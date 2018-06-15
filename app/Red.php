@@ -8,6 +8,6 @@ class Red extends Model
 {
     protected $table    = "redes";
     protected $fillable = [
-        'nombre', 'link', 'logo', 'seccion', 'orden',
+        'nombre', 'link',
     ];
 }
