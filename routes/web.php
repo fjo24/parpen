@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::prefix('adm')->group(function () {
 
     //DASHBOARD
-    Route::get('/dashboard', 'AdminController@dashboard')->name('dashboard');
+    Route::get('/dashboard', 'Adm\AdminController@dashboard')->name('dashboard');
 
     /*------------CATALOGOS----------------*/
     Route::resource('catalogos', 'Adm\CatalogosController');
@@ -28,6 +28,9 @@ Route::prefix('adm')->group(function () {
 
     /*------------CONTENIDO HOMES----------------*/
     Route::resource('homes', 'Adm\ContenidohomesController');
+
+    /*------------DATOS----------------*/
+    Route::resource('datos', 'adm\DatosController');
 
     /*------------DESTACADO HOMES----------------*/
     Route::resource('destacadoshomes', 'Adm\DestacadohomesController');
@@ -63,14 +66,20 @@ Route::prefix('adm')->group(function () {
     /*------------LOCALES----------------*/
     Route::resource('locales', 'Adm\LocalesController');
 
-//faltan
     /*------------NEWSLETTERS----------------*/
     Route::resource('newsletters', 'Adm\NewslettersController');
 
-    /*------------RED----------------*/
-    Route::resource('locales', 'Adm\LocalesController');
+    /*------------REDES----------------*/
+    Route::resource('redes', 'Adm\RedesController');
 
-    /*------------SLIDER----------------*/
-    Route::resource('sliders', 'Adm\LocalesController');
+    /*------------SLIDERS----------------*/
+    Route::resource('sliders', 'Adm\SlidersController');
+
+    /*------------USERS----------------*/
+    Route::resource('users', 'Adm\UsersController');
 
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
