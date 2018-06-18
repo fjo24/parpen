@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddDestacadoHomesTable extends Migration
 {
@@ -16,7 +16,8 @@ class AddDestacadoHomesTable extends Migration
         Schema::create('destacado_homes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->string('link');
+            $table->string('link')->nullable();
+            $table->string('imagen');
             $table->string('orden');
             $table->timestamps();
         });

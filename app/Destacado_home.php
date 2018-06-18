@@ -8,6 +8,6 @@ class Destacado_home extends Model
 {
     protected $table    = "destacado_homes";
     protected $fillable = [
-        'nombre', 'link', 'orden',
+        'nombre', 'link', 'orden', 'imagen',
     ];
 }
