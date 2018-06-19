@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Adm;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Dato;
 
 class DatosController extends Controller
 {

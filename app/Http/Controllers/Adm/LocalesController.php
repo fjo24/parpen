@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Adm;
 
 use App\Http\Controllers\Controller;
 use App\Local;
+use App\Http\Requests\LocalesRequest;
 
 class LocalesController extends Controller
 {
@@ -19,7 +20,7 @@ class LocalesController extends Controller
         return view('adm.locales.create');
     }
 
-    public function store(localsRequest $request)
+    public function store(localesRequest $request)
     {
 
         $local            = new local();
@@ -38,7 +39,7 @@ class LocalesController extends Controller
     public function edit($id)
     {
         $local = local::find($id);
-        return view('adm.locales.index.edit', compact('local'));
+        return view('adm.locales.edit', compact('local'));
     }
 
     public function update(localesRequest $request, $id)

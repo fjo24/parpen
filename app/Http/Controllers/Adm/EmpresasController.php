@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Adm;
 
 use App\Empresa;
+use App\Http\Requests\EmpresaRequest;
+
 use App\Http\Controllers\Controller;
 
 class EmpresasController extends Controller

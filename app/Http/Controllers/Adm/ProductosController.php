@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Adm;
 
+use App\Categoria;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductosRequest;
 use App\Imgproducto;
 use App\Producto;
 use Illuminate\Http\Request;
@@ -28,6 +30,7 @@ class ProductosController extends Controller
         $producto                    = new Producto();
         $producto->nombre            = $request->nombre;
         $producto->codigo            = $request->codigo;
+        $producto->orden             = $request->orden;
         $producto->descripcion       = $request->descripcion;
         $producto->contenido         = $request->contenido;
         $producto->categoria_id      = $request->categoria_id;
@@ -56,6 +59,7 @@ class ProductosController extends Controller
     {
         $producto                    = Producto::find($id);
         $producto->nombre            = $request->nombre;
+        $producto->orden             = $request->orden;
         $producto->codigo            = $request->codigo;
         $producto->descripcion       = $request->descripcion;
         $producto->contenido         = $request->contenido;
@@ -92,7 +96,7 @@ class ProductosController extends Controller
                 $path     = public_path('img/producto/');
                 $file->move($path, $id . '_' . $file->getClientOriginalName());
                 $imagen              = new Imgproducto;
-                $imagen->ubicacion   = 'img/producto/' . $id . '_' . $file->getClientOriginalName();
+                $imagen->imagen   = 'img/producto/' . $id . '_' . $file->getClientOriginalName();
                 $imagen->producto_id = $id;
                 $imagen->save();
             }

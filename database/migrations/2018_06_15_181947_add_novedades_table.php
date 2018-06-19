@@ -18,9 +18,10 @@ class AddNovedadesTable extends Migration
             $table->string('nombre');
             $table->date('fecha');
             $table->text('descripcion')->nullable();
+            $table->text('contenido')->nullable();
             $table->string('video');
             $table->text('video_descripcion');
-            $table->enum('seccion', ['home', 'empresa']);
+            $table->enum('seccion', ['destacados', 'exposiciones', 'ideas', 'promociones']);
             $table->string('orden');
             $table->timestamps();
         });

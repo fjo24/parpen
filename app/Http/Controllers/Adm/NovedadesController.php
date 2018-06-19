@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Adm;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\NovedadesRequest;
 use App\Imgnovedad;
 use App\Novedad;
 use Illuminate\Http\Request;
@@ -27,6 +28,7 @@ class NovedadesController extends Controller
         $novedad->nombre            = $request->nombre;
         $novedad->fecha             = $request->fecha;
         $novedad->descripcion       = $request->descripcion;
+        $novedad->contenido         = $request->contenido;
         $novedad->video             = $request->video;
         $novedad->video_descripcion = $request->video_descripcion;
         $novedad->seccion           = $request->seccion;
@@ -49,6 +51,7 @@ class NovedadesController extends Controller
         $novedad->nombre            = $request->nombre;
         $novedad->fecha             = $request->fecha;
         $novedad->descripcion       = $request->descripcion;
+        $novedad->contenido         = $request->contenido;
         $novedad->video             = $request->video;
         $novedad->video_descripcion = $request->video_descripcion;
         $novedad->seccion           = $request->seccion;

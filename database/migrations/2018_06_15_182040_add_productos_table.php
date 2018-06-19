@@ -17,12 +17,13 @@ class AddProductosTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('codigo');
+            $table->string('orden');
             $table->text('descripcion')->nullable();
-            $table->text('contenido');
+            $table->text('contenido')->nullable();
             $table->string('video')->nullable();
             $table->text('video_titulo')->nullable();
             $table->text('video_descripcion')->nullable();
-            $table->string('precio');
+            $table->string('precio')->nullable();
             $table->enum('visible', ['publico', 'privado', 'ambos']);
             $table->integer('categoria_id')->unsigned();
 

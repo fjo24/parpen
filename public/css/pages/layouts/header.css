@@ -1,0 +1,130 @@
+.top {
+    background-color: #504F53;
+    border-bottom: 3px solid #FF0000;
+    height: 38px;
+}
+header .list-top {
+    margin: 0px 121px;
+}
+header .li-contacto a {
+    font-family: 'Raleway';
+    color: #DDDDDD;
+    font-size: 15px;
+}
+header .li-contacto {
+    background-color: transparent;
+    border-radius: 0px;
+    float: right;
+    height: 35px;
+    width: 145px;
+    display: flex;
+    justify-content: center;
+    /* horizontal*/
+    align-items: center;
+    /*vertical*/
+    border-right: 2px solid #777777;
+}
+header .li-presupuesto a {
+    font-family: 'Raleway';
+    color: #DDDDDD;
+    font-size: 15px;
+}
+header .li-presupuesto {
+    background-color: transparent;
+    border-radius: 0px;
+    float: right;
+    height: 35px;
+    width: 243px;
+    display: flex;
+    justify-content: center;
+    /* horizontal*/
+    align-items: center;
+    /*vertical*/
+    border-right: 2px solid #777777;
+    border-left: 2px solid #777777;
+}
+header .li-telefono a {
+    font-family: 'Raleway';
+    color: #DDDDDD;
+    font-size: 16px;
+}
+header .li-telefono {
+    background-color: transparent;
+    border-radius: 0px;
+    float: left;
+    color: white;
+    position: relative;
+    top: 2px;
+    height: 35px;
+    width: 145px;
+    display: flex;
+    justify-content: center;
+    /* horizontal*/
+    align-items: center;
+    /*vertical*/
+}
+header .numero {
+    position: relative;
+    bottom: 0px;
+    left: 5px;
+}
+header .li-red {
+    background-color: transparent;
+    border-radius: 0px;
+    list-style: none;
+    float: right;
+    height: 35px;
+    width: 35px;
+    border-right: 2px solid #777777;
+    display: flex;
+    justify-content: center;
+    /* horizontal*/
+    align-items: center;
+    /*vertical*/
+}
+header .principal {
+    height: 147px!important;
+    background-color: white;
+    font-family: 'Raleway';
+}
+nav ul a {
+    color: #525254!important;
+    font-size: 16px!important;
+    font-family: 'Raleway';
+}
+nav .brand-logo {
+    top: 55px;
+    height: 113px!important;
+}
+nav ul a:hover {
+    background-color: transparent!important;
+    color: #FF0000!important;
+    font-weight: bold;
+    font-family: 'Raleway';
+}
+.activo {
+    background-color: transparent!important;
+    color: #FF0000!important;
+    font-weight: bold;
+    font-family: 'Raleway';
+}
+nav .item-left {
+    position: relative;
+    top: 41px;
+    left: 33px;
+    width: 450px;
+    font-family: 'Raleway';
+    font-weight: 600;
+}
+nav .item-right {
+    position: relative;
+    top: 41px;
+    right: 20px;
+    word-spacing: 0px;
+    font-family: 'Raleway';
+    font-weight: 600;
+}
+
+nav ul li {
+    margin: 0px 5px;
+}

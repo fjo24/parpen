@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Adm;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Red;
+use App\Http\Requests\RedesRequest;
 
 class RedesController extends Controller
 {
@@ -22,7 +24,7 @@ class RedesController extends Controller
     public function store(redesRequest $request)
     {
 
-        $red        = new red();
+        $red        = new Red();
         $red->nombre = $request->nombre;
         $red->link = $request->link;
 
@@ -32,15 +34,14 @@ class RedesController extends Controller
 
     public function edit($id)
     {
-        $red = red::find($id);
+        $red = Red::find($id);
         return view('adm.redes.edit', compact('red'));
     }
 
     public function update(redesRequest $request, $id)
     {
-        $red =
-        red::find($id);
-        $red->nombre = $request->nombre;
+        $red = Red::find($id);
+       
         $red->link = $request->link;
 
         $red->save();

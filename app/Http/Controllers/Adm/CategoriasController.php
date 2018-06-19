@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Adm;
 
 use App\Categoria;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CategoriasRequest;
 
 class CategoriasController extends Controller
 {
@@ -15,7 +16,8 @@ class CategoriasController extends Controller
 
     public function create()
     {
-        return view('adm.categorias.create');
+        $categorias = Categoria::orderBy('nombre', 'ASC')->pluck('nombre', 'id')->all();
+        return view('adm.categorias.create', compact('categorias'));
     }
 
     public function store(CategoriasRequest $request)
@@ -46,16 +48,19 @@ class CategoriasController extends Controller
 
     public function edit($id)
     {
-        $categoria = Categoria::find($id);
-        return view('adm.categorias.edit', compact('categoria'));
+        $categorias = Categoria::orderBy('nombre', 'ASC')->where('id', '<>', $id)->pluck('nombre', 'id')->all();
+        $categoria  = Categoria::find($id);
+        return view('adm.categorias.edit', compact('categoria', 'categorias'));
     }
 
     public function update(CategoriasRequest $request, $id)
     {
-        $categoria              = Categoria::find($id);
-        $categoria->id_superior = $request->id_superior;
-        $categoria->nombre      = $request->nombre;
-        $categoria->orden       = $request->orden;
+        $categoria = Categoria::find($id);
+        if ($id != $request->id_superior) {
+            $categoria->id_superior = $request->id_superior;
+        }
+        $categoria->nombre = $request->nombre;
+        $categoria->orden  = $request->orden;
 
         if ($request->hasFile('imagen')) {
             if ($request->file('imagen')->isValid()) {

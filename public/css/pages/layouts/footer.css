@@ -1,0 +1,57 @@
+.page-footer {
+    height: 265px;
+    background-color: #111111!important;
+}
+footer .logfooter {
+    
+}
+footer .titulo-footer {
+    font-family: 'Raleway';
+    color: #ff0000;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 90px;
+}
+footer .links {
+    padding-left: 78px;
+}
+footer .listlinks {
+    font-family: 'Raleway';
+    color: #ffffff;
+    font-size: 15px;
+}
+
+footer .listlinks li{
+	margin-bottom: 10px;
+	font-family: 'Raleway';
+}
+
+footer .row .col.l6 {
+	width: 40%;
+}
+
+footer .leftitems{
+	position: relative;
+	top: 3px;
+	left: -14px!important;
+}
+
+footer .rightitems{
+	position: relative;
+	top: -4px;
+	left: -14px!important;
+}
+
+footer .links2 {
+    padding-left: 78px;
+}
+footer .listlinks2 {
+    font-family: 'Raleway';
+    color: #ffffff;
+    font-size: 15px;
+}
+
+footer .rightlist{
+	margin-bottom: 5px;
+	font-family: 'Raleway';
+}
