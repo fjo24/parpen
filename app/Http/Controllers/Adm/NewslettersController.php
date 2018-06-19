@@ -3,14 +3,15 @@
 namespace App\Http\Controllers\Adm;
 
 use App\Http\Controllers\Controller;
-use App\newsletter;
 use App\Http\Requests\NewslettersRequest;
+use App\newsletter;
+
 class NewslettersController extends Controller
 {
     public function index()
     {
-        $newsletter = Newsletter::orderBy('email', 'ASC')->get();
-        return view('adm.newsletters.index', compact('newsletter'));
+        $newsletters = Newsletter::orderBy('email', 'ASC')->get();
+        return view('adm.newsletters.index', compact('newsletters'));
     }
 
     public function create()
