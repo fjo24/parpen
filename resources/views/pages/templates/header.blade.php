@@ -1,41 +1,29 @@
 <div container="">
     <header>
         {{-- BARRA SUPERIOR --}}
-        <div class="container-fluid top hide-on-med-and-down">
-            <div class="list-top row">
-                <div class="li-red">
-                    <a href="">
-                        <img alt="" src="{{asset('img/layouts/logo-top-face.png')}}" style="margin-right: 2px;">
-                        </img>
-                    </a>
-                </div>
-                <div class="li-red">
-                    <a href="">
-                        <img alt="" src="{{asset('img/layouts/search.png')}}">
-                        </img>
-                    </a>
-                </div>
-                <div class="li-contacto">
-                    <a href="">
-                        <img alt="{{ url('/contacto') }}" src="{{asset('img/layouts/mail.png')}}" style="margin-right: 5px;">
-                            CONTACTO
-                        </img>
-                    </a>
-                </div>
-                <div class="li-presupuesto">
-                    <a href="{{ url('/presupuesto') }}">
-                        <img alt="" src="{{asset('img/layouts/correo2.png')}}" style="margin-right: 0px;">
-                            SOLICITUD DE PRESUPUESTO
-                        </img>
-                    </a>
-                </div>
-                <div class="li-telefono">
-                    <i class="material-icons" style="margin-right: 0px;">
-                        phone_in_talk
-                    </i>
-                    <span class="numero">
-                        0221 1 5639-2724
-                    </span>
+        <div class="top">
+            <div class="container nav-flex hide-on-med-and-down">
+                <div class="list-top row">
+                    <div class="li-red">
+                        <a href="">
+                            <img alt="" src="{{asset('img/layouts/lupa.png')}}">
+                            </img>
+                        </a>
+                    </div>
+                    <div class="li-telefono">
+                        <a href="">
+                            <img alt="" class="" src="{{asset('img/layouts/facebook.png')}}">
+                            </img>
+                        </a>
+                        <a href="">
+                            <img alt="" class="" src="{{asset('img/layouts/instagram.png')}}">
+                            </img>
+                        </a>
+                        <a href="">
+                            <img alt="" class="" src="{{asset('img/layouts/youtube.png')}}">
+                            </img>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -43,45 +31,45 @@
         <nav class="principal">
             <div class="container" style="width: 90%">
                 <ul class="item-left left hide-on-med-and-down">
-                @if($activo=='mantenimiento')
+                    @if($activo=='mantenimiento')
                     <li>
                         <a class="activo" href="{{ url('/mantenimiento') }}">
                             MANTENIMIENTO
                         </a>
                     </li>
-                @else
+                    @else
                     <li>
                         <a href="{{ url('/mantenimiento') }}">
                             MANTENIMIENTO
                         </a>
                     </li>
-                @endif
+                    @endif
                 @if($activo=='productos')
                     <li>
                         <a class="activo" href="{{ url('/categorias') }}">
                             PRODUCTOS
                         </a>
                     </li>
-                @else
+                    @else
                     <li>
                         <a href="{{ url('/categorias') }}">
                             PRODUCTOS
                         </a>
                     </li>
-                @endif
+                    @endif
                 @if($activo=='empresa')
                     <li>
                         <a class="activo" href="{{ url('/empresa') }}">
                             EMPRESA
                         </a>
                     </li>
-                @else
+                    @else
                     <li>
                         <a href="{{ url('/empresa') }}">
                             EMPRESA
                         </a>
                     </li>
-                @endif
+                    @endif
                 </ul>
                 <a class="brand-logo center" href="{{ url('/') }}">
                     <img alt="" src="{{asset('img/layouts/logo-header.png')}}">
@@ -93,7 +81,7 @@
                     </i>
                 </a>
                 <ul class="item-right right hide-on-med-and-down">
-                 @if($activo=='consejos')
+                    @if($activo=='consejos')
                     <li>
                         <a class="activo" href="{{ url('/consejos') }}">
                             CONSEJOS DE SEGURIDAD

@@ -1,10 +1,9 @@
 .top {
-    background-color: #504F53;
-    border-bottom: 3px solid #FF0000;
+    background-color: #FF5B88;
     height: 38px;
 }
 header .list-top {
-    margin: 0px 121px;
+    margin: 0px  -79px;
 }
 header .li-contacto a {
     font-family: 'Raleway';
@@ -47,6 +46,7 @@ header .li-telefono a {
     font-family: 'Raleway';
     color: #DDDDDD;
     font-size: 16px;
+    margin: 0px 11px;
 }
 header .li-telefono {
     background-color: transparent;
@@ -55,6 +55,7 @@ header .li-telefono {
     color: white;
     position: relative;
     top: 2px;
+    left: -27px;
     height: 35px;
     width: 145px;
     display: flex;
@@ -75,7 +76,6 @@ header .li-red {
     float: right;
     height: 35px;
     width: 35px;
-    border-right: 2px solid #777777;
     display: flex;
     justify-content: center;
     /* horizontal*/
@@ -124,7 +124,6 @@ nav .item-right {
     font-family: 'Raleway';
     font-weight: 600;
 }
-
 nav ul li {
     margin: 0px 5px;
 }
