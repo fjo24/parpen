@@ -2,29 +2,74 @@
     background-color: #FF5B88;
     height: 38px;
 }
+/*BUSCADOR*/
+
+.dropdown-menu {
+    right: 0% !important;
+    left: -200% !important;
+    background-color: #787950 !important;
+}
+header #buscador {
+    float: right;
+}
+header #buscador input[type=search] {
+    margin: 0px;
+    width: 144px;
+    height: 24px;
+    color: black;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    border-bottom: 0px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+/* FIN BUSCADOR */
+
 header .list-top {
-    margin: 0px  -79px;
+    margin: 0px -79px;
+    margin-right: 3px;
 }
-header .li-contacto a {
-    font-family: 'Raleway';
-    color: #DDDDDD;
-    font-size: 15px;
-}
-header .li-contacto {
+header .li-icondistribuidor {
+    position: relative;
+    right: 92px;
+    top: 5px;
     background-color: transparent;
     border-radius: 0px;
     float: right;
-    height: 35px;
-    width: 145px;
+    height: 26px;
+    width: 62px;
+    line-height: 10px;
     display: flex;
     justify-content: center;
     /* horizontal*/
     align-items: center;
     /*vertical*/
-    border-right: 2px solid #777777;
+    border-right: 1px solid #ffffff;
+}
+header .li-distribuidor a {
+    font-family: Arial;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+header .li-distribuidor {
+    position: relative;
+    right: 48px;
+    border-radius: 0px;
+    float: right;
+    height: 35px;
+    width: 245px;
+    font-family: Arial;
+    display: flex;
+    justify-content: center;
+    /* horizontal*/
+    align-items: center;
+    /*vertical*/
 }
 header .li-presupuesto a {
-    font-family: 'Raleway';
+    font-family: arial;
     color: #DDDDDD;
     font-size: 15px;
 }
@@ -42,19 +87,19 @@ header .li-presupuesto {
     border-right: 2px solid #777777;
     border-left: 2px solid #777777;
 }
-header .li-telefono a {
-    font-family: 'Raleway';
+header .li-redes a {
+    font-family: arial;
     color: #DDDDDD;
     font-size: 16px;
     margin: 0px 11px;
 }
-header .li-telefono {
+header .li-redes {
     background-color: transparent;
     border-radius: 0px;
     float: left;
     color: white;
     position: relative;
-    top: 2px;
+    top: 4px;
     left: -27px;
     height: 35px;
     width: 145px;
@@ -74,8 +119,9 @@ header .li-red {
     border-radius: 0px;
     list-style: none;
     float: right;
-    height: 35px;
+    height: 37px;
     width: 35px;
+    margin-right: -13px;
     display: flex;
     justify-content: center;
     /* horizontal*/
@@ -83,47 +129,67 @@ header .li-red {
     /*vertical*/
 }
 header .principal {
-    height: 147px!important;
+    height: 190px!important;
     background-color: white;
-    font-family: 'Raleway';
+    font-family: arial;
 }
 nav ul a {
-    color: #525254!important;
+    color: #7D0045!important;
     font-size: 16px!important;
-    font-family: 'Raleway';
+    font-family: arial;
+    margin: 0 12px;
+    padding: 0!important;
 }
 nav .brand-logo {
-    top: 55px;
+    top: 58px;
     height: 113px!important;
 }
 nav ul a:hover {
     background-color: transparent!important;
-    color: #FF0000!important;
-    font-weight: bold;
-    font-family: 'Raleway';
+    font-family: arial;
+    margin: 0 12px;
+    padding: 0!important;
+    border-bottom: 3px solid #7D0045 !important;
 }
 .activo {
     background-color: transparent!important;
-    color: #FF0000!important;
-    font-weight: bold;
-    font-family: 'Raleway';
+    font-family: arial;
+    border-bottom: 3px solid #7D0045 !important;
+}
+
+nav .item-left a {
+    color: #7D0045!important;
+    font-size: 16px!important;
+    font-family: arial;
+    margin: 0 22px;
+    padding: 0!important;
+}
+
+nav .item-left a:hover {
+    color: #7D0045!important;
+    font-size: 16px!important;
+    font-family: arial;
+    margin: 0 22px;
+    padding: 0!important;
 }
 nav .item-left {
     position: relative;
-    top: 41px;
-    left: 33px;
-    width: 450px;
-    font-family: 'Raleway';
+    top:77px;
+    left: 19px;
+    width: 468px;
+    font-family: arial;
     font-weight: 600;
+    line-height: 46px;
 }
 nav .item-right {
     position: relative;
-    top: 41px;
-    right: 20px;
+    top:77px;
+    right: 30px;
     word-spacing: 0px;
-    font-family: 'Raleway';
+    font-family: arial;
     font-weight: 600;
+    line-height: 46px;
 }
 nav ul li {
-    margin: 0px 5px;
+    margin: 0px 1px;
 }

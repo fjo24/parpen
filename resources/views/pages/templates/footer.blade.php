@@ -1,72 +1,119 @@
 <footer class="page-footer">
     <div class="container" style="width: 100%">
         <div class="row" style="display:  flex; align-items:  center;">
-            <div class="leftitems col l4 s12 m4 hide-on-med-and-down">
-                <h5 class="titulo-footer">
-                    SITEMAP
-                </h5>
-                <div class="links">
-                    <div class="listlinks col l6 m6">
-                        <ul>
-                            <li>
-                                <a class="grey-text text-lighten-3" href="#!">
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a class="grey-text text-lighten-3" href="#!">
-                                    Mantenimiento
-                                </a>
-                            </li>
-                            <li>
-                                <a class="grey-text text-lighten-3" href="#!">
-                                    Productos
-                                </a>
-                            </li>
-                            <li>
-                                <a class="grey-text text-lighten-3" href="#!">
-                                    Empresa
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="listlinks col l6 m6">
-                        <ul style="">
-                            <li>
-                                <a class="grey-text text-lighten-3" href="#!">
-                                    Consejos de Seguridad
-                                </a>
-                            </li>
-                            <li>
-                                <a class="grey-text text-lighten-3" href="#!">
-                                    Obras
-                                </a>
-                            </li>
-                            <li>
-                                <a class="grey-text text-lighten-3" href="#!">
-                                    Clientes
-                                </a>
-                            </li>
-                            <li>
-                                <a class="grey-text text-lighten-3" href="#!">
-                                    Contacto
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col l4 s12 m4">
+            <div class="col l3 s12 m3">
                 <div class="row">
                     <div class="logfooter center">
-                        <img alt="" src="{{asset('img/layouts/logo-footer.png')}}">
+                        <img alt="" src="{{asset('img/logo_footer.png')}}">
                         </img>
                     </div>
                 </div>
             </div>
-            <div class="rightitems col l4 s12 m4 hide-on-med-and-down left">
+            <div class="leftitems col l3 s12 m3">
                 <h5 class="titulo-footer">
-                    EXCELSIOR S.A.
+                    SITEMAP
+                </h5>
+                <div class="links">
+                    <ul>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">
+                                Mantenimiento
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">
+                                Productos
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">
+                                Empresa
+                            </a>
+                        </li>
+                    </ul>
+                    <ul style="">
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">
+                                Consejos de Seguridad
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">
+                                Obras
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">
+                                Clientes
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">
+                                Contacto
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="leftitems col l3 s12 m3">
+                <h5 class="titulo-footer">
+                    SITEMAP
+                </h5>
+                <div class="links">
+                    <ul>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">
+                                Mantenimiento
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">
+                                Productos
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">
+                                Empresa
+                            </a>
+                        </li>
+                    </ul>
+                    <ul style="">
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">
+                                Consejos de Seguridad
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">
+                                Obras
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">
+                                Clientes
+                            </a>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">
+                                Contacto
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rightitems col l3 s12 m3 hide-on-med-and-down left">
+                <h5 class="titulo-footer">
+                    PARPEN ARGENTINA
                 </h5>
                 <div class="links2">
                     <div class="listlinks2 col l12 m12">

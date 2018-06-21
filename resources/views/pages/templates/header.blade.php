@@ -5,12 +5,29 @@
             <div class="container nav-flex hide-on-med-and-down">
                 <div class="list-top row">
                     <div class="li-red">
+
+                        {!!  Form::open(['route' => 'buscar', 'method' => 'POST', 'id'=>'buscador']) !!}
+          <input type="search" id="buscar" name="buscar">
+        {!! Form::close() !!} 
                         <a href="">
                             <img alt="" src="{{asset('img/layouts/lupa.png')}}">
                             </img>
                         </a>
                     </div>
-                    <div class="li-telefono">
+                    <div class="li-icondistribuidor">
+                        <a href="">
+                            <img alt="" src="{{asset('img/layouts/icono_distribuidor.png')}}">
+                            </img>
+                        </a>
+                    </div>
+                    <div class="li-distribuidor">
+                    <a href="">
+                        <img alt="" src="">
+                            ZONA DISTRIBUIDOR
+                        </img>
+                    </a>
+                </div>
+                    <div class="li-redes">
                         <a href="">
                             <img alt="" class="" src="{{asset('img/layouts/facebook.png')}}">
                             </img>
@@ -29,50 +46,50 @@
         </div>
         {{-- BARRA PRINCIPAL --}}
         <nav class="principal">
-            <div class="container" style="width: 90%">
+            <div class="container" style="width: 89%">
                 <ul class="item-left left hide-on-med-and-down">
                     @if($activo=='mantenimiento')
                     <li>
                         <a class="activo" href="{{ url('/mantenimiento') }}">
-                            MANTENIMIENTO
+                            INICIO
                         </a>
                     </li>
                     @else
                     <li>
                         <a href="{{ url('/mantenimiento') }}">
-                            MANTENIMIENTO
+                            INICIO
                         </a>
                     </li>
                     @endif
                 @if($activo=='productos')
                     <li>
                         <a class="activo" href="{{ url('/categorias') }}">
-                            PRODUCTOS
+                            QUIÉNES SOMOS
                         </a>
                     </li>
                     @else
                     <li>
                         <a href="{{ url('/categorias') }}">
-                            PRODUCTOS
+                            QUIÉNES SOMOS
                         </a>
                     </li>
                     @endif
                 @if($activo=='empresa')
                     <li>
                         <a class="activo" href="{{ url('/empresa') }}">
-                            EMPRESA
+                            PRODUCTOS
                         </a>
                     </li>
                     @else
                     <li>
                         <a href="{{ url('/empresa') }}">
-                            EMPRESA
+                            PRODUCTOS
                         </a>
                     </li>
                     @endif
                 </ul>
                 <a class="brand-logo center" href="{{ url('/') }}">
-                    <img alt="" src="{{asset('img/layouts/logo-header.png')}}">
+                    <img alt="" src="{{asset('img/logo_principal.png')}}">
                     </img>
                 </a>
                 <a class="sidenav-trigger" data-target="mobile-demo" href="#">
@@ -84,39 +101,39 @@
                     @if($activo=='consejos')
                     <li>
                         <a class="activo" href="{{ url('/consejos') }}">
-                            CONSEJOS DE SEGURIDAD
+                            DÓNDE COMPRAR
                         </a>
                     </li>
                     @else
                     <li>
                         <a href="{{ url('/consejos') }}">
-                            CONSEJOS DE SEGURIDAD
+                            DÓNDE COMPRAR
                         </a>
                     </li>
                     @endif
                     @if($activo=='obras')
                     <li>
                         <a class="activo" href="{{ url('/categoriaobras') }}">
-                            OBRAS
+                            NOVEDADES
                         </a>
                     </li>
                     @else
                     <li>
                         <a href="{{ url('/categoriaobras') }}">
-                            OBRAS
+                            NOVEDADES
                         </a>
                     </li>
                     @endif
                     @if($activo=='clientes')
                     <li>
                         <a class="activo" href="{{ url('/clientes') }}">
-                            CLIENTES
+                            CONTACTO
                         </a>
                     </li>
                     @else
                     <li>
                         <a href="{{ url('/clientes') }}">
-                            CLIENTES
+                            CONTACTO
                         </a>
                     </li>
                     @endif
@@ -126,32 +143,32 @@
         <ul class="sidenav" id="mobile-demo">
             <li>
                 <a href="{{ url('/mantenimiento') }}">
-                    MANTENIMIENTO
+                    INICIO
                 </a>
             </li>
             <li>
                 <a href="{{ url('/categorias') }}">
-                    PRODUCTOS
+                    QUIÉNES SOMOS
                 </a>
             </li>
             <li>
                 <a href="{{ url('/empresa') }}">
-                    EMPRESA
+                    PRODUCTOS
                 </a>
             </li>
             <li>
                 <a href="{{ url('/consejos') }}">
-                    CONSEJOS DE SEGURIDAD
+                    DÓNDE COMPRAR
                 </a>
             </li>
             <li>
                 <a href="{{ url('/categoriaobras') }}">
-                    OBRAS
+                    NOVEDADES
                 </a>
             </li>
             <li>
                 <a href="{{ url('/clientes') }}">
-                    CLIENTES
+                    CONTACTO
                 </a>
             </li>
         </ul>

@@ -13,6 +13,11 @@
 //HOME
 Route::get('/', 'PaginasController@home');
 
+//BUSCADOR
+Route::post('productos/buscar',[
+        'uses'=>'PaginasController@buscar',
+        'as'=>'buscar'
+    ]);
 
 Route::prefix('adm')->group(function () {
 
