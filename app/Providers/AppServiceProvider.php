@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use App\Dato;
+use App\Categoria;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,16 +17,18 @@ class AppServiceProvider extends ServiceProvider
     {
         \Schema::defaultStringLength(191);
 
-        $telefono    = Dato::where('tipo', 'telefono')->first();
-        $telefono2   = Dato::where('tipo', 'telefono2')->first();
-        $direccion   = Dato::where('tipo', 'direccion')->first();
-        $email       = Dato::where('tipo', 'email')->first();
+        $categorias = Categoria::OrderBy('id', 'asc')->get();
+        $telefono   = Dato::where('tipo', 'telefono')->first();
+        $telefono2  = Dato::where('tipo', 'telefono2')->first();
+        $direccion  = Dato::where('tipo', 'direccion')->first();
+        $email      = Dato::where('tipo', 'email')->first();
 
         view()->share([
-            'telefono'    => $telefono,
-            'telefono2'   => $telefono2,
-            'direccion'   => $direccion,
-            'email'       => $email,
+            'telefono'  => $telefono,
+            'telefono2' => $telefono2,
+            'direccion' => $direccion,
+            'email'     => $email,
+            'categorias' => $categorias,
         ]);
     }
 

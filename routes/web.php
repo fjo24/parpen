@@ -10,8 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
  */
+//PAGINAS/*************************************************************************************************
+
 //HOME
 Route::get('/', 'PaginasController@home');
+
+//PRODUCTOS
+Route::get('/productos', 'PaginasController@productos');
+
+//CATEGORIAS DE PRODUCTOS
+Route::get('/categorias', 'PaginasController@categorias');
+
 
 //BUSCADOR
 Route::post('productos/buscar',[
@@ -19,6 +28,7 @@ Route::post('productos/buscar',[
         'as'=>'buscar'
     ]);
 
+//ADMIN*******************************************************************************************************
 Route::prefix('adm')->group(function () {
 
     //DASHBOARD
