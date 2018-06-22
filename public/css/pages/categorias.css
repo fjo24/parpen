@@ -1,0 +1,415 @@
+.familia-tarjeta{
+	margin-top: 40px;
+}
+
+.familia-tarjeta img{
+	display: block;
+}
+
+section.modal-section h2 {
+    color: #BE0000;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin: 0;
+    margin-bottom: 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+section.modal-section p {
+	text-align: center;
+	margin-bottom: 10px;
+	display: block;
+}
+
+section.modal-section span {
+	text-align: center;
+	margin-bottom: 20px;
+	cursor: pointer;
+	display: block;
+	color: #5A462E;
+	font-weight: bold;
+	font-size: 12px;
+	transition: 0.3s;
+}
+
+section.modal-section span:hover {
+	color: #BE0000;
+	transition: 0.3s;
+}
+
+.familia-tarjeta h2{
+	margin-top: 5px;
+	background-color: #279087;
+	font-size: 16px;
+	text-align: center;
+	height: 45px;
+	text-transform: uppercase;
+	margin-bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
+	color: #fff;
+}
+
+section.productos{
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
+.miga{
+	font-size: 16px;
+	text-transform: capitalize;
+}
+
+.miga a, .miga span{
+	color: #93989E;
+}
+
+.collapsible-header{
+	padding: 0.2rem 0.5rem 0.5rem 0;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #BE0000;
+	position: relative;
+	border-bottom: 1px solid #BE0000;
+}
+
+.collapsible-header a{
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #BE0000;
+}
+
+.collapsible-header a i{
+	position: absolute;
+	right: 0;
+	margin: 0;
+}
+
+.collapsible-header.active a{
+	color: #BE0000;
+	border-color: #BE0000;
+}
+
+.collapsible{
+	border: none;
+	box-shadow: none;
+}
+
+.collapsible-body .collapsible-header{
+	border: none;
+	font-size: 13px;
+	font-weight: 300;
+	padding-left: 10px;
+	color: #838383;
+}
+
+.collapsible-body .collapsible-header a{
+	color: #838383;
+	font-weight: 400;
+}
+
+.collapsible-body .collapsible-header i{
+	position: absolute;
+    bottom: 8px;
+    right: inherit;
+    line-height: 10px;
+}
+
+.collapsible-body{
+	padding: 0;
+}
+
+.collapsible-body .collapsible-body{
+	padding: 0 15px;
+}
+
+.collapsible-body{
+	border: none;
+}
+
+.categoria-tarjeta {
+	position: relative;
+}
+
+.categoria-tarjeta span{
+	height: 8px;
+	display: block;
+	background-color: #00B2B0;
+	margin-top: 1rem;
+}
+
+.hover{
+	position: relative;
+}
+
+.hover::after{
+	content: 'Ver precios';
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(253,240,98,0.8);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #5B462F;
+	font-size: 18px;
+	font-weight: 600;
+	opacity: 0;
+	transition: 0.3s;
+}
+
+.hover:hover::after{
+	opacity: 1;
+	transition: 0.3s;
+}
+
+.categoria-tarjeta img{
+	border: 1px solid rgba(147,152,158,0.3);
+	display: block;
+}
+
+.ficha h1{
+	color: #5A462E;
+	text-transform: none;
+	font-size: 26px;
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-weight: 400;
+}
+
+.ficha .linea{
+	height: 1px;
+	width: 50px;
+	margin-left: 3px;
+	background-color: #5B462F;
+}
+
+.ficha p{
+	text-align: justify;
+	color: #92989E;
+}
+
+.ficha .btn{
+	float: right;
+	margin-top: 30px;
+	margin-bottom: 0;
+}
+
+.contenido img{
+	max-width: 100%;
+    height: auto;
+    display: inline-block;
+    margin: auto;
+}
+
+.ficha h2{
+	color: #777575;
+	text-transform: capitalize;
+	font-weight: 500;
+	font-size: 16px;
+	padding: 10px 0;
+	margin: 15px 0;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+
+   opacity: 1;
+
+}
+
+.ficha .input-field.col label {
+    left: 0rem;
+}
+
+.costo span{
+	color: #5B462F!important;
+	font-size: 26px!important;
+	text-align: right!important;
+	font-weight: 600;
+	display: block;
+	border-bottom: 1px solid #5B5B5B;
+}
+
+
+.costo p{
+	text-align: right!important;
+	display: block;
+	font-size: 13px;
+	margin-top: 5px;
+}
+
+.ficha .boton {
+    height: 36px;
+    width: auto;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #5A462E;
+    border: 1px solid #5A462E;
+    display: inline-block;
+    line-height: 36px;
+    padding: 0 15px;
+    cursor: pointer;
+    margin-top: 45px;
+    text-transform: uppercase;
+    float: right;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+.ficha i{
+	float: right;
+    line-height: 34px;
+    margin-top: 45px;
+    color: #604B33;
+    border: 1px solid #604B33;
+    border-right: none;
+    padding: 0 10px;
+}
+
+section.modal-section .boton {
+    height: 36px;
+    width: auto;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #FFF;
+    border: 1px solid #5A462E;
+    display: inline-block;
+    line-height: 36px;
+    padding: 0 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #5A462E;
+    text-transform: uppercase;
+    float: right;
+    margin-bottom: 15px;
+}
+
+section.modal-section .boton:hover {
+    background-color: transparent;
+    color: #5A462E;
+}
+
+section.modal-section .cerrar{
+	font-size: 13px;
+	color: #B0B0B0;
+	font-weight: 500;
+	margin-top: 10px!important;
+}
+
+
+.ficha .boton:hover {
+    background-color: #5A462E;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.ficha form{
+	margin-top: 50px;
+	display: inline-block;
+}
+
+.ficha span{
+	font-size: 15px;
+	color: #4C4C4C;
+}
+
+.margin-car{
+	margin-bottom: 5px;
+}
+
+.ficha .caracteristica{
+	color: #9C4F39;
+	font-weight: 600;
+}
+
+.categoria-tarjeta h2{
+	margin-top: 0;
+	font-size: 16px;
+	text-align: center;
+	height: 55px;
+	margin-bottom: 0.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 400;
+	color: #5B462F;
+}
+
+.ficha .categoria-tarjeta h2{
+	font-size: 14px;
+}
+
+thead{
+	background-color: #4DB6AC;
+	border: none;
+}
+
+table tr th{
+	text-align: center;
+	color: #fff;
+	font-weight: 300;
+	border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+table tr td{
+	text-align: center;
+	padding: 5px;
+}
+
+thead tr th{	
+	border-radius: 0;
+}
+
+tbody tr{
+	border-bottom: 1px solid #4DB6AC;
+}
+
+table.striped>tbody>tr:nth-child(even) {
+    background-color: rgba(77,182,172,0.15);
+}
+
+table.striped>tbody>tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.contenido ul li:nth-child(odd) {
+    background-color: rgba(77,182,172,0.15);
+}
+
+.contenido ul li:nth-child(even) {
+    background-color: #fff;
+}
+
+
+.contenido ul li{
+  padding: 3px 10px;
+  color: #818386;
+}
+
+.contenido ul li::before {
+  content: "â€¢ ";
+  color: #FFA300;
+  font-size: 25px;
+  line-height: 5px;
+}
+
+.modal{
+	background-color: #F5F2ED;
+	height: auto!important;
+	max-height: initial;
+}
+
+.modal .modal-footer{
+	background-color: #F5F2ED;
+	position: relative!important;
+}

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Banner;
 use App\Categoria;
 use App\Categoria_obra;
 use App\Cliente;
@@ -24,40 +23,57 @@ class PaginasController extends Controller
 {
     public function home()
     {
-        $activo = 'mantenimiento';
+        $activo    = 'mantenimiento';
         $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'home')->get();
         $contenido = Destacado_home::all()->first();
         return view('pages.home', compact('sliders', 'servicios', 'banner', 'contenido', 'activo'));
     }
 
+    public function productos()
+    {
+        $activo        = 'producto';
+        $categorias    = Categoria::where('id_superior', null)->orderBy('orden', 'asc')->get();
+        $subcategorias = Categoria::whereNotNull('id_superior')->orderBy('orden', 'asc')->get();
+        $productos     = Producto::orderBy('categoria_id')->get(); //
+
+
+
+        /*    $productosx= [];
+        $productos_s= DB::table('productos')
+        ->join('cate_productos', 'productos.id', '=', 'cate_productos.id_producto')
+        ->where('cate_productos.active','=',1)
+        ->orderBy('orden')
+        ->select('productos.*', 'cate_productos.id_categoria')->distinct('productos.nombre')
+        ->get();
+        foreach ($categorias as $categoria) {
+        foreach ($productos as $producto) {
+        if ($producto->categoria_id==$categoria->id) {
+        $producto = array_add($productosx);
+        }
+        }
+        }*/
+
+        return view('pages.productos', compact('categorias', 'subcategorias', 'productos', 'productos_directos', 'activo'));
+    }
+    public function categorias()
+    {
+        $activo     = 'productos';
+        $categorias = Categoria::OrderBy('orden', 'asc')->get();
+        return view('pages.categorias', compact('categorias', 'activo'));
+    }
+
     public function mantenimiento()
     {
-        $activo = 'mantenimiento';
+        $activo    = 'mantenimiento';
         $servicios = Servicio::OrderBy('orden', 'ASC')->get();
         $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'mantenimiento')->get();
         $contenido = Destacado_mantenimiento::all()->first();
         return view('pages.mantenimiento', compact('sliders', 'servicios', 'contenido', 'activo'));
     }
 
-    public function categorias()
-    {
-        $activo = 'productos';
-        $categorias = Categoria::OrderBy('orden', 'asc')->get();
-        return view('pages.categorias', compact('categorias', 'activo'));
-    }
-
-    public function productos($id)
-    {
-        $activo = 'productos';
-        $categoria = Categoria::find($id);
-        $ready     = 0;
-        $productos = Producto::OrderBy('orden', 'asc')->where('categoria_id', $id)->get();
-        return view('pages.productos', compact('productos', 'categoria', 'ready', 'activo'));
-    }
-
     public function productoinfo($id)
     {
-        $activo = 'productos';
+        $activo    = 'productos';
         $imagenes  = Imgproducto::OrderBy('ubicacion', 'ASC')->where('producto_id', '$id')->get();
         $producto  = Producto::find($id);
         $idc       = $producto->categoria_id;
@@ -70,23 +86,22 @@ class PaginasController extends Controller
     }
     public function empresa()
     {
-        $activo = 'empresa';
+        $activo    = 'empresa';
         $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'empresa')->get();
         $contenido = Destacado_empresa::all()->first();
         return view('pages.empresa', compact('sliders', 'contenido', 'activo'));
     }
 
-
     public function categoriaobras()
     {
         $activo = 'obras';
-        $obras = Categoria_obra::OrderBy('orden', 'asc')->get();
+        $obras  = Categoria_obra::OrderBy('orden', 'asc')->get();
         return view('pages.catobras', compact('obras', 'activo'));
     }
 
     public function obras($id)
     {
-        $activo = 'obras';
+        $activo    = 'obras';
         $categoria = Categoria::find($id);
         $ready     = 0;
         $servicios = Producto::OrderBy('orden', 'ASC')->get();
@@ -95,7 +110,7 @@ class PaginasController extends Controller
     }
     public function obrainfo($id)
     {
-        $activo = 'obras';
+        $activo  = 'obras';
         $obra    = Obra::find($id);
         $sliders = Slider::orderBy('id', 'ASC')->Where('seccion', 'obras')->get();
         return view('pages.obrainfo', compact('obra', 'sliders', 'activo'));
@@ -103,7 +118,7 @@ class PaginasController extends Controller
 
     public function modeloinfo($id)
     {
-        $activo = 'productos';
+        $activo        = 'productos';
         $modelo        = Modelo::find($id);
         $categorias    = Categoria::OrderBy('orden', 'asc')->get();
         $producto      = Producto::find($modelo->producto_id);
@@ -120,25 +135,24 @@ class PaginasController extends Controller
 
     public function servicios()
     {
-        $activo = 'null';
+        $activo    = 'null';
         $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'servicios')->get();
         $servicios = Servicio::OrderBy('id', 'ASC')->get();
         return view('pages.servicios', compact('sliders', 'servicios', 'activo'));
     }
 
-
     public function galeria($id)
     {
-        $activo = 'obras';
-        $ready = 0;
-        $obra    = Obra::find($id);
-        $imagenes  = Obra_imagen::OrderBy('id', 'ASC')->where('obra_id', '$id')->get();
+        $activo   = 'obras';
+        $ready    = 0;
+        $obra     = Obra::find($id);
+        $imagenes = Obra_imagen::OrderBy('id', 'ASC')->where('obra_id', '$id')->get();
         return view('pages.obragaleria', compact('obra', 'imagenes', 'ready', 'activo'));
     }
 
     public function fabrica()
     {
-        $activo = 'null';
+        $activo  = 'null';
         $fabrica = Fabrica::all()->first();
         $sliders = Slider::orderBy('id', 'ASC')->Where('seccion', 'fabrica')->get();
         return view('pages.fabrica', compact('fabrica', 'sliders', 'activo'));
@@ -146,14 +160,14 @@ class PaginasController extends Controller
 
     public function presupuesto()
     {
-        $activo = 'null';
+        $activo  = 'null';
         $sliders = Slider::orderBy('id', 'ASC')->Where('seccion', 'presupuesto')->get();
         return view('pages.presupuesto', compact('sliders', 'activo'));
     }
 
     public function enviarpresupuesto(Request $request)
     {
-        $activo = 'null';
+        $activo    = 'null';
         $sliders   = Slider::orderBy('id', 'ASC')->Where('seccion', 'presupuesto')->get();
         $nombre    = $request->nombre;
         $mail      = $request->mail;
@@ -195,10 +209,9 @@ class PaginasController extends Controller
         return view('pages.presupuesto', compact('activo'));
     }
 
-
     public function consejos()
     {
-        $activo = 'consejos';
+        $activo   = 'consejos';
         $consejos = Consejo::orderBy('orden', 'ASC')->get();
         $switch   = 1;
         return view('pages.consejos', compact('consejos', 'switch', 'activo'));
@@ -206,7 +219,7 @@ class PaginasController extends Controller
 
     public function clientes()
     {
-        $activo = 'clientes';
+        $activo   = 'clientes';
         $clientes = Cliente::orderBy('orden', 'ASC')->get();
         return view('pages.clientes', compact('clientes', 'activo'));
     }
@@ -219,7 +232,7 @@ class PaginasController extends Controller
 
     public function enviarmail(Request $request)
     {
-        $activo = 'null';
+        $activo   = 'null';
         $dato     = Dato::where('tipo', 'mail')->first();
         $nombre   = $request->nombre;
         $apellido = $request->apellido;

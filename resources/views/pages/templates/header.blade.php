@@ -82,11 +82,32 @@
                     </li>
                     @else
                     <li>
-                        <a href="{{ url('/empresa') }}">
+                        <a class='' href='{{ url('/empresa') }}' data-target='dropdown1'>
                             PRODUCTOS
                         </a>
+                        <!-- Dropdown Structure -->
+                        <!--
+  <ul id='dropdown1' class='dropdown-content'>
+  @foreach($categorias as $category)         
+                                <li>
+                                    <a class="dropdown-button" data-activates="dropdown-categorias" data-beloworigin="true" data-constrainwidth="false" href="">
+                                        {{ $category->nombre }}
+                                    </a>
+                                    <ul id="dropdown-categorias{{ $category->id }}" class="dropdown-content dropdown-categorias" style="">
+                                        @foreach($categorias as $category)
+                                                <li>
+                                                    <a href="" class="dropdown-button" data-activates="dropdown-categorias" data-beloworigin="true" data-constrainwidth="false">{{ $category->nombre }}</a>
+                                                </li>
+                                                <li class="divider"></li>
+                                        @endforeach
+                                    </ul>
+                                </li>                                  
+                            @endforeach
+
+  </ul> 
                     </li>
                     @endif
+  -->
                 </ul>
                 <a class="brand-logo center" href="{{ url('/') }}">
                     <img alt="" src="{{asset('img/logo_principal.png')}}">
@@ -172,5 +193,6 @@
                 </a>
             </li>
         </ul>
+        
     </header>
 </div>
