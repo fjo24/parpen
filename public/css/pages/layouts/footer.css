@@ -1,39 +1,39 @@
 .page-footer {
-    height: 265px;
+    height: 360px;
     background-color: #F2F2F2!important;
 }
 footer .logfooter {
     
 }
 footer .titulo-footer {
-    font-family: 'Raleway';
-    color: #ff0000;
-    font-size: 16px;
+    font-family: Arial;
+    color: #B3004A;
+    font-size: 17px;
     font-weight: bold;
-    padding-left: 90px;
+    padding-left: 77px;
 }
 footer .links {
     padding-left: 78px;
 }
 footer .listlinks {
-    font-family: 'Raleway';
+    font-family: Arial;
     color: #ffffff;
     font-size: 15px;
 }
 
 footer .listlinks li{
 	margin-bottom: 10px;
-	font-family: 'Raleway';
+	font-family: Arial;
 }
 
 footer .row .col.l6 {
 	width: 40%;
 }
 
-footer .leftitems{
+footer .footer-b a{
 	position: relative;
 	top: 3px;
-	left: -14px!important;
+	color: #595959!important;
 }
 
 footer .rightitems{
@@ -46,12 +46,25 @@ footer .links2 {
     padding-left: 78px;
 }
 footer .listlinks2 {
-    font-family: 'Raleway';
+    font-family: Arial;
     color: #ffffff;
     font-size: 15px;
 }
 
 footer .rightlist{
 	margin-bottom: 5px;
-	font-family: 'Raleway';
+	font-family: Arial;
+}
+
+footer .item-redesf{
+    display: inline;
+    margin: 7px;
+}
+
+footer .li-redes-footer{
+
+}
+
+footer .footer-a{
+    height: 80%;
 }

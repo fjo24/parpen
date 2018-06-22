@@ -1,37 +1,61 @@
 <footer class="page-footer">
     <div class="container" style="width: 100%">
         <div class="row" style="display:  flex; align-items:  center;">
-            <div class="col l3 s12 m3">
-                <div class="row">
-                    <div class="logfooter center">
-                        <img alt="" src="{{asset('img/logo_footer.png')}}">
-                        </img>
+            <div class="footer-a col l3 s12 m3">
+                <div class="col l12 s12 m12">
+                    <div class="row">
+                        <div class="logfooter center">
+                            <img alt="" src="{{asset('img/logo_footer.png')}}">
+                            </img>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l12 s12 m12">
+                    <div class="li-redes-footer center">
+                        <div class="item-redesf">
+                            <a href="">
+                                <img alt="" class="" src="{{asset('img/layouts/facebook_footer.png')}}">
+                                </img>
+                            </a>
+                        </div>
+                        <div class="item-redesf">
+                            <a href="">
+                                <img alt="" class="" src="{{asset('img/layouts/instagram_footer.png')}}">
+                                </img>
+                            </a>
+                        </div>
+                        <div class="item-redesf">
+                            <a href="">
+                                <img alt="" class="" src="{{asset('img/layouts/youtube_footer.png')}}">
+                                </img>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="leftitems col l3 s12 m3">
+            <div class="footer-b col l3 s12 m3">
                 <h5 class="titulo-footer">
                     SITEMAP
                 </h5>
                 <div class="links">
                     <ul>
                         <li>
-                            <a class="grey-text text-lighten-3" href="#!">
+                            <a class="itemsb" href="#!">
                                 Home
                             </a>
                         </li>
                         <li>
-                            <a class="grey-text text-lighten-3" href="#!">
+                            <a class="itemsb" href="#!">
                                 Mantenimiento
                             </a>
                         </li>
                         <li>
-                            <a class="grey-text text-lighten-3" href="#!">
+                            <a class="itemsb" href="#!">
                                 Productos
                             </a>
                         </li>
                         <li>
-                            <a class="grey-text text-lighten-3" href="#!">
+                            <a class="itemsb" href="#!">
                                 Empresa
                             </a>
                         </li>

@@ -6,7 +6,7 @@
 <link href="{{ asset('css/pages/home.css') }}" rel="stylesheet"/>
 @endsection
 @section('contenido')
-
+<br><br><br><br><br><br><br><br><br><br><br><br>
 @endsection
 
 @section('js')
