@@ -16,17 +16,19 @@
 Route::get('/', 'PaginasController@home');
 
 //PRODUCTOS
-Route::get('/productos', 'PaginasController@productos');
+Route::get('/productos', 'PaginasController@productos')->name('productos');
 
-//CATEGORIAS DE PRODUCTOS
-Route::get('/categorias', 'PaginasController@categorias');
+//FILTRO CATEGORIAS DE PRODUCTOS
+Route::get('categorias/{id}', 'PaginasController@categorias')->name('categorias');
 
+//FILTRO DE PRODUCTOS
+Route::get('subcategorias/{id}', 'PaginasController@subcategorias')->name('subcategorias');
 
 //BUSCADOR
-Route::post('productos/buscar',[
-        'uses'=>'PaginasController@buscar',
-        'as'=>'buscar'
-    ]);
+Route::post('productos/buscar', [
+    'uses' => 'PaginasController@buscar',
+    'as'   => 'buscar',
+]);
 
 //ADMIN*******************************************************************************************************
 Route::prefix('adm')->group(function () {

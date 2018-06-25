@@ -1,300 +1,191 @@
-@extends('page.main')
+@extends('pages.templates.body')
 
-@section('titulo', 'Línea Drimer')
+@section('titulo', 'Línea Parpen')
 
-@section('cuerpo')
-   
-   <link type="text/css" rel="stylesheet" href="{{ asset('css/productos.css') }}"/>
-   <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}"/>
-   <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}"/>
-
-   <main>
-      @if(!session('cliente'))
-      <!-- Modal Structure -->
-      <section class="modal-section">
-         <div id="modal1" class="modal modal-fixed-footer">
-            <div class="modal-header">
-                  <a href="{{ url('/') }}" class="cerrar right" style="margin-top: 15px; margin-right: 15px;">CERRAR X</a>
+@section('contenido')
+<link href="{{ asset('css/pages/productos.css') }}" rel="stylesheet" type="text/css"/>
+<link href="{{ asset('css/slick.css') }}" rel="stylesheet" type="text/css"/>
+<link href="{{ asset('css/slick-theme.css') }}" rel="stylesheet" type="text/css"/>
+<div class="container" style="width: 89%">
+    <section class="productos">
+        <div class="row">
+            <div class="col l12 m12 s12" style="padding-right: 0px;padding-left: 22px;">
+               <div class="links col l12 s12 m12 left">
+               <h7>
+                    <a href="/categorias" style="color: gray; padding-left: 75px;">
+                        Productos | 
+                    </a>
+                    <a href="{{ route('categorias', $cat->id)}}" style="color: gray;text-transform: lowercase">
+                        {!!$cat->nombre !!}
+                    </a>
+                </h7>
              </div>
-            <div class="modal-body row" style="margin: 0">
-                <h2>Ingresar</h2>
-                <p>Ingresá los siguientes datos para ver los precios.</p>
-               {!!Form::open(['route'=>'login.invitado', 'method'=>'POST'])!!}
-                  <div class="col s12">
-                        <div class="row invitado">
-                        <div class="input-field col s12 l6">
-                              {!!Form::text('nombre',null,['class'=>'validate', 'required'])!!}
-                              <label for="nombre">Nombre y Apellido</label>
-                        </div>
-                        <div class="input-field col s12 l6">
-                              {!!Form::email('email',null,['class'=>'validate', 'required'])!!}
-                              <label for="email">Correo electronico</label>
-                        </div>
-                        </div>
-
-                        <div class="col s12">
-                           {!!Form::submit('ingresar', ['class'=>'boton right invitado mayorista'])!!}
-                        </div>
-                  </div>
-               {!!Form::close()!!}
-            </div>
-         </div>
-      </section>
-      @endif
-      <section class="productos">
-         <div class="container">
-            <div class="row miga">
-               <div class="col s12">
-                  <a href="{{ url('/productos') }}">productos</a>
-                  @foreach($miga as $item)
-                     <span>|</span>
-                     <a href="{{ url('/categorias/'.$item->id) }}">{{ $item->nombre }}</a>
-                  @endforeach
-               </div>
-            </div>
-            <div class="row">
-               {{-- Menu inicio --}}
-
-               <div class="col s12 m3">
-                  <ul class="collapsible" data-collapsible="accordion">
-                     @foreach($familias as $familia)
-                      <li>
-                              @if($familia->id == $familia_id )
-                              {{-- != $padres_s[0] --}}
-                              <div class="collapsible-header active">
-                           @else
-                              <div class="collapsible-header">
-                           @endif
-                              <a href="{{ url('categorias/'.$familia->id) }}">
-                                    {{ $familia->nombre }}<i class="material-icons">expand_more</i>
-                              </a>
-                              </div>
-                           <div class="collapsible-body">
-                              <ul class="collapsible" data-collapsible="accordion">
-                              @foreach($categorias as $categoria)
-                                 @if($categoria->padre == $familia->id)
-                                 <li>
-                                          @if((isset($padres_s[1]) && $categoria->id != $padres_s[1]) || !isset($padres_s[1]))
-                                          <div class="collapsible-header">
-                                       @else
-                                          <div class="collapsible-header active">
-                                       @endif
-                                          <a href="{{ url('categorias/'.$categoria->id) }}">
-                                                {{ $categoria->nombre }}<i class="material-icons">expand_more</i>
-                                             </a>
-                                          </div>
-                                       <div class="collapsible-body">
-                                          <ul class="collapsible" data-collapsible="accordion">
-                                          @foreach($categorias as $categoria_2)
-                                             @if($categoria_2->padre == $categoria->id)
-                                             <li>
-                                                      @if((isset($padres_s[2]) && $categoria_2->id != $padres_s[2]) || !isset($padres_s[2]))
-                                                      <div class="collapsible-header">
-                                                   @else
-                                                      <div class="collapsible-header active">
-                                                   @endif
-                                                      <a href="{{ url('categorias/'.$categoria_2->id) }}">
-                                                            {{ $categoria_2->nombre }}<i class="material-icons">expand_more</i>
-                                                         </a>
-                                                      </div>
-                                                   <div class="collapsible-body">
-                                                      <ul class="collapsible" data-collapsible="accordion">
-                                                      @foreach($categorias as $categoria_3)
-                                                         @if($categoria_3->padre == $categoria_2->id)
-                                                         <li>
-                                                                  @if((isset($padres_s[3]) && $categoria_3->id != $padres_s[3]) || !isset($padres_s[3]))
-                                                                  <div class="collapsible-header">
-                                                               @else
-                                                                  <div class="collapsible-header active">
-                                                               @endif
-                                                                  <a href="{{ url('categorias/'.$categoria_3->id) }}">
-                                                                        {{ $categoria_3->nombre }}<i class="material-icons">expand_more</i>
-                                                                     </a>
-                                                                  </div>
-                                                               <div class="collapsible-body">
-                                                                  <ul class="collapsible" data-collapsible="accordion">
-                                                                     @foreach($productos as $productonav)
-                                                                        @if($productonav->categoria == $categoria_3->id)
-                                                                     <li>
-                                                                              <div class="collapsible-header">
-                                                                              <a href="{{ url('categorias/'.$productonav->id) }}">
-                                                                                    {{ $productonav->nombre }}<i class="material-icons">expand_more</i>
-                                                                                 </a>
-                                                                              </div>
-                                                                        </li>
-                                                                        @endif
-                                                                     @endforeach
-                                                                  </ul>
-                                                               </div>
-                                                            </li>
-                                                            @endif
-                                                         @endforeach
-                                                         @foreach($productos as $productonav)
-                                                            @if($productonav->categoria == $categoria_2->id)
-                                                         <li>
-                                                                  <div class="collapsible-header">
-                                                                  <a href="{{ url('producto/'.$productonav->id) }}">
-                                                                        {{ $productonav->nombre }}
-                                                                     </a>
-                                                                  </div>
-                                                            </li>
-                                                            @endif
-                                                         @endforeach
-                                                      </ul>
-                                                   </div>
-                                                </li>
-                                                @endif
-                                             @endforeach
-                                             @foreach($productos as $productonav)
-                                                @if($productonav->categoria == $categoria->id)
-                                             <li>
-                                                      <div class="collapsible-header">
-                                                      <a href="{{ url('producto/'.$productonav->id) }}">
-                                                            {{ $productonav->nombre }}
-                                                         </a>
-                                                      </div>
-                                                </li>
-                                                @endif
-                                             @endforeach
-                                          </ul>
-                                       </div>
-                                    </li>
-                                    @endif
-                                 @endforeach
-
-                                 
-                                 @foreach($productox as $productonav)
-                                    @if($productonav->categoria == $familia->id)
-                                 <li>
-                                       <div class="collapsible-header">
-                                          <a href="{{ url('producto/'.$productonav->id.'/'.$familia->id) }}">
-                                             {{ $productonav->nombre }}
-                                          </a>
-                                       </div>
-                                    </li>
-                                    @endif
-                                 @endforeach
-
-                              </ul>
-                        </div>
-                      </li>
-                      @endforeach
-                   </ul>
-               </div>
-               {{-- Menu final --}}
-
-               <div class="col s12 m9 ficha">
-                  <div class="col s12 m5" style=" margin-bottom: 30px;">
-                     <div class="slider-for">
-                        <div>
-                           <img class="responsive-img" src="{{ asset('imagenes/productos/'.$producto->ruta) }}">
-                        </div>
-                        @foreach($sliders as $slider)
-                           <div>
-                              <img class="responsive-img" src="{{ asset('imagenes/sliders/'.$slider->ruta) }}">
-                           </div>
-                        @endforeach
-                     </div>
-                     <div class="slider-nav">
-                        <div>
-                           <img class="responsive-img" src="{{ asset('imagenes/productos/'.$producto->ruta) }}">
-                        </div>
-                        @foreach($sliders as $slider)
-                           <div>
-                              <img class="responsive-img" src="{{ asset('imagenes/sliders/'.$slider->ruta) }}">
-                           </div>
-                        @endforeach
-                     </div>
-                  </div>
-                  <div class="col s12 m7">
-                     <h1>{{ $producto->nombre }}</h1>
-                     <div class="linea"></div>
-                     <h2>Detalles</h2>
-                     <span class="col s4 margin-car no-padding caracteristica">C&oacutedigo</span>
-                     <span class="col s8 margin-car no-padding">{{ $producto->codigo }}</span>
-                     <span class="col s4 margin-car no-padding caracteristica">Sabor</span>
-                     <span class="col s8 margin-car no-padding">{{ $producto->sabor }}</span>
-                     <span class="col s4 margin-car no-padding caracteristica">Peso neto</span>
-                     <span class="col s8 margin-car no-padding">{{ $producto->peso }}</span>
-                     <span class="col s4 margin-car no-padding caracteristica">Vencimiento</span>
-                     <span class="col s8 margin-car no-padding">{{ $producto->vencimiento }}</span>
-                     <span class="col s4 margin-car no-padding caracteristica">Presentaci&oacuten</span>
-                     <span class="col s8 margin-car no-padding">{{ $producto->presentacion }}</span>
-                     {!!Form::open(['route'=>'carrito.add', 'method'=>'POST'])!!}
-                        <div class="input-field col s2 no-padding">
-                           {!!Form::label('Unidades')!!}
-                           {!!Form::number('cantidad', $producto->unidades,['id' => 'cantidad', 'class'=>'validate', 'min' => $producto->unidades, 'step' => $producto->unidades, 'value' => $producto->presentacion, 'required'])!!}
-                           {!!Form::hidden('input_precio',$producto->{"precio_".session('tipo_cliente')},['id' => 'input_precio'])!!}
-                           {!!Form::hidden('producto',$producto->id)!!}
-                        </div>
-                        {{-- <span style="margin-top: 1rem; height: 3rem; line-height: 3rem;" class="col s2">x{{ $producto->unidades }}</span> --}}
-                        <div class="col s8 offset-s2 costo">
-                           <span id="precio">${{ number_format($producto->{"precio_".session('tipo_cliente')}*$producto->unidades,2) }}</span>
-                           <p>Los precios no incluyen IVA</p>
-                        </div>
-                        {!!Form::submit('añadir al carrito', ['class'=>'boton'])!!}
-                        <i class="material-icons">add_shopping_cart</i>
-                     {!!Form::close()!!} 
-                  </div>
-
-                  <div class="col s12 contenido">
-
-                     @if($producto->video != null)
-                        <h2>Conoce mas del producto</h2>
+                {{-- Menu inicio --}}
+                <div class="menuproductos2 col l4 m4 s12">
+                    <div class="menu-titulo">
+                        FILTROS
+                    </div>
+                    <div class="menu-todos">
+                        <a href="{{ route('productos')}}">
+                            TODOS LOS PRODUCTOS
+                        </a>
+                    </div>
+                    @foreach($categorias as $categoria)
+                    <ul class="collapsible">
+                        @if(($categoria->id == $ref))
+                        <li class="active">
+                           <div class="collapsible-header activado">
+                            @else
+                            <li>
+                                <div class="collapsible-header">
+                                @endif
+                                 <a href="{{ route('categorias', $categoria->id)}}">
+                                    {!! $categoria->nombre !!}
+                                 </a>
+                                </div>
+                        @foreach($subcategorias as $subcategoria)
+                           @if($subcategoria->id_superior==$categoria->id)
+                              @if(($categoria->id == $ref))
                         
-                        <div class="video-container">
-                             <iframe width="853" height="480" src="{{ $producto->video }}" frameborder="0" allowfullscreen></iframe>
-                         </div>
-                     @endif
-                  </div>
-               </div>
+                                <div class="collapsible-body" style="display: block;">
+                                    <ul class="sub collapsible">
+                                        <li>
+                                            <div class="collapsible-header">
+                                             <a href="{{ route('subcategorias', $subcategoria->id)}}">
+                                                {!! $subcategoria->nombre !!}
+                                             </a>
+                                            @isset($records)
+                                                <i class="material-icons">
+                                                    filter_drama
+                                                </i>
+                                                @endisset
+                                            </div>
+                                            <div class="collapsible-body" style="padding-left: 25px!important; padding-top: 6px!important;">
+                                                @foreach($productos as $producto)
+                                            @if($producto->visible!='privado')
+                                                            @if($producto->categoria_id==$subcategoria->id)
+                                                <div class="collapsible-header" style="padding-top: 5px;">
+                                                    {!! $producto->nombre !!}
+                                                </div>
+                                                @endif
+                                            @endif
+                                         @endforeach
+                                            </div>
+                                        </li>
+                                    </ul>
+                                 </div>
+                              @else
+                                 <div class="collapsible-body">
+                                    <ul class="sub collapsible">
+                                        <li>
+                                            <div class="collapsible-header">
+                                                {!! $subcategoria->nombre !!}
+                                            @isset($records)
+                                                <i class="material-icons">
+                                                    filter_drama
+                                                </i>
+                                                @endisset
+                                            </div>
+                                            <div class="collapsible-body" style="padding-left: 25px!important; padding-top: 6px!important;">
+                                                @foreach($productos as $producto)
+                                            @if($producto->visible!='privado')
+                                                            @if($producto->categoria_id==$subcategoria->id)
+                                                <div class="collapsible-header" style="padding-top: 5px;">
+                                                    {!! $producto->nombre !!}
+                                                </div>
+                                                @endif
+                                            @endif
+                                         @endforeach
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                              @endif
+                           @endif
+                        @endforeach
+                        @foreach($categoria->productos as $product)
+                           @if($product->visible!='privado')
+                                <div class="collapsible-body" style="display: block;">
+                                    <ul class="collapsible">
+                                        <li>
+                                            <div class="collapsible-header">
+                                                {!! $product->nombre !!}
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                          @endif
+                        @endforeach
+                            </li>
+                        </li>
+                    </ul>
+                    @endforeach
+                </div>
+                {{-- Menu final --}}
+                <div class="galeria2 col l8 m8 s12">
+                    @foreach($todos as $prod)
+                    <a href="{{ url('/producto/'.$prod->id) }}">
+                        <div class="col l4 m12 s12 categoria-tarjeta">
+                            @foreach($prod->imagenes as $img)
+                            <div class="efecto">
+                                <span class="central">
+                                    <i class="material-icons">
+                                        add
+                                    </i>
+                                    <span class="ingresar">
+                                        Ingresar
+                                    </span>
+                                </span>
+                            </div>
+                            <img class="responsive-img" src="{{ asset($img->imagen) }}"/>
+                            <h2 class="center">
+                                {{ $prod->nombre }}
+                            </h2>
+                            @endforeach
+                        </div>
+                    </a>
+                    @endforeach
+                </div>
             </div>
-         </div>
-      </section>
-   </main>
+        </div>
+    </section>
+</div>
+<script src="{{ asset('js/jquery.tinycarousel.min.js') }}" type="text/javascript">
+</script>
+<script src="{{ asset('js/slick.min.js') }}" type="text/javascript">
+</script>
+<script type="text/javascript">
+    $(document).ready(function()
+        {
+            $('.slider-for').slick({
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              arrows: false,
+              fade: true,
+              asNavFor: '.slider-nav'
+            });
+            $('.slider-nav').slick({
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              asNavFor: '.slider-for',
+              focusOnSelect: true,
+              dots: false
+            });
 
-   <script type="text/javascript" src="{{ asset('js/jquery.tinycarousel.min.js') }}"></script>
-   <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
-   
-   <script type="text/javascript">
-      $(document).ready(function()
-      {
-         $('.slider-for').slick({
-           slidesToShow: 1,
-           slidesToScroll: 1,
-           arrows: false,
-           fade: true,
-           asNavFor: '.slider-nav'
-         });
-         $('.slider-nav').slick({
-           slidesToShow: 3,
-           slidesToScroll: 1,
-           asNavFor: '.slider-for',
-           focusOnSelect: true,
-           dots: false
-         });
+            $( "#cantidad" ).change(function() {
+                let cantidad = $(this).val();
+                let precio = $("#input_precio").val();
 
+                $('#precio').html("$"+(cantidad*precio).toFixed(2));
+            });
 
-         
+            
+            $('.modal').modal({
+                dismissible: false,
+            });
 
-         $( "#cantidad" ).change(function() {
-            let cantidad = $(this).val();
-            let precio = $("#input_precio").val();
+            $('#modal1').modal('open');
 
-            $('#precio').html("$"+(cantidad*precio).toFixed(2));
-         });
-
-         
-         $('.modal').modal({
-            dismissible: false,
-         });
-
-         $('#modal1').modal('open');
-
-      });
-
-
-   </script>
-
-
+        });
+</script>
 @endsection

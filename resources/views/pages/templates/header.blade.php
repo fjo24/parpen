@@ -1,4 +1,3 @@
-<div container="">
     <header>
         {{-- BARRA SUPERIOR --}}
         <div class="top">
@@ -46,7 +45,7 @@
         </div>
         {{-- BARRA PRINCIPAL --}}
         <nav class="principal">
-            <div class="container" style="width: 89%">
+            <div class="container" style="width: 93%">
                 <ul class="item-left left hide-on-med-and-down">
                     @if($activo=='mantenimiento')
                     <li>

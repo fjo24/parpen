@@ -34,32 +34,37 @@ class PaginasController extends Controller
         $activo        = 'producto';
         $categorias    = Categoria::where('id_superior', null)->orderBy('orden', 'asc')->get();
         $subcategorias = Categoria::whereNotNull('id_superior')->orderBy('orden', 'asc')->get();
-        $productos     = Producto::orderBy('categoria_id')->get(); //
+        $productos     = Producto::orderBy('categoria_id')->get();
+        $todos         = Producto::OrderBy('orden', 'ASC')->get();
 
-
-
-        /*    $productosx= [];
-        $productos_s= DB::table('productos')
-        ->join('cate_productos', 'productos.id', '=', 'cate_productos.id_producto')
-        ->where('cate_productos.active','=',1)
-        ->orderBy('orden')
-        ->select('productos.*', 'cate_productos.id_categoria')->distinct('productos.nombre')
-        ->get();
-        foreach ($categorias as $categoria) {
-        foreach ($productos as $producto) {
-        if ($producto->categoria_id==$categoria->id) {
-        $producto = array_add($productosx);
-        }
-        }
-        }*/
-
-        return view('pages.productos', compact('categorias', 'subcategorias', 'productos', 'productos_directos', 'activo'));
+        return view('pages.productos', compact('categorias', 'subcategorias', 'productos', 'productos_directos', 'activo', 'todos'));
     }
-    public function categorias()
+
+    public function categorias($id)
     {
-        $activo     = 'productos';
-        $categorias = Categoria::OrderBy('orden', 'asc')->get();
-        return view('pages.categorias', compact('categorias', 'activo'));
+        $ref           = $id;
+        $cat           = Categoria::find($id);
+        $activo        = 'producto';
+        $categorias    = Categoria::where('id_superior', null)->orderBy('orden', 'asc')->get();
+        $subcategorias = Categoria::whereNotNull('id_superior')->orderBy('orden', 'asc')->get();
+        $productos     = Producto::orderBy('categoria_id')->get();
+        $todos         = Producto::where('categoria_id', $id)->OrderBy('orden', 'ASC')->get();
+
+        return view('pages.categorias', compact('categorias', 'subcategorias', 'productos', 'productos_directos', 'activo', 'todos', 'ref', 'cat'));
+    }
+
+    public function subcategorias($id)
+    {
+        $sub           = Categoria::find($id);
+        $subref        = $sub->id;
+        $ref           = $sub->id_superior;
+        $activo        = 'producto';
+        $categorias    = Categoria::where('id_superior', null)->orderBy('orden', 'asc')->get();
+        $subcategorias = Categoria::whereNotNull('id_superior')->orderBy('orden', 'asc')->get();
+        $productos     = Producto::orderBy('categoria_id')->get();
+        $todos         = Producto::where('categoria_id', $id)->OrderBy('orden', 'ASC')->get();
+
+        return view('pages.subcategorias', compact('categorias', 'subcategorias', 'productos', 'productos_directos', 'activo', 'todos', 'ref', 'subref'));
     }
 
     public function mantenimiento()
