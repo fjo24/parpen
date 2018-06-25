@@ -24,6 +24,9 @@ Route::get('categorias/{id}', 'PaginasController@categorias')->name('categorias'
 //FILTRO DE PRODUCTOS
 Route::get('subcategorias/{id}', 'PaginasController@subcategorias')->name('subcategorias');
 
+//FILTRO DE PRODUCTO
+Route::get('producto/{id}', 'PaginasController@productoinfo')->name('productoinfo');
+
 //BUSCADOR
 Route::post('productos/buscar', [
     'uses' => 'PaginasController@buscar',

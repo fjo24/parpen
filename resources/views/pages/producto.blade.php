@@ -21,7 +21,7 @@
                 </h7>
              </div>
                 {{-- Menu inicio --}}
-                <div class="menuproductos2 col l4 m4 s12">
+                <div class="menuproductos3 col l4 m4 s12">
                     <div class="menu-titulo">
                         FILTROS
                     </div>
@@ -72,9 +72,7 @@
                                             @if($producto->visible!='privado')
                                                             @if($producto->categoria_id==$subcategoria->id)
                                                 <div class="collapsible-header" style="padding-top: 0px;padding-bottom: 29px;">
-                                                <a href="{{ route('productoinfo', $producto->id)}}">
                                                     {!! $producto->nombre !!}
-                                                    </a>
                                                 </div>
                                                 @endif
                                             @endif
@@ -100,9 +98,7 @@
                                             @if($producto->visible!='privado')
                                                             @if($producto->categoria_id==$subcategoria->id)
                                                 <div class="collapsible-header" style="padding-top: 5px;">
-                                                <a href="{{ route('productoinfo', $prod->id)}}">
                                                     {!! $producto->nombre !!}
-                                                    </a>
                                                 </div>
                                                 @endif
                                             @endif
@@ -120,10 +116,10 @@
                                         <ul class="collapsible">
                                             <li>
                                                 <div class="collapsible-header">
-                                                <a href="{{ route('productoinfo', $product->id)}}">
-                                                    {!! $product->nombre !!}
+                                                    <a href="{{ route('productoinfo', $product->id)}}">
+                                                        {!! $product->nombre !!}
+                                                    </a>
                                                 </div>
-                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -136,28 +132,117 @@
                 </div>
                 {{-- Menu final --}}
                 <div class="galeria2 col l8 m8 s12">
-                    @foreach($todos as $prod)
-                    <a href="{{ route('productoinfo', $prod->id)}}">
-                        <div class="col l4 m12 s12 categoria-tarjeta">
-                            @foreach($prod->imagenes as $img)
-                            <div class="efecto">
-                                <span class="central">
-                                    <i class="material-icons">
-                                        add
-                                    </i>
-                                    <span class="ingresar">
-                                        Ingresar
-                                    </span>
-                                </span>
+                    <div class="col l12 m12 s12" style="padding: 0;">
+                        
+                        <div class="col l6 m12 s12 galeriadeproducto">
+                                
+
+
+
+                                <div class="cont-ser">
+                                            <div class="row imggrande">
+                                                <div class="col s12" style="padding-left: 0px;">
+                                                    @foreach($producto->imagenes as $imagen)
+                                                    <div class="cont-img">
+                                                        <img alt="" class="responsive-img" id="producto" src="{{asset($imagen->imagen)}}" style="width: 100%;border:1px solid #AAAAAA;">
+                                                        </img>
+                                                    </div>
+                                                    @if($ready == 0)    
+                                        @break;
+                                    @endif
+                        @endforeach
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col s12" style="padding-left: 0px;padding-right: 0px;">
+                                                    @foreach($producto->imagenes as $imagen)
+                                                    <div class="col l4 s4 m2" style="padding-left: 0px;">
+                                                        <div class="cont-img">
+                                                            <img alt="" class="responsive-img" onclick="actualizar('{{asset($imagen->imagen)}}')" src="{{asset($imagen->imagen)}}">
+                                                            </img>
+                                                        </div>
+                                                    </div>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </br>
+                                </div>
+
+
+
+
+                        </div>
+                        <div class="col l6 m12 s12 infoproducto" style="padding-left: 29px;">
+                            <div class="nombreproducto">    
+                                {!! $p->nombre !!}
                             </div>
+                            <hr class="pro-line"/>
+                            <div class="codigoproducto">    
+                                Código: {!! $p->codigo !!}
+                            </div>
+                            <div class="descripcionproducto">    
+                                {!! $p->descripcion !!}
+                            </div>
+                            <div class="contenidoproducto">    
+                                {!! $p->contenido !!}
+                            </div>
+                               <a href="">
+        <button class="pedido btn btn-default left" href="" style="background-color: #7D0045;">
+            <span class="rpedido">
+                
+            REALIZAR PEDIDO
+            </span>
+        </button>
+    </a>
+                        </div>
+              
+                    </div>
+
+
+
+
+                    <div class="masproducto col l12 m12 s12">
+                        <div class="col l6 m12 s12">
+                                <div class="cont-ser">
+                                                <div class="col s12" style="padding-left: 0px;">
+                            <div class="tituloproducto">    
+                                Más sobre este producto
+                            </div>
+                            <div class="descripcionvideo">    
+                                {!! $p->video_descripcion !!}
+                            </div>
+
+                                                </div>
+                                </div>
+                           </div>
+                        <div class="col l6 m12 s12" style="padding-left: 29px;">
+                            <iframe width="381" height="216" src="{!! $p->video!!}" frameborder="0" allowfullscreen></iframe>
+                        </div>
+              
+                    </div>
+                    <div class="col l12 m12 s12 infoproducto" style="padding-left: 29px;">
+                            <div class="trelacionados">    
+                                Productos Relacionados
+                            </div>
+                            <hr class="rela-line"/>
+                    </div>
+                    <div class="col l12 m12 s12 relablock">
+                    @foreach($relacionados as $relacionado)
+                    <a href="{{ route('productoinfo', $relacionado->id)}}">
+                        <div class="col l4 m12 s12 categoria-tarjeta">
+                            @foreach($relacionado->imagenes as $img)
                             <img class="responsive-img" src="{{ asset($img->imagen) }}"/>
                             <h2 class="center">
-                                {{ $prod->nombre }}
+                                {{ $relacionado->nombre }}
                             </h2>
                             @endforeach
                         </div>
                     </a>
-                    @endforeach
+                    @endforeach 
+                    </div>
+
+
+            
                 </div>
             </div>
         </div>
@@ -200,6 +285,10 @@
             $('#modal1').modal('open');
 
         });
+
+    function actualizar(imagen){
+      document.getElementById('producto').src = imagen;
+    }
 </script>
 @endsection
 
