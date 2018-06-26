@@ -33,6 +33,9 @@ Route::post('productos/buscar', [
     'as'   => 'buscar',
 ]);
 
+//NOVEDADES
+Route::get('novedades/{tipo}', 'PaginasController@novedades')->name('novedades');
+
 //ADMIN*******************************************************************************************************
 Route::prefix('adm')->group(function () {
 

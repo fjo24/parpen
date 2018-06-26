@@ -1,0 +1,97 @@
+nav ul a {
+    color: #7D0045!important;
+    font-size: 16px!important;
+    font-family: arial;
+    margin: 0 12px;
+    padding: 0!important;
+}
+nav .brand-logo {
+    top: 58px;
+    height: 113px!important;
+}
+nav ul a:hover {
+    background-color: transparent!important;
+    font-family: arial;
+    margin: 0 12px;
+    padding: 0!important;
+    border-bottom: 3px solid #7D0045 !important;
+}
+.itemsnov .activado {
+    background-color: transparent!important;
+    font-family: arial;
+    border-bottom: 3px solid #7D0045 !important;
+    color: #7D0045 !important;
+    font-size: 32px!important;
+
+    padding: 0!important;
+        padding-bottom: 12px!important;
+}
+
+nav .itemsnov a {
+    color: #FF5F8A!important;
+    font-size: 32px!important;
+    font-family: arial;
+    margin: 0px 0px!important;
+    padding: 0!important;
+}
+
+nav .itemsnov a:hover {
+    background-color: transparent!important;
+    font-family: arial;
+    border-bottom: 3px solid #7D0045 !important;
+    color: #7D0045 !important;
+    font-size: 32px!important;
+ 
+    padding: 0!important;
+    padding-bottom: 12px!important;
+}
+nav .itemsnov {
+    position: relative;
+    top:62px;
+    left: -11px;
+    width: 1100px;
+    font-size: 18px;
+    font-family: Arial;
+    line-height: 46px;
+}
+
+nav {
+    height: 190px!important;
+    background-color: white!important;
+    font-family: arial;
+}
+.principalnov ul li {
+    margin: 0px 0px;
+}
+
+.principalnov{
+
+    position: relative;
+    margin-top: 3px;
+    height: 123px!important;
+    box-shadow: 0 0 0 0 rgba(0,0,0,0.14), 0 0 0 0 rgba(0,0,0,0.12), 0 1px 0 0 rgba(0,0,0,0.2)!important;
+}
+
+.list{
+    height: 1000px;
+}
+
+.contnovedad {
+    background-color: #F5F5F5;
+    border: 1px solid #C9C9C9;
+    /* width: 806px!important; */
+    padding-left: 0px!important;
+    height: 278px;
+    margin-top: 81px;
+}
+
+.imgnovedad img {
+    width: 368px;
+    height: 276px;
+}
+
+.titulonovedad{
+    font-family: Arial;
+    color: #FF5F8A;
+    font-size: 25px;
+}

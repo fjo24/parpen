@@ -13,7 +13,7 @@ class Novedad extends Model
 
     public function imagenes()
     {
-        return $this->hasMany('App\Imgproducto');
+        return $this->hasMany('App\Imgnovedad');
     }
 
     public function getfechaAttribute($date)

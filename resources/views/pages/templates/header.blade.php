@@ -75,13 +75,13 @@
                     @endif
                 @if($activo=='empresa')
                     <li>
-                        <a class="activo" href="{{ url('/empresa') }}">
+                        <a class="activo" href="{{ url('/productos') }}">
                             PRODUCTOS
                         </a>
                     </li>
                     @else
                     <li>
-                        <a class='' href='{{ url('/empresa') }}' data-target='dropdown1'>
+                        <a class='' href='{{ url('/productos') }}' data-target='dropdown1'>
                             PRODUCTOS
                         </a>
                         <!-- Dropdown Structure -->
@@ -131,15 +131,15 @@
                         </a>
                     </li>
                     @endif
-                    @if($activo=='obras')
+                    @if($activo=='novedades')
                     <li>
-                        <a class="activo" href="{{ url('/categoriaobras') }}">
+                        <a class="activo" href="{{ route('novedades', 'destacado')}}">
                             NOVEDADES
                         </a>
                     </li>
                     @else
                     <li>
-                        <a href="{{ url('/categoriaobras') }}">
+                        <a href="{{ route('novedades', 'destacado')}}">
                             NOVEDADES
                         </a>
                     </li>
