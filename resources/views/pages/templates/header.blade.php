@@ -73,7 +73,7 @@
                         </a>
                     </li>
                     @endif
-                @if($activo=='empresa')
+                @if($activo=='productos')
                     <li>
                         <a class="activo" href="{{ url('/productos') }}">
                             PRODUCTOS
@@ -133,13 +133,13 @@
                     @endif
                     @if($activo=='novedades')
                     <li>
-                        <a class="activo" href="{{ route('novedades', 'destacado')}}">
+                        <a class="activo" href="{{ route('novedades', 'destacados') }}">
                             NOVEDADES
                         </a>
                     </li>
                     @else
                     <li>
-                        <a href="{{ route('novedades', 'destacado')}}">
+                        <a href="{{ route('novedades', 'destacados') }}">
                             NOVEDADES
                         </a>
                     </li>
@@ -172,7 +172,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ url('/empresa') }}">
+                <a href="{{ url('/productos') }}">
                     PRODUCTOS
                 </a>
             </li>

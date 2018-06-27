@@ -154,6 +154,9 @@
                             <h2 class="center">
                                 {{ $prod->nombre }}
                             </h2>
+                            @if($ready == 0)    
+                                        @break;
+                                    @endif
                             @endforeach
                         </div>
                     </a>

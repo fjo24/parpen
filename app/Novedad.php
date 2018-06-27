@@ -18,9 +18,9 @@ class Novedad extends Model
 
     public function getfechaAttribute($date)
     {
-        return $date = \Carbon\Carbon::parse($date)->format('d-m-Y');
+        return $date = \Carbon\Carbon::parse($date)->format('d · m · y');
     }
-    
+
     public function setfechaAttribute($date)
     {
         $this->attributes['fecha'] = \Carbon\Carbon::parse($date)->format('Y-m-d');

@@ -106,7 +106,7 @@
                         @foreach($categoria->productos as $product)
                            @if($product->visible!='privado')
                                 <div class="collapsible-body" style="display: block;">
-                                    <ul class="collapsible">
+                                    <ul class="sub collapsible">
                                         <li>
                                             <div class="collapsible-header">
                                                 {!! $product->nombre !!}

@@ -9,41 +9,41 @@
             <div class="row col l12 m12 s12 list">
                 
                 <ul class="center itemsnov hide-on-med-and-down">
-                    @if($tipon=='destacado')
+                    @if($tipon=='destacados')
                     <li class="col l3 m3 s6">
-                        <a class="activado" href="{{ url('/mantenimiento') }}">
+                        <a class="activado" href="{{ route('novedades', 'destacados') }}">
                             Destacados
                         </a>
                     </li>
                     @else
                     <li class="col l3 m3 s6">
-                        <a href="{{ url('/mantenimiento') }}">
+                        <a href="{{ route('novedades', 'destacados') }}">
                             Destacados
                         </a>
                     </li>
                     @endif
                 @if($tipon=='exposiciones')
                     <li class="col l3 m3 s6">
-                        <a class="activo" href="{{ url('/categorias') }}">
+                        <a class="activado" href="{{ route('novedades', 'exposiciones') }}">
                             Exposiciones
                         </a>
                     </li>
                     @else
                     <li class="col l3 m3 s6">
-                        <a href="{{ url('/categorias') }}">
+                        <a href="{{ route('novedades', 'exposiciones') }}">
                             Exposiciones
                         </a>
                     </li>
                     @endif
                 @if($tipon=='ideas')
                     <li class="col l3 m3 s6">
-                        <a class="activo" href="{{ url('/productos') }}">
+                        <a class="activado" href="{{ route('novedades', 'ideas') }}">
                             Ideas
                         </a>
                     </li>
                     @else
                     <li class="col l3 m3 s6">
-                        <a class='' href='{{ url('/productos') }}' data-target='dropdown1'>
+                        <a class='' href='{{ route('novedades', 'ideas') }}' data-target='dropdown1'>
                             Ideas
                         </a>
                     </li>
@@ -51,13 +51,13 @@
 
                     @if($tipon=='promociones')
                     <li class="col l3 m3 s6">
-                        <a class="activo" href="{{ url('/productos') }}">
+                        <a class="activado" href="{{ route('novedades', 'promociones') }}">
                             Promociones
                         </a>
                     </li>
                     @else
                     <li class="col l3 m3 s6">
-                        <a class='' href='{{ url('/productos') }}' data-target='dropdown1'>
+                        <a class='' href='{{ route('novedades', 'promociones') }}' data-target='dropdown1'>
                             Promociones
                         </a>
                     </li>
@@ -66,26 +66,42 @@
             </div>
         </nav>
 @foreach($novedades as $novedad)
+                @if($novedad->seccion==$tipon)
     <div class="row">
         
         <div class="contnovedad col l12 m12 s12">
             <div class="col l4 m4 s12" style="padding-left: 0px;">
             @foreach($novedad->imagenes as $imagen)
-                <div class="imgnovedad"> 
-                    <img class="responsive-img" src="{{ asset($imagen->imagen) }}"/>
-                </div>
-                @if($ready == 0)    
-                    @break;
-                @endif
+                    <div class="imgnovedad"> 
+                        <img class="responsive-img" src="{{ asset($imagen->imagen) }}"/>
+                    </div>
+                    @if($ready == 0)    
+                        @break;
+                    @endif
             @endforeach
             </div>
             <div class="col l8 m8 s12" style="padding-left: 29px;">
                 <div class="titulonovedad">
                     {!! $novedad->nombre !!}
                 </div>
+                <div class="fechanovedad">
+                    {!! $novedad->fecha !!}
+                </div>
+                <div class="descripcionnovedad">
+                    {!! $novedad->descripcion !!}
+                </div>
+                <div class="flecha">
+                    <img class="responsive-img" src="{{ asset("/img/flecha.png") }}"/>
+                    <a href="">
+                    <span class="ver">
+                    VER MÁS
+                    </span>
+                </a>
+                </div>
             </div>
         </div>
     </div>
+                @endif
     
 @endforeach
 

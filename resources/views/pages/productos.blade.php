@@ -60,12 +60,9 @@
                               @foreach($categoria->productos as $product)
                               @if($product->visible!='privado')
                             <div class="collapsible-body">
-                                <ul class="collapsible">
+                                <ul class="sub collapsible">
                                     <li>
                                         <div class="collapsible-header">
-                                            <i class="material-icons">
-                                                filter_drama
-                                            </i>
                                             {!! $product->nombre !!}
                                         </div>
                                     </li>
@@ -97,6 +94,9 @@
                             <h2 class="center">
                                 {{ $prod->nombre }}
                             </h2>
+                            @if($ready == 0)    
+                                        @break;
+                                    @endif
                             @endforeach
                         </div>
                     </a>

@@ -3,21 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Categoria;
-use App\Categoria_obra;
-use App\Cliente;
-use App\Consejo;
-use App\Dato;
-use App\Novedad;
 use App\Destacado_empresa;
 use App\Destacado_home;
 use App\Destacado_mantenimiento;
-use App\Obra;
-use App\Obra_imagen;
+use App\Novedad;
 use App\Producto;
 use App\Servicio;
 use App\Slider;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 
 class PaginasController extends Controller
 {
@@ -36,8 +28,9 @@ class PaginasController extends Controller
         $subcategorias = Categoria::whereNotNull('id_superior')->orderBy('orden', 'asc')->get();
         $productos     = Producto::orderBy('categoria_id')->get();
         $todos         = Producto::OrderBy('orden', 'ASC')->get();
+        $ready         = 0;
 
-        return view('pages.productos', compact('categorias', 'subcategorias', 'productos', 'productos_directos', 'activo', 'todos'));
+        return view('pages.productos', compact('categorias', 'subcategorias', 'productos', 'productos_directos', 'activo', 'todos', 'ready'));
     }
 
     public function categorias($id)
@@ -57,6 +50,7 @@ class PaginasController extends Controller
     {
         $sub           = Categoria::find($id);
         $subref        = $sub->id;
+        $ready         = 0;
         $ref           = $sub->id_superior;
         $cat           = Categoria::find($ref);
         $activo        = 'producto';
@@ -65,21 +59,30 @@ class PaginasController extends Controller
         $productos     = Producto::orderBy('categoria_id')->get();
         $todos         = Producto::where('categoria_id', $id)->OrderBy('orden', 'ASC')->get();
 
-        return view('pages.subcategorias', compact('categorias', 'subcategorias', 'productos', 'productos_directos', 'activo', 'todos', 'ref', 'subref', 'sub', 'cat'));
+        return view('pages.subcategorias', compact('categorias', 'subcategorias', 'productos', 'productos_directos', 'activo', 'todos', 'ref', 'subref', 'sub', 'cat', 'ready'));
+    }
+
+    public function mantenimiento()
+    {
+        $activo    = 'mantenimiento';
+        $servicios = Servicio::OrderBy('orden', 'ASC')->get();
+        $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'mantenimiento')->get();
+        $contenido = Destacado_mantenimiento::all()->first();
+        return view('pages.mantenimiento', compact('sliders', 'servicios', 'contenido', 'activo'));
     }
 
     public function productoinfo($id)
     {
-        $p = Producto::find($id);
-        $idsub    = $p->categoria_id;
-        $sub      = Categoria::find($idsub);
+        $p     = Producto::find($id);
+        $idsub = $p->categoria_id;
+        $sub   = Categoria::find($idsub);
         if ($sub->id_superior != null) {
             $cat = Categoria::find($sub->id_superior);
-        }else{
+        } else {
             $cat = Categoria::find($idsub);
         }
-        $ready = 0;
-        $relacionados = Producto::OrderBy('orden', 'ASC')->Where('categoria_id', $p->categoria_id)->get();
+        $ready         = 0;
+        $relacionados  = Producto::OrderBy('orden', 'ASC')->Where('categoria_id', $p->categoria_id)->get();
         $subref        = $sub->id;
         $ref           = $sub->id_superior;
         $activo        = 'producto';
@@ -93,8 +96,8 @@ class PaginasController extends Controller
     public function novedades($tipo)
     {
         $activo    = 'novedades';
-        $tipon = $tipo;
-        $ready = 0;
+        $tipon     = $tipo;
+        $ready     = 0;
         $novedades = Novedad::OrderBy('orden', 'ASC')->get();
         return view('pages.novedades', compact('tipon', 'novedades', 'activo', 'ready'));
     }

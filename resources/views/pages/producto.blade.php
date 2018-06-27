@@ -20,8 +20,8 @@
                     </a>
                 </h7>
              </div>
-                {{-- Menu inicio --}}
-                <div class="menuproductos3 col l4 m4 s12">
+                 {{-- Menu inicio --}}
+                <div class="menuproductos2 col l4 m4 s12">
                     <div class="menu-titulo">
                         FILTROS
                     </div>
@@ -71,8 +71,16 @@
                                                 @foreach($productos as $producto)
                                             @if($producto->visible!='privado')
                                                             @if($producto->categoria_id==$subcategoria->id)
+                                                            @if(($producto->id == $p->id))
+                      
+                           <div class="collapsible-header activado" style="padding-top: 0px;padding-bottom: 29px;">
+                            @else
+                                
                                                 <div class="collapsible-header" style="padding-top: 0px;padding-bottom: 29px;">
+                                @endif
+                                                <a href="{{ route('productoinfo', $producto->id)}}">
                                                     {!! $producto->nombre !!}
+                                                    </a>
                                                 </div>
                                                 @endif
                                             @endif
@@ -97,8 +105,14 @@
                                                 @foreach($productos as $producto)
                                             @if($producto->visible!='privado')
                                                             @if($producto->categoria_id==$subcategoria->id)
+                                                            @if(($producto->id == $p->id))
+                                                <div class="collapsible-header activado">
+                                                    @else
                                                 <div class="collapsible-header" style="padding-top: 5px;">
+                                                            @endif
+                                                <a href="{{ route('productoinfo', $producto->id)}}">
                                                     {!! $producto->nombre !!}
+                                                    </a>
                                                 </div>
                                                 @endif
                                             @endif
@@ -116,10 +130,10 @@
                                         <ul class="collapsible">
                                             <li>
                                                 <div class="collapsible-header">
-                                                    <a href="{{ route('productoinfo', $product->id)}}">
-                                                        {!! $product->nombre !!}
-                                                    </a>
+                                                <a href="{{ route('productoinfo', $product->id)}}">
+                                                    {!! $product->nombre !!}
                                                 </div>
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -158,7 +172,7 @@
                                                     @foreach($producto->imagenes as $imagen)
                                                     <div class="col l4 s4 m2" style="padding-left: 0px;">
                                                         <div class="cont-img">
-                                                            <img alt="" class="responsive-img" onclick="actualizar('{{asset($imagen->imagen)}}')" src="{{asset($imagen->imagen)}}">
+                                                            <img alt="" class="responsive-img" onclick="actualizar('{{asset($imagen->imagen)}}')" src="{{asset($imagen->imagen)}}" style="border: 1px solid #AAAAAA;">
                                                             </img>
                                                         </div>
                                                     </div>
