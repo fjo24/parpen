@@ -36,6 +36,9 @@ Route::post('productos/buscar', [
 //NOVEDADES
 Route::get('novedades/{tipo}', 'PaginasController@novedades')->name('novedades');
 
+//ZONA PRIVADA************************************************************************************************
+Route::get('/zonaprivada/productos', 'ZprivadaController@productos')->name('zproductos');
+
 //ADMIN*******************************************************************************************************
 Route::prefix('adm')->group(function () {
 
