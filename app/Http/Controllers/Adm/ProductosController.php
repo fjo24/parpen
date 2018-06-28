@@ -31,6 +31,8 @@ class ProductosController extends Controller
         $producto->nombre            = $request->nombre;
         $producto->codigo            = $request->codigo;
         $producto->orden             = $request->orden;
+        $producto->embalaje             = $request->embalaje;
+        $producto->medidas           = $request->medidas;
         $producto->descripcion       = $request->descripcion;
         $producto->contenido         = $request->contenido;
         $producto->categoria_id      = $request->categoria_id;
@@ -60,6 +62,8 @@ class ProductosController extends Controller
         $producto                    = Producto::find($id);
         $producto->nombre            = $request->nombre;
         $producto->orden             = $request->orden;
+        $producto->embalaje          = $request->embalaje;
+        $producto->medidas           = $request->medidas;
         $producto->codigo            = $request->codigo;
         $producto->descripcion       = $request->descripcion;
         $producto->contenido         = $request->contenido;

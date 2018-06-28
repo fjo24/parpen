@@ -25,6 +25,8 @@ class AddProductosTable extends Migration
             $table->text('video_descripcion')->nullable();
             $table->string('precio')->nullable();
             $table->enum('visible', ['publico', 'privado', 'ambos']);
+            $table->string('embalaje')->nullable();
+            $table->string('medidas')->nullable();
             $table->integer('categoria_id')->unsigned();
 
             $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');

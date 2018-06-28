@@ -32,6 +32,14 @@
                         {!!Form::text('codigo', null , ['class'=>'', ''])!!}
             </div>
             <div class="input-field col l6 s12">
+                {!!Form::label('Medidas:')!!}
+                        {!!Form::text('medidas', null , ['class'=>'', ''])!!}
+            </div>
+            <div class="input-field col l6 s12">
+                {!!Form::label('Numero por embalaje:')!!}
+                        {!!Form::text('embalaje', null , ['class'=>'', ''])!!}
+            </div>
+            <div class="input-field col l6 s12">
                 {!! Form::select('categoria_id', $categorias, null, ['class' => 'form-control', 'placeholder' => 'Categoria']) !!}
             </div>
             <div class="input-field col l6 s12">

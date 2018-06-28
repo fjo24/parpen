@@ -25,16 +25,35 @@ class AddPedidosTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('distribuidor_pedido', function (Blueprint $table) {
+        Schema::create('pedido_producto', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('pedido_id')->unsigned();
-            $table->integer('distribuidor_id')->unsigned();
+            $table->integer('producto_id')->unsigned();
             $table->string('cantidad');
             $table->string('costo');
-            $table->timestamps();
-            
-            $table->foreign('pedido_id')->references('id')->on('pedidos')->onDelete('cascade');
+            $table->integer('distribuidor_id')->unsigned();
+
             $table->foreign('distribuidor_id')->references('id')->on('distribuidores')->onDelete('cascade');
+            $table->timestamps();
+
+            $table->foreign('pedido_id')->references('id')->on('pedidos')->onDelete('cascade');
+            $table->foreign('producto_id')->references('id')->on('productos')->onDelete('cascade');
+        });
+
+        Schema::create('carrito_pedido_producto', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('cantidad');
+            $table->string('costo');
+            $table->boolean('pedir')->default('0');
+            $table->integer('pedido_id')->unsigned()->nullable();
+            $table->integer('producto_id')->unsigned();
+            $table->integer('distribuidor_id')->unsigned();
+
+            $table->foreign('distribuidor_id')->references('id')->on('distribuidores')->onDelete('cascade');
+
+            $table->foreign('pedido_id')->references('id')->on('pedidos')->onDelete('cascade');
+            $table->foreign('producto_id')->references('id')->on('productos')->onDelete('cascade');
+            $table->timestamps();
             
         });
     }
@@ -47,7 +66,8 @@ class AddPedidosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('distribuidor_pedido');
+        Schema::dropIfExists('carrito_pedido_producto');
+        Schema::dropIfExists('pedido_producto');
         Schema::dropIfExists('pedidos');
     }
 }

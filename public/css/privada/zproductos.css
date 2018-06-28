@@ -11,18 +11,6 @@
 	display: none!important;
 }
 
-input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea{
-	border-top: 1px solid #EAEAEA!important;
-	border-left: 1px solid #EAEAEA!important;
-	border-right: 1px solid #EAEAEA!important;
-	border-bottom: 1px solid #EAEAEA!important;
-        border-radius: 5px;
-    width: 666px!important;
-    height: 57px;
-    font-size: 36px!important;
-    color: #FF5E87;
-}
-
 input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
     border-bottom: 1px solid #FF608A;
      -webkit-box-shadow: 0 1px 0 0 #FF608A; */
@@ -71,4 +59,78 @@ table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.s
 
 table.dataTable tbody tr {
     background-color: blue;
+}
+
+.buscadorprivado input{
+	border-top: 1px solid #EAEAEA!important;
+	border-left: 1px solid #EAEAEA!important;
+	border-right: 1px solid #EAEAEA!important;
+	border-bottom: 1px solid #EAEAEA!important;
+    border-radius: 5px;
+    width: 666px!important;
+    height: 57px;
+    font-size: 36px!important;
+    color: #FF5E87;	
+}
+
+.buscadorprivado input{
+	background: url(/img/fondoinput.png);
+	margin-bottom: 41px;
+}
+
+.buscadorprivado input:focus{
+	background:none;
+}
+
+.buscadorprivado input:visited{
+	background:none!important;
+}
+
+.buscadorprivado input:active{
+	background:none!important;
+}
+
+.buscadorprivado input:focus-within{
+	background:none!important;
+}
+
+.trprincipal {
+    border-bottom: 3px solid #FF608A;
+}
+
+.timagen img{
+	height: 85px!important;
+	width: 85px!important;
+	border: 1px solid #C9C9C9;
+}
+
+.tcodigo{
+	color:#595959;
+	font-size: 17;
+	font-family: 'Lato';
+}
+
+.tdescripcion{
+	color: #7D0045;
+	font-size: 17;
+	font-family: 'Lato';
+}
+
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    position: absolute;
+    opacity: 10;
+    pointer-events: auto;
+}
+
+.tnumcantidad{
+        width: 70px!important;
+    height: 40px!important;
+    border-top: 1px solid #EAEAEA!important;
+    border-left: 1px solid #EAEAEA!important;
+    border-right: 1px solid #EAEAEA!important;
+    border-bottom: 1px solid #EAEAEA!important;
+}
+
+.tnumcantidad input{
+        background-color: red;
 }
