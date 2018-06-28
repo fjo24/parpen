@@ -4,6 +4,7 @@
     color: #FF5E87;
     margin-top: 40px;
     font-size: 26px;
+    margin-bottom: 21px;
 }
 
 .dataTables_length label{
@@ -15,10 +16,59 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
 	border-left: 1px solid #EAEAEA!important;
 	border-right: 1px solid #EAEAEA!important;
 	border-bottom: 1px solid #EAEAEA!important;
+        border-radius: 5px;
+    width: 666px!important;
+    height: 57px;
+    font-size: 36px!important;
+    color: #FF5E87;
 }
 
 input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
     border-bottom: 1px solid #FF608A;
      -webkit-box-shadow: 0 1px 0 0 #FF608A; */
      box-shadow: 0 2px 0 0 #FF608A; */
+}
+
+label {
+    /* display: none; */
+    font-size: .1rem!important;
+    color: white!important;
+    position: relative!important;
+    right: 34%;
+
+}
+
+.dataTables_wrapper .dataTables_filter {
+    text-align: center;    
+}
+
+thead {
+    font-family: 'Lato';
+    font-size: 18px!important;
+    color:#7D0045!important;
+    }
+
+
+.dataTables_length table.dataTable thead .sorting_asc {
+    background-image: none!important;
+}
+
+table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
+    background-color: red; 
+}
+
+table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd {
+    background-color: green;
+}
+
+table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
+    background-color: pink;
+}
+
+table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
+    background-color: pink;
+}
+
+table.dataTable tbody tr {
+    background-color: blue;
 }
