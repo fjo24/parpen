@@ -41,7 +41,13 @@ Route::get('/zonaprivada/productos', 'ZprivadaController@productos')->name('zpro
 //NOVEDADES
 Route::post('novedades/{tipo}', 'PaginasController@novedades')->name('novedades');
 
-Route::resource('carrito', 'CarritoController');
+//Route::resource('carrito', 'CarritoController');
+
+Route::group(['prefix' => 'carrito'], function() {
+        Route::post('add', ['uses' => 'ZprivadaController@add', 'as' => 'carrito.add']);
+        Route::get('delete/{id}', ['uses' => 'ZprivadaController@delete', 'as' => 'carrito.delete']);
+        Route::post('enviar', ['uses' => 'ZprivadaController@send', 'as' => 'carrito.enviar']);
+    });
 
 //ADMIN*******************************************************************************************************
 Route::prefix('adm')->group(function () {

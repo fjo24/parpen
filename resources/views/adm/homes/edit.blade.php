@@ -51,7 +51,7 @@
                 </label>
                 <div class="input-field col s12">
                     <textarea class="materialize-textarea" id="descripcion" name="descripcion" required="">
-                        {{$empresa->descripcion}}
+                        {{$homes->descripcion}}
                     </textarea>
                 </div>
                 <label class="col l12 s12" for="parrafo">
@@ -59,7 +59,7 @@
                 </label>
                 <div class="input-field col s12">
                     <textarea class="materialize-textarea" id="contenido" name="contenido" required="">
-                        {{$empresa->contenido}}
+                        {{$homes->contenido}}
                     </textarea>
                 </div>
             </div>

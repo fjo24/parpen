@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Adm;
 
 use App\Contenido_home;
-
+use App\Http\Requests\HomesRequest;
 use App\Http\Controllers\Controller;
 
 class ContenidohomesController extends Controller

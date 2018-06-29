@@ -10,7 +10,7 @@ use App\Novedad;
 use App\Producto;
 use App\Servicio;
 use App\Slider;
-
+use App\Contenido_home;
 class PaginasController extends Controller
 {
     public function home()
@@ -21,6 +21,7 @@ class PaginasController extends Controller
         $bloque2 = Destacado_home::find(2);
         $bloque3 = Destacado_home::find(3);
         $bloque4 = Destacado_home::find(4);
+        $contenido = Contenido_home::all()->first();
         return view('pages.home', compact('sliders', 'servicios', 'banner', 'contenido', 'activo', 'bloque1', 'bloque2', 'bloque3', 'bloque4'));
     }
 

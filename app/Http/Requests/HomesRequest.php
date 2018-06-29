@@ -25,7 +25,7 @@ class HomesRequest extends FormRequest
     {
         return [
             'nombre'   => 'required',
-            'orden' => 'required',
+        
             'link'  => 'required',
         ];
     }

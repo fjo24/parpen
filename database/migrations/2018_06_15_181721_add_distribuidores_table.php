@@ -15,11 +15,11 @@ class AddDistribuidoresTable extends Migration
     {
         Schema::create('distribuidores', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('username')->unique();
-            $table->string('email')->unique();
-            $table->string('telefono')->nullable();
-            $table->string('password');
+            $table->text('name');
+            $table->string('userdistribuidor', 100)->unique();
+            $table->string('email', 100)->unique();
+            $table->string('telefono', 100)->nullable();
+            $table->string('password', 100);
             $table->timestamps();
         });
     }

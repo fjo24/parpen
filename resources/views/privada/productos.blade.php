@@ -49,8 +49,9 @@
                 </thead>
                 <tbody>
                     @foreach($productos as $producto)
-                    {!!Form::open(['route'=>'carrito.store','id'=>'formpedido' ,'method'=>'POST', 'files' => true])!!}
+                     {!! Form::open(['route'=>'carrito.add','id'=>'formpedido','METHOD'=>'POST'])!!}
                         <tr>
+                            <div><input type="hidden" value="{{$producto->id}}" name="id"></div>
                             <td class="timagen center" style="width: 95px; height: 85px;">
                             @foreach($producto->imagenes as $img)
                             <img class="responsive-img" src="{{ asset($img->imagen) }}"/>
@@ -67,22 +68,34 @@
                             {{ Form::hidden('medidas', $producto->medidas) }}
                             <td class="center">{!! $producto->embalaje !!}</td>
                             <td class="center">
-                                <input class="tnumcantidad" id="tnumcantidad" type="number" min="0" max="100" value="0" step="1"></input>
+                                <label for="cantidad">Cantidad</label>
+                            <input type="number" name="cantidad" value="1">
                             </td>
                             <td class="center">
                                 {!! $producto->precio !!}
                             </td>
                             {{ Form::hidden('precio', $producto->precio) }}
-                            <td class="center"><input type="checkbox" name="test" value="value1"  onchange="document.getElementById('formpedido').submit()">
+
+                            <td class="center">
+                            <button class="btn-small waves-effect waves-light right" name="action" type="submit">
+                Editar
+                <i class="material-icons right">
+                    send
+                </i>
+            </button>
+  
                             </td>
                         </tr>
                     {!!Form::close()!!}
                     @endforeach
                 </tbody>
             </table>
+
         </div>
     </div>
 </body>
+
+ 
 @endsection
 @section('js')
 <script class="init" type="text/javascript">
@@ -96,31 +109,11 @@ $(document).ready(function(){
 });
 
 
-        //Si cambian el numero de cantidad, se calculan los numeros nuevamente
-    /*    $(document).on('change', '.tnumcantidad', function () {
-            calculate()
-        });
-*/
-// LLAMAR A CALCULATE CON BOTON CALCULATE
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+          
 
-//Llamar calculate y costos cuando se agrega producto
-
-
-        //Fin  Caluclar total de los costos
-
-        //Inicio calculate, realiza la mayoria de los calculos de la pagina, llamando a las otras funciones
-     /*   function calculate() {
-
-            var precio = {{ $producto->precio }};
-
-            if ($(".tnumcantidad").val() > 0) {
-                var total = eval($(".tnumcantidad").val() * precio);
-            }
-
-            $(".cantidad").val(precio)
-
-        }*/
-        //Fin calculate
 </script>
 
 @endsection

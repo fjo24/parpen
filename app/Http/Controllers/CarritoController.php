@@ -9,6 +9,8 @@ class CarritoController extends Controller
 {
     public function store(Request $request)
     {
+
+        
     	$pedido = new Pedido();
     	$hoy = \Carbon\Carbon::now();
     	dd($hoy);
