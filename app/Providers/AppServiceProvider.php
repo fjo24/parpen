@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Dato;
 use App\Categoria;
+use App\Dato;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,10 +24,10 @@ class AppServiceProvider extends ServiceProvider
         $email      = Dato::where('tipo', 'email')->first();
 
         view()->share([
-            'telefono'  => $telefono,
-            'telefono2' => $telefono2,
-            'direccion' => $direccion,
-            'email'     => $email,
+            'telefono'   => $telefono,
+            'telefono2'  => $telefono2,
+            'direccion'  => $direccion,
+            'email'      => $email,
             'categorias' => $categorias,
         ]);
     }

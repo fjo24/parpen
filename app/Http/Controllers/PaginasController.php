@@ -15,10 +15,13 @@ class PaginasController extends Controller
 {
     public function home()
     {
-        $activo    = 'mantenimiento';
-        $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'home')->get();
-        $contenido = Destacado_home::all()->first();
-        return view('pages.home', compact('sliders', 'servicios', 'banner', 'contenido', 'activo'));
+        $activo  = 'mantenimiento';
+        $sliders = Slider::orderBy('orden', 'ASC')->Where('seccion', 'home')->get();
+        $bloque1 = Destacado_home::find(1);
+        $bloque2 = Destacado_home::find(2);
+        $bloque3 = Destacado_home::find(3);
+        $bloque4 = Destacado_home::find(4);
+        return view('pages.home', compact('sliders', 'servicios', 'banner', 'contenido', 'activo', 'bloque1', 'bloque2', 'bloque3', 'bloque4'));
     }
 
     public function productos()

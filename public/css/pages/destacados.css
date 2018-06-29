@@ -1,0 +1,127 @@
+.categorias {
+    margin-top: 50px;
+    margin-bottom: 83px;
+}
+.titulo-cat {
+    font-size: 27px;
+    color: #FF0000;
+    font-family: 'Asap';
+    margin-bottom: 30px;
+}
+.cat-line {
+    width: 100px;
+    height: 2px!important;
+    background-color: red!important;
+    border: 0px red;
+}
+.items-cat {
+    margin-top: 38px;
+}
+.img-cat {
+    width: 374px;
+    height: 406px;
+}
+.div-nombre {
+    display: table;
+    background-color: rgba(179, 0, 74, 0.86);
+    height: 104px;
+    font-weight: 900;
+    font-family: 'Asap';
+    justify-content: center;
+    align-items: center;
+    font-size: 29px;
+    position: relative;
+    width: 100%;
+    bottom: 104px;
+    color: white;
+}
+
+.div-nombrelarge {
+    display: table;
+    background-color: rgba(179, 0, 74, 0.86);
+    height: 104px;
+    font-weight: 900;
+    font-family: 'Asap';
+    justify-content: center;
+    align-items: center;
+    font-size: 29px;
+    position: relative;
+    width: 756px;
+    bottom: 103px;
+    color: white;
+}
+
+.texto {
+    display: table-cell;
+    vertical-align: middle;
+}
+.div-categoria {
+    display: table;
+    height: 429px;
+}
+/* DESTACADOS */
+
+.efecto {
+    position: absolute;
+    opacity: 0;
+    background-color: rgba(255, 0, 0, 0.75);
+    width: 92%;
+    height: 92%;
+    z-index: 999;
+    margin: 16px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.efecto:hover {
+    opacity: 1;
+    transition: 1s;
+}
+.central {
+    padding: inherit;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    color: white;
+    width: 59px;
+    height: 59px;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+.efecto i {
+    padding-top: 20%;
+    /*font-weight: bold;*/
+    font-size: 30px;
+}
+.bloquecard {
+    padding-right: 5px!important;
+    padding-left: 5px!important;
+    height: 442px!important;
+}
+
+.imgrupo2 img{
+    height: 370px!important;
+    width: 370px!important;
+}
+
+.imgl img{
+    height: 750px!important;
+    width: 370px!important;
+}
+
+.imglarge img{
+        margin-top: -11px;
+    height: 359px!important;
+    width: 756px!important;
+}
+
+.bloque{
+        width: 370px;
+}
+
+.tododestacado{
+    margin-top: 30px!important;
+}
