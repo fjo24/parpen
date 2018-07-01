@@ -77,10 +77,11 @@
                             {{ Form::hidden('precio', $producto->precio) }}
 
                             <td class="center">
+                                <i class="material-icons" >add</i>
                             <button class="btn-small waves-effect waves-light right" name="action" type="submit">
                 Editar
                 <i class="material-icons right">
-                    send
+                    shopping_cart
                 </i>
             </button>
   
