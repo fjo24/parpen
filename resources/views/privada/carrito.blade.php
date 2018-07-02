@@ -8,7 +8,7 @@
 <body>
 <main class="zonaprivada">
 
-	<div class="gris fs28 lighter center-align mt70 mb70">CARRITO DE PEDIDOS</div>
+	<div class="mipedido left">MI PEDIDO</div>
 
 	<div class="container" style="width:90%;">
 
@@ -18,7 +18,7 @@
 
 					<table class="highlight bordered">
 
-						<thead style="border-bottom: 3px solid #3F51B5;">
+						<thead style="border-bottom: 3px solid #000000;background-color: #FAFAFA;">
 
 							<th></th>
 
@@ -40,9 +40,10 @@
 								@endphp
 								@foreach(Cart::content()  as $row)
 								<tr>
+									
 									<td></td>
 									<td class="capitalize">{{ $row->name }}</td>
-									<td><input type="number" name="cantidad" value="{{ $row->qty }}" style="width: 20%;"></td>
+									<td><input type="number" name="cantidad" value="{{ $row->qty }}" style="width: 20%;border-top: 1px solid #9e9e9e;border-right: 1px solid #9e9e9e;border-left: 1px solid #9e9e9e;"></td>
 									<td>{{ '$'.$row->price }}</td>
 									<td>{{ '$'.$row->price*$row->qty }}</td>
 									<td>
@@ -56,10 +57,22 @@
 								</tr>
 								@endforeach
 								@if(Cart::count() > 0)
-								<tr>
+								<tr style="border-top: 3px solid black;border-bottom: none;height:150%;">
+									<td colspan="4">
+							        <textarea id="mensaje" name="mensaje" class="materialize-textarea" placeholder="Mensaje"></textarea>
+									</td>
+									<td class="total fs24 azul bold">SUBTOTAL</td>
+									<td>{{ '$'.$total*0.92 }}</td>
+								</tr>
+								<tr style="border-bottom: none;">
 									<td colspan="4"></td>
-									<td>{{ '$'.$total }}</td>
+									<td class="total fs24 azul bold">IVA</td>
+									<td>{{ '$'.$total*0.08}}</td>
+								</tr>
+								<tr style="border-bottom: none;">
+									<td colspan="4"></td>
 									<td class="total fs24 azul bold">TOTAL</td>
+									<td>{{ '$'.$total }}</td>
 								</tr>
 								@endif
 							</tbody>
@@ -70,8 +83,7 @@
 							    <div class="col s7">
 							      <div class="row">
 							        <div class="input-field col s12">
-							          <textarea id="mensaje" name="mensaje" class="materialize-textarea"></textarea>
-							          <label for="mensaje">Mensaje</label>
+
 							        </div>
 							      </div>
 							    </div>

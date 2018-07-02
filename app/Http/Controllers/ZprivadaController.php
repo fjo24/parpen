@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Producto;
-use Illuminate\Http\Request;
-use Gloudemans\Shoppingcart\Facades\Cart;
-use Illuminate\Support\Facades\Mail;
 use App\Mail\pedido;
+use App\Producto;
+use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
 class ZprivadaController extends Controller
 {
     public function productos()
@@ -22,45 +23,41 @@ class ZprivadaController extends Controller
 
     public function add(Request $request)
     {
-       
-        $activo= 'carrito';
+
+        $activo   = 'carrito';
         $producto = Producto::find($request->id);
 
-        if($request->cantidad > 0)
-        {
-            Cart::add(['id' => $producto->id, 'name' => $producto->nombre, 'price' => $producto->precio, 'qty' => $request->cantidad]);
+        if ($request->cantidad > 0) {
+            Cart::add(['id' => $producto->id, 'name' => $producto->nombre, 'price' => $producto->precio, 'qty' => $request->cantidad, 'options' => ['codigo' => $producto->codigo, 'orden' => $producto->orden]]);
             return view('privada.carrito', compact('activo'));
-        }
-        else
-        {
+        } else {
             return back();
         }
     }
 
-    function send(Request $request)
+    public function send(Request $request)
     {
-            $activo = 'carrito';
-            foreach(Cart::content()  as $row)
-            {
-                $producto = $row->name;
-                $cantidad = $row->qty;
-                $precio = $row->price;
-            }
+        $activo = 'carrito';
+        foreach (Cart::content() as $row) {
+            $producto = $row->name;
+            $cantidad = $row->qty;
+            $precio   = $row->price;
+        }
 
-            $subtotal = Cart::Subtotal();
-            $total = Cart::Total();
-            $mensaje = $request->input('mensaje');
-            Mail::to('fjo224@gmail.com')->send(new pedido($producto, $cantidad, $precio, $subtotal, $total, $mensaje));
+        $subtotal = Cart::Subtotal();
+        $total    = Cart::Total();
+        $mensaje  = $request->input('mensaje');
+        Mail::to('fjo224@gmail.com')->send(new pedido($producto, $cantidad, $precio, $subtotal, $total, $mensaje));
 
-            if (count(Mail::failures()) > 0) {
+        if (count(Mail::failures()) > 0) {
 
-                $success = 'Ha ocurrido un error al enviar el correo';
+            $success = 'Ha ocurrido un error al enviar el correo';
 
-            }else{
+        } else {
 
-                $success = 'Pedido enviado correctamente';
+            $success = 'Pedido enviado correctamente';
 
-            }
+        }
         Cart::destroy();
 
         return view('privada.carrito', compact('activo'))->with('success', $success);
@@ -73,6 +70,5 @@ class ZprivadaController extends Controller
         Cart::remove($id);
         return view('privada.carrito', compact('activo'));
     }
-
 
 }

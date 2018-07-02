@@ -96,6 +96,7 @@ table.dataTable tbody tr {
 
 .trprincipal {
     border-bottom: 3px solid #FF608A;
+    
 }
 
 .timagen img{
@@ -135,6 +136,17 @@ table.dataTable tbody tr {
         background-color: red;
 }
 
+.carrito button:focus {
+    outline: none;
+    background-color: transparent!important;
+}
 
-
-
+.mipedido{
+    font-family: 'Asap';
+    font-weight: 400;
+    color: #FF5E87;
+    margin-top: 7%;
+    font-size: 26px;
+    margin-bottom: 3%;
+    margin-left: 6%;
+}

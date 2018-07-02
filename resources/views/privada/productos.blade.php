@@ -18,7 +18,7 @@
                 </input>
                     {!! Form::close() !!}
             </div>
-            <table class="display" id="tprivada" style="width:100%">
+            <table class="display" id="tprivada" style="width:100%;margin-bottom: 13%;">
                 <thead>
                     <tr class="trprincipal">
                         <th class="center">
@@ -69,7 +69,7 @@
                             <td class="center">{!! $producto->embalaje !!}</td>
                             <td class="center">
                                 <label for="cantidad">Cantidad</label>
-                            <input type="number" name="cantidad" value="1">
+                            <input type="number" name="cantidad" value="1" style="width: 46px;">
                             </td>
                             <td class="center">
                                 {!! $producto->precio !!}
@@ -77,13 +77,9 @@
                             {{ Form::hidden('precio', $producto->precio) }}
 
                             <td class="center">
-                                <i class="material-icons" >add</i>
-                            <button class="btn-small waves-effect waves-light right" name="action" type="submit">
-                Editar
-                <i class="material-icons right">
-                    shopping_cart
-                </i>
-            </button>
+                                <button type="submit" name="submit" style="padding-bottom: 0px;padding-right: 0px;border-top-width: 0px;padding-left: 0px;background-color: white;border-left-width: 0px;margin-right: 0px;border-right-width: 0px;    border-bottom-width: 0px;"><i class="material-icons" style="color: #FF5F8A; background-color: transparent!important;">shopping_cart</i></button>
+
+                            </td>
   
                             </td>
                         </tr>
