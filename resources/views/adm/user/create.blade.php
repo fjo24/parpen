@@ -20,7 +20,7 @@
 
 		<div class="row">
 			<div class="col s12">
-			{!!Form::open(['route'=>'user.store', 'method'=>'POST', 'files' => true])!!}
+			{!!Form::open(['route'=>'users.store', 'method'=>'POST', 'files' => true])!!}
 				{{ csrf_field() }}
 				<div class="row">
 					<div class="input-field col l4 s12 m4">

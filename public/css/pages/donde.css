@@ -1,0 +1,54 @@
+#map{
+	height: 650px;
+	width: 100%;
+}
+
+.container-distribuidor{
+	width: 80%;
+	min-width: 800px;
+	position: absolute;
+	background-color: #fff;
+	z-index: 999;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 15px 15px 5px 15px;
+}
+
+.no-margin{
+	margin: 0;
+}
+
+.boton{
+	height: 36px;
+	width: auto;
+	font-size: 13px;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #5A462E;
+	border: 1px solid #5A462E;
+	display: inline-block;
+	line-height: 36px;
+	padding: 0 40px;
+	cursor: pointer;
+	transition: 0.3s;
+	margin-top: 15px;
+	background-color: #fff;
+	float: right;
+}
+
+.boton:hover{
+	background-color: #5A462E;
+	color: #FDF9EB;
+	transition: 0.3s;
+}
+
+.container-distribuidor i {
+    float: right;
+    line-height: 34px;
+    margin-top: 45px;
+    color: #604B33;
+    border: 1px solid #604B33;
+    border-right: none;
+    padding: 0 10px;
+}

@@ -7,6 +7,7 @@ use App\Http\Requests\NovedadesRequest;
 use App\Imgnovedad;
 use App\Novedad;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class NovedadesController extends Controller
 {

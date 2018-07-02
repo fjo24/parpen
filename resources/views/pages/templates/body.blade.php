@@ -25,9 +25,11 @@ header('Access-Control-Allow-Origin: *');
                                     <script src='https://www.google.com/recaptcha/api.js'></script>
 
                                         <link href="{{ asset('plugins/materialize/css/materialize.min.css') }}" rel="stylesheet">
-                                            <script src="//code.jquery.com/jquery-1.11.1.min.js">
-                                            </script>
+
                                             <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+                                            <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+        <script type="text/javascript" src="http://osolelaravel.com/drimer/js/materialize.min.js"></script>
                                         </link>
                                     </link>
                                 </link>
@@ -37,6 +39,7 @@ header('Access-Control-Allow-Origin: *');
                 </meta>
             </meta>
         </meta>
+
     </head>
     <body>
         <!-- CABECERA -->

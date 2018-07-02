@@ -300,12 +300,12 @@
                         <div class="collapsible-body">
                             <ul>
                                 <li>
-                                    <a href="{{route('user.create')}}">
+                                    <a href="{{route('users.create')}}">
                                         Crear Usuario
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{route('user.index')}}">
+                                    <a href="{{route('users.index')}}">
                                         Editar Usuario
                                     </a>
                                 </li>
@@ -319,8 +319,8 @@
               <li class="bold"><a class="collapsible-header waves-effect waves-admin"><i class="material-icons">account_circle</i>Usuarios</a>
                 <div class="collapsible-body">
                   <ul>
-                    <li><a href="{{route('user.create')}}">Crear Usuario</a></li>
-                    <li><a href="{{route('user.index')}}">Editar Usuario</a></li>
+                    <li><a href="{{route('users.create')}}">Crear Usuario</a></li>
+                    <li><a href="{{route('users.index')}}">Editar Usuario</a></li>
                   </ul>
                 </div>
               </li>

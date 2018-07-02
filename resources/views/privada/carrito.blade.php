@@ -57,7 +57,7 @@
 								</tr>
 								@endforeach
 								@if(Cart::count() > 0)
-								<tr style="border-top: 3px solid black;border-bottom: none;height:150%;">
+								<tr style="border-top: 3px solid black;border-bottom: none;height:150%;color: #595959">
 									<td colspan="4">
 							        <textarea id="mensaje" name="mensaje" class="materialize-textarea" placeholder="Mensaje"></textarea>
 									</td>
@@ -72,7 +72,7 @@
 								<tr style="border-bottom: none;">
 									<td colspan="4"></td>
 									<td class="total fs24 azul bold">TOTAL</td>
-									<td>{{ '$'.$total }}</td>
+									<td name>{{ '$'.$total }}</td>
 								</tr>
 								@endif
 							</tbody>
@@ -91,7 +91,8 @@
 									<div class="col s6">
 									</div>
 									<div class="col s6">
-										<button class="enviar" class="bg-azul" href="#modal1" style="color:white; padding: 20px; background-color: #3F51B5; border: none; width: 200px;">ENVIAR PEDIDO</button></a>
+										<button class="enviar" class="bg-azul" href="#modal1" style="color:white; padding: 20px; background-color: #7D0045; border: none; width: 181px;
+    height: 42px!important;"><span style="font-family: 'lato';font-size: 13px;position: relative;bottom: 8px;font-weight: bold;">REALIZAR PEDIDO</span></button></a>
 									</div>
 									<a type="submit" class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
 									  <!-- Modal Structure -->
@@ -107,7 +108,9 @@
 									{!! Form::close() !!}
 								</div>
 
-									<a href="{{ url('/zonaprivada/productos') }}"><button class="boton" style="border: 1px solid #3F51B5; color:#3F51B5; background-color: white; padding: 20px; width: 200px; ">SEGUIR COMPRANDO</button></a>
+									<a href="{{ url('/zonaprivada/productos') }}" class="right"><button class="boton" style="height: 42px;border: 1px solid #7D0045; color:#7D0045; background-color: white; padding: 20px; width: 181px;position: relative;
+    bottom: 51px;
+    left: 244px;"><span style="font-family: 'lato';font-size: 13px;position: relative;bottom: 8px;font-weight: bold;">SEGUIR COMPRANDO</span></button></a>
 						</div>
 					@endif
 				</div>

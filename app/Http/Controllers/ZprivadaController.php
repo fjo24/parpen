@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\pedido;
+use App\Mail\pedidom;
 use App\Producto;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-
+use Illuminate\Support\Facades\DB;
+Use App\Pedido;
+use Carbon\Carbon;
 class ZprivadaController extends Controller
 {
     public function productos()
@@ -24,7 +26,7 @@ class ZprivadaController extends Controller
     public function add(Request $request)
     {
 
-        $activo   = 'carrito';
+        $activo   = 'pedido';
         $producto = Producto::find($request->id);
 
         if ($request->cantidad > 0) {
@@ -42,19 +44,35 @@ class ZprivadaController extends Controller
             $producto = $row->name;
             $cantidad = $row->qty;
             $precio   = $row->price;
+            //$idproducto = $row->rowId
         }
 
         $subtotal = Cart::Subtotal();
         $total    = Cart::Total();
         $mensaje  = $request->input('mensaje');
-        Mail::to('fjo224@gmail.com')->send(new pedido($producto, $cantidad, $precio, $subtotal, $total, $mensaje));
+       // dd($request->total);
+        $pedidox = new Pedido();
+        $pedidox->fecha = Carbon::now();
+        $pedidox->iva=8;
+        $pedidox->total=$subtotal;
+        $pedidox->distribuidor_id=1;
+        $pedidox->save();
+
+        //$pedidox->productos
+        //$pedidox->productos()->sync(array('cantidad' => $request->cantidad[$i], 'cantidad' => $request->cantidad[$i], 3, 4));
+
+   //     for ($i = 0; $i < count($request->id); $i++) {
+   //         $pedidox->productos()->attach($request->producto[$i], ['cantidad' => $request->cantidad[$i], 'price' => $request->costo[$i]]);
+     //   }
+
+        Mail::to('fjo224@gmail.com')->send(new pedidom($producto, $cantidad, $precio, $subtotal, $total, $mensaje));
 
         if (count(Mail::failures()) > 0) {
 
             $success = 'Ha ocurrido un error al enviar el correo';
-
+            dd("si");
         } else {
-
+            dd("no");
             $success = 'Pedido enviado correctamente';
 
         }

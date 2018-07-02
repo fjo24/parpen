@@ -104,7 +104,7 @@
                         </a>
                     </li>
                     @endif
-                @if($activo=='pedidos')
+                @if($activo=='pedido')
                     <li>
                         <a class="zactivo" href="{{ url('/categorias') }}">
                             PEDIDOS

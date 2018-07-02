@@ -8,6 +8,7 @@ use App\Destacado_home;
 use App\Destacado_mantenimiento;
 use App\Novedad;
 use App\Producto;
+use App\Local;
 use App\Servicio;
 use App\Slider;
 use App\Contenido_home;
@@ -114,4 +115,10 @@ class PaginasController extends Controller
         return view('pages.empresa', compact('sliders', 'contenido', 'activo'));
     }
 
+    public function dondeComprar(){
+        $activo  = 'donde';
+        $mapas = Local::all();
+
+        return view('pages.donde',compact('mapas', 'activo'));
+    }
 }

@@ -28,16 +28,16 @@
                 </div>
                   <!-- Dropdown LOGIN -->
                   <div class="areaprivada"> 
-  <ul id='dropdown1' class='dropdown-content' style="background: none">
-    <div class="container" style="background: #FBFBFB; margin-top: 37px !important; outline: none; width: 300px;">
-
+  <ul id='dropdown1' class='dropdown-content' style="background: none, width:400px!important; height: 300px!important;">
+    <div class="container" style="background: #FBFBFB; margin-top: 37px !important; outline: none; width: 256px;">
+        {!!Form::open(['route'=>'login', 'method'=>'POST'])!!}
         <div class="input-field col s12" style="padding-left: 10px; margin: 2px; margin-top: 15px;">
-          {!!Form::text('email',null,['class'=>'validate', 'required', 'autocomplete' => 'off'])!!}
+          {!!Form::text('email',null,['class'=>'', 'required', 'autocomplete' => 'off'])!!}
           <label for="email" style="color:white; font-weight: 500; font-family: 'Raleway'; font-size: 15px;">Email</label>
         </div>
-        <div class="input-field col s12" style="padding-left: 10px; margin: 2px;">
-          {!!Form::password('contrasena',null,['class'=>'validate', 'required'])!!}
-          <label for="contrasena" style="color:white; font-weight: 500; font-family: 'Raleway'; font-size: 15px;">Contraseña</label>
+        <div class="input-field col s12" style="padding-left: 10px; margin: 2px;" placeholder="contrasena">
+          {!!Form::password('contrasena',null,['class'=>'', 'required'])!!}
+          <label for="contrasena" style="color:white; font-weight: 500; font-family: 'Raleway'; font-size: 15px;" >Contraseña</label>
         </div>
 
         <style type="text/css">
@@ -50,18 +50,14 @@
 
         </style>
 
-        <div class="col s12">
+        <div class="col s12" style="    position: relative;
+    right: 24%;">
             {!!Form::submit('INGRESAR', ['class'=>'waves-effect waves-light btn right colorboton'])!!}
         </div>
-        <div class="col s12">
-        <a href="">
-          <li style="font-size: 12px; text-decoration: underline; color: #4B4B4B; font-size: 14px; font-family: 'Raleway';">Olvidé mi contraseña</li>
-        </a>
-        </div>
         
-      <li class="center" style="font-size: 12px; text-decoration: underline;">
-      <a href="">
-      CREAR CUENTA
+      <li class="center" style="font-size: 12px;color: pink; text-decoration: none;">
+      <a href="" style="color: #FF608A!important">
+      CREAR UNA CUENTA NUEVA
         </a>
       </li>
       

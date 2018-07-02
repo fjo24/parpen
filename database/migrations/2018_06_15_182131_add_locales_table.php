@@ -20,8 +20,8 @@ class AddLocalesTable extends Migration
             $table->string('localidad')->nullable();
             $table->string('provincia')->nullable();
             $table->string('telefono');
-            $table->string('logitud');
-            $table->string('latitud');
+            $table->string('lng');
+            $table->string('lat');
             $table->timestamps();
         });
     }

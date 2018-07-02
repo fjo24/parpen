@@ -38,8 +38,7 @@ main, header, footer{
 }
 
 .logo img{
-      margin-top: 12%;
-    height: 70px;
+  height: 50px;
 }
 
 main{
@@ -59,20 +58,8 @@ nav.top-nav{
 }
 
 .btn, .btn:hover, .nav-wrapper{
-  background-color: #FF5B88;
+  background-color: #FF5E88;
   padding-left: 20%;
-}
-
-.btn-large{
-  background-color: #FF5B88;
-}
-
-.btn-large:hover {
-    background-color: #FF5B88;
-}
-
-.btn-large:focus {
-    background-color: #FF5B88;
 }
 
 .icono{
@@ -142,7 +129,7 @@ button:focus {
 
 side-nav li>a>i, .sidenav li>a>[class^="mdi-"], .sidenav li>a li>a>[class*="mdi-"], .sidenav li>a>i.material-icons {
     margin: 0 5px 0 0;
-    color: #FF5B88;
+    color: #FF5E88;
     transform: translateY(-2px);
 }
 
@@ -156,8 +143,8 @@ side-nav li>a>i, .sidenav li>a>[class^="mdi-"], .sidenav li>a li>a>[class*="mdi-
  }
  /* label underline focus color */
  .row .input-field input:focus {
-   border-bottom: 1px solid #FF5B88 !important;
-   box-shadow: 0 1px 0 0 #FF5B88 !important
+   border-bottom: 1px solid #FF5E88 !important;
+   box-shadow: 0 1px 0 0 #FF5E88 !important
  }
 
 select option{

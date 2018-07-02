@@ -33,6 +33,9 @@ Route::post('productos/buscar', [
     'as'   => 'buscar',
 ]);
 
+//DONDE COMPRAR
+Route::get('/donde', ['uses' => 'PaginasController@dondeComprar', 'as' => 'donde.comprar']);
+
 //NOVEDADES
 Route::get('novedades/{tipo}', 'PaginasController@novedades')->name('novedades');
 
@@ -41,6 +44,7 @@ Route::get('/zonaprivada/productos', 'ZprivadaController@productos')->name('zpro
 //NOVEDADES
 Route::post('novedades/{tipo}', 'PaginasController@novedades')->name('novedades');
 
+Route::post('/buscador',['uses'=>'BuscadorController@getProducts', 'as'=>'buscador']);
 //Route::resource('carrito', 'CarritoController');
 
 Route::group(['prefix' => 'carrito'], function() {
@@ -50,9 +54,10 @@ Route::group(['prefix' => 'carrito'], function() {
     });
 
 //ADMIN*******************************************************************************************************
-Route::prefix('adm')->group(function () {
+Route::prefix('adm')->middleware('auth')->group(function () {
 
     //DASHBOARD
+    Route::get('/', 'Adm\AdminController@dashboard')->name('dashboard');
     Route::get('/dashboard', 'Adm\AdminController@dashboard')->name('dashboard');
 
     /*------------CATALOGOS----------------*/

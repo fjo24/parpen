@@ -13,7 +13,9 @@
     <div class="fw-body">
         <div class="container" style="width: 85%">
             <div class="center buscadorprivado">
-                {!!  Form::open(['route' => 'buscar', 'method' => 'POST', 'id'=>'buscador']) !!}
+
+
+                {!!  Form::open(['route' => 'buscador', 'method' => 'POST', 'id'=>'buscador']) !!}
                 <input id="pbuscar" name="pbuscar" type="psearch">
                 </input>
                     {!! Form::close() !!}
