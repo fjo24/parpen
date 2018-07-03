@@ -124,6 +124,14 @@ class PaginasController extends Controller
         return view('pages.donde', compact('mapas', 'activo'));
     }
 
+    public function dondeComprarlistado()
+    {
+        $activo = 'donde';
+        $mapas  = Local::all();
+
+        return view('pages.dondelistado', compact('mapas', 'activo'));
+    }
+
     public function contacto()
     {
         $activo = 'donde';

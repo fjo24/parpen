@@ -9,7 +9,7 @@ class Distribuidor extends Model
 	protected $table    = "distribuidores";
 
     protected $fillable = [
-        'name', 'username', 'email', 'telefono', 'password',
+        'name', 'userdistribuidor', 'email', 'telefono', 'password',
     ];
 
     protected $hidden = [

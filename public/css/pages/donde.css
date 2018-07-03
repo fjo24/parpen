@@ -4,10 +4,11 @@
 }
 
 .container-distribuidor{
-	width: 80%;
+	width: 1155px;
+    height: 98px;
 	min-width: 800px;
 	position: absolute;
-	background-color: #fff;
+	background-color: #FF608A;
 	z-index: 999;
 	left: 50%;
 	transform: translateX(-50%);
@@ -51,4 +52,93 @@
     border: 1px solid #604B33;
     border-right: none;
     padding: 0 10px;
+}
+
+.titulos_input_direccion{
+
+    font-family: 'Lato';
+    font-size: 15px!important;
+    font-weight: bold;
+    color: white!important;
+        left: 19px!important;
+}
+
+.titulos_input_radio{
+    font-family: 'Lato';
+    font-size: 15px!important;
+    font-weight: bold;
+    color: white!important;
+    left: 74px!important;
+}
+
+.direccion_mapa{
+    background: white;
+    height: 31px!important;
+    width: 317px!important;
+    position: relative;
+    top: 11px;
+    left: 8px;
+}
+
+.radio_mapa{
+    background: white;
+    height: 31px!important;
+    width: 317px!important;
+    position: relative;
+    top: 11px;
+        right: -63px;
+}
+
+.boton_mapa{
+	height: 42px!important;
+    width: 133px;
+    top: 5px;
+    right: 221px;
+    background-color: #7D0045;
+    top: 23px;
+    right: -138px;
+    font-family: 'Lato';
+    font-size: 18px;
+}
+
+.boton_mapa:hover{
+	height: 42px!important;
+    width: 133px;
+    top: 5px;
+    right: 221px;
+    background-color: #7D0045;
+    top: 23px;
+    right: -138px;
+    font-family: 'Lato';
+    font-size: 18px;
+}
+
+.ver_mapa a img{
+	    position: relative;
+    left: 89%;
+}
+
+.ver_listado a img{
+	    position: relative;
+    left: 41%;
+}
+
+.tabla_mapa thead{
+	font-family: 'Asap';
+    font-size: 22px;
+    color: #FF5E89;
+}
+
+.celda_nombre{
+	    font-size: 16px;
+    color: #7F0045;
+    font-family: 'Lato';
+    font-weight: bold;
+}
+
+.celda_resto{
+	    font-size: 16px;
+    color: #595959;
+    font-family: 'Lato';
+    font-weight: bold;
 }

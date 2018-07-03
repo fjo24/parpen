@@ -1,5 +1,5 @@
 @extends('pages.templates.body')
-@section('title', 'Excelsior - Home')
+@section('title', 'Parpen - Quienes Somos?')
 @section('css')
 <link href="{{ asset('css/pages/sliders/slider.css') }}" rel="stylesheet"/>
 <link href="{{ asset('css/pages/destacados.css') }}" rel="stylesheet"/>

@@ -13,7 +13,7 @@
 //PAGINAS/*************************************************************************************************
 
 //HOME
-Route::get('/', 'PaginasController@home');
+Route::get('/', 'PaginasController@home')->name('inicio');
 
 //PRODUCTOS
 Route::get('/productos', 'PaginasController@productos')->name('productos');
@@ -45,16 +45,26 @@ Route::post('productos/buscar', [
 
 //DONDE COMPRAR
 Route::get('/donde', ['uses' => 'PaginasController@dondeComprar', 'as' => 'donde.comprar']);
+//DONDE COMPRAR {listado}
+Route::get('/dondelistado', ['uses' => 'PaginasController@dondeComprarlistado', 'as' => 'donde.comprar.listado']);
 
 //NOVEDADES
 Route::get('novedades/{tipo}', 'PaginasController@novedades')->name('novedades');
 
 //ZONA PRIVADA************************************************************************************************
 Route::get('/zonaprivada/productos', 'ZprivadaController@productos')->name('zproductos');
+
+//REGISTRO DE DISTRIBUIDORES
+Route::get('registro',['uses'=>'DistribuidorController@index', 'as'=>'registro' ]);
+Route::post('/registro',['uses'=>'DistribuidorController@store', 'as'=>'cliente.store']);
+Route::post('/nuevousuario',['uses'=>'DistribuidorController@registroStore', 'as'=>'registro.store']);
+
 //NOVEDADES
 Route::post('novedades/{tipo}', 'PaginasController@novedades')->name('novedades');
 
 Route::post('/buscador', ['uses' => 'BuscadorController@getProducts', 'as' => 'buscador']);
+
+Route::post('login/distribuidor', ['uses' => 'DistribuidorController@loginDistribuidor', 'as' => 'login.distribuidor']);
 //Route::resource('carrito', 'CarritoController');
 
 Route::group(['prefix' => 'carrito'], function () {

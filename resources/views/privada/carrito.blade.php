@@ -94,7 +94,9 @@
 										<button class="enviar" class="bg-azul" href="#modal1" style="color:white; padding: 20px; background-color: #7D0045; border: none; width: 181px;
     height: 42px!important;"><span style="font-family: 'lato';font-size: 13px;position: relative;bottom: 8px;font-weight: bold;">REALIZAR PEDIDO</span></button></a>
 									</div>
-									<a type="submit" class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+									<a type="submit" class="waves-effect waves-light btn modal-trigger" href="#modal1" style="    position: relative;
+    top: 258px;
+    background: white;">Modal</a>
 									  <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">

@@ -38,13 +38,13 @@
                                     </div>
                                     <div class="ver_mapa col s12 l2">
                                         <a href="{{ url('/donde') }}">
-                                            <img alt="" src="{{asset('img/ver_mapa.png')}}">
+                                            <img alt="" src="{{asset('img/ver_mapa2.png')}}">
                                             </img>
                                         </a>
                                     </div>
                                     <div class="ver_listado col s12 l2" style="    margin-top: 1%;">
                                         <a href="{{ url('/dondelistado') }}">
-                                            <img alt="" src="{{asset('img/listado.png')}}">
+                                            <img alt="" src="{{asset('img/listado2.png')}}">
                                             </img>
                                         </a>
                                     </div>
@@ -53,10 +53,56 @@
                             {!!Form::close()!!}
                         </main>
                     </link>
+                    <div class="container" style="width: 87%">
+                    <div class="row">
+            <div class="col s12">
+                <table class="highlight bordered tabla_mapa" style="margin-top: 15%;
+     margin-bottom: 3%;">
+                    <thead>
+                        <td class="center">
+                            Local
+                        </td>
+                        <td class="center">
+                            Dirección
+                        </td>
+                        <td class="center">
+                            Localidad
+                        </td>
+                        <td class="center"">
+                            Provincia
+                        </td>
+                        <td class="center">
+                            Telefono
+                        </td>
+                    </thead>
+                    <tbody>
+                        @foreach($mapas as $mapa)
+                        <tr>
+                            <td class="celda_nombre center">
+                                {!!$mapa->nombre!!}
+                            </td>
+                            <td class="celda_resto center">
+                                {!!$mapa->direccion!!}
+                            </td>
+                            <td class="celda_resto center">
+								{!!$mapa->localidad!!}
+                            </td>
+                            <td class="celda_resto center">
+								{!!$mapa->provincia!!}
+                            </td>
+                            <td class="celda_resto center">
+								{!!$mapa->telefono!!}
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
     </body>
 </html>
-<div id="map">
-</div>
+
 @endsection
 @section('js')
 <script type="text/javascript">

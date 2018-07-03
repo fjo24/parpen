@@ -3,73 +3,79 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Distribuidor;
+use Illuminate\Support\Facades\DB;
+use Redirect;
 
 class DistribuidorController extends Controller
 {
-    public function loginInvitado(Request $request){
-
-
-// 'name', 'username', 'email', 'nivel', 'password',
-        if(isset($request->usuario)){
-            $user = User::where('username', $request->username)->first();
-            echo "si";
-
-            if(Auth::attempt(['username' => $request->username, 'password' => $request->password, 'activo' => 1])){ //$request->password
-                session(['cliente' => 1]);
-                session(['nombre' => $user->nombre]);
-                session(['apellido' => $user->apellido]);
-                session(['email' => $user->email]);
-                session(['telefono' => $user->telefono]);
-                session(['tipo_cliente' => $user->tipo_cliente]);
-                session(['mayorista' => $user]);
-                echo "usuario";
-            }
-        }else{
-        	session(['cliente' => 1]);
-        	session(['nombre' => $request->nombre]);
-        	session(['email' => $request->email]);
-            session(['tipo_cliente' => 1]);
-            echo "no";
-        }
-
-    	return back();
+    public function index()
+    {
+        $activo = 'registro';
+        
+        return view('pages.registro', compact('activo'));
     }
-    public function loginDistribuidor(LogDistRequest $request){
-        if(isset($request->usuario)){
 
-            $user = User::where('usuario', $request->usuario)->first();
+    public function registroStore(Request $request)
+    {
+
+        $datos = $request->all();
+        Distribuidor::create($datos);
+        $success = 'Usuario creado correctamente';
+        return Redirect::to('registro')->with('success', $success);
+    }
+
+    public function store(Request $request){
+
+        $distribuidor = DB::table('distribuidores')->where('email', $request->input('email'))->first();
+        if(isset($distribuidor))
+        {
+            if($distribuidor->password == $request->input('password'))
+            {
+                session(['distribuidor' => $distribuidor->id]);
+                return redirect('zproductos');
+            }
+            else
+            {
+                $error = "El usuario y/o contraseña son invalidos";
+                return back()->with('error');
+            }
+        }
+        else
+        {
+            $error = "El usuario y/o contraseña son invalidos";
+            return back()->with('error');
+        }
+    }
+
+    public function loginDistribuidor(Request $request){
+        if(isset($request->userdistribuidor)){
+
+            $user = Distribuidor::where('userdistribuidor', $request->userdistribuidor)->first();
+            dd('userdistribuidor');
             if($user && $user->password == ''){
                 $email = $user->email;
                 session(['email' => $email]);
-                return Redirect::to('recuperar');
+                return Redirect::to('zproductos');
                 echo "pass";
             }
 
-            if(Auth::attempt(['usuario' => $request->usuario, 'password' => $request->password, 'activo' => 1, 'tipo_cliente' => 2]) || Auth::attempt(['usuario' => $request->usuario, 'password' => $request->password, 'activo' => 1, 'tipo_cliente' => 3]) || Auth::attempt(['usuario' => $request->usuario, 'password' => $request->password, 'activo' => 1, 'tipo_cliente' => 4]) || Auth::attempt(['usuario' => $request->usuario, 'password' => $request->password, 'activo' => 1, 'tipo_cliente' => 5])){ //$request->password
+            if(Auth::attempt(['userdistribuidor' => $request->userdistribuidor, 'password' => $request->password])){ //$request->password
                 session()->flush();
-                session(['cliente' => 1]);
-                session(['nombre' => $user->nombre]);
-                session(['apellido' => $user->apellido]);
+                session(['name' => $user->name]);
                 session(['email' => $user->email]);
-                session(['telefono' => $user->telefono]);
-                session(['tipo_cliente' => $user->tipo_cliente]);
-                session(['mayorista' => $user]);
+                session(['telefono' => $user->telefono]);                
 
-                
-
-                return redirect()->route('guardado', 1);
+                return redirect()->route('zproductos');
                 
             }
             else{
-                return redirect()->route('guardado', 2);
+                return redirect()->route('zproductos');
             }
         }
         
         
     }
 
-    public function logout(){
-    	session()->flush();
-        return Redirect::to('/');
-    }
-}
+
+}   

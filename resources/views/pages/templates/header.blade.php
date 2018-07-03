@@ -56,11 +56,11 @@
         </div>
         
       <li class="center" style="font-size: 12px;color: pink; text-decoration: none;">
-      <a href="" style="color: #FF608A!important">
+      <a href="{{ url('registro') }}" style="color: #FF608A!important">
       CREAR UNA CUENTA NUEVA
         </a>
       </li>
-      
+      {!!Form::close()!!}
        </div>
   </ul>
 

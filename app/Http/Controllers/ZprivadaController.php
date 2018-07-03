@@ -15,12 +15,15 @@ class ZprivadaController extends Controller
     public function productos()
     {
         $activo    = 'productos';
+        $carrito = Cart::content();   
+        $items = $carrito->all();
         $ready     = 0;
         $config    = 4;
         $productos = Producto::OrderBy('orden', 'ASC')->get();
         $aux       = Producto::orderBy('orden', 'ASC')->get();
         $prod      = $aux->toJson();
-        return view('privada.productos', compact('activo', 'productos', 'ready', 'prod', 'config'));
+      // dd($carrito->all());
+        return view('privada.productos', compact('carrito','activo', 'productos', 'ready', 'prod', 'config', 'items'));
     }
 
     public function add(Request $request)

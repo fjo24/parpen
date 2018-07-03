@@ -79,7 +79,13 @@
                             {{ Form::hidden('precio', $producto->precio) }}
 
                             <td class="center">
+                                @foreach($items as $item)
+                            @if($item->id==$producto->id)
+                            dentro
+                            @else
                                 <button type="submit" name="submit" style="padding-bottom: 0px;padding-right: 0px;border-top-width: 0px;padding-left: 0px;background-color: white;border-left-width: 0px;margin-right: 0px;border-right-width: 0px;    border-bottom-width: 0px;"><i class="material-icons" style="color: #FF5F8A; background-color: transparent!important;">shopping_cart</i></button>
+                            @endif
+                            @endforeach
 
                             </td>
   
