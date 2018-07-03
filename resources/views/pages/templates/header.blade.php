@@ -89,28 +89,28 @@
         <nav class="principal">
             <div class="container" style="width: 93%">
                 <ul class="item-left left hide-on-med-and-down">
-                    @if($activo=='mantenimiento')
+                    @if($activo=='home')
                     <li>
-                        <a class="activo" href="{{ url('/mantenimiento') }}">
+                        <a class="activo" href="{{ url('/') }}">
                             INICIO
                         </a>
                     </li>
                     @else
                     <li>
-                        <a href="{{ url('/mantenimiento') }}">
+                        <a href="{{ url('/') }}">
                             INICIO
                         </a>
                     </li>
                     @endif
-                @if($activo=='productos')
+                @if($activo=='empresa')
                     <li>
-                        <a class="activo" href="{{ url('/categorias') }}">
+                        <a class="activo" href="{{ url('/empresa') }}">
                             QUIÉNES SOMOS
                         </a>
                     </li>
                     @else
                     <li>
-                        <a href="{{ url('/categorias') }}">
+                        <a href="{{ url('/empresa') }}">
                             QUIÉNES SOMOS
                         </a>
                     </li>
@@ -160,15 +160,15 @@
                     </i>
                 </a>
                 <ul class="item-right right hide-on-med-and-down">
-                    @if($activo=='consejos')
+                    @if($activo=='donde')
                     <li>
-                        <a class="activo" href="{{ url('/consejos') }}">
+                        <a class="activo" href="{{ url('/donde') }}">
                             DÓNDE COMPRAR
                         </a>
                     </li>
                     @else
                     <li>
-                        <a href="{{ url('/consejos') }}">
+                        <a href="{{ url('/donde') }}">
                             DÓNDE COMPRAR
                         </a>
                     </li>
@@ -186,15 +186,15 @@
                         </a>
                     </li>
                     @endif
-                    @if($activo=='clientes')
+                    @if($activo=='contacto')
                     <li>
-                        <a class="activo" href="{{ url('/clientes') }}">
+                        <a class="activo" href="{{ url('/contacto') }}">
                             CONTACTO
                         </a>
                     </li>
                     @else
                     <li>
-                        <a href="{{ url('/clientes') }}">
+                        <a href="{{ url('/contacto') }}">
                             CONTACTO
                         </a>
                     </li>

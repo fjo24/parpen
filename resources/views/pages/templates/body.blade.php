@@ -29,7 +29,7 @@ header('Access-Control-Allow-Origin: *');
                                             <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
                                             <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-        <script type="text/javascript" src="http://osolelaravel.com/drimer/js/materialize.min.js"></script>
+       <!--    <script type="text/javascript" src="http://osolelaravel.com/drimer/js/materialize.min.js"></script>-->
                                         </link>
                                     </link>
                                 </link>

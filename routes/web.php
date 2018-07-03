@@ -18,6 +18,16 @@ Route::get('/', 'PaginasController@home');
 //PRODUCTOS
 Route::get('/productos', 'PaginasController@productos')->name('productos');
 
+//EMPRESAS
+Route::get('/empresa', 'PaginasController@empresa')->name('empresa');
+
+//CONTACTO
+Route::get('/contacto', 'PaginasController@contacto')->name('contacto');
+Route::post('enviar-mail', [
+    'uses' => 'PaginasController@enviarmail',
+    'as'   => 'enviarmail',
+]);
+
 //FILTRO CATEGORIAS DE PRODUCTOS
 Route::get('categorias/{id}', 'PaginasController@categorias')->name('categorias');
 
@@ -44,17 +54,17 @@ Route::get('/zonaprivada/productos', 'ZprivadaController@productos')->name('zpro
 //NOVEDADES
 Route::post('novedades/{tipo}', 'PaginasController@novedades')->name('novedades');
 
-Route::post('/buscador',['uses'=>'BuscadorController@getProducts', 'as'=>'buscador']);
+Route::post('/buscador', ['uses' => 'BuscadorController@getProducts', 'as' => 'buscador']);
 //Route::resource('carrito', 'CarritoController');
 
-Route::group(['prefix' => 'carrito'], function() {
-        Route::post('add', ['uses' => 'ZprivadaController@add', 'as' => 'carrito.add']);
-        Route::get('delete/{id}', ['uses' => 'ZprivadaController@delete', 'as' => 'carrito.delete']);
-        Route::post('enviar', ['uses' => 'ZprivadaController@send', 'as' => 'carrito.enviar']);
-    });
+Route::group(['prefix' => 'carrito'], function () {
+    Route::post('add', ['uses' => 'ZprivadaController@add', 'as' => 'carrito.add']);
+    Route::get('delete/{id}', ['uses' => 'ZprivadaController@delete', 'as' => 'carrito.delete']);
+    Route::post('enviar', ['uses' => 'ZprivadaController@send', 'as' => 'carrito.enviar']);
+});
 
 //ADMIN*******************************************************************************************************
-Route::prefix('adm')->middleware('auth')->group(function () {
+Route::prefix('adm')->group(function () {
 
     //DASHBOARD
     Route::get('/', 'Adm\AdminController@dashboard')->name('dashboard');

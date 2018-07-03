@@ -21,12 +21,12 @@ class NewslettersController extends Controller
 
     public function store(NewslettersRequest $request)
     {
-
+        dd("si");
         $newsletter        = new Newsletter();
         $newsletter->email = $request->email;
 
         $newsletter->save();
-        return redirect()->route('newsletters.index');
+        return view('pages.home');
     }
 
     public function edit($id)

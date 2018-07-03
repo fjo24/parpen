@@ -1,5 +1,5 @@
 @extends('pages.templates.body')
-@section('title', 'Excelsior - Home')
+@section('title', 'Parpen - Home')
 @section('css')
 <link href="{{ asset('css/pages/sliders/slider.css') }}" rel="stylesheet"/>
 <link href="{{ asset('css/pages/destacados.css') }}" rel="stylesheet"/>
@@ -11,6 +11,7 @@
         @foreach($sliders as $slider)
         <li>
             <img src="{{asset($slider->imagen)}}">
+            @if(isset($slider->texto)||isset($slider->texto2))
                 <div class="caption box-cap" style="">
                     <div style="">
                         <span class="slidertext2">
@@ -21,6 +22,7 @@
                         </span>
                     </div>
                 </div>
+                @endif
             </img>
         </li>
         @endforeach
@@ -28,7 +30,7 @@
 </div>
 <div class="container" style="width: 90%">
     <div class="destacado-home">
-        <div class="row" style="">
+        <div class="row" style="margin-bottom: -5px!important;">
             <div class="tododestacado col l12 s12">
                 <div class="col l8 s12">
                     <div class="col l6 s12">
@@ -96,9 +98,9 @@
         </div>
     </div>
 </div>
+    <div class="destacado-home2">
 <div class="container" style="width: 84%;">
-    <div class="destacado-home">
-        <div class="row" style="">
+        <div class="row" style="position: relative;top: 66px;">
             <div class="col l6 s12 hide-on-med-and-down">
                 <img class="img-destacado responsive-img" src="{!! $contenido->imagen !!}" style="">
                 </img>
@@ -107,20 +109,43 @@
                 <div class="tit-dest">
                     {!! $contenido->nombre !!}
                 </div>
-                <hr class="dest-line">
                 <div class="subtit-dest">
                     {!! $contenido->descripcion !!}
                 </div>
                 <div class="cont-dest">
                     {!! $contenido->contenido !!}
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 cont-btn">
-                    <a href="{!! $contenido->link !!}">
-                    <button type="button" class="boton btn btn-default pull-right">Conocé mas</button>
-                </a>
-                </div>
             </div>
         </div>
+    </div>
+</div>
+<div class="seccion-banner" style="margin-top: -35px;">
+    <div class="btexto">
+        <div class="tbanner center">
+            <p>
+                Reciba Nuestras Novedades
+            </p>
+        </div>
+        <div class="tbanner2 center">
+            <p>
+                Inspiración, ideas, nuevos productos y mucho más
+            </p>
+        </div>
+        <div class="tbanner3 center">
+     
+                {!!Form::open(['route'=>'newsletters.store', 'method'=>'POST', 'files' => true])!!}
+        <div class="row" style="font-family: 'Lato'; color: #B0B0B0;margin-left: 34%;margin-top: -1%;">
+            <div class="input-field left" style="top: -10px;width: 271px;height: 42px;background-color: white;border-bottom:none;border-bottom: none;margin-left: 0%;border-radius: 3px;border: 1px solid #B0B0B0;">
+                        {!!Form::text('email', null , ['class'=>'', 'required', 'placeholder' => 'ESCRIBA SU EMAIL'])!!}
+            </div>
+            <button class="boton2 btn waves-effect waves-light" name="action" type="submit">
+                ENVIAR
+            </button>
+        </div>
+
+        </div>
+        {!!Form::close()!!}
+           
     </div>
 </div>
 @endsection

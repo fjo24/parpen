@@ -3,25 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Categoria;
-use App\Destacado_empresa;
+use App\Contenido_home;
 use App\Destacado_home;
 use App\Destacado_mantenimiento;
+use App\Empresa;
+use App\Local;
 use App\Novedad;
 use App\Producto;
-use App\Local;
 use App\Servicio;
 use App\Slider;
-use App\Contenido_home;
+
 class PaginasController extends Controller
 {
     public function home()
     {
-        $activo  = 'mantenimiento';
-        $sliders = Slider::orderBy('orden', 'ASC')->Where('seccion', 'home')->get();
-        $bloque1 = Destacado_home::find(1);
-        $bloque2 = Destacado_home::find(2);
-        $bloque3 = Destacado_home::find(3);
-        $bloque4 = Destacado_home::find(4);
+        $activo    = 'home';
+        $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'home')->get();
+        $bloque1   = Destacado_home::find(1);
+        $bloque2   = Destacado_home::find(2);
+        $bloque3   = Destacado_home::find(3);
+        $bloque4   = Destacado_home::find(4);
         $contenido = Contenido_home::all()->first();
         return view('pages.home', compact('sliders', 'servicios', 'banner', 'contenido', 'activo', 'bloque1', 'bloque2', 'bloque3', 'bloque4'));
     }
@@ -111,14 +112,48 @@ class PaginasController extends Controller
     {
         $activo    = 'empresa';
         $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'empresa')->get();
-        $contenido = Destacado_empresa::all()->first();
+        $contenido = Empresa::all()->first();
         return view('pages.empresa', compact('sliders', 'contenido', 'activo'));
     }
 
-    public function dondeComprar(){
-        $activo  = 'donde';
-        $mapas = Local::all();
+    public function dondeComprar()
+    {
+        $activo = 'donde';
+        $mapas  = Local::all();
 
-        return view('pages.donde',compact('mapas', 'activo'));
+        return view('pages.donde', compact('mapas', 'activo'));
+    }
+
+    public function contacto()
+    {
+        $activo = 'donde';
+        return view('pages.contacto', compact('activo'));
+    }
+
+    public function enviarmail(Request $request)
+    {
+
+        $dato     = Dato::where('tipo', 'mail')->first();
+        $nombre   = $request->nombre;
+        $apellido = $request->apellido;
+        $empresa  = $request->empresa;
+        $email    = $request->email;
+        $mensaje  = $request->mensaje;
+
+        Mail::send('pages.emails.contactomail', ['nombre' => $nombre, 'apellido' => $apellido, 'empresa' => $empresa, 'email' => $email, 'mensaje' => $mensaje], function ($message) {
+
+            $dato = Dato::where('tipo', 'email')->first();
+            $message->from('info@aberturastolosa.com.ar', 'Excelsior');
+
+            $message->to($dato->descripcion);
+
+            //Add a subject
+            $message->subject("Contacto");
+
+        });
+        if (Mail::failures()) {
+            return view('pages.contacto');
+        }
+        return view('pages.contacto');
     }
 }
