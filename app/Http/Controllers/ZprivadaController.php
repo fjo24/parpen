@@ -108,9 +108,27 @@ class ZprivadaController extends Controller
     public function listadeprecios()
     {
         $activo    = 'listadeprecios';
-        $catalogos = Catalogo::orderBy('nombre', 'ASC')->get();
+        $catalogo = Catalogo::orderBy('created_at', 'ASC')->first();
 
-        return view('privada.listadeprecios', compact('activo', 'catalogos'));
+        return view('privada.listadeprecios', compact('activo', 'catalogo'));
+    }
+
+    public function downloadPdf2($id)
+    {
+        $catalogo = Catalogo::find($id);
+        $path     = public_path();
+        $url      = $path . '/' . $catalogo->pdf;
+        return response()->download($url);
+        return redirect()->route('catalogos.index');
+    }
+
+    public function ofertasynovedades()
+    {
+        $activo        = 'ofertasynovedades';
+        $productos     = Producto::OrderBy('orden', 'ASC')->orwhere('tipo', 'novedad')->orwhere('tipo', 'oferta')->get();
+        $ready         = 0;
+
+        return view('privada.ofertasynovedades', compact('productos', 'activo', 'ready'));
     }
 
 }

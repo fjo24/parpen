@@ -53,6 +53,9 @@
                 {!!Form::label('Orden:')!!}
                         {!!Form::text('orden', null , ['class'=>'', ''])!!}
             </div>
+            <div class="input-field col l6 s12">
+                {!! Form::select('tipo', ['novedad' => 'novedad', 'oferta' => 'oferta', 'ninguna' => 'ninguna'], null, ['class' => 'form-control', 'placeholder' => 'Seleccione tipo de producto']) !!}
+            </div>
         </div>
         <label class="col l12 s12" for="descripcion">
             Descripcion

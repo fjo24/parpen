@@ -100,29 +100,29 @@
                     </i>
                 </a>
                 <ul class="item-right right hide-on-med-and-down">
-                    @if($activo=='consejos')
+                    @if($activo=='listadeprecios')
                     <li>
-                        <a class="zactivo" href="{{ url('/consejos') }}">
+                        <a class="zactivo" href="{{ route('listadeprecios') }}">
                             LISTA DE PRECIOS
                         </a>
                     </li>
                     @else
                     <li>
-                        <a href="{{ url('/consejos') }}">
+                        <a href="{{ route('listadeprecios') }}">
                             LISTA DE PRECIOS
                         </a>
                     </li>
                     @endif
                         
-                    @if($activo=='novedades')
+                    @if($activo=='ofertasynovedades')
                     <li>
-                        <a class="zactivo" href="{{ route('novedades', 'destacados') }}" style="width: 47%;line-height: 135%;position: relative;margin-top: 1%;">
+                        <a class="zactivo" href="{{ route('ofertasynovedades') }}" style="width: 47%;line-height: 135%;position: relative;margin-top: 1%;">
                             OFERTAS Y NOVEDADES
                         </a>
                     </li>
                     @else
                     <li>
-                        <a href="{{ route('novedades', 'destacados') }}" style="width: 47%;line-height: 135%;position: relative;margin-top: 1%;">
+                        <a href="{{ route('ofertasynovedades') }}" style="width: 47%;line-height: 135%;position: relative;margin-top: 1%;">
                             OFERTAS Y NOVEDADES
                         </a>
                     </li>

@@ -174,14 +174,14 @@ nav .brand-logo {
 }
 nav ul a:hover {
     background-color: transparent!important;
-    font-family: arial;
+    font-family: 'Asap';
     margin: 0 12px;
     padding: 0!important;
     border-bottom: 3px solid #7D0045 !important;
 }
 .activo {
     background-color: transparent!important;
-    font-family: arial;
+    font-family: 'Asap';
     border-bottom: 3px solid #7D0045 !important;
 }
 

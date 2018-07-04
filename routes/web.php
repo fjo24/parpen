@@ -55,11 +55,15 @@ Route::get('novedades/{tipo}', 'PaginasController@novedades')->name('novedades')
 Route::get('/zonaprivada/productos', 'ZprivadaController@productos')->name('zproductos')->middleware('auth');
 //LISTA DE PRECIOS************************************************************************************************
 Route::get('/zonaprivada/listadeprecios', 'ZprivadaController@listadeprecios')->name('listadeprecios')->middleware('auth');
+// Rutas de reportes pdf desde la web
+    Route::get('pdf2/{id}', ['uses' => 'ZprivadaController@downloadPdf2', 'as' => 'file-pdf2']);
 
 //REGISTRO DE DISTRIBUIDORES
 Route::get('registro', ['uses' => 'DistribuidorController@index', 'as' => 'registro']);
 Route::post('/registro', ['uses' => 'DistribuidorController@store', 'as' => 'cliente.store']);
 Route::post('/nuevousuario', ['uses' => 'DistribuidorController@registroStore', 'as' => 'registro.store']);
+//novedades y ofertas
+Route::get('/zonaprivada/ofertasynovedades', 'ZprivadaController@ofertasynovedades')->name('ofertasynovedades')->middleware('auth');
 
 //NOVEDADES
 Route::post('novedades/{tipo}', 'PaginasController@novedades')->name('novedades');

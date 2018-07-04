@@ -40,6 +40,7 @@ class ProductosController extends Controller
         $producto->video_descripcion = $request->video_descripcion;
         $producto->precio            = $request->precio;
         $producto->visible           = $request->visible;
+        $producto->tipo           = $request->tipo;
         $producto->save();
 
         return redirect()->route('productos.index');
@@ -72,6 +73,7 @@ class ProductosController extends Controller
         $producto->video_descripcion = $request->video_descripcion;
         $producto->precio            = $request->precio;
         $producto->visible           = $request->visible;
+        $producto->tipo           = $request->tipo;
         $producto->save();
 
         return redirect()->route('productos.index');

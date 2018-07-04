@@ -74,7 +74,7 @@ header .li-distribuidor {
     /*vertical*/
 }
 header .li-presupuesto a {
-    font-family: arial;
+    font-family: 'Asap';
     color: #DDDDDD;
     font-size: 15px;
 }
@@ -93,7 +93,7 @@ header .li-presupuesto {
     border-left: 2px solid #777777;
 }
 header .li-redes a {
-    font-family: arial;
+    font-family: 'Asap';
     color: #DDDDDD;
     font-size: 16px;
     margin: 0px 11px;
@@ -136,12 +136,12 @@ header .li-red {
 header .principal {
     height: 190px!important;
     background-color: white;
-    font-family: arial;
+    font-family: 'Asap';
 }
 nav ul a {
     color: #7D0045!important;
     font-size: 16px!important;
-    font-family: arial;
+    font-family: 'Asap';
     margin: 0 12px;
     padding: 0!important;
 }
@@ -151,21 +151,21 @@ nav .brand-logo {
 }
 nav ul a:hover {
     background-color: transparent!important;
-    font-family: arial;
+    font-family: 'Asap';
     margin: 0 12px;
     padding: 0!important;
     border-bottom: 3px solid #7D0045 !important;
 }
 .zactivo {
     background-color: transparent!important;
-    font-family: arial;
+    font-family: 'Asap';
     border-bottom: 3px solid #7D0045 !important;
 }
 
 nav .item-left a {
     color: #7D0045!important;
     font-size: 16px!important;
-    font-family: arial;
+    font-family: 'Asap';
     margin: 0 22px;
     padding: 0!important;
 }
@@ -173,7 +173,7 @@ nav .item-left a {
 nav .item-left a:hover {
     color: #7D0045!important;
     font-size: 16px!important;
-    font-family: arial;
+    font-family: 'Asap';
     margin: 0 22px;
     padding: 0!important;
 }
