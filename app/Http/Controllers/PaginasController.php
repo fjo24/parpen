@@ -45,6 +45,7 @@ class PaginasController extends Controller
     public function categorias($id)
     {
         $ref           = $id;
+        $ready = 0 ;
         $cat           = Categoria::find($id);
         $activo        = 'producto';
         $categorias    = Categoria::where('id_superior', null)->orderBy('orden', 'asc')->get();
@@ -52,7 +53,7 @@ class PaginasController extends Controller
         $productos     = Producto::orderBy('categoria_id')->get();
         $todos         = Producto::where('categoria_id', $id)->OrderBy('orden', 'ASC')->get();
 
-        return view('pages.categorias', compact('categorias', 'subcategorias', 'productos', 'productos_directos', 'activo', 'todos', 'ref', 'cat'));
+        return view('pages.categorias', compact('categorias', 'subcategorias', 'productos', 'productos_directos', 'activo', 'ready', 'todos', 'ref', 'cat'));
     }
 
     public function subcategorias($id)

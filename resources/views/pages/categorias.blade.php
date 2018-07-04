@@ -12,7 +12,7 @@
             <div class="col l12 m12 s12" style="padding-right: 0px;padding-left: 22px;">
                <div class="links col l12 s12 m12 left">
                <h7>
-                    <a href="/categorias" style="color: gray; padding-left: 75px;">
+                    <a href="{{ url('/productos') }}" style="color: gray; padding-left: 75px;">
                         Productos | 
                     </a>
                     <a href="{{ route('categorias', $cat->id)}}" style="color: gray;text-transform: lowercase">
@@ -141,6 +141,9 @@
                             <h2 class="center">
                                 {{ $prod->nombre }}
                             </h2>
+                            @if($ready == 0)    
+                                        @break;
+                                    @endif
                             @endforeach
                         </div>
                     </a>

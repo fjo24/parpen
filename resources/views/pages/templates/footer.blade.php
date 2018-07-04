@@ -33,110 +33,91 @@
                     </div>
                 </div>
             </div>
-            <div class="footer-b col l3 s12 m3">
-                <h5 class="titulo-footer">
+            <div class="footer-b col l3 s12 m3" style="    padding-left: 5%;">
+                <h5 class="titulo-footer" style="    margin-top: 46px;">
                     SITEMAP
                 </h5>
-                <div class="links">
+                <div class="linksb">
                     <ul>
                         <li>
-                            <a class="itemsb" href="#!">
-                                Home
+                            <a class="itemsb" href="{{ url('/') }}">
+                                INICIO
                             </a>
                         </li>
                         <li>
-                            <a class="itemsb" href="#!">
-                                Mantenimiento
-                            </a>
+                            <a class="itemsb" href="{{ url('/empresa') }}">
+                            QUIÉNES SOMOS
+                        </a>
                         </li>
                         <li>
-                            <a class="itemsb" href="#!">
-                                Productos
-                            </a>
+                            <a class="itemsb" href="{{ url('/productos') }}">
+                            PRODUCTOS
+                        </a>
                         </li>
                         <li>
-                            <a class="itemsb" href="#!">
-                                Empresa
-                            </a>
-                        </li>
-                    </ul>
-                    <ul style="">
-                        <li>
-                            <a class="grey-text text-lighten-3" href="#!">
-                                Consejos de Seguridad
-                            </a>
+                            <a class="itemsb" href="{{ url('/donde') }}">
+                            DÓNDE COMPRAR
+                        </a>
                         </li>
                         <li>
-                            <a class="grey-text text-lighten-3" href="#!">
-                                Obras
-                            </a>
+                            <a class="itemsb" href="{{ route('novedades', 'destacados') }}">
+                            NOVEDADES
+                        </a>
                         </li>
                         <li>
-                            <a class="grey-text text-lighten-3" href="#!">
-                                Clientes
-                            </a>
-                        </li>
-                        <li>
-                            <a class="grey-text text-lighten-3" href="#!">
-                                Contacto
-                            </a>
+                            <a class="itemsb" href="{{ url('/contacto') }}">
+                            CONTACTO
+                        </a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="leftitems col l3 s12 m3">
-                <h5 class="titulo-footer">
-                    SITEMAP
+                <h5 class="titulo-footer2" style="margin-top: 15%;">
+                    PRODUCTOS
                 </h5>
-                <div class="links">
+                <div class="linksb">
                     <ul>
                         <li>
-                            <a class="grey-text text-lighten-3" href="#!">
-                                Home
+                            <a class="itemsc" href="#!">
+                                ARMADORES DE PLÁSTICO
+
                             </a>
                         </li>
                         <li>
-                            <a class="grey-text text-lighten-3" href="#!">
-                                Mantenimiento
+                            <a class="itemsc" href="#!">
+                                AROS INOXIDABLES
+
                             </a>
                         </li>
                         <li>
-                            <a class="grey-text text-lighten-3" href="#!">
-                                Productos
+                            <a class="itemsc" href="#!">
+                                HERRAMIENTAS VARIAS
+
                             </a>
                         </li>
                         <li>
-                            <a class="grey-text text-lighten-3" href="#!">
-                                Empresa
-                            </a>
-                        </li>
-                    </ul>
-                    <ul style="">
-                        <li>
-                            <a class="grey-text text-lighten-3" href="#!">
-                                Consejos de Seguridad
+                            <a class="itemsc" href="#!">
+                                MARCADORES DE PASTAS
+
                             </a>
                         </li>
                         <li>
-                            <a class="grey-text text-lighten-3" href="#!">
-                                Obras
+                            <a class="itemsc" href="#!">
+                                MINI RODILLOS
+
                             </a>
                         </li>
                         <li>
-                            <a class="grey-text text-lighten-3" href="#!">
-                                Clientes
-                            </a>
-                        </li>
-                        <li>
-                            <a class="grey-text text-lighten-3" href="#!">
-                                Contacto
+                            <a class="itemsc" href="#!">
+                                MOLDES PLACAS
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="rightitems col l3 s12 m3 hide-on-med-and-down left">
-                <h5 class="titulo-footer">
+            <div class="footer_c col l3 s12 m3 hide-on-med-and-down left">
+                <h5 class="titulo-footer3" style="margin-top: -1%;">
                     PARPEN ARGENTINA
                 </h5>
                 <div class="links2">
@@ -144,46 +125,24 @@
                         <ul>
                             <li>
                                 <div class="row rightlist">
-                                    <div class="col s1">
-                                        <img alt="" src="{{asset('img/layouts/ubicacion.png')}}">
-                                        </img>
-                                    </div>
-                                    <div class="col s11">
+                                    <div class="col s12">
                                         {{$direccion->descripcion}}
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="row rightlist">
-                                    <div class="col s1">
-                                        <img alt="" src="{{asset('img/layouts/telefono.png')}}">
-                                        </img>
-                                    </div>
-                                    <div class="col s11">
+                                    <div class="col s12">
                                         {{$telefono->descripcion}}
-                                    |
+                                    </div>
+                                    <div class="col s12">             
                                         {{$telefono2->descripcion}}
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="row rightlist">
-                                    <div class="col s1">
-                                        <img alt="" src="{{asset('img/layouts/urgencias.png')}}">
-                                        </img>
-                                    </div>
-                                    <div class="col s11">
-                                        2313213
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="row rightlist">
-                                    <div class="col s1">
-                                        <img alt="" src="{{asset('img/layouts/email.png')}}">
-                                        </img>
-                                    </div>
-                                    <div class="col s11">
+                                    <div class="col s12">
                                         {{$email->descripcion}}
                                     </div>
                                 </div>

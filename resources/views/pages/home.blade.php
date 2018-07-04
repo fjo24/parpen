@@ -7,7 +7,7 @@
 @endsection
 @section('contenido')
 <div class="slider hide-on-med-and-down">
-    <ul class="slides" style="height: 561px!important;">
+    <ul class="slides" style="height: 561px!important;width: 100%">
         @foreach($sliders as $slider)
         <li>
             <img src="{{asset($slider->imagen)}}">

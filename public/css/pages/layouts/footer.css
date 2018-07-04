@@ -6,24 +6,28 @@ footer .logfooter {
     
 }
 footer .titulo-footer {
-    font-family: Arial;
+        font-family: 'Lato';
     color: #B3004A;
     font-size: 17px;
     font-weight: bold;
     padding-left: 77px;
 }
-footer .links {
+footer .linksb {
+        font-family: 'Lato';
     padding-left: 78px;
+        line-height: 33px!important;
+    font-weight: bold;
+    font-size: 15px;
 }
 footer .listlinks {
-    font-family: Arial;
+    font-family: 'Lato';
     color: #ffffff;
     font-size: 15px;
 }
 
 footer .listlinks li{
 	margin-bottom: 10px;
-	font-family: Arial;
+	font-family: 'Lato';
 }
 
 footer .row .col.l6 {
@@ -32,7 +36,7 @@ footer .row .col.l6 {
 
 footer .footer-b a{
 	position: relative;
-	top: 3px;
+	top: 3px!important;
 	color: #595959!important;
 }
 
@@ -43,17 +47,19 @@ footer .rightitems{
 }
 
 footer .links2 {
-    padding-left: 78px;
+        padding-left: 68px;
 }
 footer .listlinks2 {
-    font-family: Arial;
-    color: #ffffff;
+    color: #595959!important;
+    font-family: 'Lato';
+    line-height: 33px!important;
+    font-weight: bold;
     font-size: 15px;
 }
 
 footer .rightlist{
 	margin-bottom: 5px;
-	font-family: Arial;
+	font-family: 'Lato';
 }
 
 footer .item-redesf{
@@ -67,4 +73,42 @@ footer .li-redes-footer{
 
 footer .footer-a{
     height: 80%;
+}
+
+footer .titulo-footer2 {
+        font-family: 'Lato';
+    color: #B3004A;
+    font-size: 17px;
+    font-weight: bold;
+    padding-left: 77px;
+}
+
+footer .leftitems a{
+    position: relative;
+    top: 3px;
+    color: #595959!important;
+    font-family: 'Lato';
+    line-height: 33px!important;
+    font-weight: bold;
+    font-size: 15px;
+
+}
+
+footer .titulo-footer3 {
+        font-family: 'Lato';
+    color: #B3004A;
+    font-size: 17px;
+    font-weight: bold;
+    padding-left: 77px;
+}
+
+footer .footer_c a{
+    position: relative;
+    top: 3px;
+    color: #595959!important;
+    font-family: 'Lato';
+    line-height: 33px!important;
+    font-weight: bold;
+    font-size: 15px;
+
 }

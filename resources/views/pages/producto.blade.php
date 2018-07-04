@@ -156,7 +156,7 @@
                                 <div class="cont-ser">
                                             <div class="row imggrande">
                                                 <div class="col s12" style="padding-left: 0px;">
-                                                    @foreach($producto->imagenes as $imagen)
+                                                    @foreach($p->imagenes as $imagen)
                                                     <div class="cont-img">
                                                         <img alt="" class="responsive-img" id="producto" src="{{asset($imagen->imagen)}}" style="width: 100%;border:1px solid #AAAAAA;">
                                                         </img>
@@ -169,7 +169,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col s12" style="padding-left: 0px;padding-right: 0px;">
-                                                    @foreach($producto->imagenes as $imagen)
+                                                    @foreach($p->imagenes as $imagen)
                                                     <div class="col l4 s4 m2" style="padding-left: 0px;">
                                                         <div class="cont-img">
                                                             <img alt="" class="responsive-img" onclick="actualizar('{{asset($imagen->imagen)}}')" src="{{asset($imagen->imagen)}}" style="border: 1px solid #AAAAAA;">
