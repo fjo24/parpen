@@ -49,7 +49,9 @@ Route::get('/donde', ['uses' => 'PaginasController@dondeComprar', 'as' => 'donde
 Route::get('/dondelistado', ['uses' => 'PaginasController@dondeComprarlistado', 'as' => 'donde.comprar.listado']);
 
 //NOVEDADES
-Route::get('novedades/{tipo}', 'PaginasController@novedades')->name('novedades')->middleware('auth');
+Route::get('novedades/{tipo}', 'PaginasController@novedades')->name('novedades');
+//NOVEDADES
+Route::get('novedadesinfo/{id}', 'PaginasController@novedadesinfo')->name('novedadesinfo');
 
 //ZONA PRIVADA************************************************************************************************
 Route::get('/zonaprivada/productos', 'ZprivadaController@productos')->name('zproductos')->middleware('auth');

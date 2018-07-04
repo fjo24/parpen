@@ -4,7 +4,7 @@
 
 @section('contenido')
 <link href="{{ asset('css/pages/novedades.css') }}" rel="stylesheet" type="text/css"/>
-            <div class="container" style="width: 80%">
+<link href="{{ asset('css/pages/sliders/slider.css') }}" rel="stylesheet"/>
         <nav class="principalnov">
             <div class="row col l12 m12 s12 list">
                 
@@ -65,48 +65,18 @@
                 </ul>
             </div>
         </nav>
-@foreach($novedades as $novedad)
-                @if($novedad->seccion==$tipon)
-    <div class="row">
-        
-        <div class="contnovedad col l12 m12 s12">
-            <div class="col l4 m4 s12" style="padding-left: 0px;">
-            @foreach($novedad->imagenes as $imagen)
-                    <div class="imgnovedad"> 
-                        <img class="responsive-img" src="{{ asset($imagen->imagen) }}"/>
-                    </div>
-                    @if($ready == 0)    
-                        @break;
-                    @endif
-            @endforeach
-            </div>
-            <div class="col l8 m8 s12" style="padding-left: 29px;">
-                <div class="titulonovedad">
-                    {!! $novedad->nombre !!}
-                </div>
-                <div class="fechanovedad">
-                    {!! $novedad->fecha !!}
-                </div>
-                <div class="descripcionnovedad">
-                    {!! $novedad->descripcion !!}
-                </div>
-                <div class="flecha">
-                    <img class="responsive-img" src="{{ asset("/img/flecha.png") }}"/>
-                    <a href="{{ route('novedadesinfo', $novedad->id) }}">
-                    <span class="ver">
-                    VER MÁS
-                    </span>
-                </a>
-                </div>
-            </div>
-        </div>
-    </div>
-                @endif
-    
-@endforeach
-
-<br><br><br><br><br><br><br><br><br><br>
-            </div>
+<div class="container" style="width: 53%; margin-top: 5%;">
+<div class="slider hide-on-med-and-down">
+    <ul class="slides" style="height: 561px!important;">
+        @foreach($novedad->imagenes as $imagen)
+        <li>
+            <img src="{{asset($imagen->imagen)}}" style="width: 720px!important;">
+            </img>
+        </li>
+        @endforeach
+    </ul>
+</div>
+</div>
 <script src="{{ asset('js/jquery.tinycarousel.min.js') }}" type="text/javascript">
 </script>
 <script src="{{ asset('js/slick.min.js') }}" type="text/javascript">
@@ -115,3 +85,12 @@
 </script>
 @endsection
 
+@section('js')
+<script type="text/javascript">
+    $('.slider').slider({
+        indicators: true,
+        height: 540,
+        width:720,
+    });
+</script>
+@endsection

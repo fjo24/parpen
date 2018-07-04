@@ -112,6 +112,12 @@ class PaginasController extends Controller
         return view('pages.novedades', compact('tipon', 'novedades', 'activo', 'ready'));
     }
 
+    public function novedadesinfo($id)
+    {
+        $novedad     = Novedad::find($id);
+        $activo        = 'novedades';
+        return view('pages.novedadinfo', compact('novedad', 'activo'));
+    }
     public function empresa()
     {
         $activo    = 'empresa';
