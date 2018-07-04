@@ -2,83 +2,96 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\pedidom;
+use App\Catalogo;
+use App\Dato;
 use App\Producto;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\DB;
-Use App\Pedido;
-use Carbon\Carbon;
+
 class ZprivadaController extends Controller
 {
     public function productos()
     {
         $activo    = 'productos';
-        $carrito = Cart::content();   
-        $items = $carrito->all();
+        $carrito   = Cart::content();
+        $items     = $carrito->all();
         $ready     = 0;
         $config    = 4;
+        $shop      = 0;
         $productos = Producto::OrderBy('orden', 'ASC')->get();
         $aux       = Producto::orderBy('orden', 'ASC')->get();
         $prod      = $aux->toJson();
-      // dd($carrito->all());
-        return view('privada.productos', compact('carrito','activo', 'productos', 'ready', 'prod', 'config', 'items'));
+        // dd($carrito->all());
+        return view('privada.productos', compact('shop', 'carrito', 'activo', 'productos', 'ready', 'prod', 'config', 'items'));
     }
 
     public function add(Request $request)
     {
-
-        $activo   = 'pedido';
-        $producto = Producto::find($request->id);
+        $activo    = 'productos';
+        $carrito   = Cart::content();
+        $items     = $carrito->all();
+        $ready     = 0;
+        $config    = 4;
+        $shop      = 0;
+        $productos = Producto::OrderBy('orden', 'ASC')->get();
+        $producto  = Producto::find($request->id);
 
         if ($request->cantidad > 0) {
             Cart::add(['id' => $producto->id, 'name' => $producto->nombre, 'price' => $producto->precio, 'qty' => $request->cantidad, 'options' => ['codigo' => $producto->codigo, 'orden' => $producto->orden]]);
-            return view('privada.carrito', compact('activo'));
+            return redirect()->route('zproductos', compact('shop', 'carrito', 'activo', 'productos', 'ready', 'prod', 'config', 'items'));
         } else {
             return back();
         }
     }
 
+    public function carrito(Request $request)
+    {
+
+        $activo = 'pedido';
+
+        return view('privada.carrito', compact('activo'));
+    }
+
     public function send(Request $request)
     {
         $activo = 'carrito';
+        $dato   = Dato::where('tipo', 'mail')->first();
         foreach (Cart::content() as $row) {
             $producto = $row->name;
             $cantidad = $row->qty;
             $precio   = $row->price;
             //$idproducto = $row->rowId
         }
+        $carrito = Cart::content();
+        $items   = $carrito->all();
 
         $subtotal = Cart::Subtotal();
         $total    = Cart::Total();
         $mensaje  = $request->input('mensaje');
-       // dd($request->total);
-        $pedidox = new Pedido();
-        $pedidox->fecha = Carbon::now();
-        $pedidox->iva=8;
-        $pedidox->total=$subtotal;
-        $pedidox->distribuidor_id=1;
-        $pedidox->save();
+        // dd($request->total);
 
-        //$pedidox->productos
-        //$pedidox->productos()->sync(array('cantidad' => $request->cantidad[$i], 'cantidad' => $request->cantidad[$i], 3, 4));
+        Mail::send('privada.mailpedido', ['total' => $total, 'items' => $items, 'row' => $row, 'subtotal' => $subtotal, 'mensaje' => $mensaje], function ($message) {
 
-   //     for ($i = 0; $i < count($request->id); $i++) {
-   //         $pedidox->productos()->attach($request->producto[$i], ['cantidad' => $request->cantidad[$i], 'price' => $request->costo[$i]]);
-     //   }
+            $dato = Dato::where('tipo', 'email')->first();
+            $message->from('info@aberturastolosa.com.ar', 'Parpen');
 
-        Mail::to('fjo224@gmail.com')->send(new pedidom($producto, $cantidad, $precio, $subtotal, $total, $mensaje));
+            $message->to($dato->descripcion);
 
+            //Add a subject
+            $message->subject("Pedido");
+
+        });
         if (count(Mail::failures()) > 0) {
 
             $success = 'Ha ocurrido un error al enviar el correo';
-            dd("si");
+
         } else {
-            dd("no");
+
             $success = 'Pedido enviado correctamente';
 
         }
+
         Cart::destroy();
 
         return view('privada.carrito', compact('activo'))->with('success', $success);
@@ -90,6 +103,14 @@ class ZprivadaController extends Controller
         $activo = 'carrito';
         Cart::remove($id);
         return view('privada.carrito', compact('activo'));
+    }
+
+    public function listadeprecios()
+    {
+        $activo    = 'listadeprecios';
+        $catalogos = Catalogo::orderBy('nombre', 'ASC')->get();
+
+        return view('privada.listadeprecios', compact('activo', 'catalogos'));
     }
 
 }

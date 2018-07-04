@@ -4,12 +4,13 @@ namespace App\Http\Controllers\Adm;
 
 use App\Catalogo;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class CatalogosController extends Controller
 {
     public function index()
     {
-        $catalogos = Catalogo::orderBy('orden', 'ASC')->get();
+        $catalogos = Catalogo::orderBy('nombre', 'ASC')->get();
         return view('adm.catalogos.index', compact('catalogos'));
     }
 
@@ -18,7 +19,7 @@ class CatalogosController extends Controller
         return view('adm.catalogos.create');
     }
 
-    public function store(CatalogosRequest $request)
+    public function store(Request $request)
     {
 
         $catalogo         = new Catalogo();
@@ -43,7 +44,7 @@ class CatalogosController extends Controller
         return view('adm.catalogos.edit', compact('catalogo'));
     }
 
-    public function update(catalogosRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $catalogo         = catalogo::find($id);
         $id               = catalogo::all()->max('id');
@@ -72,8 +73,18 @@ class CatalogosController extends Controller
     {
         $catalogo = Catalogo::find($id);
         $path     = public_path();
-        $url      = $path . 'file/catalogos/' . $catalogo->pdf;
+        $url      = $path . '/' . $catalogo->pdf;
         return response()->download($url);
         return redirect()->route('catalogos.index');
     }
+
+    public function downloadPdf2($id)
+    {
+        $producto = Producto::find($id);
+        $path     = public_path();
+        $url      = $path . '/' . $producto->ficha;
+        return response()->download($url);
+        return redirect()->route('home');
+    }
+
 }

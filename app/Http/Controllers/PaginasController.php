@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Categoria;
 use App\Contenido_home;
+use App\Dato;
 use App\Destacado_home;
 use App\Destacado_mantenimiento;
 use App\Empresa;
@@ -12,6 +13,8 @@ use App\Novedad;
 use App\Producto;
 use App\Servicio;
 use App\Slider;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PaginasController extends Controller
 {
@@ -140,7 +143,7 @@ class PaginasController extends Controller
 
     public function enviarmail(Request $request)
     {
-
+        $activo   = 'contacto';
         $dato     = Dato::where('tipo', 'mail')->first();
         $nombre   = $request->nombre;
         $apellido = $request->apellido;
@@ -151,7 +154,7 @@ class PaginasController extends Controller
         Mail::send('pages.emails.contactomail', ['nombre' => $nombre, 'apellido' => $apellido, 'empresa' => $empresa, 'email' => $email, 'mensaje' => $mensaje], function ($message) {
 
             $dato = Dato::where('tipo', 'email')->first();
-            $message->from('info@aberturastolosa.com.ar', 'Excelsior');
+            $message->from('info@aberturastolosa.com.ar', 'Parpen');
 
             $message->to($dato->descripcion);
 
@@ -160,8 +163,8 @@ class PaginasController extends Controller
 
         });
         if (Mail::failures()) {
-            return view('pages.contacto');
+            return view('pages.contacto', compact('activo'));
         }
-        return view('pages.contacto');
+        return view('pages.contacto', compact('activo'));
     }
 }

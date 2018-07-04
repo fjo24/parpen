@@ -146,7 +146,7 @@
                 </div>
                 {{-- Menu final --}}
                 <div class="galeria2 col l8 m8 s12">
-                    <div class="col l12 m12 s12" style="padding: 0;">
+                    <div class="col l12 m12 s12" style="padding: 0;    height: 467px;">
                         
                         <div class="col l6 m12 s12 galeriadeproducto">
                                 
@@ -249,6 +249,9 @@
                             <h2 class="center">
                                 {{ $relacionado->nombre }}
                             </h2>
+                            @if($ready == 0)    
+                                        @break;
+                                    @endif
                             @endforeach
                         </div>
                     </a>

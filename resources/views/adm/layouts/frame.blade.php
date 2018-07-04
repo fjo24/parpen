@@ -288,6 +288,28 @@
                             </ul>
                         </div>
                     </li>
+                    <li class="bold">
+                        <a class="collapsible-header waves-effect waves-admin">
+                            <i class="material-icons">
+                                account_circle
+                            </i>
+                            Catalogos
+                        </a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <a href="{{route('catalogos.create')}}">
+                                        Agregar Catalogo
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('catalogos.index')}}">
+                                        Editar Catalogo
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                     @if(Auth::user())
                   @if(Auth::user()->nivel === 'administrador')
                     <li class="bold">

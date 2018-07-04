@@ -106,13 +106,13 @@
                     @endif
                 @if($activo=='pedido')
                     <li>
-                        <a class="zactivo" href="{{ url('/categorias') }}">
+                        <a class="zactivo" href="{{ route('carrito') }}">
                             PEDIDOS
                         </a>
                     </li>
                     @else
                     <li>
-                        <a href="{{ url('/categorias') }}">
+                        <a href="{{ route('carrito') }}">
                             PEDIDOS
                         </a>
                     </li>

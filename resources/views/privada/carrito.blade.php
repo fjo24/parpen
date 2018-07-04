@@ -62,17 +62,17 @@
 							        <textarea id="mensaje" name="mensaje" class="materialize-textarea" placeholder="Mensaje"></textarea>
 									</td>
 									<td class="total fs24 azul bold">SUBTOTAL</td>
-									<td>{{ '$'.$total*0.92 }}</td>
+									<td>{{ '$'.$total }}</td>
 								</tr>
 								<tr style="border-bottom: none;">
 									<td colspan="4"></td>
-									<td class="total fs24 azul bold">IVA</td>
-									<td>{{ '$'.$total*0.08}}</td>
+									<td class="total fs24 azul bold">IVA 21%</td>
+									<td>{{ '$'.$total*0.21}}</td>
 								</tr>
 								<tr style="border-bottom: none;">
 									<td colspan="4"></td>
 									<td class="total fs24 azul bold">TOTAL</td>
-									<td name>{{ '$'.$total }}</td>
+									<td name>{{ '$'.$total*1.21 }}</td>
 								</tr>
 								@endif
 							</tbody>

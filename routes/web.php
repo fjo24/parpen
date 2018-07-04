@@ -53,11 +53,13 @@ Route::get('novedades/{tipo}', 'PaginasController@novedades')->name('novedades')
 
 //ZONA PRIVADA************************************************************************************************
 Route::get('/zonaprivada/productos', 'ZprivadaController@productos')->name('zproductos');
+//LISTA DE PRECIOS************************************************************************************************
+Route::get('/zonaprivada/listadeprecios', 'ZprivadaController@listadeprecios')->name('listadeprecios');
 
 //REGISTRO DE DISTRIBUIDORES
-Route::get('registro',['uses'=>'DistribuidorController@index', 'as'=>'registro' ]);
-Route::post('/registro',['uses'=>'DistribuidorController@store', 'as'=>'cliente.store']);
-Route::post('/nuevousuario',['uses'=>'DistribuidorController@registroStore', 'as'=>'registro.store']);
+Route::get('registro', ['uses' => 'DistribuidorController@index', 'as' => 'registro']);
+Route::post('/registro', ['uses' => 'DistribuidorController@store', 'as' => 'cliente.store']);
+Route::post('/nuevousuario', ['uses' => 'DistribuidorController@registroStore', 'as' => 'registro.store']);
 
 //NOVEDADES
 Route::post('novedades/{tipo}', 'PaginasController@novedades')->name('novedades');
@@ -69,11 +71,12 @@ Route::post('login/distribuidor', ['uses' => 'DistribuidorController@loginDistri
 
 Route::group(['prefix' => 'carrito'], function () {
     Route::post('add', ['uses' => 'ZprivadaController@add', 'as' => 'carrito.add']);
+    Route::get('carrito', ['uses' => 'ZprivadaController@carrito', 'as' => 'carrito']);
     Route::get('delete/{id}', ['uses' => 'ZprivadaController@delete', 'as' => 'carrito.delete']);
     Route::post('enviar', ['uses' => 'ZprivadaController@send', 'as' => 'carrito.enviar']);
 });
 
-//ADMIN*******************************************************************************************************
+//ADMIN*************->middleware('admin')******************************************************************************************
 Route::prefix('adm')->group(function () {
 
     //DASHBOARD
@@ -82,6 +85,8 @@ Route::prefix('adm')->group(function () {
 
     /*------------CATALOGOS----------------*/
     Route::resource('catalogos', 'Adm\CatalogosController');
+    // Rutas de reportes pdf
+    Route::get('pdf/{id}', ['uses' => 'Adm\CatalogosController@downloadPdf', 'as' => 'file-pdf']);
 
     /*------------CATEGORIAS----------------*/
     Route::resource('categorias', 'Adm\CategoriasController');
