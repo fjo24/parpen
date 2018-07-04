@@ -30,14 +30,15 @@
                   <div class="areaprivada"> 
   <ul id='dropdown1' class='dropdown-content' style="background: none, width:400px!important; height: 300px!important;">
     <div class="container" style="background: #FBFBFB; margin-top: 37px !important; outline: none; width: 256px;">
+
         {!!Form::open(['route'=>'login', 'method'=>'POST'])!!}
         <div class="input-field col s12" style="padding-left: 10px; margin: 2px; margin-top: 15px;">
-          {!!Form::text('email',null,['class'=>'', 'required', 'autocomplete' => 'off'])!!}
-          <label for="email" style="color:white; font-weight: 500; font-family: 'Raleway'; font-size: 15px;">Email</label>
+          {!!Form::text('username',null,['class'=>'', 'required', 'autocomplete' => 'off'])!!}
+          <label for="username" style="color:white; font-weight: 500; font-family: 'Raleway'; font-size: 15px;">Username</label>
         </div>
-        <div class="input-field col s12" style="padding-left: 10px; margin: 2px;" placeholder="contrasena">
-          {!!Form::password('contrasena',null,['class'=>'', 'required'])!!}
-          <label for="contrasena" style="color:white; font-weight: 500; font-family: 'Raleway'; font-size: 15px;" >Contraseña</label>
+        <div class="input-field col s12" style="padding-left: 10px; margin: 2px;" placeholder="password">
+          {!!Form::password('password',null,['class'=>'', 'required'])!!}
+          <label for="password" style="color:white; font-weight: 500; font-family: 'Raleway'; font-size: 15px;" >Contraseña</label>
         </div>
 
         <style type="text/css">

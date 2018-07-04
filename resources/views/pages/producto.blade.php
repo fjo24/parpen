@@ -214,7 +214,7 @@
 
 
 
-
+                @isset($p->video)
                     <div class="masproducto col l12 m12 s12">
                         <div class="col l6 m12 s12">
                                 <div class="cont-ser">
@@ -234,6 +234,8 @@
                         </div>
               
                     </div>
+                    @endisset
+
                     <div class="col l12 m12 s12 infoproducto" style="padding-left: 29px;">
                             <div class="trelacionados">    
                                 Productos Relacionados

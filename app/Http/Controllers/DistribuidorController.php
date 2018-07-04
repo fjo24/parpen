@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Distribuidor;
+use App\User;
 use Illuminate\Support\Facades\DB;
 use Redirect;
 
@@ -18,11 +18,16 @@ class DistribuidorController extends Controller
 
     public function registroStore(Request $request)
     {
+        $usuario           = new User();
+        $usuario->name     = $request->name;
+        $usuario->username = $request->username;
+        $usuario->email    = $request->email;
+        $usuario->nivel    = 'usuario';
+        $usuario->password = \Hash::make($request->password);
+        $usuario->save();
 
-        $datos = $request->all();
-        Distribuidor::create($datos);
         $success = 'Usuario creado correctamente';
-        return Redirect::to('registro')->with('success', $success);
+        return redirect('zonaprivada/productos')->with('success', $success);
     }
 
     public function store(Request $request){

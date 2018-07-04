@@ -159,12 +159,12 @@ header .li-red {
 header .principal {
     height: 190px!important;
     background-color: white;
-    font-family: arial;
+    font-family: 'Asap';
 }
 nav ul a {
     color: #7D0045!important;
     font-size: 16px!important;
-    font-family: arial;
+    font-family: 'Asap';
     margin: 0 12px;
     padding: 0!important;
 }

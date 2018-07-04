@@ -17,10 +17,10 @@ class Admin
     public function handle($request, Closure $next)
     {
         if (auth()->user()->nivel == 'administrador') {
-            return redirect()->route('dashboard');
+            return $next($request);
         }
-        return redirect()->route('zproductos')
+        return redirect()->route('zproductos');
         //->with('error', 'NO TIENES PERMISO PARA ACCEDER A ESTA AREA')
-        ;
     }
+
 }

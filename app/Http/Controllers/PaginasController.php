@@ -32,7 +32,7 @@ class PaginasController extends Controller
 
     public function productos()
     {
-        $activo        = 'producto';
+        $activo        = 'productos';
         $categorias    = Categoria::where('id_superior', null)->orderBy('orden', 'asc')->get();
         $subcategorias = Categoria::whereNotNull('id_superior')->orderBy('orden', 'asc')->get();
         $productos     = Producto::orderBy('categoria_id')->get();
@@ -47,7 +47,7 @@ class PaginasController extends Controller
         $ref           = $id;
         $ready = 0 ;
         $cat           = Categoria::find($id);
-        $activo        = 'producto';
+        $activo        = 'productos';
         $categorias    = Categoria::where('id_superior', null)->orderBy('orden', 'asc')->get();
         $subcategorias = Categoria::whereNotNull('id_superior')->orderBy('orden', 'asc')->get();
         $productos     = Producto::orderBy('categoria_id')->get();
@@ -63,7 +63,7 @@ class PaginasController extends Controller
         $ready         = 0;
         $ref           = $sub->id_superior;
         $cat           = Categoria::find($ref);
-        $activo        = 'producto';
+        $activo        = 'productos';
         $categorias    = Categoria::where('id_superior', null)->orderBy('orden', 'asc')->get();
         $subcategorias = Categoria::whereNotNull('id_superior')->orderBy('orden', 'asc')->get();
         $productos     = Producto::orderBy('categoria_id')->get();
@@ -95,7 +95,7 @@ class PaginasController extends Controller
         $relacionados  = Producto::OrderBy('orden', 'ASC')->Where('categoria_id', $p->categoria_id)->get();
         $subref        = $sub->id;
         $ref           = $sub->id_superior;
-        $activo        = 'producto';
+        $activo        = 'productos';
         $categorias    = Categoria::where('id_superior', null)->orderBy('orden', 'asc')->get();
         $subcategorias = Categoria::whereNotNull('id_superior')->orderBy('orden', 'asc')->get();
         $productos     = Producto::orderBy('categoria_id')->get();

@@ -39,7 +39,7 @@
 
 			<div class="col l4">
 
-				{!!Form::open(['route'=>'cliente.store', 'method'=>'POST', 'class' => 'col s12'])!!}
+				{!!Form::open(['route'=>'login', 'method'=>'POST', 'class' => 'col s12'])!!}
 
 					<h4 class="datos">Ya soy usuario</h4>
 
@@ -47,9 +47,9 @@
 
 	                        <div class="input-field col s12">
 
-	                            {!!Form::text('email',null,['class'=>'validate'])!!}
+	                            {!!Form::text('username',null,['class'=>'validate'])!!}
 
-	                            {!!Form::label('Correo electrónico')!!}
+	                            {!!Form::label('Username')!!}
 
 	                        </div>
 
@@ -106,7 +106,7 @@
 
 						      		{!! Form::label('Username') !!}
 
-									{!! Form::text('userdistribuidor', null, ['class'=>'', 'required']) !!}
+									{!! Form::text('username', null, ['class'=>'', 'required']) !!}
 
 							    </div>
 
@@ -132,18 +132,6 @@
 						      		{!! Form::label('Contraseña *') !!}
 
 									{!! Form::password('password', null, ['class'=>'validate', 'required']) !!}
-
-							    </div>
-
-							</div>
-
-							<div class="row">
-
-						      	<div class="input-field col s12">
-
-						      		{!! Form::label('Teléfono *') !!}
-
-									{!! Form::text('phone', null, ['class'=>'validate', 'required']) !!}
 
 							    </div>
 

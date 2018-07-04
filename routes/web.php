@@ -49,12 +49,12 @@ Route::get('/donde', ['uses' => 'PaginasController@dondeComprar', 'as' => 'donde
 Route::get('/dondelistado', ['uses' => 'PaginasController@dondeComprarlistado', 'as' => 'donde.comprar.listado']);
 
 //NOVEDADES
-Route::get('novedades/{tipo}', 'PaginasController@novedades')->name('novedades');
+Route::get('novedades/{tipo}', 'PaginasController@novedades')->name('novedades')->middleware('auth');
 
 //ZONA PRIVADA************************************************************************************************
-Route::get('/zonaprivada/productos', 'ZprivadaController@productos')->name('zproductos');
+Route::get('/zonaprivada/productos', 'ZprivadaController@productos')->name('zproductos')->middleware('auth');
 //LISTA DE PRECIOS************************************************************************************************
-Route::get('/zonaprivada/listadeprecios', 'ZprivadaController@listadeprecios')->name('listadeprecios');
+Route::get('/zonaprivada/listadeprecios', 'ZprivadaController@listadeprecios')->name('listadeprecios')->middleware('auth');
 
 //REGISTRO DE DISTRIBUIDORES
 Route::get('registro', ['uses' => 'DistribuidorController@index', 'as' => 'registro']);
@@ -77,37 +77,37 @@ Route::group(['prefix' => 'carrito'], function () {
 });
 
 //ADMIN*************->middleware('admin')******************************************************************************************
-Route::prefix('adm')->group(function () {
+Route::prefix('adm')->middleware('admin')->middleware('auth')->group(function () {
+    Route::get('/', 'Adm\AdminController@dashboard')->name('dashboard');
 
     //DASHBOARD
-    Route::get('/', 'Adm\AdminController@dashboard')->name('dashboard');
-    Route::get('/dashboard', 'Adm\AdminController@dashboard')->name('dashboard');
+    Route::get('/dashboard', 'Adm\AdminController@admin')->middleware('admin');
 
     /*------------CATALOGOS----------------*/
-    Route::resource('catalogos', 'Adm\CatalogosController');
+    Route::resource('catalogos', 'Adm\CatalogosController')->middleware('admin');
     // Rutas de reportes pdf
     Route::get('pdf/{id}', ['uses' => 'Adm\CatalogosController@downloadPdf', 'as' => 'file-pdf']);
 
     /*------------CATEGORIAS----------------*/
-    Route::resource('categorias', 'Adm\CategoriasController');
+    Route::resource('categorias', 'Adm\CategoriasController')->middleware('admin');
 
     /*------------CONTENIDO HOMES----------------*/
-    Route::resource('homes', 'Adm\ContenidohomesController');
+    Route::resource('homes', 'Adm\ContenidohomesController')->middleware('admin');
 
     /*------------DATOS----------------*/
-    Route::resource('datos', 'adm\DatosController');
+    Route::resource('datos', 'adm\DatosController')->middleware('admin');
 
     /*------------DESTACADO HOMES----------------*/
-    Route::resource('destacadoshomes', 'Adm\DestacadohomesController');
+    Route::resource('destacadoshomes', 'Adm\DestacadohomesController')->middleware('admin');
 
     /*------------DISTRIBUIDORES----------------*/
-    Route::resource('distribuidores', 'Adm\DistribuidoresController');
+    Route::resource('distribuidores', 'Adm\DistribuidoresController')->middleware('admin');
 
     /*------------EMPRESAS----------------*/
-    Route::resource('empresas', 'Adm\EmpresasController');
+    Route::resource('empresas', 'Adm\EmpresasController')->middleware('admin');
 
     /*------------NOVEDADES----------------*/
-    Route::resource('novedades', 'Adm\NovedadesController');
+    Route::resource('novedades', 'Adm\NovedadesController')->middleware('admin');
     /*------------Imagen----------------*/
     Route::get('novedad/{novedad_id}/imagenes/', 'Adm\NovedadesController@imagenes')->name('imgnovedad.lista'); //index del modulo imagenes
     //agregar nuevas imagenes de productos
@@ -147,4 +147,4 @@ Route::prefix('adm')->group(function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('admin');
