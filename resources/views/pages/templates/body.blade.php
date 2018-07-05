@@ -10,7 +10,7 @@
                                 :: Parpen :: - @yield('titulo')
                             </title>
 
-                            <link href="{{ asset('img/logo_principal.png') }}" rel="icon" type="image/png"/>
+                            <link href="{{ asset('img/favicon.png') }}" rel="icon" type="image/png"/>
                             
                             <link href="{{ asset('css/pages/layouts/header.css') }}" rel="stylesheet">
                                 <link href="{{ asset('css/pages/layouts/footer.css') }}" rel="stylesheet">

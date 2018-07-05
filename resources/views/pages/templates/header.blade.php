@@ -29,16 +29,16 @@
                   <!-- Dropdown LOGIN -->
                   <div class="areaprivada"> 
   <ul id='dropdown1' class='dropdown-content' style="background: none, width:400px!important; height: 300px!important;">
-    <div class="container" style="background: #FBFBFB; margin-top: 37px !important; outline: none; width: 256px;">
+    <div class="container" style="background: #FAFAFA; margin-top: 19px !important; outline: none; width: 282px;">
 
         {!!Form::open(['route'=>'login', 'method'=>'POST'])!!}
-        <div class="input-field col s12" style="padding-left: 10px; margin: 2px; margin-top: 15px;">
+        <div class="input-field col s12" style="padding-left: 10px;    border-bottom: 1px solid #595959; margin: 2px; margin-top: 14px;">
           {!!Form::text('username',null,['class'=>'', 'required', 'autocomplete' => 'off'])!!}
-          <label for="username" style="color:white; font-weight: 500; font-family: 'Raleway'; font-size: 15px;">Username</label>
+          <label for="username" style="color:gray; font-weight: 500; font-family: 'Lato'; font-size: 15px;">Username</label>
         </div>
-        <div class="input-field col s12" style="padding-left: 10px; margin: 2px;" placeholder="password">
+        <div class="input-field col s12" style="padding-left: 10px;    border-bottom: 1px solid #595959; margin: 2px;" placeholder="password">
           {!!Form::password('password',null,['class'=>'', 'required'])!!}
-          <label for="password" style="color:white; font-weight: 500; font-family: 'Raleway'; font-size: 15px;" >Contraseña</label>
+          <label for="password" style="color:gray; font-weight: 500; font-family: 'Lato'; font-size: 15px;" >Contraseña</label>
         </div>
 
         <style type="text/css">
@@ -51,13 +51,15 @@
 
         </style>
 
-        <div class="col s12" style="    position: relative;
-    right: 24%;">
-            {!!Form::submit('INGRESAR', ['class'=>'waves-effect waves-light btn right colorboton'])!!}
+        <div class="col s12" style="position: relative;right: 24%;">
+        <input class="waves-effect waves-light btn right colorboton" type="submit" value="INGRESAR" style="
+    color: white;
+">
+
         </div>
         
       <li class="center" style="font-size: 12px;color: pink; text-decoration: none;">
-      <a href="{{ url('registro') }}" style="color: #FF608A!important">
+      <a href="{{ url('registro') }}" style="color: #FF608A!important; text-align: center;">
       CREAR UNA CUENTA NUEVA
         </a>
       </li>
@@ -70,15 +72,15 @@
 
 
                     <div class="li-redes">
-                        <a href="">
+                        <a href="https://es-la.facebook.com/parpenargentina/">
                             <img alt="" class="" src="{{asset('img/layouts/facebook.png')}}">
                             </img>
                         </a>
-                        <a href="">
+                        <a href="https://www.instagram.com/parpenargentina/">
                             <img alt="" class="" src="{{asset('img/layouts/instagram.png')}}">
                             </img>
                         </a>
-                        <a href="">
+                        <a href="https://www.youtube.com/channel/UCSrcO4wXydma0e5SnYICd1g">
                             <img alt="" class="" src="{{asset('img/layouts/youtube.png')}}">
                             </img>
                         </a>
@@ -152,7 +154,7 @@
   -->
                 </ul>
                 <a class="brand-logo center" href="{{ url('/') }}">
-                    <img alt="" src="{{asset('img/logo_principal.png')}}">
+                    <img alt="" src="{{asset('img/logo_footer.png')}}">
                     </img>
                 </a>
                 <a class="sidenav-trigger" data-target="mobile-demo" href="#">
