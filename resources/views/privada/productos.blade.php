@@ -27,7 +27,7 @@
                             Imagen
                         </th>
                         <th class="">
-                            Código
+                            Categoria
                         </th>
                         <th class="">
                             Descripción
@@ -62,7 +62,7 @@
                                     @endif
                             @endforeach
                             </td>
-                            <td class="tcodigo ">{!! $producto->codigo !!}</td>
+                            <td class="tcodigo ">{!! $producto->categoria->nombre !!}</td>
                             <td class="tdescripcion ">
                                 {!! $producto->nombre !!}
                             </td>

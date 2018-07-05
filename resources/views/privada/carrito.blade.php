@@ -12,6 +12,20 @@
 
 	<div class="container" style="width:90%;">
 
+@if(isset($success))
+	@if($success == 'Ha ocurrido un error al enviar el correo')
+		<div class="col s12 card-panel red lighten-4 white-text text-darken-4">
+		{{($success) }}
+		</div>
+	@endif
+
+	@if($success == 'Pedido enviado correctamente')
+		<div class="col s12 card-panel green lighten-4 black-text text-darken-4" style="height: 70px">
+		{{($success) }}
+		</div>
+	@endif
+@endif
+
 	  	<div class="row mb50">
 				<div class="col s12">
 	  			@if(Cart::count() > 0)

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Catalogo;
 use App\Dato;
 use App\Producto;
+use Laracasts\Flash\Flash;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -84,7 +85,7 @@ class ZprivadaController extends Controller
         });
         if (count(Mail::failures()) > 0) {
 
-            $success = 'Ha ocurrido un error al enviar el correo';
+            $failed = 'Ha ocurrido un error al enviar el correo';
 
         } else {
 
@@ -94,7 +95,7 @@ class ZprivadaController extends Controller
 
         Cart::destroy();
 
-        return view('privada.carrito', compact('activo'))->with('success', $success);
+        return view('privada.carrito', compact('activo', 'success'));
 
     }
 
