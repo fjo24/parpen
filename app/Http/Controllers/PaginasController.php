@@ -45,7 +45,7 @@ class PaginasController extends Controller
     public function categorias($id)
     {
         $ref           = $id;
-        $ready = 0 ;
+        $ready         = 0;
         $cat           = Categoria::find($id);
         $activo        = 'productos';
         $categorias    = Categoria::where('id_superior', null)->orderBy('orden', 'asc')->get();
@@ -114,9 +114,10 @@ class PaginasController extends Controller
 
     public function novedadesinfo($id)
     {
-        $novedad     = Novedad::find($id);
-        $activo        = 'novedades';
-        return view('pages.novedadinfo', compact('novedad', 'activo'));
+        $novedad = Novedad::find($id);
+        $tipon   = $novedad->seccion;
+        $activo  = 'novedades';
+        return view('pages.novedadinfo', compact('novedad', 'activo', 'tipon'));
     }
     public function empresa()
     {
@@ -173,5 +174,29 @@ class PaginasController extends Controller
             return view('pages.contacto', compact('activo'));
         }
         return view('pages.contacto', compact('activo'));
+    }
+
+    public function buscar(Request $request)
+    {
+
+        $busqueda = $request->buscar;
+
+        $busca = 1;
+        $ready = 0;
+        //$metadatos = Metadato::where('section','buscar')->get();
+        $activo    = 'productos';
+        $productos = Producto::where('nombre', 'like', '%' . $busqueda . '%')->
+            orwhere('codigo', 'like', '%' . $busqueda . '%')->get();
+
+        $activo        = 'productos';
+        $categorias    = Categoria::where('id_superior', null)->orderBy('orden', 'asc')->get();
+        $subcategorias = Categoria::whereNotNull('id_superior')->orderBy('orden', 'asc')->get();
+        $productos     = Producto::orderBy('categoria_id')->get();
+        $todos         = Producto::where('nombre', 'like', '%' . $busqueda . '%')->
+            orwhere('codigo', 'like', '%' . $busqueda . '%')->get();
+        $ready = 0;
+
+        return view('pages.productos', compact('categorias', 'subcategorias', 'productos', 'productos_directos', 'activo', 'todos', 'ready'));
+
     }
 }

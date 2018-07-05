@@ -3,8 +3,9 @@
 @section('titulo', 'Novedades - Parpen')
 
 @section('contenido')
-<link href="{{ asset('css/pages/novedades.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('css/pages/sliders/slider.css') }}" rel="stylesheet"/>
+<link href="{{ asset('css/pages/novedades.css') }}" rel="stylesheet" type="text/css"/>
+<div class="container" style="width: 80%">
         <nav class="principalnov">
             <div class="row col l12 m12 s12 list">
                 
@@ -65,7 +66,8 @@
                 </ul>
             </div>
         </nav>
-<div class="container" style="width: 53%; margin-top: 5%;">
+    </div>
+<div class="container" style="width: 53%; margin-top: 5%; margin-bottom: 5%;">
 <div class="slider hide-on-med-and-down">
     <ul class="slides" style="height: 561px!important;">
         @foreach($novedad->imagenes as $imagen)
@@ -76,6 +78,20 @@
         @endforeach
     </ul>
 </div>
+<div class="titulonovedad">
+                    {!! $novedad->nombre !!}
+                </div>
+                <div class="fechanovedad">
+                    {!! $novedad->fecha !!}
+                </div>
+                <div class="descripcionnovedad">
+                    {!! $novedad->descripcion !!}
+                </div>
+                @isset($novedad->video)
+                    <div class="center masproducto col l12 m12 s12" style="margin-top: 9%;margin-bottom: 16%">
+                        <iframe width="671" height="383" src="{!! $novedad->video!!}" frameborder="0" allowfullscreen></iframe>              
+                    </div>
+                    @endisset
 </div>
 <script src="{{ asset('js/jquery.tinycarousel.min.js') }}" type="text/javascript">
 </script>
