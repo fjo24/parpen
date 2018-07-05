@@ -45,7 +45,7 @@
 
 	                    <div class="row">
 
-	                        <div class="input-field col s12">
+	                        <div class="usuario_input input-field col s12">
 
 	                            {!!Form::text('username',null,['class'=>'validate'])!!}
 
@@ -57,7 +57,7 @@
 
 	                    <div class="row">
 
-	                        <div class="input-field col s12">
+	                        <div class="contrasena_input input-field col s12">
 
 	                            {!!Form::password('password',['class'=>'validate'])!!}
 
@@ -68,9 +68,9 @@
 	                    </div>
 
 
-						<div class="col s12 no-padding sub">
+						<div class="col s12 no-padding sub" style="">
 
-								{!! Form::submit('Ingresar', ['class'=>'waves-effect waves-light btn right pink bg-azul']) !!}
+								{!! Form::submit('Ingresar', ['class'=>'waves-effect waves-light btn right bg-azul']) !!}
 
 							</div>
 
@@ -94,7 +94,7 @@
 
 						      		{!! Form::label('Nombre *') !!}
 
-									{!! Form::text('name', null, ['class'=>'validate', 'required']) !!}
+									{!! Form::text('name', null, ['class'=>'', 'required']) !!}
 
 							    </div>
 
@@ -119,7 +119,7 @@
 
 						      		{!! Form::label('Correo electrónico *') !!}
 
-									{!! Form::email('email', null, ['class'=>'validate', 'required']) !!}
+									{!! Form::email('email', null, ['class'=>'', 'required']) !!}
 
 							    </div>
 
@@ -131,7 +131,7 @@
 
 						      		{!! Form::label('Contraseña *') !!}
 
-									{!! Form::password('password', null, ['class'=>'validate', 'required']) !!}
+									{!! Form::password('password', null, ['class'=>'', 'required']) !!}
 
 							    </div>
 
@@ -139,7 +139,7 @@
 
 							<div class="col s12 no-padding sub">
 
-								{!! Form::submit('REGÍSTRATE', ['class'=>'waves-effect waves-light btn right pink bg-azul']) !!}
+								{!! Form::submit('REGÍSTRATE', ['class'=>'waves-effect waves-light btn right bg-azul']) !!}
 
 							</div>
 

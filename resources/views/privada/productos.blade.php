@@ -23,25 +23,25 @@
             <table class="display" id="tprivada" style="width:100%;margin-bottom: 13%;">
                 <thead>
                     <tr class="trprincipal">
-                        <th class="center">
+                        <th class="">
                             Imagen
                         </th>
-                        <th class="center">
+                        <th class="">
                             Código
                         </th>
-                        <th class="center">
+                        <th class="">
                             Descripción
                         </th>
-                        <th class="center">
+                        <th class="">
                             Medidas
                         </th>
-                        <th class="center">
+                        <th class="">
                             Embalaje
                         </th>
-                        <th style="width: 128px" class="center">
+                        <th style="width: 128px" class="">
                             Cantidad de Embalajes
                         </th>
-                        <th style="width: 128px" class="center">
+                        <th style="width: 128px" class="">
                             Precio Unitario
                         </th>
                         <th>
@@ -54,7 +54,7 @@
                      {!! Form::open(['route'=>'carrito.add','id'=>'formpedido','METHOD'=>'POST'])!!}
                         <tr>
                             <div><input type="hidden" value="{{$producto->id}}" name="id"></div>
-                            <td class="timagen center" style="width: 95px; height: 85px;">
+                            <td class="timagen " style="width: 95px; height: 85px;">
                             @foreach($producto->imagenes as $img)
                             <img class="responsive-img" src="{{ asset($img->imagen) }}"/>
                             @if($ready == 0)    
@@ -62,23 +62,23 @@
                                     @endif
                             @endforeach
                             </td>
-                            <td class="tcodigo center">{!! $producto->codigo !!}</td>
-                            <td class="tdescripcion center">
+                            <td class="tcodigo ">{!! $producto->codigo !!}</td>
+                            <td class="tdescripcion ">
                                 {!! $producto->nombre !!}
                             </td>
-                            <td class="center" value="medida" name="medida">{!! $producto->medidas !!}</td>
+                            <td class="" value="medida" name="medida">{!! $producto->medidas !!}</td>
                             {{ Form::hidden('medidas', $producto->medidas) }}
-                            <td class="center">{!! $producto->embalaje !!}</td>
-                            <td class="center">
+                            <td class="">{!! $producto->embalaje !!}</td>
+                            <td class="">
                                 <label for="cantidad">Cantidad</label>
                             <input type="number" name="cantidad" value="1" style="width: 46px;">
                             </td>
-                            <td class="center">
+                            <td class="">
                                 {!! $producto->precio !!}
                             </td>
                             {{ Form::hidden('precio', $producto->precio) }}
 
-                            <td class="center">
+                            <td class="">
                                 
                                 @isset($items)
 

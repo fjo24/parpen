@@ -9,4 +9,24 @@
 .datos{
 	color: #FF5E87;
 }
- 
+
+.usuario_input label:after{
+	color:#FF608A;
+}
+
+input[type=text].valid:not(.browser-default){
+	    border-bottom: 1px solid #FF608A;
+    -webkit-box-shadow: 0 1px 0 0 #FF608A;
+    box-shadow: 0 1px 0 0 #FF608A;
+}
+
+.btn, .btn-large, .btn-small {
+    text-decoration: none;
+    color: #fff;
+    background-color: #FF608A!important;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    cursor: pointer;
+}

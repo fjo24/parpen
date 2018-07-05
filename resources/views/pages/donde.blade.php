@@ -103,7 +103,7 @@
 			  
 			  	var cantidad = $("#cantidad").val();
 			  	var p1, p2;
-			  	var ubicacion1, ubicacion2;
+			  	var ubicacion1, ubicacion2, ubicacion3, ubicacion4;
 			  	var distancia;
 			  	ubicacion2 = new google.maps.LatLng(position.lat, position.lng);
 			  	map.setCenter(position);
@@ -147,7 +147,7 @@
 </script>
 <script type="text/javascript">
     $('.logo').click(() => {
-            window.location.href = "/drimer";
+            window.location.href = "/parpen";
         });
 </script>
 @endsection

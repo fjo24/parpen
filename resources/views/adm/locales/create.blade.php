@@ -45,11 +45,11 @@
             </div>
             <div class="input-field col l6 s12">
                 {!!Form::label('Logitud:')!!}
-                        {!!Form::text('logitud', null , ['class'=>'', 'required'])!!}
+                        {!!Form::text('lng', null , ['class'=>'', 'required'])!!}
             </div>
             <div class="input-field col l6 s12">
                 {!!Form::label('Latitud:')!!}
-                        {!!Form::text('latitud', null , ['class'=>'', 'required'])!!}
+                        {!!Form::text('lat', null , ['class'=>'', 'required'])!!}
             </div>
         </div>
         <div class="col l12 s12 no-padding">

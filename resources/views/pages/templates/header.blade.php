@@ -32,7 +32,7 @@
     <div class="container" style="background: #FAFAFA; margin-top: 19px !important; outline: none; width: 282px;">
 
         {!!Form::open(['route'=>'login', 'method'=>'POST'])!!}
-        <div class="input-field col s12" style="padding-left: 10px;    border-bottom: 1px solid #595959; margin: 2px; margin-top: 14px;">
+        <div class="input-field col s12" style="padding-left: 10px;    border-bottom: 1px solid #595959; margin: 2px; margin-top: 1px; margin-bottom: 9px;">
           {!!Form::text('username',null,['class'=>'', 'required', 'autocomplete' => 'off'])!!}
           <label for="username" style="color:gray; font-weight: 500; font-family: 'Lato'; font-size: 15px;">Username</label>
         </div>
@@ -51,10 +51,9 @@
 
         </style>
 
-        <div class="col s12" style="position: relative;right: 24%;">
-        <input class="waves-effect waves-light btn right colorboton" type="submit" value="INGRESAR" style="
-    color: white;
-">
+        <div class="col s12" style="position: relative;right: 24%;margin-top: 9%;
+    margin-bottom: 2%;">
+        <input class="waves-effect waves-light btn right colorboton" type="submit" value="INGRESAR" style="color: white;font-family: 'Lato';font-weight: bold;">
 
         </div>
         

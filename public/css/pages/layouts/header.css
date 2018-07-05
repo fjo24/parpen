@@ -21,7 +21,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 }
 
 .dropdown-content{
-        background-color: #fff;
+        background-color: #fafafa!important;
     margin: 0;
     display: none;
     min-width: 100px;
@@ -31,6 +31,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     right: 0%!important;
     left: 43%!important;
     width: 300px!important;
+    height: 265px;
     top: 0;
     z-index: 9999;
     -webkit-transform-origin: 0 0;
@@ -228,3 +229,9 @@ nav ul li {
     background-color: #7D0045!important;
 }
 
+.colorboton input{
+        color: white;
+    font-family: 'Lato';
+    font-weight: bold;
+
+}

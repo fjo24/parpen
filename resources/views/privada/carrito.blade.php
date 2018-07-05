@@ -43,7 +43,7 @@
 									
 									<td></td>
 									<td class="capitalize">{{ $row->name }}</td>
-									<td><input type="number" name="cantidad" value="{{ $row->qty }}" style="width: 20%;border-top: 1px solid #9e9e9e;border-right: 1px solid #9e9e9e;border-left: 1px solid #9e9e9e;"></td>
+									<td>{{ $row->qty }}</td>
 									<td>{{ '$'.$row->price }}</td>
 									<td>{{ '$'.$row->price*$row->qty }}</td>
 									<td>

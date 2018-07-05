@@ -29,8 +29,8 @@ class LocalesController extends Controller
         $local->localidad = $request->localidad;
         $local->provincia = $request->provincia;
         $local->telefono  = $request->telefono;
-        $local->logitud   = $request->logitud;
-        $local->latitud   = $request->latitud;
+        $local->lng   = $request->lng;
+        $local->lat   = $request->lat;
 
         $local->save();
         return redirect()->route('locales.index');
@@ -50,8 +50,8 @@ class LocalesController extends Controller
         $local->localidad = $request->localidad;
         $local->provincia = $request->provincia;
         $local->telefono  = $request->telefono;
-        $local->logitud   = $request->logitud;
-        $local->latitud   = $request->latitud;
+        $local->lng   = $request->lng;
+        $local->lat   = $request->lat;
 
         $local->save();
         return redirect()->route('locales.index');
