@@ -69,6 +69,10 @@ header('Access-Control-Allow-Origin: *');
   });
 
 
-        </script>
+        $('.dropdown-button').dropdown({
+          hover: true
+        });
+
+    </script>
     </body>
 </html>

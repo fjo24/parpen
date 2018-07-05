@@ -13,7 +13,7 @@
                 {{-- Menu inicio --}}
                 <div class="menuproductos col l4 m4 s12">
                     <div class="menu-titulo">
-                        FILTROS
+                        PRODUCTOS
                     </div>
                     <div class="activado menu-todos">
                         <a href="{{ route('productos')}}">

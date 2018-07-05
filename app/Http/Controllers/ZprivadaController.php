@@ -34,13 +34,22 @@ class ZprivadaController extends Controller
         $items     = $carrito->all();
         $ready     = 0;
         $config    = 4;
+        $im = 0;
         $shop      = 0;
         $productos = Producto::OrderBy('orden', 'ASC')->get();
         $producto  = Producto::find($request->id);
+        foreach ($producto->imagenes as $img) {
+                $imagen= $img->imagen;
+            if ($im==0) {
+                break;
+            }
+        }
+        $categoria = $producto->categoria->nombre;
 
         if ($request->cantidad > 0) {
-            Cart::add(['id' => $producto->id, 'name' => $producto->nombre, 'price' => $producto->precio, 'qty' => $request->cantidad, 'options' => ['codigo' => $producto->codigo, 'orden' => $producto->orden]]);
-            return redirect()->route('zproductos', compact('shop', 'carrito', 'activo', 'productos', 'ready', 'prod', 'config', 'items'));
+            Cart::add(['id' => $producto->id, 'name' => $producto->nombre, 'price' => $producto->precio, 'qty' => $request->cantidad, 'options' => ['codigo' => $producto->codigo, 'orden' => $producto->orden, 'imagen' => $imagen, 'categoria' => $categoria]]);
+           //dd($categoria);
+            return redirect()->route('zproductos', compact('shop', 'carrito', 'activo', 'productos', 'ready', 'prod', 'config', 'items', 'codigo'));
         } else {
             return back();
         }
@@ -71,8 +80,10 @@ class ZprivadaController extends Controller
         $total    = Cart::Total();
         $mensaje  = $request->input('mensaje');
         // dd($request->total);
+        $cliente = Auth()->user()->name;
+        $emailcliente = Auth()->user()->email;
 
-        Mail::send('privada.mailpedido', ['total' => $total, 'items' => $items, 'row' => $row, 'subtotal' => $subtotal, 'mensaje' => $mensaje], function ($message) {
+        Mail::send('privada.mailpedido', ['total' => $total,'cliente' => $cliente,'emailcliente' => $emailcliente, 'items' => $items, 'row' => $row, 'subtotal' => $subtotal, 'mensaje' => $mensaje], function ($message) {
 
             $dato = Dato::where('tipo', 'email')->first();
             $message->from('info@aberturastolosa.com.ar', 'Parpen');

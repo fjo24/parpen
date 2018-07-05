@@ -14,7 +14,7 @@
 
 @if(isset($success))
 	@if($success == 'Ha ocurrido un error al enviar el correo')
-		<div class="col s12 card-panel red lighten-4 white-text text-darken-4">
+		<div class="col s12 card-panel red lighten-4 white-text text-darken-4" style="position: relative;top: 26px;height: 123px;text-align: center;font-size: 27px;">
 		{{($success) }}
 		</div>
 	@endif
@@ -35,8 +35,13 @@
 						<thead style="border-bottom: 3px solid #000000;background-color: #FAFAFA;">
 
 							<th></th>
+							<th>IMAGEN</th>
 
-							<th>PRODUCTO</th>
+							<th>DESCRIPCIÓN</th>
+
+							<th>CATEGORIA</th>
+
+							<th>CODIGO</th>
 
 							<th>CANTIDAD</th>
 
@@ -56,7 +61,10 @@
 								<tr>
 									
 									<td></td>
-									<td class="capitalize">{{ $row->name }}</td>
+									<td class="timagen " style="width: 95px; height: 85px;"><img class="responsive-img" src="{{ asset($row->options->imagen) }}"/></td>
+									<td>{{ $row->name }}</td>
+									<td>{{ $row->options->categoria }}</td>
+									<td>{{ $row->options->codigo }}</td>
 									<td>{{ $row->qty }}</td>
 									<td>{{ '$'.$row->price }}</td>
 									<td>{{ '$'.$row->price*$row->qty }}</td>
@@ -72,19 +80,19 @@
 								@endforeach
 								@if(Cart::count() > 0)
 								<tr style="border-top: 3px solid black;border-bottom: none;height:150%;color: #595959">
-									<td colspan="4">
+									<td colspan="7">
 							        <textarea id="mensaje" name="mensaje" class="materialize-textarea" placeholder="Mensaje"></textarea>
 									</td>
 									<td class="total fs24 azul bold">SUBTOTAL</td>
 									<td>{{ '$'.$total }}</td>
 								</tr>
 								<tr style="border-bottom: none;">
-									<td colspan="4"></td>
+									<td colspan="7"></td>
 									<td class="total fs24 azul bold">IVA 21%</td>
 									<td>{{ '$'.$total*0.21}}</td>
 								</tr>
 								<tr style="border-bottom: none;">
-									<td colspan="4"></td>
+									<td colspan="7"></td>
 									<td class="total fs24 azul bold">TOTAL</td>
 									<td name>{{ '$'.$total*1.21 }}</td>
 								</tr>

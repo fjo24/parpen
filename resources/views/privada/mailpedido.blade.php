@@ -3,9 +3,12 @@
 <body>
 	<h2>Parpen</h2>
 	<h3>Solicitud de Pedido</h3>
-	<p>Enviado desde la web </p>
+	<p>Enviado desde la web por: </p>
+
+	Nombre del cliente: {{$cliente}}	<br>
+	Correo electronico: {{$emailcliente}}	<br>
 	<br>
-	<br>
+
 	<h3>Datos del Producto</h3>
 	<table>
 		<thead>

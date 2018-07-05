@@ -23,7 +23,7 @@
                 {{-- Menu inicio --}}
                 <div class="menuproductos2 col l4 m4 s12">
                     <div class="menu-titulo">
-                        FILTROS
+                        PRODUCTOS
                     </div>
                     <div class="menu-todos">
                         <a href="{{ route('productos')}}">
