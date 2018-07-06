@@ -23,7 +23,7 @@
                     @foreach($categorias as $categoria)
                     <ul class="collapsible">
                         <li>
-                            <div class="collapsible-header">
+                            <div class="collapsible-header" style="text-transform: uppercase;">
                                 <a href="{{ route('categorias', $categoria->id)}}">
                                     {!! $categoria->nombre !!}
                                 </a>
@@ -33,7 +33,7 @@
                             <div class="collapsible-body">
                                 <ul class="sub collapsible">
                                     <li>
-                                        <div class="collapsible-header">
+                                        <div class="collapsible-header" style="text-transform: uppercase;">
                                             {!! $subcategoria->nombre !!}
                                             @isset($records)
                                             <i class="material-icons">
@@ -41,11 +41,11 @@
                                             </i>
                                             @endisset
                                         </div>
-                                        <div class="collapsible-body" style="padding-left: 25px!important; padding-top: 6px!important;">
+                                        <div class="collapsible-body" style="padding-left: 25px!important; padding-top: 6px!important; text-transform: uppercase;">
                                             @foreach($productos as $producto)
                                             @if($producto->visible!='privado')
                                                             @if($producto->categoria_id==$subcategoria->id)
-                                            <div class="collapsible-header" style="padding-top: 5px;">
+                                            <div class="collapsible-header" style="padding-top: 5px;text-transform: uppercase;">
                                                 {!! $producto->nombre !!}
                                             </div>
                                             @endif
@@ -62,7 +62,7 @@
                             <div class="collapsible-body">
                                 <ul class="sub collapsible">
                                     <li>
-                                        <div class="collapsible-header">
+                                        <div class="collapsible-header" style="text-transform: uppercase;">
                                             {!! $product->nombre !!}
                                         </div>
                                     </li>

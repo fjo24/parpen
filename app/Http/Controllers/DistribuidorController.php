@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Redirect;
 
@@ -12,75 +12,47 @@ class DistribuidorController extends Controller
     public function index()
     {
         $activo = 'registro';
-        
+
         return view('pages.registro', compact('activo'));
     }
 
     public function registroStore(Request $request)
     {
-        $usuario           = new User();
-        $usuario->name     = $request->name;
-        $usuario->username = $request->username;
-        $usuario->email    = $request->email;
-        $usuario->nivel    = 'usuario';
-        $usuario->password = \Hash::make($request->password);
+
+        $usuario                 = new User();
+        $usuario->username  = $request->username;
+        $usuario->name      = $request->name;
+        $usuario->apellido  = $request->apellido;
+        $usuario->social    = $request->social;
+        $usuario->cuit      = $request->cuit;
+        $usuario->telefono  = $request->telefono;
+        $usuario->direccion = $request->direccion;
+        $usuario->lat       = $request->lat;
+        $usuario->lng       = $request->lng;
+        $usuario->email     = $request->email;
+        $usuario->telefono  = $request->telefono;
+        $usuario->password       = \Hash::make($request->password);
         $usuario->save();
 
         $success = 'Usuario creado correctamente';
         return redirect('/registro')->with('success', $success);
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
         $distribuidor = DB::table('distribuidores')->where('email', $request->input('email'))->first();
-        if(isset($distribuidor))
-        {
-            if($distribuidor->password == $request->input('password'))
-            {
+        if (isset($distribuidor)) {
+            if ($distribuidor->password == $request->input('password')) {
                 session(['distribuidor' => $distribuidor->id]);
                 return redirect('zproductos');
-            }
-            else
-            {
+            } else {
                 $error = "El usuario y/o contraseña son invalidos";
                 return back()->with('error');
             }
-        }
-        else
-        {
+        } else {
             $error = "El usuario y/o contraseña son invalidos";
             return back()->with('error');
         }
     }
-
-    public function loginDistribuidor(Request $request){
-        if(isset($request->userdistribuidor)){
-
-            $user = Distribuidor::where('userdistribuidor', $request->userdistribuidor)->first();
-            dd('userdistribuidor');
-            if($user && $user->password == ''){
-                $email = $user->email;
-                session(['email' => $email]);
-                return Redirect::to('zproductos');
-                echo "pass";
-            }
-
-            if(Auth::attempt(['userdistribuidor' => $request->userdistribuidor, 'password' => $request->password])){ //$request->password
-                session()->flush();
-                session(['name' => $user->name]);
-                session(['email' => $user->email]);
-                session(['telefono' => $user->telefono]);                
-
-                return redirect()->route('zproductos');
-                
-            }
-            else{
-                return redirect()->route('zproductos');
-            }
-        }
-        
-        
-    }
-
-
-}   
+}

@@ -24,46 +24,58 @@ class DistribuidoresController extends Controller
 
     public function store(Request $request)
     {
-        $distribuidor           = new Distribuidor();
-        $distribuidor->name     = $request->name;
-        $distribuidor->username = $request->username;
-        $distribuidor->email    = $request->email;
-        $distribuidor->telefono = $request->telefono;
-        $distribuidor->password = \Hash::make($request->password);
+        $distribuidor            = new User();
+        $distribuidor->username  = $request->username;
+        $distribuidor->name    = $request->name;
+        $distribuidor->apellido  = $request->apellido;
+        $distribuidor->social    = $request->social;
+        $distribuidor->cuit      = $request->cuit;
+        $distribuidor->telefono  = $request->telefono;
+        $distribuidor->direccion = $request->direccion;
+        $distribuidor->lat       = $request->lat;
+        $distribuidor->lng       = $request->lng;
+        $distribuidor->email     = $request->email;
+        $distribuidor->telefono  = $request->telefono;
+        $distribuidor->password  = \Hash::make($request->password);
         $distribuidor->save();
 
-        $distribuidor = Distribuidor::orderBy('id', 'ASC')->paginate(10);
+        $distribuidor = User::orderBy('id', 'ASC')->paginate(10);
         return view('adm.distribuidores.index')
             ->with('distribuidor', $distribuidor);
     }
 
     public function edit($id)
     {
-        $distribuidor = Distribuidor::find($id);
+        $distribuidor = User::find($id);
         return view('adm.distribuidores.edit')
             ->with('distribuidor', $distribuidor);
     }
 
     public function update(Request $request, $id)
     {
-        $distribuidor           = new Distribuidor();
-        $distribuidor->name     = $request->name;
-        $distribuidor->username = $request->username;
-        $distribuidor->email    = $request->email;
-        $distribuidor->telefono = $request->telefono;
-        if ($request->password != $distribuidor->password) {
-            $distribuidor->password = \Hash::make($request->password);
-        }
+        $distribuidor            = new User();
+        $distribuidor->username  = $request->username;
+        $distribuidor->name    = $request->name;
+        $distribuidor->apellido  = $request->apellido;
+        $distribuidor->social    = $request->social;
+        $distribuidor->cuit      = $request->cuit;
+        $distribuidor->telefono  = $request->telefono;
+        $distribuidor->direccion = $request->direccion;
+        $distribuidor->lat       = $request->lat;
+        $distribuidor->lng       = $request->lng;
+        $distribuidor->email     = $request->email;
+        $distribuidor->telefono  = $request->telefono;
+        $distribuidor->password  = \Hash::make($request->password);
         $distribuidor->save();
 
-        $distribuidores = Distribuidor::orderBy('id', 'ASC')->paginate(10);
+        $distribuidores = User::orderBy('id', 'ASC')->paginate(10);
         return view('adm.distribuidores.index')
             ->with('distribuidores', $distribuidores);
     }
 
     public function destroy($id)
     {
-        $Distribuidor = Distribuidor::find($id);
+        $Distribuidor = User::find($id);
         $Distribuidor->delete();
         return redirect()->route('distribuidores.index');
     }

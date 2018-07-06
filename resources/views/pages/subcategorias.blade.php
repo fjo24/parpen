@@ -39,7 +39,7 @@
                             <li>
                                 <div class="collapsible-header">
                                 @endif
-                                 <a href="{{ route('categorias', $categoria->id)}}">
+                                 <a href="{{ route('categorias', $categoria->id)}}" style="text-transform: uppercase;">
                                     {!! $categoria->nombre !!}
                                  </a>
                                 </div>
@@ -58,7 +58,7 @@
                                                         <div class="collapsible-header">
                                                             @endif
                                
-                                             <a href="{{ route('subcategorias', $subcategoria->id)}}">
+                                             <a href="{{ route('subcategorias', $subcategoria->id)}}" style="text-transform: uppercase;">
                                                 {!! $subcategoria->nombre !!}
                                              </a>
                                             @isset($records)

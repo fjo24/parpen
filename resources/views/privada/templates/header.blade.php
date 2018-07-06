@@ -21,9 +21,9 @@
                     </div>
                 <div class="li-distribuidor">
                     <a class="dropdown-trigger" data-target="dropdown1" href="#">
-                        <img alt="" src="">
-                            ZONA DISTRIBUIDOR
-                        </img>
+                        <div style="text-transform: uppercase;">
+                            BIENVENIDO, {{ Auth::User()->name }}
+                        </div>
                     </a>
                 </div>
                   <!-- Dropdown LOGIN -->
@@ -31,7 +31,7 @@
 <ul class="dropdown-content" id="dropdown1">
                 <li>
                     <a class="right" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                     document.getElementById('logout-form').submit();" style="color:#FF5B88;">
                         {{ __('  Cerrar Sesión') }}
                     </a>
                     <form action="{{ route('logout') }}" id="logout-form" method="POST" style="display: none;">

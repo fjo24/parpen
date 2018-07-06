@@ -30,7 +30,7 @@
                 <div class="areaprivada">
                     <ul class="dropdown-content" id="dropdown1" style="background: none, width:400px!important; height: 300px!important;">
                         <div class="container" style="background: #FAFAFA; margin-top: 19px !important; outline: none; width: 282px;">
-                            {!!Form::open(['route'=>'login', 'method'=>'POST'])!!}
+                            {!!Form::open(['route'=>'logindistribuidor', 'method'=>'POST'])!!}
                             <div class="input-field col s12" style="padding-left: 10px;    border-bottom: 1px solid #595959; margin: 2px; margin-top: 1px; margin-bottom: 9px;">
                                 {!!Form::text('username',null,['class'=>'', 'required', 'autocomplete' => 'off'])!!}
                                 <label for="username" style="color:gray; font-weight: 500; font-family: 'Lato'; font-size: 15px;">
@@ -67,15 +67,15 @@
                 </div>
                 <!-- Dropdown LOGIN FIN -->
                 <div class="li-redes">
-                    <a href="https://es-la.facebook.com/parpenargentina/">
+                    <a href="{{$facebook->link}}">
                         <img alt="" class="" src="{{asset('img/layouts/facebook.png')}}">
                         </img>
                     </a>
-                    <a href="https://www.instagram.com/parpenargentina/">
+                    <a href="{{$instagram->link}}">
                         <img alt="" class="" src="{{asset('img/layouts/instagram.png')}}">
                         </img>
                     </a>
-                    <a href="https://www.youtube.com/channel/UCSrcO4wXydma0e5SnYICd1g">
+                    <a href="{{$youtube->link}}">
                         <img alt="" class="" src="{{asset('img/layouts/youtube.png')}}">
                         </img>
                     </a>

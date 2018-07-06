@@ -13,19 +13,19 @@
                 <div class="col l12 s12 m12">
                     <div class="li-redes-footer center">
                         <div class="item-redesf">
-                            <a href="">
+                            <a href="{{$facebook->link}}">
                                 <img alt="" class="" src="{{asset('img/layouts/facebook_footer.png')}}">
                                 </img>
                             </a>
                         </div>
                         <div class="item-redesf">
-                            <a href="">
+                            <a href="{{$instagram->link}}">
                                 <img alt="" class="" src="{{asset('img/layouts/instagram_footer.png')}}">
                                 </img>
                             </a>
                         </div>
                         <div class="item-redesf">
-                            <a href="">
+                            <a href="{{$youtube->link}}">
                                 <img alt="" class="" src="{{asset('img/layouts/youtube_footer.png')}}">
                                 </img>
                             </a>

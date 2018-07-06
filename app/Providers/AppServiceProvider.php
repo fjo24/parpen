@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Categoria;
 use App\Dato;
+use App\Red;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -21,6 +22,9 @@ class AppServiceProvider extends ServiceProvider
         $telefono   = Dato::where('tipo', 'telefono')->first();
         $telefono2  = Dato::where('tipo', 'telefono2')->first();
         $direccion  = Dato::where('tipo', 'direccion')->first();
+        $instagram  = Red::where('nombre', 'instagram')->first();
+        $facebook   = Red::where('nombre', 'facebook')->first();
+        $youtube    = Red::where('nombre', 'youtube')->first();
         $email      = Dato::where('tipo', 'email')->first();
 
         view()->share([
@@ -29,6 +33,9 @@ class AppServiceProvider extends ServiceProvider
             'direccion'  => $direccion,
             'email'      => $email,
             'categorias' => $categorias,
+            'instagram'  => $instagram,
+            'facebook'   => $facebook,
+            'youtube'    => $youtube,
         ]);
     }
 

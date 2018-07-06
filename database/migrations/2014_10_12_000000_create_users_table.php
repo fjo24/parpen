@@ -15,16 +15,24 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 100);
-            $table->string('username', 100);
-            $table->string('email', 100)->unique();
-            $table->enum('nivel', ['administrador', 'usuario'])->default('usuario');
+            $table->string('username', 15)->unique();
+            $table->string('name', 50);
+            $table->string('apellido', 50)->nullable();
+            $table->string('email', 25)->unique();
+            $table->string('social', 150)->nullable();
+            $table->string('cuit', 15)->nullable();
+            $table->string('telefono', 15)->nullable();
+            $table->string('direccion', 150)->nullable();
+            $table->string('postal', 15)->nullable();
+            $table->string('lat', 15)->nullable();
+            $table->string('lng', 15)->nullable();
+            $table->enum('nivel', ['administrador', 'usuario', 'distribuidor'])->default('distribuidor');
+            $table->boolean('activo')->default('0');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *

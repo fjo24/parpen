@@ -39,7 +39,7 @@
 
 			<div class="col l4">
 
-				{!!Form::open(['route'=>'login', 'method'=>'POST', 'class' => 'col s12'])!!}
+				{!!Form::open(['route'=>'logindistribuidor', 'method'=>'POST', 'class' => 'col s12'])!!}
 
 					<h4 class="datos">Ya soy usuario</h4>
 
@@ -47,7 +47,7 @@
 
 	                        <div class="usuario_input input-field col s12">
 
-	                            {!!Form::text('username',null,['class'=>'validate'])!!}
+	                            {!!Form::text('username',null,['class'=>''])!!}
 
 	                            {!!Form::label('Username')!!}
 
@@ -59,14 +59,13 @@
 
 	                        <div class="contrasena_input input-field col s12">
 
-	                            {!!Form::password('password',['class'=>'validate'])!!}
+	                            {!!Form::password('password',['class'=>''])!!}
 
 	                            {!!Form::label('Contraseña')!!}
 
 	                        </div>
 
 	                    </div>
-
 
 						<div class="col s12 no-padding sub" style="">
 
@@ -104,6 +103,18 @@
 
 						      	<div class="input-field col s12">
 
+						      		{!! Form::label('Apellido *') !!}
+
+									{!! Form::text('lastname', null, ['class'=>'', 'required']) !!}
+
+							    </div>
+
+							</div>
+
+							<div class="row">
+
+						      	<div class="input-field col s12">
+
 						      		{!! Form::label('Username') !!}
 
 									{!! Form::text('username', null, ['class'=>'', 'required']) !!}
@@ -132,6 +143,90 @@
 						      		{!! Form::label('Contraseña *') !!}
 
 									{!! Form::password('password', null, ['class'=>'', 'required']) !!}
+
+							    </div>
+
+							</div>
+
+							<div class="row">
+
+						      	<div class="input-field col s12">
+
+						      		{!! Form::label('Razón social *') !!}
+
+									{!! Form::text('social', null, ['class'=>'', 'required']) !!}
+
+							    </div>
+
+							</div>
+
+							<div class="row">
+
+						      	<div class="input-field col s12">
+
+						      		{!! Form::label('CUIT *') !!}
+
+									{!! Form::text('cuit', null, ['class'=>'', 'required']) !!}
+
+							    </div>
+
+							</div>
+
+							<div class="row">
+
+						      	<div class="input-field col s12">
+
+						      		{!! Form::label('Teléfono *') !!}
+
+									{!! Form::text('phone', null, ['class'=>'', 'required']) !!}
+
+							    </div>
+
+							</div>
+							<div class="row">
+
+						      	<div class="input-field col s12">
+
+						      		{!! Form::label('Dirección') !!}
+
+									{!! Form::text('address', null, ['class'=>'']) !!}
+
+							    </div>
+
+							</div>
+
+							<div class="row">
+
+						      	<div class="input-field col s12">
+
+						      		{!! Form::label('Latitud') !!}
+
+									{!! Form::text('lat', null, ['class'=>'', '']) !!}
+
+							    </div>
+
+							</div>
+
+							<div class="row">
+
+						      	<div class="input-field col s12">
+
+						      		{!! Form::label('Longitud') !!}
+
+									{!! Form::text('lng', null, ['class'=>'']) !!}
+
+							    </div>
+
+							</div>
+
+
+							<div class="row">
+
+						      	<div class="input-field col s12">
+
+						      		{!! Form::label('Código postal') !!}
+
+									{!! Form::text('postal', null, ['class'=>'']) !!}
 
 							    </div>
 

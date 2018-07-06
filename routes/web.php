@@ -72,14 +72,13 @@ Route::post('novedades/{tipo}', 'PaginasController@novedades')->name('novedades'
 
 Route::post('/buscador', ['uses' => 'BuscadorController@getProducts', 'as' => 'buscador']);
 
-Route::post('login/distribuidor', ['uses' => 'DistribuidorController@loginDistribuidor', 'as' => 'login.distribuidor']);
 //Route::resource('carrito', 'CarritoController');
 
 Route::group(['prefix' => 'carrito'], function () {
-    Route::post('add', ['uses' => 'ZprivadaController@add', 'as' => 'carrito.add']);
-    Route::get('carrito', ['uses' => 'ZprivadaController@carrito', 'as' => 'carrito']);
-    Route::get('delete/{id}', ['uses' => 'ZprivadaController@delete', 'as' => 'carrito.delete']);
-    Route::post('enviar', ['uses' => 'ZprivadaController@send', 'as' => 'carrito.enviar']);
+    Route::post('add', ['uses' => 'ZprivadaController@add', 'as' => 'carrito.add'])->middleware('auth');
+    Route::get('carrito', ['uses' => 'ZprivadaController@carrito', 'as' => 'carrito'])->middleware('auth');
+    Route::get('delete/{id}', ['uses' => 'ZprivadaController@delete', 'as' => 'carrito.delete'])->middleware('auth');
+    Route::post('enviar', ['uses' => 'ZprivadaController@send', 'as' => 'carrito.enviar'])->middleware('auth');
 });
 
 //ADMIN*************->middleware('admin')******************************************************************************************
@@ -92,7 +91,7 @@ Route::prefix('adm')->middleware('admin')->middleware('auth')->group(function ()
     /*------------CATALOGOS----------------*/
     Route::resource('catalogos', 'Adm\CatalogosController')->middleware('admin');
     // Rutas de reportes pdf
-    Route::get('pdf/{id}', ['uses' => 'Adm\CatalogosController@downloadPdf', 'as' => 'file-pdf']);
+    Route::get('pdf/{id}', ['uses' => 'Adm\CatalogosController@downloadPdf', 'as' => 'file-pdf'])->middleware('admin');
 
     /*------------CATEGORIAS----------------*/
     Route::resource('categorias', 'Adm\CategoriasController')->middleware('admin');
@@ -115,42 +114,43 @@ Route::prefix('adm')->middleware('admin')->middleware('auth')->group(function ()
     /*------------NOVEDADES----------------*/
     Route::resource('novedades', 'Adm\NovedadesController')->middleware('admin');
     /*------------Imagen----------------*/
-    Route::get('novedad/{novedad_id}/imagenes/', 'Adm\NovedadesController@imagenes')->name('imgnovedad.lista'); //index del modulo imagenes
+    Route::get('novedad/{novedad_id}/imagenes/', 'Adm\NovedadesController@imagenes')->name('imgnovedad.lista')->middleware('admin'); //index del modulo imagenes
     //agregar nuevas imagenes de productos
-    Route::post('novedad/nuevaimagen/{id}', 'Adm\NovedadesController@nuevaimagen')->name('imgnovedad.nueva'); //es el store de las imagenes
+    Route::post('novedad/nuevaimagen/{id}', 'Adm\NovedadesController@nuevaimagen')->name('imgnovedad.nueva')->middleware('admin'); //es el store de las imagenes
     Route::delete('imgnovedad/{id}/destroy', [
         'uses' => 'Adm\NovedadesController@destroyimg',
         'as'   => 'imgnovedad.destroy',
-    ]);
+    ])->middleware('admin');
 
     /*------------PRODUCTOS----------------*/
-    Route::resource('productos', 'Adm\ProductosController');
+    Route::resource('productos', 'Adm\ProductosController')->middleware('admin');
     /*------------Imagen----------------*/
-    Route::get('producto/{producto_id}/imagenes/', 'Adm\ProductosController@imagenes')->name('imgproducto.lista'); //index del modulo imagenes
+    Route::get('producto/{producto_id}/imagenes/', 'Adm\ProductosController@imagenes')->name('imgproducto.lista')->middleware('admin'); //index del modulo imagenes
     //agregar nuevas imagenes de productos
-    Route::post('producto/nuevaimagen/{id}', 'Adm\ProductosController@nuevaimagen')->name('imgproducto.nueva'); //es el store de las imagenes
+    Route::post('producto/nuevaimagen/{id}', 'Adm\ProductosController@nuevaimagen')->name('imgproducto.nueva')->middleware('admin'); //es el store de las imagenes
     Route::delete('imgproducto/{id}/destroy', [
         'uses' => 'Adm\ProductosController@destroyimg',
         'as'   => 'imgproducto.destroy',
-    ]);
+    ])->middleware('admin');
 
     /*------------LOCALES----------------*/
-    Route::resource('locales', 'Adm\LocalesController');
+    Route::resource('locales', 'Adm\LocalesController')->middleware('admin');
 
     /*------------NEWSLETTERS----------------*/
-    Route::resource('newsletters', 'Adm\NewslettersController');
+    Route::resource('newsletters', 'Adm\NewslettersController')->middleware('admin');
 
     /*------------REDES----------------*/
-    Route::resource('redes', 'Adm\RedesController');
+    Route::resource('redes', 'Adm\RedesController')->middleware('admin');
 
     /*------------SLIDERS----------------*/
-    Route::resource('sliders', 'Adm\SlidersController');
+    Route::resource('sliders', 'Adm\SlidersController')->middleware('admin');
 
     /*------------USERS----------------*/
-    Route::resource('users', 'Adm\UsersController');
+    Route::resource('users', 'Adm\UsersController')->middleware('admin');
 
 });
 
 Auth::routes();
+Route::post('logindistribuidor', 'Auth\LoginDistribuidorController@login')->name('logindistribuidor');
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('admin');

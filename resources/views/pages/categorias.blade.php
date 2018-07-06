@@ -39,7 +39,7 @@
                             <li>
                                 <div class="collapsible-header">
                                 @endif
-                                 <a href="{{ route('categorias', $categoria->id)}}">
+                                 <a href="{{ route('categorias', $categoria->id)}}" style="text-transform: uppercase;">
                                     {!! $categoria->nombre !!}
                                  </a>
                                 </div>
@@ -51,7 +51,7 @@
                                     <ul class="sub collapsible">
                                         <li>
                                             <div class="collapsible-header">
-                                             <a href="{{ route('subcategorias', $subcategoria->id)}}">
+                                             <a href="{{ route('subcategorias', $subcategoria->id)}}" style="text-transform: uppercase;">
                                                 {!! $subcategoria->nombre !!}
                                              </a>
                                             @isset($records)
@@ -64,7 +64,7 @@
                                                 @foreach($productos as $producto)
                                             @if($producto->visible!='privado')
                                                             @if($producto->categoria_id==$subcategoria->id)
-                                                <div class="collapsible-header" style="padding-top: 5px;">
+                                                <div class="collapsible-header">
                                                     {!! $producto->nombre !!}
                                                 </div>
                                                 @endif
@@ -78,7 +78,7 @@
                                  <div class="collapsible-body">
                                     <ul class="sub collapsible">
                                         <li>
-                                            <div class="collapsible-header">
+                                            <div class="collapsible-header" style="text-transform: uppercase;">
                                                 {!! $subcategoria->nombre !!}
                                             @isset($records)
                                                 <i class="material-icons">
