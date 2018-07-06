@@ -64,7 +64,10 @@
                             </td>
                             <td class="tcodigo ">{!! $producto->categoria->nombre !!}</td>
                             <td class="tdescripcion ">
+                            <a href="" data-target="modal{!! $producto->id !!}" class="modal-trigger">
+                                
                                 {!! $producto->nombre !!}
+                            </a>
                             </td>
                             <td class="" value="medida" name="medida">{!! $producto->medidas !!}</td>
                             {{ Form::hidden('medidas', $producto->medidas) }}
@@ -98,9 +101,28 @@
                             </td>
                         </tr>
                     {!!Form::close()!!}
+
+  <!-- Modal Structure -->
+  <div id="modal{!! $producto->id !!}" class="modal">
+    <div class="modal-content">
+      <h4>{!! $producto->nombre !!}</h4>
+      <p>A bunch of text</p>
+      @foreach($producto->imagenes as $img)
+                            <img class="responsive-img" src="{{ asset($img->imagen) }}"/>
+                            @if($ready == 0)    
+                                        @break;
+                                    @endif
+                            @endforeach
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+    </div>
+  </div>
                     @endforeach
                 </tbody>
             </table>
+              <!-- Modal Trigger -->
+          
 
         </div>
     </div>

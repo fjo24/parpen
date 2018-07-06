@@ -274,6 +274,23 @@
                     <li class="bold">
                         <a class="collapsible-header waves-effect waves-admin">
                             <i class="material-icons">
+                                home
+                            </i>
+                            Contacto
+                        </a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <a href="{{route('contacto.create')}}">
+                                        Editar Contenido
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bold">
+                        <a class="collapsible-header waves-effect waves-admin">
+                            <i class="material-icons">
                                 grid_on
                             </i>
                             Redes Sociales

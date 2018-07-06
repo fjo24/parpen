@@ -15,7 +15,7 @@
 			<div class="container">
 				<h1 class="naranja mayus fs36" style="color: #FF5E89; font-size: 38px; font-family: 'Asap';font-weight: bold;">Contacto</h1>
 				<div class="linea"><b>Consulta:</b> {{$producto}}</div>
-				<div style="margin-top: 20px; margin-bottom: 20px; color: #6F6F6F;background-color: #fafafa;">Contáctanos y te brindaremos toda la información que necesites</div>
+				<div style="margin-top: 20px; margin-bottom: 20px; color: #6F6F6F;background-color: #fafafa;">{{$contenido}}</div>
 
 				<div class="row">
 					<div class="col s12 l12">

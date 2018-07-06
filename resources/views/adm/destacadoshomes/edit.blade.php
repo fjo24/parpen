@@ -44,13 +44,26 @@
                     </span>
                     {!! Form::file('imagen') !!}
                 </div>
-                <div class="file-path-wrapper">
+                @if($destacado->id==3)
+                <div class="file-path-wrapper" style="">
                     {!! Form::text('imagen',null, ['class'=>'file-path ']) !!}
+                {!!Form::label('Recomendado: 370px - 750px')!!}
+                </div>
+                @elseif($destacado->id==4)
+                <div class="file-path-wrapper" style="">
+                    {!! Form::text('imagen',null, ['class'=>'file-path ']) !!}
+                {!!Form::label('Recomendado: 764px - 359px')!!}
+                </div>
+                @else
+                <div class="file-path-wrapper" style="">
+                    {!! Form::text('imagen',null, ['class'=>'file-path ']) !!}
+                {!!Form::label('Recomendado: 370px - 370px')!!}
+                @endif
                 </div>
             </div>
         </div>
         <div class="col l12 s12 no-padding">
-            <button class="btn-large waves-effect waves-light right" name="action" type="submit">
+            <button class="btn-large waves-effect waves-light right" style="background: #FF5E88;" name="action" type="submit">
                 Editar
                 <i class="material-icons right">
                     send

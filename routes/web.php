@@ -1,17 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
- */
-//PAGINAS/*************************************************************************************************
-
 //HOME
 Route::get('/', 'PaginasController@home')->name('inicio');
 
@@ -147,6 +135,9 @@ Route::prefix('adm')->middleware('admin')->middleware('auth')->group(function ()
 
     /*------------USERS----------------*/
     Route::resource('users', 'Adm\UsersController')->middleware('admin');
+
+    /*------------TEXTO EN CONTACTO----------------*/
+    Route::resource('contacto', 'Adm\ContactotextsController')->middleware('admin');
 
 });
 

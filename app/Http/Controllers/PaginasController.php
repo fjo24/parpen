@@ -10,6 +10,7 @@ use App\Destacado_mantenimiento;
 use App\Empresa;
 use App\Local;
 use App\Novedad;
+use App\Contactotext;
 use App\Producto;
 use App\Servicio;
 use App\Slider;
@@ -143,18 +144,15 @@ class PaginasController extends Controller
         return view('pages.dondelistado', compact('mapas', 'activo'));
     }
 
-    public function enviarproducto()
-    {
-        $activo = 'donde';
-        return view('pages.contacto', compact('activo'));
-    }
 
     public function contacto($producto)
     {
         //return ($producto);
-        $activo = 'donde';
+        $activo = 'contacto';
+        $contacto   = Contactotext::all()->first();
+        $contenido = $contacto->contenido;
         $dato = $producto;
-        return view('pages.contacto', compact('activo', 'producto'));
+        return view('pages.contacto', compact('activo', 'producto', 'contenido'));
     }
 
     public function enviarmail(Request $request)

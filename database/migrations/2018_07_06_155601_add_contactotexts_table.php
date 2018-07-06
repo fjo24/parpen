@@ -15,6 +15,7 @@ class AddContactotextsTable extends Migration
     {
         Schema::create('contactotexts', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('contenido', 500);
             $table->timestamps();
         });
     }
