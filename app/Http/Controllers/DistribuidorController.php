@@ -27,7 +27,7 @@ class DistribuidorController extends Controller
         $usuario->save();
 
         $success = 'Usuario creado correctamente';
-        return redirect('zonaprivada/productos')->with('success', $success);
+        return redirect('/registro')->with('success', $success);
     }
 
     public function store(Request $request){

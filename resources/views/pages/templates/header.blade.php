@@ -115,69 +115,56 @@
                 @endif
                 @if($activo=='productos')
                 <li>
-                    <a class="dropdown-trigger" data-target="dropdown-productos" href="#">
-                        <img alt="" src="">
-                            PRODUCTOS
-                        </img>
+                    <!-- HEAD 1 -->
+                    <a class="dropdown-trigger btn" data-target="categorias" href="#">
+                        PRODUCTOS
                     </a>
-                    <!-- Dropdown LOGIN -->
-                    <div class="areaprivada">
-                        <ul class="dropdown-content" id="dropdown-productos" style="background: none, width:400px!important; height: 100%!important;">
-                            @foreach($categorias as $categoria)
-                            <li>
-                                <a class="dropdown-trigger" data-target="dropdown-productos" href="#">
-                                    <img alt="" src="">
-                                        {!! $categoria->nombre !!}
-                                    </img>
-                                </a>
-                            </li>
-                            <!-- Dropdown sub -->
-                            @foreach($subcategorias as $subcategoria)
+                    <!-- FIN HEAD 1 -->
+                    <!-- CONTENIDO 1-->
+                    <ul class="dropdown-content" id="categorias">
+                        @foreach($categorias as $categoria)
+                        <li>
+                            <!-- HEAD 2 -->
+                            <a class="dropdown-trigger2 btn" data-target="subcategorias" href="#">
+                                {{ $categoria->nombre }}
+                            </a>
+                            <!-- FIN HEAD 2-->
+                            <!-- CONTENIDO 2-->
+                            <ul class="dropdown-content" id="subcategorias">
+                                @foreach($subcategorias as $subcategoria)
                             @if($subcategoria->id_superior==$categoria->id)
-                            <div class="collapsible-body">
-                                <ul class="sub collapsible">
-                                    <li>
-                                        <div class="collapsible-header">
-                                            {!! $subcategoria->nombre !!}
-                                            @isset($records)
-                                            <i class="material-icons">
-                                                filter_drama
-                                            </i>
-                                            @endisset
-                                        </div>
-                                        <div class="collapsible-body" style="padding-left: 25px!important; padding-top: 6px!important;">
-                                            @foreach($productos as $producto)
+                                <li>
+                                    <!-- HEAD 3 -->
+                                    <a class="dropdown-trigger3 btn" data-target="productos" href="#">
+                                        {{ $subcategoria->nombre }}
+                                    </a>
+                                    <!-- FIN HEAD 3 -->
+                                    <!-- CONTENIDO 3 -->
+                                    <ul class="dropdown-content" id="productos">
+                                       @foreach($productos as $producto)
                                             @if($producto->visible!='privado')
-                                                            @if($producto->categoria_id==$subcategoria->id)
-                                            <div class="collapsible-header" style="padding-top: 5px;">
-                                                {!! $producto->nombre !!}
-                                            </div>
-                                            @endif
-                                            @endif
-                                         @endforeach
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            @endif
-                              @endforeach
-                              @foreach($categoria->productos as $product)
-                              @if($product->visible!='privado')
-                            <div class="collapsible-body">
-                                <ul class="sub collapsible">
-                                    <li>
-                                        <div class="collapsible-header">
-                                            {!! $product->nombre !!}
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            @endif
+                                            @if($producto->categoria_id==$subcategoria->id)
+                                        <li>
+                                            <!-- HEAD 4 -->
+                                            <a href="#">
+                                                {{ $subcategoria->nombre }}
+                                            </a>
+                                            <!-- FIN HEAD 4 -->
+                                        </li>
+                                        @endif
+                                        @endif
                                 @endforeach
-                            <!-- FIN Dropdown sub -->
-                            @endforeach
-                        </ul>
-                    </div>
+                                    </ul>
+                                    <!-- FIN CONTENIDO 3 -->
+                                </li>
+                                @endif
+                                @endforeach
+                            </ul>
+                            <!-- FIN CONTENIDO 2 -->
+                        </li>
+                        @endforeach
+                    </ul>
+                    <!-- FIN CONTENIDO 1 -->
                 </li>
                 @endif
             </ul>
