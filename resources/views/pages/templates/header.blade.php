@@ -206,13 +206,13 @@
                 @endif
                     @if($activo=='contacto')
                 <li>
-                    <a class="activo" href="{{ url('/contacto') }}">
+                    <a class="activo" href="{{ url('/contacto', 'productos parpen') }}">
                         CONTACTO
                     </a>
                 </li>
                 @else
                 <li>
-                    <a href="{{ url('/contacto') }}">
+                    <a href="{{ url('/contacto', 'General') }}">
                         CONTACTO
                     </a>
                 </li>

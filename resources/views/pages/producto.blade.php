@@ -200,7 +200,7 @@
                             <div class="contenidoproducto">    
                                 {!! $p->contenido !!}
                             </div>
-                               <a href="">
+                               <a href="{{ route('contacto', $p->nombre) }}">
         <button class="pedido btn btn-default left" href="" style="background-color: #7D0045;">
             <span class="rpedido">
                 

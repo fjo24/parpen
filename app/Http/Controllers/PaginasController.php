@@ -143,23 +143,34 @@ class PaginasController extends Controller
         return view('pages.dondelistado', compact('mapas', 'activo'));
     }
 
-    public function contacto()
+    public function enviarproducto()
     {
         $activo = 'donde';
         return view('pages.contacto', compact('activo'));
+    }
+
+    public function contacto($producto)
+    {
+        //return ($producto);
+        $activo = 'donde';
+        $dato = $producto;
+        return view('pages.contacto', compact('activo', 'producto'));
     }
 
     public function enviarmail(Request $request)
     {
         $activo   = 'contacto';
         $dato     = Dato::where('tipo', 'mail')->first();
+        $producto = $request->producto;
         $nombre   = $request->nombre;
         $apellido = $request->apellido;
         $empresa  = $request->empresa;
         $email    = $request->email;
         $mensaje  = $request->mensaje;
+       //     dd($producto);
+        Mail::send('pages.emails.contactomail', ['nombre' => $nombre, 'apellido' => $apellido, 'empresa' => $empresa, 'email' => $email, 'mensaje' => $mensaje, 'producto' => $producto], function ($message) use ($producto){
 
-        Mail::send('pages.emails.contactomail', ['nombre' => $nombre, 'apellido' => $apellido, 'empresa' => $empresa, 'email' => $email, 'mensaje' => $mensaje], function ($message) {
+
 
             $dato = Dato::where('tipo', 'email')->first();
             $message->from('info@aberturastolosa.com.ar', 'Parpen');
@@ -167,13 +178,14 @@ class PaginasController extends Controller
             $message->to($dato->descripcion);
 
             //Add a subject
-            $message->subject("Contacto");
+            $message->subject('Consulta de web de producto: ' .$producto);
 
         });
         if (Mail::failures()) {
-            return view('pages.contacto', compact('activo'));
+            return view('pages.contacto', compact('activo', 'General'));
         }
-        return view('pages.contacto', compact('activo'));
+        $producto = 'General';
+        return view('pages.contacto', compact('activo', 'producto'));
     }
 
     public function buscar(Request $request)

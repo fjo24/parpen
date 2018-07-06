@@ -22,7 +22,7 @@ Route::get('/productos', 'PaginasController@productos')->name('productos');
 Route::get('/empresa', 'PaginasController@empresa')->name('empresa');
 
 //CONTACTO
-Route::get('/contacto', 'PaginasController@contacto')->name('contacto');
+Route::get('/contacto/{producto}', 'PaginasController@contacto')->name('contacto');
 Route::post('enviar-mail', [
     'uses' => 'PaginasController@enviarmail',
     'as'   => 'enviarmail',
