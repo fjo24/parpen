@@ -5,8 +5,13 @@
 	<h3>Solicitud de Pedido</h3>
 	<p>Enviado desde la web por: </p>
 
-	Nombre del cliente: {{$cliente}}	<br>
-	Correo electronico: {{$emailcliente}}	<br>
+	Nombre de usuario: {{$username}}	<br>
+	Nombre del cliente: {{$nombre }} {{ $apellido}}<br>
+	Email: {{$emailcliente}}	<br>
+	Razón Social: {{$social}}	<br>
+	Cuit: {{$cuit}}	<br>
+	Telefono: {{$telefono}}	<br>
+	Dirección: {{$direccion}}	<br>
 	<br>
 
 	<h3>Datos del Producto</h3>
@@ -23,18 +28,18 @@
 				<tr>
 					<td style="text-align: left;">{{ $producto->name }}</td>
 					<td>{{ $producto->qty }}</td>
-					<td>{{ $producto->price }}</td>
+					<td>${{ $producto->price }}</td>
 				</tr>
 			@endforeach
 		</tbody>
 	</table>
 		<h4>SubTotal:</h4>
-		<p>{{ $subtotal }}</p>
+		<p>${{ $subtotal }}</p>
 		<h4>Iva:</h4>
-		<p>{{ $subtotal*1.21 }}</p>
+		<p>${{ $subtotal*1.21 }}</p>
 
 	<h4>Total:</h4>
-		<p>{{ $total }}</p>
+		<p>${{ $total }}</p>
 		<h4>Mensaje:</h4>
 		<p>{{ $mensaje }}</p>
 

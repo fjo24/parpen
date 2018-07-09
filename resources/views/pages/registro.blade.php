@@ -105,7 +105,7 @@
 
 						      		{!! Form::label('Apellido *') !!}
 
-									{!! Form::text('lastname', null, ['class'=>'', 'required']) !!}
+									{!! Form::text('apellido', null, ['class'=>'', 'required']) !!}
 
 							    </div>
 
@@ -178,7 +178,7 @@
 
 						      		{!! Form::label('Teléfono *') !!}
 
-									{!! Form::text('phone', null, ['class'=>'', 'required']) !!}
+									{!! Form::text('telefono', null, ['class'=>'', 'required']) !!}
 
 							    </div>
 
@@ -189,7 +189,7 @@
 
 						      		{!! Form::label('Dirección') !!}
 
-									{!! Form::text('address', null, ['class'=>'']) !!}
+									{!! Form::text('direccion', null, ['class'=>'']) !!}
 
 							    </div>
 

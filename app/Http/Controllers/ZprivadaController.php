@@ -80,18 +80,24 @@ class ZprivadaController extends Controller
         $total    = Cart::Total();
         $mensaje  = $request->input('mensaje');
         // dd($request->total);
-        $cliente = Auth()->user()->name;
+        $nombre = Auth()->user()->name;
+        $apellido = Auth()->user()->apellido;
         $emailcliente = Auth()->user()->email;
+        $username = Auth()->user()->username;
+        $social = Auth()->user()->social;
+        $cuit = Auth()->user()->cuit;
+        $telefono = Auth()->user()->telefono;
+        $direccion = Auth()->user()->direccion;
 
-        Mail::send('privada.mailpedido', ['total' => $total,'cliente' => $cliente,'emailcliente' => $emailcliente, 'items' => $items, 'row' => $row, 'subtotal' => $subtotal, 'mensaje' => $mensaje], function ($message) {
+        Mail::send('privada.mailpedido', ['total' => $total,'username' => $username, 'nombre' => $nombre,'apellido' => $apellido,'social' => $social,'cuit' => $cuit,'telefono' => $telefono,'direccion' => $direccion,'emailcliente' => $emailcliente, 'items' => $items, 'row' => $row, 'subtotal' => $subtotal, 'mensaje' => $mensaje], function ($message) use ($nombre, $apellido) {
 
             $dato = Dato::where('tipo', 'email')->first();
-            $message->from('info@aberturastolosa.com.ar', 'Parpen');
+            $message->from('info@aberturastolosa.com.ar', 'Parpen | Pedidos');
 
             $message->to($dato->descripcion);
 
             //Add a subject
-            $message->subject("Pedido");
+            $message->subject('Pedido de '. $nombre. ' ' .$apellido);
 
         });
         if (count(Mail::failures()) > 0) {

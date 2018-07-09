@@ -205,3 +205,28 @@ table.dataTable tbody tr {
     margin-left: 21px;
     margin-right: 21px;
 }
+
+.modal_img{
+    height: 270px!important;
+    width: 270px;
+    border: 1px solid #D9D9D9;
+    
+}
+
+.modal-content h4{
+    font-family: 'Asap';
+    font-weight: 400;
+    color: #FF5E87;
+    font-size: 32px;
+}
+
+.modal_descripcion{
+    font-family: 'Lato';
+    color: #FF5E87;
+    font-weight: bold;
+    font-size: 16px;
+}
+.modal_contenido{
+    font-family: 'Lato';
+
+}

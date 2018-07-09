@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Adm;
 
-use App\Distribuidor;
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 
 class DistribuidoresController extends Controller
@@ -12,8 +12,8 @@ class DistribuidoresController extends Controller
 
     public function index()
     {
-        $distribuidores = Distribuidor::orderBy('nombre', 'ASC')->paginate(5);
-        return view('adm.user.index')
+        $distribuidores = User::orderBy('username', 'ASC')->Where('nivel', 'distribuidor')->get();
+        return view('adm.distribuidores.index')
             ->with('distribuidores', $distribuidores);
     }
 
@@ -25,23 +25,26 @@ class DistribuidoresController extends Controller
     public function store(Request $request)
     {
         $distribuidor            = new User();
+        $distribuidor->activo    = $request->activo;
         $distribuidor->username  = $request->username;
-        $distribuidor->name    = $request->name;
+        $distribuidor->name      = $request->name;
         $distribuidor->apellido  = $request->apellido;
         $distribuidor->social    = $request->social;
         $distribuidor->cuit      = $request->cuit;
         $distribuidor->telefono  = $request->telefono;
         $distribuidor->direccion = $request->direccion;
+        $distribuidor->postal    = $request->postal;
         $distribuidor->lat       = $request->lat;
         $distribuidor->lng       = $request->lng;
         $distribuidor->email     = $request->email;
-        $distribuidor->telefono  = $request->telefono;
+        $distribuidor->nivel     = 'distribuidor';
         $distribuidor->password  = \Hash::make($request->password);
         $distribuidor->save();
+        
 
-        $distribuidor = User::orderBy('id', 'ASC')->paginate(10);
+        $distribuidores = User::orderBy('username', 'ASC')->Where('nivel', 'distribuidor')->get();
         return view('adm.distribuidores.index')
-            ->with('distribuidor', $distribuidor);
+            ->with('distribuidores', $distribuidores);
     }
 
     public function edit($id)
@@ -53,22 +56,25 @@ class DistribuidoresController extends Controller
 
     public function update(Request $request, $id)
     {
-        $distribuidor            = new User();
+        $distribuidor            = User::find($id);
+        if ($distribuidor->nivel != 'administrador' || $distribuidor->nivel != 'usuario' ) {
+        $distribuidor->activo    = $request->activo;
         $distribuidor->username  = $request->username;
-        $distribuidor->name    = $request->name;
+        $distribuidor->name      = $request->name;
         $distribuidor->apellido  = $request->apellido;
         $distribuidor->social    = $request->social;
         $distribuidor->cuit      = $request->cuit;
         $distribuidor->telefono  = $request->telefono;
         $distribuidor->direccion = $request->direccion;
+        $distribuidor->postal    = $request->postal;
         $distribuidor->lat       = $request->lat;
         $distribuidor->lng       = $request->lng;
         $distribuidor->email     = $request->email;
-        $distribuidor->telefono  = $request->telefono;
         $distribuidor->password  = \Hash::make($request->password);
         $distribuidor->save();
+        }
 
-        $distribuidores = User::orderBy('id', 'ASC')->paginate(10);
+        $distribuidores = User::orderBy('id', 'ASC')->get();
         return view('adm.distribuidores.index')
             ->with('distribuidores', $distribuidores);
     }

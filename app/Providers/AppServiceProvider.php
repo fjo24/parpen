@@ -18,7 +18,8 @@ class AppServiceProvider extends ServiceProvider
     {
         \Schema::defaultStringLength(191);
 
-        $categorias = Categoria::OrderBy('id', 'asc')->get();
+        $subcategorias = Categoria::whereNotNull('id_superior')->orderBy('orden', 'asc')->get();
+        $categorias    = Categoria::where('id_superior', null)->orderBy('orden', 'asc')->get();
         $telefono   = Dato::where('tipo', 'telefono')->first();
         $telefono2  = Dato::where('tipo', 'telefono2')->first();
         $direccion  = Dato::where('tipo', 'direccion')->first();
@@ -33,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
             'direccion'  => $direccion,
             'email'      => $email,
             'categorias' => $categorias,
+            'subcategorias' => $subcategorias,
             'instagram'  => $instagram,
             'facebook'   => $facebook,
             'youtube'    => $youtube,

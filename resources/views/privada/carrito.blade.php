@@ -79,6 +79,7 @@
 								</tr>
 								@endforeach
 								@if(Cart::count() > 0)
+							{!! Form::open(['route'=>'carrito.enviar', 'method'=>'POST']) !!}
 								<tr style="border-top: 3px solid black;border-bottom: none;height:150%;color: #595959">
 									<td colspan="7">
 							        <textarea id="mensaje" name="mensaje" class="materialize-textarea" placeholder="Mensaje"></textarea>
@@ -101,7 +102,6 @@
 						
 					</table>
 						<div class="row">
-							{!! Form::open(['route'=>'carrito.enviar', 'method'=>'POST']) !!}
 							    <div class="col s7">
 							      <div class="row">
 							        <div class="input-field col s12">

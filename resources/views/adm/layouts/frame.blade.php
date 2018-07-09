@@ -274,7 +274,7 @@
                     <li class="bold">
                         <a class="collapsible-header waves-effect waves-admin">
                             <i class="material-icons">
-                                home
+                                local_phone
                             </i>
                             Contacto
                         </a>
@@ -308,7 +308,7 @@
                     <li class="bold">
                         <a class="collapsible-header waves-effect waves-admin">
                             <i class="material-icons">
-                                account_circle
+                                library_books
                             </i>
                             Catalogos
                         </a>
@@ -322,6 +322,28 @@
                                 <li>
                                     <a href="{{route('catalogos.index')}}">
                                         Editar Catalogo
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bold">
+                        <a class="collapsible-header waves-effect waves-admin">
+                            <i class="material-icons">
+                                assignment_ind
+                            </i>
+                            Distribuidores
+                        </a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <a href="{{route('distribuidores.create')}}">
+                                        Crear Distribuidores
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('distribuidores.index')}}">
+                                        Editar Distribuidores
                                     </a>
                                 </li>
                             </ul>

@@ -93,7 +93,28 @@
             </div>
         </div>
     </div>
-    {{-- BARRA PRINCIPAL --}} 
+    {{-- BARRA PRINCIPAL --}}
+    <ul>
+    <li class="productos_menu">
+                    <a href="">
+                        PRODUCTOX
+                    </a>
+                    <ul>
+                        <li>P 1
+                            <ul>
+                                <li>>P 1</li>
+                                <li>>P 3</li>
+                                <li>>P 1</li>
+                                <li>>P r</li>
+                            </ul>
+                        </li>
+                        <li>P 3</li>
+                        <li>P 1</li>
+                        <li>P r</li>
+                    </ul>
+                </li>
+        
+    </ul>
     <nav class="principal">
         <div class="container" style="width: 93%">
             <ul class="item-left left hide-on-med-and-down">
@@ -124,36 +145,63 @@
                 </li>
                 @endif
                 @if($activo=='productos')
-                    <li class="productos_menu">
-                    <a class="activo" href="">
-                        PRODUCTO
+                <li>
+                    <!-- HEAD 1 -->
+                    <a class="dropdown-trigger btn" data-target="categorias" href="#">
+                        PRODUCTOS
                     </a>
-                  
-                </li>
-                @else
-                <li id="menu_productos">
-                    <a class="prod_menu" href="{{ url('/productos') }}">
-                        PRODUCTO
-                    </a>
-                    <ul>
-                        <li class="menu_cate">
-                            <a href="{{ route('productos')}}">TODOS LOS PRODUCTOS</a>
-                        </li>
+                    <!-- FIN HEAD 1 -->
+                    <!-- CONTENIDO 1-->
+                    <ul class="dropdown-content" id="categorias">
                         @foreach($categorias as $categoria)
-                        <li class="menu_cate">
-                            <a href="{{ route('categorias', $categoria->id)}}" style="text-transform: uppercase;">{{ $categoria->nombre }}</a>
-                            <ul class="menu_subcate">
+                        <li>
+                            <!-- HEAD 2 -->
+                            <a class="dropdown-trigger2 btn" data-target="subcategorias" href="#">
+                                {{ $categoria->nombre }}
+                            </a>
+                            <!-- FIN HEAD 2-->
+                            <!-- CONTENIDO 2-->
+                            <ul class="dropdown-content" id="subcategorias">
                                 @foreach($subcategorias as $subcategoria)
-                            @if($subcategoria->id_superior==$categoria->id)                                
+                            @if($subcategoria->id_superior==$categoria->id)
                                 <li>
-                                    <a href="{{ route('subcategorias', $subcategoria->id)}}" style="text-transform: uppercase;">{!! $subcategoria->nombre !!}</a>
+                                    <!-- HEAD 3 -->
+                                    <a class="dropdown-trigger3 btn" data-target="productos" href="#">
+                                        {{ $subcategoria->nombre }}
+                                    </a>
+                                    <!-- FIN HEAD 3 -->
+                                    <!-- CONTENIDO 3 -->
+                                    <ul class="dropdown-content" id="productos">
+                                       @foreach($productos as $producto)
+                                            @if($producto->visible!='privado')
+                                            @if($producto->categoria_id==$subcategoria->id)
+                                        <li>
+                                            <!-- HEAD 4 -->
+                                            <a href="#">
+                                                {{ $subcategoria->nombre }}
+                                            </a>
+                                            <!-- FIN HEAD 4 -->
+                                        </li>
+                                        @endif
+                                        @endif
+                                @endforeach
+                                    </ul>
+                                    <!-- FIN CONTENIDO 3 -->
                                 </li>
                                 @endif
                                 @endforeach
                             </ul>
+                            <!-- FIN CONTENIDO 2 -->
                         </li>
                         @endforeach
                     </ul>
+                    <!-- FIN CONTENIDO 1 -->
+                </li>
+                @else
+                <li>
+                    <a href="{{ url('/empresa') }}">
+                        PRODUCTOSX
+                    </a>
                 </li>
                 @endif
             </ul>
@@ -174,10 +222,16 @@
                     </a>
                 </li>
                 @else
-                <li class="">
-                    <a href="{{ url('/donde') }}">
-                        DÓNDE COMPRAR
+                <li class="productos_menu">
+                    <a href="">
+                        PRODUCTOX
                     </a>
+                    <ul>
+                        <li>P 1</li>
+                        <li>P 3</li>
+                        <li>P 1</li>
+                        <li>P r</li>
+                    </ul>
                 </li>
                 @endif
                     @if($activo=='novedades')

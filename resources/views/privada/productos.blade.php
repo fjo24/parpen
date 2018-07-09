@@ -64,8 +64,7 @@
                             </td>
                             <td class="tcodigo ">{!! $producto->categoria->nombre !!}</td>
                             <td class="tdescripcion ">
-                            <a href="" data-target="modal{!! $producto->id !!}" class="modal-trigger">
-                                
+                            <a href="" data-target="modal{!! $producto->id !!}" class="modal-trigger" style="color: #7D0045"> 
                                 {!! $producto->nombre !!}
                             </a>
                             </td>
@@ -105,17 +104,27 @@
   <!-- Modal Structure -->
   <div id="modal{!! $producto->id !!}" class="modal">
     <div class="modal-content">
-      <h4>{!! $producto->nombre !!}</h4>
-      <p>A bunch of text</p>
-      @foreach($producto->imagenes as $img)
-                            <img class="responsive-img" src="{{ asset($img->imagen) }}"/>
-                            @if($ready == 0)    
-                                        @break;
-                                    @endif
-                            @endforeach
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+        <h4>{!! $producto->nombre !!}<a href="#!" class="right modal-close waves-effect waves-green btn-flat" style="font-family: 'Lato';color: #B3004A;font-weight: bold;">Cerrar</a></h4>
+        <div class="row">
+            <div class="col l12 m12 s12" style="padding-left: 0px;">   
+                <div class="col l5 m5 s5" style="padding-left: 0px;">    
+                @foreach($producto->imagenes as $img)
+                    <img class="responsive-img modal_img" src="{{ asset($img->imagen) }}"/>
+                    @if($ready == 0)    
+                        @break;
+                    @endif
+                @endforeach
+                </div> 
+                <div class="col l7 m7 s7">   
+                <div class="modal_descripcion">
+                    {!! $producto->descripcion !!}
+                </div> 
+                <div class="modal_contenido">
+                    {!! $producto->contenido !!}
+                </div>
+                </div> 
+            </div>
+        </div>
     </div>
   </div>
                     @endforeach
