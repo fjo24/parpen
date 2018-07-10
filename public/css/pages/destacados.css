@@ -178,3 +178,61 @@
         margin-top: -17px;
         margin-bottom: 148px;
 }
+
+
+
+
+@media only screen and (max-width: 993px){
+
+.imglarge img {
+    margin-top: -11px;
+    width: 100%!important;
+    height: 235px!important;
+}
+
+.div-nombrelarge {
+    display: table;
+    background-color: rgba(179, 0, 74, 0.86);
+    height: 104px;
+    font-weight: 900;
+    font-family: 'Asap';
+    justify-content: center;
+    align-items: center;
+    font-size: 29px;
+    position: relative;
+    width: 756px;
+    bottom: 103px;
+    color: white;
+}
+
+.div-nombrelarge {
+    display: table;
+    background-color: rgba(179, 0, 74, 0.86);
+    height: 104px;
+    font-weight: 900;
+    font-family: 'Asap';
+    justify-content: center;
+    align-items: center;
+    font-size: 29px;
+    position: relative;
+    width: 756px;
+    bottom: 103px;
+    color: white;
+}
+
+.div-bloque{
+    width: 370px;height: 380px;
+}
+
+.imglarge img {
+    margin-top: -11px;
+    height: 333px!important;
+    width: 100%!important;
+}
+
+.div-nombrelarge {
+
+    width: 100%;
+
+}
+}

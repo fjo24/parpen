@@ -229,7 +229,7 @@
                                                 </div>
                                 </div>
                            </div>
-                        <div class="col l6 m12 s12" style="padding-left: 29px;">
+                        <div class="col hide-on-med-and-down l6 m12 s12" style="padding-left: 29px;">
                             <iframe width="381" height="216" src="{!! $p->video!!}" frameborder="0" allowfullscreen></iframe>
                         </div>
               

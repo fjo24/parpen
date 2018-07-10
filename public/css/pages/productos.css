@@ -163,8 +163,8 @@
     top: 25px;
 }
 .galeriadeproducto {
-    width: 350px!important;
-    height: 350px!important;
+        width: 43%!important;
+    height: 85%!important;
     padding-right: 0px!important;
 }
 .imggrande {
@@ -186,7 +186,7 @@
 }
 .pro-line {
     position: relative!important;
-    width: 423px!important;
+    width: 114%!important;
     height: 1px!important;
     border: 1px!important;
     border-radius: 10px!important;
@@ -227,8 +227,8 @@
 .masproducto {
     background-color: #F5F5F5;
     border: 1px solid #C9C9C9;
-    width: 806px!important;
-    height: 281px;
+    width: 100%!important;
+    height: 100%;
     margin-top: 60px;
     padding: 32px 75px 10px 10px!important;
 }
@@ -268,7 +268,7 @@
 }
 .rela-line {
     position: relative!important;
-    width: 807px!important;
+    width: 103%!important;
     height: 1px!important;
     border: 1px!important;
     border-radius: 10px!important;
@@ -280,3 +280,21 @@
 .relablock{
     margin-left: 31px;
 }
+
+@media only screen and (max-width: 993px){
+    .galeriadeproducto {
+    width: 155%!important;
+    height: 85%!important;
+    padding-right: 0px!important;
+}
+
+.masproducto {
+    background-color: #F5F5F5;
+    border: 1px solid #C9C9C9;
+    width: 140%!important;
+    height: 100%;
+    margin-top: 60px;
+    padding: 0!important;
+}
+}
+

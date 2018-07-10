@@ -124,11 +124,29 @@
                 </li>
                 @endif
                 @if($activo=='productos')
-                    <li class="productos_menu">
-                    <a class="activo" href="">
+                <li id="menu_productos">
+                    <a class="prod_menu" href="{{ url('/productos') }}">
                         PRODUCTO
                     </a>
-                  
+                    <ul>
+                        <li class="menu_cate">
+                            <a href="{{ route('productos')}}">TODOS LOS PRODUCTOS</a>
+                        </li>
+                        @foreach($categorias as $categoria)
+                        <li class="menu_cate">
+                            <a href="{{ route('categorias', $categoria->id)}}" style="text-transform: uppercase;">{{ $categoria->nombre }}</a>
+                            <ul class="menu_subcate">
+                                @foreach($subcategorias as $subcategoria)
+                            @if($subcategoria->id_superior==$categoria->id)                                
+                                <li>
+                                    <a href="{{ route('subcategorias', $subcategoria->id)}}" style="text-transform: uppercase;">{!! $subcategoria->nombre !!}</a>
+                                </li>
+                                @endif
+                                @endforeach
+                            </ul>
+                        </li>
+                        @endforeach
+                    </ul>
                 </li>
                 @else
                 <li id="menu_productos">
@@ -162,7 +180,7 @@
                 </img>
             </a>
             <a class="sidenav-trigger" data-target="mobile-demo" href="#">
-                <i class="material-icons center" style="background-color: gray; width: 150%">
+                <i class="material-icons center" style="background-color: #FF5B88; width: 150%">
                     menu
                 </i>
             </a>
@@ -195,7 +213,7 @@
                 @endif
                     @if($activo=='contacto')
                 <li>
-                    <a class="activo" href="{{ url('/contacto', 'productos parpen') }}">
+                    <a class="activo" href="{{ url('/contacto', 'General') }}">
                         CONTACTO
                     </a>
                 </li>
@@ -211,12 +229,12 @@
     </nav>
     <ul class="sidenav" id="mobile-demo">
         <li>
-            <a href="{{ url('/mantenimiento') }}">
+            <a href="{{ url('/') }}">
                 INICIO
             </a>
         </li>
         <li>
-            <a href="{{ url('/categorias') }}">
+            <a href="{{ url('/empresa') }}">
                 QUIÉNES SOMOS
             </a>
         </li>
@@ -226,17 +244,17 @@
             </a>
         </li>
         <li>
-            <a href="{{ url('/consejos') }}">
+            <a href="{{ url('/donde') }}">
                 DÓNDE COMPRAR
             </a>
         </li>
         <li>
-            <a href="{{ url('/categoriaobras') }}">
+            <a href="{{ route('novedades', 'destacados') }}">
                 NOVEDADES
             </a>
         </li>
         <li>
-            <a href="{{ url('/clientes') }}">
+            <a href="{{ url('/contacto', 'General') }}">
                 CONTACTO
             </a>
         </li>

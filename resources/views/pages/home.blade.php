@@ -119,7 +119,7 @@
         </div>
     </div>
 </div>
-<div class="seccion-banner" style="margin-top: -35px;">
+<div class="seccion-banner hide-on-med-and-down" style="margin-top: -35px;">
     <div class="btexto">
         <div class="tbanner center">
             <p>

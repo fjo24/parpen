@@ -8,41 +8,41 @@
         <nav class="principalnov">
             <div class="row col l12 m12 s12 list">
                 
-                <ul class="center itemsnov hide-on-med-and-down">
+                <ul class="center itemsnov">
                     @if($tipon=='destacados')
-                    <li class="col l3 m3 s6">
+                    <li class="col l3 m3 s12">
                         <a class="activado" href="{{ route('novedades', 'destacados') }}">
                             Destacados
                         </a>
                     </li>
                     @else
-                    <li class="col l3 m3 s6">
+                    <li class="col l3 m3 s12">
                         <a href="{{ route('novedades', 'destacados') }}">
                             Destacados
                         </a>
                     </li>
                     @endif
                 @if($tipon=='exposiciones')
-                    <li class="col l3 m3 s6">
+                    <li class="col l3 m3 s12">
                         <a class="activado" href="{{ route('novedades', 'exposiciones') }}">
                             Exposiciones
                         </a>
                     </li>
                     @else
-                    <li class="col l3 m3 s6">
+                    <li class="col l3 m3 s12">
                         <a href="{{ route('novedades', 'exposiciones') }}">
                             Exposiciones
                         </a>
                     </li>
                     @endif
                 @if($tipon=='ideas')
-                    <li class="col l3 m3 s6">
+                    <li class="col l3 m3 s12">
                         <a class="activado" href="{{ route('novedades', 'ideas') }}">
                             Ideas
                         </a>
                     </li>
                     @else
-                    <li class="col l3 m3 s6">
+                    <li class="col l3 m3 s12">
                         <a class='' href='{{ route('novedades', 'ideas') }}' data-target='dropdown1'>
                             Ideas
                         </a>
@@ -50,13 +50,13 @@
                     @endif
 
                     @if($tipon=='promociones')
-                    <li class="col l3 m3 s6">
+                    <li class="col l3 m3 s12">
                         <a class="activado" href="{{ route('novedades', 'promociones') }}">
                             Promociones
                         </a>
                     </li>
                     @else
-                    <li class="col l3 m3 s6">
+                    <li class="col l3 m3 s12">
                         <a class='' href='{{ route('novedades', 'promociones') }}' data-target='dropdown1'>
                             Promociones
                         </a>
@@ -68,7 +68,7 @@
 @foreach($novedades as $novedad)
                 @if($novedad->seccion==$tipon)
     <div class="row">
-        
+            
         <div class="contnovedad col l12 m12 s12">
             <div class="col l4 m4 s12" style="padding-left: 0px;">
             @foreach($novedad->imagenes as $imagen)
