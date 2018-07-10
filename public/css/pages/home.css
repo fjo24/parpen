@@ -65,3 +65,17 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     top: 5px;
     right: 221px;
 }
+@media only screen and (max-width: 993px){
+.tbanner {
+    font-size: 27px;
+    }
+.tbanner2 p {
+    color: #595959;
+    font-size: 15px;
+}
+
+.boton2 {
+    top: -65px;
+    right: 209px;
+}
+}

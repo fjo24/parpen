@@ -23,7 +23,7 @@
     <div class="col s12">
         <table class="highlight bordered">
             <thead>
-                <th>
+                <th class="hide-on-med-and-down">
                 	Imagen
                 </th>
                 <th>
@@ -42,7 +42,7 @@
             <tbody>
                 @foreach($destacados as $destacado)
                 <tr>
-                    <td><img src="{{ asset($destacado->imagen) }}" alt="seccion" width="400" height="150"/>
+                    <td class="hide-on-med-and-down"><img src="{{ asset($destacado->imagen) }}" alt="seccion" width="400" height="150"/>
                     </td>
                     <td>
                         {!!$destacado->nombre!!}

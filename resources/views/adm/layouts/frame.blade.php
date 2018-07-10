@@ -209,28 +209,6 @@
                                 </li>
                             </ul>
                         </div>
-                        <li class="bold">
-                            <a class="collapsible-header waves-effect waves-admin">
-                                <i class="material-icons">
-                                    location_on
-                                </i>
-                                Locales
-                            </a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li>
-                                        <a href="{{route('locales.create')}}">
-                                            Agregar local
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{route('locales.index')}}">
-                                            Ver/Editar Locales
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
                     </li>
                     <li class="bold">
                         <a class="collapsible-header waves-effect waves-admin">

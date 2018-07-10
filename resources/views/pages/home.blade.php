@@ -6,7 +6,23 @@
 <link href="{{ asset('css/pages/home.css') }}" rel="stylesheet"/>
 @endsection
 @section('contenido')
-<div class="slider hide-on-med-and-down">
+@if(count($errors) > 0)
+        <div class="col s12 card-panel red lighten-4 red-text text-darken-4">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{!!$error!!}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+        @isset($success)
+        <div class="col s12 card-panel green lighten-4 green-text text-darken-4">
+          {{ $success }}
+        </div>
+        @endisset
+       
+
+<div class="slider">
     <ul class="slides" style="height: 561px!important;width: 100%">
         @foreach($sliders as $slider)
         <li>
@@ -64,7 +80,7 @@
                         </div>
                     </div>
                     <div class="col l12 s12">
-                        <div class="div-bloque card z-depth-0" style="width: 370px;">
+                        <div class="div-bloquelarge card z-depth-0" style="width: 370px;">
                             <div class="card-image center-align">
                                 <a class="imglarge" href="{!!$bloque4->link !!}">
                                     <img src="{{asset($bloque4->imagen)}}" style="">
@@ -87,7 +103,7 @@
                                 </img>
                             </a>
                         </div>
-                        <div class="div-nombre center">
+                        <div class="div-nombrehight center">
                             <p class="texto">
                                 {!!$bloque3->nombre !!}
                             </p>
@@ -119,7 +135,7 @@
         </div>
     </div>
 </div>
-<div class="seccion-banner hide-on-med-and-down" style="margin-top: -35px;">
+<div class="seccion-banner" style="margin-top: -35px;">
     <div class="btexto">
         <div class="tbanner center">
             <p>

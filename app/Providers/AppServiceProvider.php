@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Categoria;
 use App\Dato;
 use App\Red;
+use App\Producto;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -18,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
     {
         \Schema::defaultStringLength(191);
 
+        $productosoferta = Producto::Where('tipo', 'oferta')->orderBy('orden', 'asc')->limit(8)->get();
         $subcategorias = Categoria::whereNotNull('id_superior')->orderBy('orden', 'asc')->get();
         $categorias    = Categoria::where('id_superior', null)->orderBy('orden', 'asc')->get();
         $telefono   = Dato::where('tipo', 'telefono')->first();
@@ -38,6 +40,7 @@ class AppServiceProvider extends ServiceProvider
             'instagram'  => $instagram,
             'facebook'   => $facebook,
             'youtube'    => $youtube,
+            'productosoferta' => $productosoferta,
         ]);
     }
 

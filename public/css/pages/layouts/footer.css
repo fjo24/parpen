@@ -85,6 +85,7 @@ footer .titulo-footer2 {
 }
 
 footer .leftitems a{
+        text-transform: uppercase;
     position: relative;
     top: 3px;
     color: #595959!important;

@@ -19,30 +19,30 @@
                             <div class="container-distribuidor">
                                 {!!Form::open(['route'=>'donde.comprar', 'method'=>'GET'])!!}
                                 <div class="row no-margin">
-                                    <div class="input-field col s12 l3">
+                                    <div class="input-field col s6 l3">
                                         <input autocomplete="off" background="white" class="direccion_mapa" id="direccion" name="direccion" placeholder="Ingresa una ubicación" style="background-color: white" type="text"/>
                                         <label class="titulos_input_direccion" for="direccion">
                                             Provincia, localidad, barrio o dirección
                                         </label>
                                     </div>
-                                    <div class="input-field col s12 l3">
+                                    <div class="input-field col s6 l3">
                                         <input autocomplete="off" background="white" class="radio_mapa" id="radio" name="radio" placeholder="Radio en km" style="background-color: white" type="number"/>
                                         <label class="titulos_input_radio" for="radio">
                                             Radio de búsqueda
                                         </label>
                                     </div>
-                                    <div class="col s12 l2">
+                                    <div class="col s2 l2">
                                         <button class="boton_mapa btn waves-effect waves-light" name="action" type="submit">
                                             BUSCAR
                                         </button>
                                     </div>
-                                    <div class="ver_mapa col s12 l2">
+                                    <div class="ver_mapa col s5 l2">
                                         <a href="{{ url('/donde') }}">
                                             <img alt="" src="{{asset('img/ver_mapa2.png')}}">
                                             </img>
                                         </a>
                                     </div>
-                                    <div class="ver_listado col s12 l2" style="    margin-top: 1%;">
+                                    <div class="ver_listado col s5 l2" style="    margin-top: 1%;">
                                         <a href="{{ url('/dondelistado') }}">
                                             <img alt="" src="{{asset('img/listado2.png')}}">
                                             </img>

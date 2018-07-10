@@ -79,36 +79,13 @@
                     </h5>
                     <div class="linksb">
                         <ul>
+                        @foreach($productosoferta as $poferta)
                             <li>
-                                <a class="itemsc" href="#!">
-                                    ARMADORES DE PLÁSTICO
+                                <a class="itemsc" href="{{ url('/producto/'.$poferta->id) }}" style="text-transform: uppercase;">
+                                    {{ $poferta->nombre }}
                                 </a>
                             </li>
-                            <li>
-                                <a class="itemsc" href="#!">
-                                    AROS INOXIDABLES
-                                </a>
-                            </li>
-                            <li>
-                                <a class="itemsc" href="#!">
-                                    HERRAMIENTAS VARIAS
-                                </a>
-                            </li>
-                            <li>
-                                <a class="itemsc" href="#!">
-                                    MARCADORES DE PASTAS
-                                </a>
-                            </li>
-                            <li>
-                                <a class="itemsc" href="#!">
-                                    MINI RODILLOS
-                                </a>
-                            </li>
-                            <li>
-                                <a class="itemsc" href="#!">
-                                    MOLDES PLACAS
-                                </a>
-                            </li>
+                        @endforeach
                         </ul>
                     </div>
                 </div>

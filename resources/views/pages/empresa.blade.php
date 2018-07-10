@@ -32,7 +32,7 @@
     <div class="destacado-empresa">
 <div class="container" style="width: 84%;">
         <div class="row" style="position: relative;top: 66px;">
-            <div class="col l6 s12 hide-on-med-and-down">
+            <div class="col l6 s12">
                 <img class="img-destacado responsive-img" src="{!! $contenido->imagen !!}" style="">
                 </img>
             </div>

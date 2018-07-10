@@ -9,7 +9,7 @@
 	min-width: 800px;
 	position: absolute;
 	background-color: #FF608A;
-	z-index: 999;
+	z-index: 3;
 	left: 50%;
 	transform: translateX(-50%);
 	padding: 15px 15px 5px 15px;
@@ -142,3 +142,54 @@
     font-family: 'Lato';
     font-weight: bold;
 }
+
+
+
+@media only screen and (max-width: 993px){
+  .container-distribuidor {
+    width: 100%;
+    height: 22%;
+    min-width: 0;
+    position: absolute;
+    background-color: #FF608A;
+    z-index: 3;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 15px 5px 15px;
+}
+
+.direccion_mapa {
+    width: 100%!important;
+}
+
+.radio_mapa {
+    width: 100%!important;
+        right: 5%;
+}
+
+.boton_mapa {
+
+    top: 0%;
+    right: 8%;
+
+}
+
+.ver_mapa a img {
+    left: 65%;
+}
+
+.ver_listado a img {
+    position: relative;
+    left: 26%;
+}
+
+.titulos_input_direccion {
+    font-size: 11px!important;
+}
+
+.titulos_input_radio {
+    font-size: 13px!important;
+}
+
+}
+

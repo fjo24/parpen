@@ -100,7 +100,7 @@
                                             @if($producto->visible!='privado')
                                                             @if($producto->categoria_id==$subcategoria->id)
                                                 <div class="collapsible-header" style="padding-top: 5px;">
-                                                <a href="{{ route('productoinfo', $prod->id)}}">
+                                                <a href="{{ route('productoinfo', $producto->id)}}">
                                                     {!! $producto->nombre !!}
                                                     </a>
                                                 </div>

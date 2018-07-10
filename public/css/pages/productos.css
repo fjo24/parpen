@@ -283,7 +283,7 @@
 
 @media only screen and (max-width: 993px){
     .galeriadeproducto {
-    width: 155%!important;
+        width: 125%!important;
     height: 85%!important;
     padding-right: 0px!important;
 }

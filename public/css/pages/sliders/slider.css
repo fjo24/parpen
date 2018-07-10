@@ -47,3 +47,33 @@
     padding: 3%;
     color: #909090;
 }
+
+@media only screen and (max-width: 993px){
+
+.slider .slides li img {
+    width: 100%!important;
+}
+.box-cap {
+    position: absolute!important;
+    top: 25%!important;
+    left: 9%!important;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 84%!important;
+    height: 231px;
+    line-height: 250%;
+    color: #FF5F8A!important;
+    text-align: center;
+    font-family: 'Asap';
+}
+
+.slidertext1 {
+    position: relative;
+    top: 44px;
+    left: -1%;
+    line-height: 29px;
+    font-family: 'Asap';
+    font-size: 37px;
+    font-weight: bold;
+    padding: 1%;
+}
+}
