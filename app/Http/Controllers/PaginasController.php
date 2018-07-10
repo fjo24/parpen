@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Categoria;
 use App\Contenido_home;
+use App\User;
 use App\Dato;
 use App\Destacado_home;
 use App\Destacado_mantenimiento;
@@ -131,7 +132,7 @@ class PaginasController extends Controller
     public function dondeComprar()
     {
         $activo = 'donde';
-        $mapas  = Local::all();
+        $mapas  = User::where('activo', 1)->get();
 
         return view('pages.donde', compact('mapas', 'activo'));
     }
@@ -139,7 +140,7 @@ class PaginasController extends Controller
     public function dondeComprarlistado()
     {
         $activo = 'donde';
-        $mapas  = Local::all();
+        $mapas  = User::where('activo', 1)->get();
 
         return view('pages.dondelistado', compact('mapas', 'activo'));
     }

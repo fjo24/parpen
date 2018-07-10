@@ -13,7 +13,7 @@
             <input id="p2_{{ $cont_mapa }}" name="" type="hidden" value="{{ $mapa->lng }}">
                 <?php $cont_mapa++; ?>
                 @endforeach
-                <input id="cantidad" name="" type="hidden" value="2">
+				<input type="hidden" id="cantidad" name="" value="{{ $cont_mapa }}">
                     <link href="{{ asset('css/pages/donde.css') }}" rel="stylesheet">
                         <main>
                             <div class="container-distribuidor">
@@ -83,8 +83,8 @@
 	 	var codificador = new google.maps.Geocoder();
 
 
-	 	var direccion = '';
-	 	var kilometros = '';
+	 	var direccion = '<?php if(isset($_GET['direccion'])){echo $_GET['direccion'];}else{echo '';} ?>';
+	 	var kilometros = '<?php if(isset($_GET['radio'])){echo $_GET['radio'];}else{echo '';} ?>';
 
 	 	if(kilometros == ''){
 	 		kilometros = 1000000;

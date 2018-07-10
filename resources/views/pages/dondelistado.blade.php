@@ -13,7 +13,7 @@
             <input id="p2_{{ $cont_mapa }}" name="" type="hidden" value="{{ $mapa->lng }}">
                 <?php $cont_mapa++; ?>
                 @endforeach
-                <input id="cantidad" name="" type="hidden" value="2">
+                <input type="hidden" id="cantidad" name="" value="{{ $cont_mapa }}">
                     <link href="{{ asset('css/pages/donde.css') }}" rel="stylesheet">
                         <main>
                             <div class="container-distribuidor">
@@ -66,10 +66,10 @@
                             Dirección
                         </td>
                         <td class="center">
-                            Localidad
+                            Postal
                         </td>
                         <td class="center"">
-                            Provincia
+                            Razón Social
                         </td>
                         <td class="center">
                             Telefono
@@ -79,16 +79,16 @@
                         @foreach($mapas as $mapa)
                         <tr>
                             <td class="celda_nombre center">
-                                {!!$mapa->nombre!!}
+                                {!!$mapa->name!!} {!!$mapa->apellido!!}
                             </td>
                             <td class="celda_resto center">
                                 {!!$mapa->direccion!!}
                             </td>
                             <td class="celda_resto center">
-								{!!$mapa->localidad!!}
+								{!!$mapa->postal!!}
                             </td>
                             <td class="celda_resto center">
-								{!!$mapa->provincia!!}
+								{!!$mapa->social!!}
                             </td>
                             <td class="celda_resto center">
 								{!!$mapa->telefono!!}
@@ -129,8 +129,8 @@
 	 	var codificador = new google.maps.Geocoder();
 
 
-	 	var direccion = '';
-	 	var kilometros = '';
+	 	var direccion = '<?php if(isset($_GET['direccion'])){echo $_GET['direccion'];}else{echo '';} ?>';
+	 	var kilometros = '<?php if(isset($_GET['radio'])){echo $_GET['radio'];}else{echo '';} ?>';
 
 	 	if(kilometros == ''){
 	 		kilometros = 1000000;
@@ -193,7 +193,7 @@
 </script>
 <script type="text/javascript">
     $('.logo').click(() => {
-            window.location.href = "/drimer";
+            window.location.href = "/parpen";
         });
 </script>
 @endsection
