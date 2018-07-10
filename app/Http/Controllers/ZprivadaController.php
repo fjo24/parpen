@@ -20,7 +20,7 @@ class ZprivadaController extends Controller
         $ready     = 0;
         $config    = 4;
         $shop      = 0;
-        $productos = Producto::OrderBy('orden', 'ASC')->get();
+        $productos = Producto::OrderBy('orden', 'ASC')->where('visible', '<>', 'privado')->get();
         $aux       = Producto::orderBy('orden', 'ASC')->get();
         $prod      = $aux->toJson();
         // dd($carrito->all());
