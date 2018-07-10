@@ -9,7 +9,7 @@ class UsersController extends Controller
 {
     public function index()
     {
-        $users = User::orderBy('id', 'ASC')->paginate(5);
+        $users = User::orderBy('id', 'ASC')->Where('nivel', '<>', 'distribuidor')->get();
         return view('adm.user.index')
             ->with('users', $users);
     }

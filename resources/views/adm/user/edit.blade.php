@@ -21,7 +21,7 @@
 
 		<div class="row">
 			<div class="col s12">
-			{!!Form::model($user, ['route'=>['user.update',$user->id], 'method'=>'PUT', 'files' => true])!!}
+			{!!Form::model($user, ['route'=>['users.update',$user->id], 'method'=>'PUT', 'files' => true])!!}
 				{{ csrf_field() }}
 				<div class="row">
 					<div class="input-field col l4 s12 m4">
