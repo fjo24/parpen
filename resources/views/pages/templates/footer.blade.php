@@ -11,7 +11,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col l12 s12 m12">
+                    <div class="col l12 s12 m6">
                         <div class="li-redes-footer center">
                             <div class="item-redesf">
                                 <a href="{{$facebook->link}}">
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="footer-b col l3 s12 m3" style="    padding-left: 5%;">
+                <div class="footer-b col l3 s12 m6" style="    padding-left: 5%;">
                     <h5 class="titulo-footer" style="    margin-top: 46px;">
                         SITEMAP
                     </h5>
@@ -73,7 +73,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="leftitems col l3 s12 m3">
+                <div class="leftitems col l3 s12 m6">
                     <h5 class="titulo-footer2" style="margin-top: 15%;">
                         PRODUCTOS
                     </h5>
@@ -89,7 +89,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="footer_c col l3 s12 m3 left">
+                <div class="footer_c col l3 s12 m6 left">
                     <h5 class="titulo-footer3" style="margin-top: 15%;">
                         PARPEN ARGENTINA
                     </h5>

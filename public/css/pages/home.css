@@ -25,6 +25,17 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
     transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s;
 }
 
+.newsletter{
+    top: -10px;width: 271px;
+    height: 42px;
+    background-color: white;
+    border-bottom:none;
+    border-bottom: none;
+    margin-left: 0%;
+    border-radius: 3px;
+    border: 1px solid #B0B0B0;
+}
+
 
 element.style {
 }
@@ -65,7 +76,9 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     top: 5px;
     right: 221px;
 }
-@media only screen and (max-width: 993px){
+
+
+@media only screen and (max-width: 1100px){
 .tbanner {
     font-size: 27px;
     }
@@ -77,5 +90,16 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 .boton2 {
     top: -65px;
     right: 209px;
+}
+
+.newsletter{
+    top: -10px;width: 100%;
+    height: 42px;
+    background-color: white;
+    border-bottom:none;
+    border-bottom: none;
+    margin-left: 0%;
+    border-radius: 3px;
+    border: 1px solid #B0B0B0;
 }
 }

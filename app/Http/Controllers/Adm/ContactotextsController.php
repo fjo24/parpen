@@ -8,7 +8,7 @@ use App\Contactotext;
 
 class ContactotextsController extends Controller
 {
-	 public function create()
+	public function create()
     {
         $contacto = Contactotext::all()->first();
         return redirect()->route('contacto.edit', $contacto->id);
