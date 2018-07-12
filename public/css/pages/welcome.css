@@ -1,0 +1,148 @@
+.slider h5>p {
+    font-size: 2.5rem;
+    line-height: 110%;
+    margin: .6rem 0 .6rem 0;
+    font-weight: 400;
+    /*text-shadow: 1px 1px 2px rgba(1, 1, 1, 1);*/
+    margin-bottom: 0px;
+}
+.slider h3 {margin-top: 0px;}
+.slider h3>p {
+    font-size: 3.5rem;
+    line-height: 91%;
+    margin: 0.46rem 0 0.168rem 0;
+    font-weight: 700;
+    /*text-shadow: 1px 1px 2px rgba(1, 1, 1, 1);*/
+
+    
+}
+.slider h3>p>span>strong{
+	font-weight: 700;
+}
+
+section.sabor{
+	background-color: #FDF9EB;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+section.sabor img{
+	display: block;
+	margin: auto;
+}
+
+section.sabor h2{
+	color: #BE0000;
+	font-size: 30px;
+	font-weight: 700;
+	letter-spacing: 3px;
+	margin: 0;
+	margin-bottom: 5px;
+}
+
+section.sabor h3{
+	color: #BE0000;
+	font-size: 19px;
+	letter-spacing: 2px;
+	margin: 0;
+	margin-bottom: 30px;
+}
+
+section.sabor{
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
+section.sabor .boton{
+	height: 36px;
+	width: auto;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	color: #5A462E;
+	border: 1px solid #5A462E;
+	display: inline-block;
+	line-height: 36px;
+	padding: 0 15px;
+	cursor: pointer;
+	transition: 0.3s;
+	margin-top: 15px;
+}
+
+section.sabor .boton:hover{
+	background-color: #5A462E;
+	color: #FDF9EB;
+	transition: 0.3s;
+}
+
+.card .card-image .card-title {
+   	font-weight: 700;
+   	text-transform: uppercase;
+   	padding: 20px;
+   	font-size: 22px;
+   	letter-spacing: 3px;
+   	line-height: 26px;
+}
+
+.card .card-image .card-title span{
+   	font-size: 11px;
+   	font-weight: 400;
+   	text-transform: none;
+}
+
+section.destacados{
+	padding-top: 40px;
+	padding-bottom: 20px;
+}
+
+@media only screen and (max-width: 993px){
+	section.sabor img{
+		margin-bottom: 40px;
+	}
+}
+div.caption{
+	left: 63%!important;
+	width: 23%!important;
+	top: 23%!important;
+}
+
+@media all and (max-width: 1549px){
+	div.caption{
+		left: 58%!important;
+		width: 40%!important;
+	}
+}
+@media all and (max-width: 1300px){
+	div.caption{
+		left: 60%!important;
+		width: 40%!important;
+	}
+}
+@media all and (max-width: 812px){
+	div.caption{
+		display: none;
+	}
+}
+
+.card .card-image .card-title {
+    padding: 10% 23%!important;
+}
+
+.card-title{
+	background-color: rgba(179, 0, 74, 0.86);
+	display: table;
+}
+
+.card-title p{
+	display: table-cell;
+	text-align: center;
+}
+
+@media only screen and (max-width: 993px){
+
+	.b3 {
+	    height: 300px!important;
+	}	
+
+}
+
+

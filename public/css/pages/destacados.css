@@ -197,6 +197,12 @@
         margin-bottom: 148px;
 }
 
+@media only screen and (max-width: 993px){
 
+    .card-image img{
+        height: 400px!important;
+            right: 302px!important;
+            margin-bottom: 10%;
+    }   
 
-
+}

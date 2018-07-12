@@ -2,7 +2,7 @@
     <div class="container" style="width: 100%">
         <div class="row" style="display:  flex; align-items:  center;">
             <div class="col l12 s12 m12">
-                <div class="footer-a col l3 s12 m3">
+                <div class="footer-a col l3 s12 m6">
                     <div class="col l12 s12 m12">
                         <div class="row">
                             <div class="logfooter center">
@@ -11,7 +11,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col l12 s12 m6">
+                    <div class="col l12 s12 m12">
                         <div class="li-redes-footer center">
                             <div class="item-redesf">
                                 <a href="{{$facebook->link}}">
@@ -93,7 +93,7 @@
                     <h5 class="titulo-footer3" style="margin-top: 15%;">
                         PARPEN ARGENTINA
                     </h5>
-                    <div class="links2">
+              
                         <div class="listlinks2 col l12 m12 s12">
                             <ul>
                                 <li>
@@ -122,7 +122,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                 
                 </div>
             </div>
         </div>

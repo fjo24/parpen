@@ -89,7 +89,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 
 .boton2 {
     top: -65px;
-    right: 209px;
+        right: 68%;
 }
 
 .newsletter{
@@ -102,4 +102,59 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     border-radius: 3px;
     border: 1px solid #B0B0B0;
 }
+}
+
+
+@media only screen and (max-width: 900px){
+.boton2 {
+    top: -65px;
+    right: 330px;
+}
+    
+}
+
+@media only screen and (max-width: 900px){
+.boton2 {
+    top: -65px;
+    right: 72%;
+}
+
+footer .linksb {
+    font-family: 'Lato';
+    padding-left: 0px;
+    text-align: center;
+}
+
+footer .titulo-footer {
+    font-family: 'Lato';   
+    text-align: center;
+    padding-left: 0px;
+}
+
+footer .linksb {
+    font-family: 'Lato';
+    padding-left: 0px;
+    text-align: center;
+}
+
+footer .titulo-footer2 {
+    font-family: 'Lato';   
+    text-align: center;
+    padding-left: 0px;
+}
+
+footer .titulo-footer3 {
+    font-family: 'Lato';   
+    text-align: center;
+    padding-left: 0px;
+}
+
+footer .listlinks2 {
+    font-family: 'Lato';
+    padding-left: 0px;
+    text-align: center;
+}
+
+
+
 }

@@ -7,27 +7,27 @@
 @endsection
 @section('contenido')
 @if(count($errors) > 0)
-        <div class="col s12 card-panel red lighten-4 red-text text-darken-4">
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>{!!$error!!}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
+<div class="col s12 card-panel red lighten-4 red-text text-darken-4">
+    <ul>
+        @foreach($errors->all() as $error)
+        <li>
+            {!!$error!!}
+        </li>
+        @endforeach
+    </ul>
+</div>
+@endif
         @isset($success)
-        <div class="col s12 card-panel green lighten-4 green-text text-darken-4">
-          {{ $success }}
-        </div>
-        @endisset
-       
-
+<div class="col s12 card-panel green lighten-4 green-text text-darken-4">
+    {{ $success }}
+</div>
+@endisset
 <div class="slider">
     <ul class="slides" style="height: 561px!important;width: 100%">
         @foreach($sliders as $slider)
         <li>
             <img src="{{asset($slider->imagen)}}">
-            @if(isset($slider->texto)||isset($slider->texto2))
+                @if(isset($slider->texto)||isset($slider->texto2))
                 <div class="caption box-cap" style="">
                     <div style="">
                         <span class="slidertext2">
@@ -44,74 +44,78 @@
         @endforeach
     </ul>
 </div>
-<div class="container" style="width: 90%">
-    <div class="destacado-home">
-        <div class="row" style="margin-bottom: -5px!important;">
-                <div class="col l8 s12 no-padding">
-                    <div class="col l6 m12 s12">
-                        <div class="card">
-                            <div class="card-image">
-                                    <img src="{{asset($bloque1->imagen)}}" style="">
-                                    </img>
-                            </div>
-                            <div class="div-nombre center">
-                                <p class="texto">
+<div class="container" style="width: 87%;">
+    <section class="destacados">
+        <div class="row">
+            <div class="col s12 l8 no-padding">
+                <a href="{!!$bloque1->link !!}">
+                <div class="col s12 l6">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{{asset($bloque1->imagen)}}" style="">
+                            </img>
+                            <div class="card-title" style="display: table;background-color: rgba(179, 0, 74, 0.86);font-family: 'Asap';width: 100%;">
+                                <p style="display: table-cell;text-align: center;">
                                     {!!$bloque1->nombre !!}
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col l6 m12 s12">
-                        <div class="card">
-                            <div class="card-image center-align">
-                                <a class="responsive-img" href="{!!$bloque2->link !!}">
-                                    <img src="{{asset($bloque2->imagen)}}" style="">
-                                    </img>
-                                </a>
-                            </div>
-                            <div class="div-nombre center">
-                                <p class="texto">
-                                    {!!$bloque2->nombre !!}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col l12 m12 s12">
-                        <div class="card">
-                            <div class="card-image center-align">
-                                <a class="responsive-img" href="{!!$bloque4->link !!}">
-                                    <img src="{{asset($bloque4->imagen)}}" style="">
-                                    </img>
-                                </a>
-                            </div>
-                            <div class="div-nombrelarge center">
-                                <p class="texto">
-                                    {!!$bloque4->nombre !!}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <div class="col l4 m12 s12 no-padding">
-                    <div class="card">
-                        <div class="card-image center-align">
-                            <a class="responsive-img" href="{!!$bloque3->link !!}">
-                                <img src="{{asset($bloque3->imagen)}}" style="">
+                </a>
+                <a href="{!!$bloque2->link !!}">
+                    <div class="col s12 l6">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="{{asset($bloque2->imagen)}}" style="">
                                 </img>
-                            </a>
+                                <div class="card-title" style="display: table;background-color: rgba(179, 0, 74, 0.86);font-family: 'Asap';width: 100%;">
+                                    <p style="display: table-cell;text-align: center;">
+                                        {!!$bloque2->nombre !!}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="div-nombrehight center">
-                            <p class="texto">
-                                {!!$bloque3->nombre !!}
-                            </p>
+                    </div>
+                </a>
+                <a href="{!!$bloque4->link !!}">
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="{{asset($bloque4->imagen)}}" style="">
+                                </img>
+                                <div class="card-title" style="display: table;background-color: rgba(179, 0, 74, 0.86);font-family: 'Asap';width: 100%;">
+                                    <p style="display: table-cell;text-align: center;">
+                                        {!!$bloque4->nombre !!}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col s12 l4 no-padding">
+                <a href="{!!$bloque3->link !!}">
+                <div class="col s12">
+                    <div class="card">
+                        <div class="card-image">
+                            <img class="b3" src="{{asset($bloque3->imagen)}}" style="">
+                            </img>
+                            <div class="card-title" style="display: table;background-color: rgba(179, 0, 74, 0.86);font-family: 'Asap';width: 100%;">
+                                <p style="display: table-cell;text-align: center;">
+                                    {!!$bloque3->nombre !!}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                </a>
+            </div>
         </div>
-    </div>
+    </section>
 </div>
-    <div class="destacado-home2">
-<div class="container" style="width: 84%;">
+<div class="destacado-home2">
+    <div class="container" style="width: 84%;">
         <div class="row" style="position: relative;top: 66px;">
             <div class="col l6 s12 hide-on-med-and-down">
                 <img class="img-destacado responsive-img" src="{!! $contenido->imagen !!}" style="">
@@ -144,20 +148,17 @@
             </p>
         </div>
         <div class="tbanner3 center">
-     
-                {!!Form::open(['route'=>'newsletters.store', 'method'=>'POST', 'files' => true])!!}
-        <div class="row" style="font-family: 'Lato'; color: #B0B0B0;margin-left: 34%;margin-top: -1%;">
-            <div class="newsletter input-field left" style="">
-                        {!!Form::text('email', null , ['class'=>'', 'required', 'placeholder' => 'ESCRIBA SU EMAIL'])!!}
+            {!!Form::open(['route'=>'newsletters.store', 'method'=>'POST', 'files' => true])!!}
+            <div class="row" style="font-family: 'Lato'; color: #B0B0B0;margin-left: 34%;margin-top: -1%;">
+                <div class="newsletter input-field left" style="">
+                    {!!Form::text('email', null , ['class'=>'', 'required', 'placeholder' => 'ESCRIBA SU EMAIL'])!!}
+                </div>
+                <button class="boton2 btn waves-effect waves-light" name="action" type="submit">
+                    ENVIAR
+                </button>
             </div>
-            <button class="boton2 btn waves-effect waves-light" name="action" type="submit">
-                ENVIAR
-            </button>
+            {!!Form::close()!!}
         </div>
-
-        {!!Form::close()!!}
-        </div>
-           
     </div>
 </div>
 @endsection
