@@ -179,11 +179,19 @@
                 <img alt="" src="{{asset('img/logo_footer.png')}}">
                 </img>
             </a>
-            <a class="sidenav-trigger" data-target="mobile-demo" href="#">
-                <i class="material-icons center" style="background-color: #FF5B88; width: 150%">
+            <a class="sidenav-trigger" data-target="mobile-demo" href="#" style="width: 0%;margin-left: 0;">
+                <i class="material-icons center" >
                     menu
                 </i>
             </a>
+                
+            {!!  Form::open(['route' => 'buscar', 'method' => 'POST','class' => 'right']) !!}
+            <div class="lupa">
+        <input id="mobile_search" type="search" name="nombre" placeholder="">
+            </div>
+                        {!! Form::close() !!}
+
+
             <ul class="item-right right hide-on-med-and-down">
                 @if($activo=='donde')
                 <li>
@@ -227,36 +235,138 @@
             </ul>
         </div>
     </nav>
-    <ul class="sidenav" id="mobile-demo">
-        <li>
-            <a href="{{ url('/') }}">
-                INICIO
-            </a>
-        </li>
-        <li>
-            <a href="{{ url('/empresa') }}">
-                QUIÉNES SOMOS
-            </a>
-        </li>
-        <li>
-            <a href="{{ url('/productos') }}">
-                PRODUCTOS
-            </a>
-        </li>
-        <li>
-            <a href="{{ url('/donde') }}">
-                DÓNDE COMPRAR
-            </a>
-        </li>
-        <li>
-            <a href="{{ route('novedades', 'destacados') }}">
-                NOVEDADES
-            </a>
-        </li>
-        <li>
-            <a href="{{ url('/contacto', 'General') }}">
-                CONTACTO
-            </a>
-        </li>
-    </ul>
+
+
+    <ul class="sidenav" id="mobile-demo" style="position: absolute;">
+    <ul class="collapsible collapsible-accordion">
+                    <li class="bold">
+                        <a class="collapsible-header waves-effect waves-admin" href="{{ url('/') }}">
+                            <span class="side">
+                                
+                            INICIO
+                            </span>
+                            <i class="material-icons">
+                                home
+                            </i>
+                        </a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <a href="{{route('destacadoshomes.index')}}">
+                                        Editar Destacados
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('homes.create')}}">
+                                        Editar Contenido
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bold">
+                        <a class="collapsible-header waves-effect waves-admin">
+                            <i class="material-icons">
+                                compare_arrows
+                            </i>
+                            Sliders
+                        </a>
+                        <div class="collapsible-body">
+
+                            @foreach($categorias as $categoria)
+                    <ul class="collapsible">
+                        <li>
+                            <div class="collapsible-header" style="text-transform: uppercase;">
+                                <a href="{{ route('categorias', $categoria->id)}}">
+                                    {!! $categoria->nombre !!}
+                                </a>
+                            </div>
+                            @foreach($subcategorias as $subcategoria)
+                            @if($subcategoria->id_superior==$categoria->id)
+                            <div class="collapsible-body">
+                                <ul class="sub collapsible">
+                                    <li>
+                                        <div class="collapsible-header" style="text-transform: uppercase;">
+                                            {!! $subcategoria->nombre !!}
+                                            @isset($records)
+                                            <i class="material-icons">
+                                                filter_drama
+                                            </i>
+                                            @endisset
+                                        </div>
+                                        <div class="collapsible-body" style="padding-left: 25px!important; padding-top: 6px!important; text-transform: uppercase;">
+                                            @foreach($productos as $producto)
+                                            @if($producto->visible!='privado')
+                                                            @if($producto->categoria_id==$subcategoria->id)
+                                            <div class="collapsible-header" style="padding-top: 5px;text-transform: uppercase;">
+                                                {!! $producto->nombre !!}
+                                            </div>
+                                            @endif
+                                            @endif
+                                         @endforeach
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            @endif
+                              @endforeach
+
+                        </li>
+                    </ul>
+                    @endforeach
+                </div>
+                {{-- Menu final --}}
+                <div class="galeria col l8 m12 s12">
+                    @foreach($todos as $prod)
+                    <a href="{{ url('/producto/'.$prod->id) }}">
+                        <div class="center col l4 m4 s12 categoria-tarjeta">
+                            @foreach($prod->imagenes as $img)
+                            <div class="efecto">
+                                <span class="central">
+                                    <i class="material-icons">
+                                        add
+                                    </i>
+                                    <span class="ingresar">
+                                        Ingresar
+                                    </span>
+                                </span>
+                            </div>
+                            <img class="center responsive-img" src="{{ asset($img->imagen) }}"/>
+                            <h2 class="center">
+                                {{ $prod->nombre }}
+                            </h2>
+                            @if($ready == 0)    
+                                        @break;
+                                    @endif
+                            @endforeach
+                        </div>
+                    </a>
+                    @endforeach
+
+                        </div>
+                    </li>
+                    <li class="bold">
+                        <a class="collapsible-header waves-effect waves-admin">
+                            <i class="material-icons">
+                                email
+                            </i>
+                            Newsletter
+                        </a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <a href="{{route('newsletters.index')}}">
+                                        Listado
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('newsletters.create')}}">
+                                        Registrar email
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+ </ul>
+            </ul>
 </header>

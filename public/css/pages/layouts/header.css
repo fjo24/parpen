@@ -9,19 +9,14 @@
     left: -200% !important;
     background-color: #787950 !important;
 }
-
-#dropdown1{
-
-}
-
+#dropdown1 {}
 input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
     border-bottom: 1px solid #FF608A!important;
     -webkit-box-shadow: 0 1px 0 0 #FF608A!important;
     box-shadow: 0 1px 0 0 #FF608A!important;
 }
-
-.dropdown-content{
-        background-color: #fafafa!important;
+.dropdown-content {
+    background-color: #fafafa!important;
     margin: 0;
     display: none;
     min-width: 100px;
@@ -37,7 +32,6 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
     -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
 }
-
 header #buscador {
     float: right;
 }
@@ -185,7 +179,6 @@ nav ul a:hover {
     font-family: 'Asap';
     border-bottom: 3px solid #7D0045 !important;
 }
-
 nav .item-left a {
     color: #7D0045!important;
     font-size: 16px!important;
@@ -193,7 +186,6 @@ nav .item-left a {
     margin: 0 22px;
     padding: 0!important;
 }
-
 nav .item-left a:hover {
     color: #7D0045!important;
     font-size: 16px!important;
@@ -203,7 +195,7 @@ nav .item-left a:hover {
 }
 nav .item-left {
     position: relative;
-    top:77px;
+    top: 77px;
     left: 19px;
     width: 468px;
     font-size: 18px;
@@ -213,7 +205,7 @@ nav .item-left {
 }
 nav .item-right {
     position: relative;
-    top:77px;
+    top: 77px;
     right: 28px;
     font-size: 18px;
     word-spacing: 0px;
@@ -224,15 +216,124 @@ nav .item-right {
 nav ul li {
     margin: 0px 5px;
 }
-
-.colorboton{
+.colorboton {
     background-color: #7D0045!important;
 }
-
-.colorboton input{
-        color: white;
+.colorboton input {
+    color: white;
     font-family: 'Lato';
     font-weight: bold;
+}
+nav .sidenav-trigger {
+    color: #FF5B88!important;
+}
+/* lupita para buscador en movil*/
 
+#mobile_search {
+    display: none;
+    width: 45px;
+    /*ancho por defecto*/
+    background: #ededed url(/img/lupaa.png) no-repeat 9px center;
+    /*icono lupa*/
+    padding: 9px 10px 9px 32px;
+    border-radius: 15em;
+    -webkit-transition: all .5s;
+    /* transición de .5seg a todos los elementos para chrome*/
+    -moz-transition: all .5s;
+    /* transición de .5seg a todos los elementos para mozilla*/
+    -o-transition: all .5s;
+    /* transición de .5seg a todos los elementos para ophera*/
+    transition: all .5s;
+    /* transición de .5seg a todos los elementos*/
+    outline: none;
+    /* ocultar el fucos automático de los input */
+}
+#mobile_search:focus {
+    width: 130px;
+    /*tamaño del boton buscar al hacer click*/
+    padding-left: 32px;
+    /*espacio entre el icono lupa y el placeholder*/
+    color: #000;
+    background-color: #FFF;
+}
+@media only screen and (max-width: 990px) {
+    #mobile_search {
+        display: inline;
+        width: 0px;
+        /*ancho por defecto*/
+        background: #FFF url(/img/lupa.png) no-repeat 9px center;
+        /*icono lupa*/
+            position: relative;
+    left: 90%;
+        padding: 9px 43% 9px 32px;
+        border-radius: 15em;
+        -webkit-transition: all .5s;
+        /* transición de .5seg a todos los elementos para chrome*/
+        -moz-transition: all .5s;
+        /* transición de .5seg a todos los elementos para mozilla*/
+        -o-transition: all .5s;
+        /* transición de .5seg a todos los elementos para ophera*/
+        transition: all .5s;
+        /* transición de .5seg a todos los elementos*/
+        outline: none;
+        /* ocultar el fucos automático de los input */
+        border-bottom: 1px solid #FFF;
+    }
+    #mobile_search:focus {
+    margin-top: 128%;
+    height: 5px;
+    width: 70px;
+    /*tamaño del boton buscar al hacer click*/
+    padding-left: 39px;
+    /*espacio entre el icono lupa y el placeholder*/
+    margin-right: -12px;
+    color: #fff;
+    background-color: #FF5B88;
+    border-bottom: 1px solid #FFF;
+    position: relative;
+    left: -27px!important;
+    }
+
+    nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+    font-size: 58px!important;
 }
 
+nav .sidenav-trigger {
+    float: left;
+    position: relative;
+    z-index: 1;
+    height: 56px;
+    margin: 36px 0 0 0%!important;
+}
+}
+/* FIN lupita para buscador en movil*/
+
+@media only screen and (max-width: 767px) {
+    .top {
+        display: none;
+    }
+    header .principal img {
+        height: 75%;
+    }
+
+    nav .brand-logo {
+        top: 15px;
+    }
+
+    header .principal {
+        height: 130px!important;
+    }
+
+    .lupa{
+    right: 116%;
+    position: relative;
+        margin-top: 65%;
+    width: 51px;
+
+    }
+.lupa:focus{
+        left: 12%;
+    position: relative;
+    margin-top: 153%;
+}
+}

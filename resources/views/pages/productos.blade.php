@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col l12 m12 s12" style="padding-right: 0px;padding-left: 22px;">
                 {{-- Menu inicio --}}
-                <div class="menuproductos col l4 m4 s12">
+                <div class="menuproductos col l4 m12 s12">
                     <div class="menu-titulo">
                         PRODUCTOS
                     </div>
@@ -75,10 +75,10 @@
                     @endforeach
                 </div>
                 {{-- Menu final --}}
-                <div class="galeria col l8 m8 s12">
+                <div class="galeria col l8 m12 s12">
                     @foreach($todos as $prod)
                     <a href="{{ url('/producto/'.$prod->id) }}">
-                        <div class="col l4 m12 s12 categoria-tarjeta">
+                        <div class="center col l4 m4 s12 categoria-tarjeta">
                             @foreach($prod->imagenes as $img)
                             <div class="efecto">
                                 <span class="central">
@@ -90,7 +90,7 @@
                                     </span>
                                 </span>
                             </div>
-                            <img class="responsive-img" src="{{ asset($img->imagen) }}"/>
+                            <img class="center responsive-img" src="{{ asset($img->imagen) }}"/>
                             <h2 class="center">
                                 {{ $prod->nombre }}
                             </h2>

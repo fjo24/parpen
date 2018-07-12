@@ -9,7 +9,7 @@
 
 .slider .slides li img {
     height: 561px!important;
-    width: 1421px!important;
+    width: 100%!important;
     background-size: cover;
     background-position: center;
 }
@@ -68,12 +68,48 @@
 
 .slidertext1 {
     position: relative;
-    top: 44px;
+    top: 104px;
     left: -1%;
     line-height: 29px;
     font-family: 'Asap';
-    font-size: 37px;
+    font-size: 47px;
     font-weight: bold;
     padding: 1%;
 }
+
+.slidertext2 {
+    position: relative;
+    top: 60px;
+    padding: 10px!important;
+    font-family: 'Lato';
+    font-size: 44px;
+    font-weight: 400;
+    padding: 3%;
+    color: #909090;
 }
+}
+
+@media only screen and (max-width: 753px){
+.slidertext2 {
+    position: relative;
+    top: 30px;
+    padding: 10px!important;
+    font-family: 'Lato';
+    font-size: 32px;
+    font-weight: 600;
+    padding: 3%;
+    color: #909090;
+}
+.slidertext1 {
+    position: relative;
+    top: 37px;
+    left: -1%;
+    line-height: 29px;
+    font-family: 'Asap';
+    font-size: 40px;
+    font-weight: bold;
+    padding: 1%;
+}
+
+}
+

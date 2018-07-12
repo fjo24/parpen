@@ -23,7 +23,7 @@
 </div>
 @endisset
 <div class="slider">
-    <ul class="slides" style="height: 561px!important;width: 100%">
+    <ul class="slides" style="height: 461px!important;width: 100%">
         @foreach($sliders as $slider)
         <li>
             <img src="{{asset($slider->imagen)}}">
@@ -167,7 +167,7 @@
 <script type="text/javascript">
     $('.slider').slider({
         indicators: true,
-        height: 561,
+        height: 461,
     });
 </script>
 @endsection

@@ -105,6 +105,8 @@ footer .titulo-footer3 {
 }
 
 footer .footer_c a{
+    display: table;
+    text-align: center;
     position: relative;
     top: 3px;
     color: #595959!important;
@@ -113,4 +115,35 @@ footer .footer_c a{
     font-weight: bold;
     font-size: 15px;
 
+}
+
+@media only screen and (max-width: 1001px){
+    footer .titulo-footer3 {
+    
+    text-align: center;
+    padding-left: 0px!important;
+        margin-top: 26px!important;
+}
+
+footer .linksb {
+
+    text-align: center;
+    padding-left: 0px!important;
+}
+
+footer .listlinks2 {
+    display: table-cell;
+    text-align: center;
+    padding-left: 0px!important;
+}
+footer .titulo-footer2 {
+    text-align: center;
+    padding-left: 0px!important;
+        margin-top: 26px!important;
+}
+footer .titulo-footer {
+    text-align: center;
+    padding-left: 0px!important;
+        margin-top: 50px!important;
+}
 }

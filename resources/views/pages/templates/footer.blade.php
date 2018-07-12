@@ -34,7 +34,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="footer-b col l3 s12 m6" style="    padding-left: 5%;">
+                <div class="footer-b col l3 s12 m6" style="    padding-left: 2%;">
                     <h5 class="titulo-footer" style="    margin-top: 46px;">
                         SITEMAP
                     </h5>

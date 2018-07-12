@@ -281,7 +281,7 @@
     margin-left: 31px;
 }
 
-@media only screen and (max-width: 993px){
+@media only screen and (max-width: 1035px){
     .galeriadeproducto {
         width: 125%!important;
     height: 85%!important;
@@ -296,5 +296,19 @@
     margin-top: 60px;
     padding: 0!important;
 }
+
+.galeria {
+    width: 93%!important;
+    margin-top: 112px;
+    padding-left: 17px!important;
+    padding-right: 0px!important;
 }
+.galeria2 {
+    width: 92%!important;
+    margin-top: 87px;
+    padding-left: 17px!important;
+    padding-right: 0px!important;
+}
+}
+
 
