@@ -156,7 +156,7 @@
                 </li>
                 @else
                 <li id="menu_productos">
-                    <a class="prod_menu" href="{{ url('/productos') }}">
+                    <a class="prod_menu" href="{{ url('/categ') }}">
                         PRODUCTO
                     </a>
                     <ul>
@@ -248,7 +248,7 @@
     <ul class="sidenav" id="mobile-demo" style="position: absolute;">
         <ul class="collapsible collapsible-accordion">
             <li class="bold">
-                <a class="collapsible-header waves-effect waves-admin" href="{{ url('/') }}">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/') }}">
                     <span class="side">
                         INICIO
                     </span>
@@ -256,28 +256,38 @@
                         home
                     </i>
                 </a>
+            </li>
+            <li class="bold">
+                <a class="principalmovil collapsible-header waves-effect waves-admin">
+                    <i class="material-icons">
+                        group
+                    </i>
+                    QUIENES SOMOS
+                </a>
                 <div class="collapsible-body">
                     <ul>
                         <li>
-                            <a href="{{route('destacadoshomes.index')}}">
-                                Editar Destacados
+                            <a href="{{route('newsletters.index')}}">
+                                Listado
                             </a>
                         </li>
                         <li>
-                            <a href="{{route('homes.create')}}">
-                                Editar Contenido
+                            <a href="{{route('newsletters.create')}}">
+                                Registrar email
                             </a>
                         </li>
                     </ul>
                 </div>
             </li>
             <li class="bold" style="background-color: #FAFAFA;">
-                <a class="collapsible-header waves-effect waves-admin" style="
+                <a class="principalmovil collapsible-header waves-effect waves-admin" style="
       ">
       <i class="material-icons">
                         brush
                     </i>
+                    <span class="">    
                     PRODUCTOS
+                    </span>
                     <i class="material-icons right">
                         arrow_drop_down
                     </i>
@@ -287,15 +297,22 @@
                     @foreach($categorias as $categoria)
                     <ul class="collapsible">
                         <li>
-                            <a class="collapsible-header" style="background-color: #FAFAFA;   text-transform: uppercase;font-family: 'lato';font-weight: bold;color: #FF5F8A;border-style: solid;border-width: 0px 0px 1px 0px;padding-left: 4%;">
+                            <i class="material-icons right">
+                        arrow_drop_down
+                    </i>
+                            <a class="catemovil collapsible-header" style="">
                                     {!! $categoria->nombre !!}
+
                             </a>
                             @foreach($subcategorias as $subcategoria)
                             @if($subcategoria->id_superior==$categoria->id)
                             <div class="collapsible-body">
                                 <ul class="collapsible">
                                     <li>
-                                        <a class="collapsible-header"  style="background-color: #FAFAFA;   text-transform: uppercase;font-family: 'lato';font-weight: bold;color: #FF5F8A;border-style: solid;border-width: 0px 0px 1px 0px;padding-left: 8%;">
+                                    <i class="material-icons right">
+                        arrow_drop_down
+                    </i>
+                                        <a class="subcatemovil collapsible-header"  style="">
 
                                             {!! $subcategoria->nombre !!}
                                             @isset($records)
@@ -305,8 +322,8 @@
                                             @foreach($productos as $producto)
                                             @if($producto->visible!='privado')
                                                             @if($producto->categoria_id==$subcategoria->id)
-                                            <div class="collapsible-header"  style="background-color: #FAFAFA;   text-transform: uppercase;font-family: 'lato';font-weight: bold;color: #FF5F8A;border-style: solid;border-width: 0px 0px 1px 0px;padding-left: 0%">
-                                                <a style="text-transform: uppercase;font-family: 'Asap';font-weight: bold;color: #7D0045;font-size: 13px" href="{{ route('productoinfo', $producto->id)}}">
+                                            <div class="productomovil collapsible-header"  style="">
+                                                <a class="" style="" href="{{ route('productoinfo', $producto->id)}}">
                                                     {!! $producto->nombre !!}
                                                     </a>
                                             </div>
@@ -324,8 +341,8 @@
                             <div class="collapsible-body">
                                 <ul class="collapsible">
                                     <li>
-                                        <div class="collapsible-header" style="background-color: #FAFAFA;text-transform: uppercase;font-family: 'Asap';font-weight: bold;color: #7D0045;border-style: solid;border-width: 0px 0px 1px 0px;">
-                                            <a  style="text-transform: uppercase;font-family: 'Asap';font-weight: bold;color: #7D0045;    padding-left: 1%;font-size: 13px;" href="{{ route('productoinfo', $product->id)}}">
+                                        <div class="productomovil collapsible-header" style="">
+                                            <a  class="" style="" href="{{ route('productoinfo', $product->id)}}">
                                                     {!! $product->nombre !!}
                                             </a>
                                         </div>
@@ -340,26 +357,28 @@
                 </div>
             </li>
             <li class="bold">
-                <a class="collapsible-header waves-effect waves-admin">
+                <a class="principalmovil collapsible-header waves-effect waves-admin"  href="{{ url('/donde') }}">
                     <i class="material-icons">
-                        email
+                        map
                     </i>
-                    Newsletter
+                    DONDE COMPRAR
                 </a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li>
-                            <a href="{{route('newsletters.index')}}">
-                                Listado
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{route('newsletters.create')}}">
-                                Registrar email
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+            </li>
+            <li class="bold">
+                <a class="principalmovil collapsible-header waves-effect waves-admin"  href="{{ url('/donde') }}">
+                    <i class="material-icons">
+                        new_releases
+                    </i>
+                    NOVEDADES
+                </a>
+            </li>
+            <li class="bold">
+                <a class="principalmovil collapsible-header waves-effect waves-admin"  href="{{ url('/donde') }}">
+                    <i class="material-icons">
+                        contact_mail
+                    </i>
+                    CONTACTO
+                </a>
             </li>
         </ul>
     </ul>

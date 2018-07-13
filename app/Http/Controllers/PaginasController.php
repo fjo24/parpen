@@ -32,6 +32,18 @@ class PaginasController extends Controller
         return view('pages.home', compact('sliders', 'servicios', 'banner', 'contenido', 'activo', 'bloque1', 'bloque2', 'bloque3', 'bloque4'));
     }
 
+    public function categ()
+    {
+        $activo        = 'productos';
+        $categorias    = Categoria::where('id_superior', null)->orderBy('orden', 'asc')->get();
+        $subcategorias = Categoria::whereNotNull('id_superior')->orderBy('orden', 'asc')->get();
+        $productos     = Producto::orderBy('categoria_id')->get();
+        $todos         = Producto::OrderBy('orden', 'ASC')->get();
+        $ready         = 0;
+
+        return view('pages.cate', compact('categorias', 'subcategorias', 'productos', 'productos_directos', 'activo', 'todos', 'ready'));
+    }
+
     public function productos()
     {
         $activo        = 'productos';

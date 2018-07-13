@@ -6,6 +6,9 @@ Route::get('/', 'PaginasController@home')->name('inicio');
 //PRODUCTOS
 Route::get('/productos', 'PaginasController@productos')->name('productos');
 
+//CATEGORIAS
+Route::get('/categ', 'PaginasController@categ')->name('categ');
+
 //EMPRESAS
 Route::get('/empresa', 'PaginasController@empresa')->name('empresa');
 

@@ -256,6 +256,8 @@ nav .sidenav-trigger {
     color: #000;
     background-color: #FFF;
 }
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  990 px <<<<<<*/
 @media only screen and (max-width: 990px) {
     #mobile_search {
         display: inline;
@@ -264,7 +266,7 @@ nav .sidenav-trigger {
         background: #FFF url(/img/lupa.png) no-repeat 9px center;
         /*icono lupa*/
             position: relative;
-    left: 90%;
+        left: 113%;
         padding: 9px 43% 9px 32px;
         border-radius: 15em;
         -webkit-transition: all .5s;
@@ -279,23 +281,28 @@ nav .sidenav-trigger {
         /* ocultar el fucos automático de los input */
         border-bottom: 1px solid #FFF;
     }
-    #mobile_search:focus {
-    margin-top: 128%;
+
+#mobile_search:focus {
+    margin-top: 138%;
     height: 5px;
-    width: 70px;
-    /*tamaño del boton buscar al hacer click*/
-    padding-left: 39px;
-    /*espacio entre el icono lupa y el placeholder*/
-    margin-right: -12px;
-    color: #fff;
-    background-color: #FF5B88;
-    border-bottom: 1px solid #FFF;
+    width: 655%;
+    padding-left: 42px;
+    margin-right: 42px;
+    color: #FF5F8A;
+    background: none;
+    background-color: #fafafa;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-top: 1px solid;
+    border-bottom: 1px solid #FF5F8A!important;
     position: relative;
-    left: -27px!important;
-    }
+    /* right: 33%; */
+    left: -607%;
+    border-radius: 6px;
+}
 
     nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
-    font-size: 58px!important;
+    font-size: 40px!important;
 }
 
 nav .sidenav-trigger {
@@ -308,12 +315,56 @@ nav .sidenav-trigger {
 }
 /* FIN lupita para buscador en movil*/
 
-@media only screen and (max-width: 767px) {
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  1180 px <<<<<<*/
+@media only screen and (max-width: 1180px) {
+
+    header .principal img {
+            height: 120%;
+    margin-top: 20%;
+    }
+
+    nav .brand-logo {
+        top: 15px;
+    }
+
+    header .principal {
+        height:190px!important;
+    }
+nav .item-left a {
+    color: #7D0045!important;
+    font-size: 16px!important;
+    font-family: arial;
+    margin: 0 10px;
+    padding: 0!important;
+}
+
+nav ul a {
+    color: #7D0045!important;
+    font-size: 16px!important;
+    font-family: 'Asap';
+    margin: 0 1px;
+    padding: 0!important;
+}
+
+
+}
+
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  1000 px <<<<<<*/
+@media only screen and (max-width: 1000px) {
     .top {
         display: none;
     }
+    .filtro_categorias {
+    -webkit-box-shadow: none;
+    width: 100%!important;
+    position: relative!important;
+    top: 30%!important;
+    left: 0%!important;
+}
     header .principal img {
         height: 75%;
+        margin-top: 0%;
     }
 
     nav .brand-logo {
@@ -331,9 +382,339 @@ nav .sidenav-trigger {
     width: 51px;
 
     }
-.lupa:focus{
-        left: 12%;
+    .lupa:focus{
+            left: 12%;
+        position: relative;
+        margin-top: 153%;
+    }
+
+    #mobile_search {
+        display: inline;
+        width: 0px;
+        /*ancho por defecto*/
+        background: #FFF url(/img/lupa.png) no-repeat 9px center;
+        /*icono lupa*/
+            position: relative;
+        left: 113%;
+        padding: 9px 43% 9px 32px;
+        border-radius: 15em;
+        -webkit-transition: all .5s;
+        /* transición de .5seg a todos los elementos para chrome*/
+        -moz-transition: all .5s;
+        /* transición de .5seg a todos los elementos para mozilla*/
+        -o-transition: all .5s;
+        /* transición de .5seg a todos los elementos para ophera*/
+        transition: all .5s;
+        /* transición de .5seg a todos los elementos*/
+        outline: none;
+        /* ocultar el fucos automático de los input */
+        border-bottom: 1px solid #FFF;
+    }
+
+    #mobile_search:focus {
+    margin-top: 138%;
+    height: 5px;
+    width: 437%;
+    padding-left: 42px;
+    margin-right: 42px;
+    color: #FF5F8A;
+    background: none;
+    background-color: #fafafa;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-top: 1px solid;
+    border-bottom: 1px solid #FF5F8A!important;
     position: relative;
-    margin-top: 153%;
+    /* right: 33%; */
+    left: -406%;
+    border-radius: 6px;
 }
+
+    .catemovil{
+        background-color: #FAFAFA!important;   
+        text-transform: uppercase!important;
+        font-family: 'lato'!important;
+        font-weight: bold!important;
+        color: #595959!important;
+        border-style: solid!important;
+        border-width: 0px 0px 1px 0px!important;
+        padding-left: 4%!important;
+    }
+    .catemovil:hover{
+        background-color: #FF5F8A!important;   
+        text-transform: uppercase!important;
+        font-family: 'lato'!important;
+        font-weight: bold!important;
+        color: #FAFAFA!important;
+        border-style: solid!important;
+        border-width: 0px 0px 1px 0px!important;
+        padding-left: 4%!important;
+    }
+    .subcatemovil{
+        background-color: #FAFAFA!important;   
+        text-transform: uppercase;
+        font-family: 'lato'!important;
+        font-weight: bold!important;
+        color: #595959!important;
+        border-style: solid!important;
+        border-width: 0px 0px 1px 0px!important;
+        padding-left: 8%!important;
+    }
+
+    .subcatemovil:hover{
+        background-color: #FF5F8A!important;   
+        font-weight: bold!important;
+        color: #FAFAFA!important;
+        text-transform: uppercase;
+        font-family: 'lato';
+        color: #FAFAFA;
+        border-style: solid;
+        border-width: 0px 0px 1px 0px;
+        padding-left: 8%;
+    }
+
+    .productomovil{
+        text-transform: uppercase;
+        font-family: 'lato';
+        font-weight: bold;
+        border-style: solid!important;
+        border-width: 0px 0px 1px 0px!important;
+        padding-left: 0%!important;
+    }
+
+    .productomovil a{
+        padding-left: 4%!important;
+        padding-right: 0%!important;
+    }
+
+    .principalmovil{
+    color: #7D0045!important;
+    font-size: 16px!important;
+    font-family: 'Asap';
+    border-style: solid!important;
+    border-width: 0px 0px 1px 0px!important;
+    }
+
+    .sidenav li>a>i, .sidenav li>a>[class^="mdi-"], .sidenav li>a li>a>[class*="mdi-"], .sidenav li>a>i.material-icons {
+        float: left;
+        height: 48px;
+        line-height: 48px;
+        width: 24px;
+        margin-left: 10px;
+        color: #7D0045!important;
+    }
+}
+
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  767 px <<<<<<*/
+@media only screen and (max-width: 767px) {
+    .top {
+        display: none;
+    }
+    header .principal img {
+        height: 75%;
+        margin-top: 0%;
+    }
+    .filtro_categorias {
+    -webkit-box-shadow: none;
+       width: 100%!important;
+    position: relative;
+    top: 30%!important;
+    left: 0%!important;
+}
+
+    nav .brand-logo {
+        top: 15px;
+    }
+
+    header .principal {
+        height: 130px!important;
+    }
+
+    .lupa{
+    right: 116%;
+    position: relative;
+        margin-top: 65%;
+    width: 51px;
+
+    }
+    .lupa:focus{
+            left: 12%;
+        position: relative;
+        margin-top: 153%;
+    }
+
+    #mobile_search {
+        display: inline;
+        width: 0px;
+        /*ancho por defecto*/
+        background: #FFF url(/img/lupa.png) no-repeat 9px center;
+        /*icono lupa*/
+            position: relative;
+        left: 113%;
+        padding: 9px 43% 9px 32px;
+        border-radius: 15em;
+        -webkit-transition: all .5s;
+        /* transición de .5seg a todos los elementos para chrome*/
+        -moz-transition: all .5s;
+        /* transición de .5seg a todos los elementos para mozilla*/
+        -o-transition: all .5s;
+        /* transición de .5seg a todos los elementos para ophera*/
+        transition: all .5s;
+        /* transición de .5seg a todos los elementos*/
+        outline: none;
+        /* ocultar el fucos automático de los input */
+        border-bottom: 1px solid #FFF;
+    }
+
+    #mobile_search:focus {
+    margin-top: 138%;
+    height: 5px;
+    width: 437%;
+    padding-left: 42px;
+    margin-right: 42px;
+    color: #FF5F8A;
+    background: none;
+    background-color: #fafafa;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-top: 1px solid;
+    border-bottom: 1px solid #FF5F8A!important;
+    position: relative;
+    /* right: 33%; */
+    left: -406%;
+    border-radius: 6px;
+}
+
+    .catemovil{
+        background-color: #FAFAFA!important;   
+        text-transform: uppercase!important;
+        font-family: 'lato'!important;
+        font-weight: bold!important;
+        color: #595959!important;
+        border-style: solid!important;
+        border-width: 0px 0px 1px 0px!important;
+        padding-left: 4%!important;
+    }
+    .catemovil:hover{
+        background-color: #FF5F8A!important;   
+        text-transform: uppercase!important;
+        font-family: 'lato'!important;
+        font-weight: bold!important;
+        color: #FAFAFA!important;
+        border-style: solid!important;
+        border-width: 0px 0px 1px 0px!important;
+        padding-left: 4%!important;
+    }
+    .subcatemovil{
+        background-color: #FAFAFA!important;   
+        text-transform: uppercase;
+        font-family: 'lato'!important;
+        font-weight: bold!important;
+        color: #595959!important;
+        border-style: solid!important;
+        border-width: 0px 0px 1px 0px!important;
+        padding-left: 8%!important;
+    }
+
+    .subcatemovil:hover{
+        background-color: #FF5F8A!important;   
+        font-weight: bold!important;
+        color: #FAFAFA!important;
+        text-transform: uppercase;
+        font-family: 'lato';
+        color: #FAFAFA;
+        border-style: solid;
+        border-width: 0px 0px 1px 0px;
+        padding-left: 8%;
+    }
+
+    .productomovil{
+        text-transform: uppercase;
+        font-family: 'lato';
+        font-weight: bold;
+        border-style: solid!important;
+        border-width: 0px 0px 1px 0px!important;
+        padding-left: 0%!important;
+    }
+
+    .productomovil a{
+        padding-left: 4%!important;
+        padding-right: 0%!important;
+        font-family: 'lato'!important;
+        font-weight: bold!important;
+        color: #595959!important;
+    }
+
+    .principalmovil{
+    color: #7D0045!important;
+    font-size: 16px!important;
+    font-family: 'Asap';
+    border-style: solid!important;
+    border-width: 0px 0px 1px 0px!important;
+    }
+
+    .sidenav li>a>i, .sidenav li>a>[class^="mdi-"], .sidenav li>a li>a>[class*="mdi-"], .sidenav li>a>i.material-icons {
+        float: left;
+        height: 48px;
+        line-height: 48px;
+        width: 24px;
+        margin-left: 10px;
+        color: #7D0045!important;
+    }
+}
+
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  600 px <<<<<<*/
+@media only screen and (max-width: 600px) {
+#mobile_search:focus {
+        width: 305%;
+    background: none;
+    left: -509%;
+    border-radius: 6px;
+}
+header .principal img {
+    margin-top: 0%;
+    }
+}
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  500 px <<<<<<*/
+@media only screen and (max-width: 500px) {
+#mobile_search:focus {
+        width: 305%;
+    background: none;
+        left: -382%;
+    border-radius: 6px;
+}
+header .principal img {
+    margin-top: 0%;
+    }
+}
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  400 px <<<<<<*/
+@media only screen and (max-width: 400px) {
+#mobile_search:focus {
+    left: -387%!important;
+    width: 424%;    
+}
+@media only screen and (max-width: 350px) {
+#mobile_search:focus {
+    left: -355%!important;
+    width: 424%;    
+}
+header .principal img {
+    margin-top: 0%;
+    }
+}
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  300 px <<<<<<*/
+@media only screen and (max-width: 300px) {
+#mobile_search:focus {
+        width: 305%;
+    background: none;
+    left: -253%;
+    border-radius: 6px;
+}
+header .principal img {
+    margin-top: 0%;
+    }
 }
