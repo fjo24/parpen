@@ -29,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
         $facebook   = Red::where('nombre', 'facebook')->first();
         $youtube    = Red::where('nombre', 'youtube')->first();
         $email      = Dato::where('tipo', 'email')->first();
+        $productos     = Producto::orderBy('categoria_id')->get();
 
         view()->share([
             'telefono'   => $telefono,
@@ -41,14 +42,10 @@ class AppServiceProvider extends ServiceProvider
             'facebook'   => $facebook,
             'youtube'    => $youtube,
             'productosoferta' => $productosoferta,
+            'productos' => $productos,
         ]);
     }
 
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
     public function register()
     {
         //
