@@ -312,3 +312,13 @@
 }
 
 
+.titulo_filtro span{
+    padding-left: 44%;
+    color: #7D0045; 
+    font-family: 'Asap';
+}
+
+.titulo_filtro{
+    border: 1px solid #FF5F8A;
+    border-radius: 3px;
+}

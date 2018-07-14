@@ -280,19 +280,21 @@
                 </div>
             </li>
             <li class="bold" style="background-color: #FAFAFA;">
-                <a class="principalmovil collapsible-header waves-effect waves-admin" style="
+                <div class="principalmovil collapsible-header waves-effect waves-admin" style="
       ">
       <i class="material-icons">
                         brush
                     </i>
-                    <span class="">    
+                    <a href="{{ url('/productos') }}">
+                    <span class="" style="color: #7D0045; padding-left: 19%;">    
                     PRODUCTOS
                     </span>
-                    <i class="material-icons right">
+                </a>
+                    <i class="material-icons right" style="padding-left: 36%;color: #7D0045; z-index: 9;">
                         arrow_drop_down
                     </i>
                     
-                </a>
+                </div>
                 <div class="collapsible-body">
                     @foreach($categorias as $categoria)
                     <ul class="collapsible">
