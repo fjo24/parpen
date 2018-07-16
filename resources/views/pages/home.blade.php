@@ -22,6 +22,7 @@
     {{ $success }}
 </div>
 @endisset
+<div class="container" style="width: 89%;">
 <div class="slider">
     <ul class="slides" style="height: 461px!important;width: 100%">
         @foreach($sliders as $slider)
@@ -43,6 +44,7 @@
         </li>
         @endforeach
     </ul>
+</div>
 </div>
 <div class="container" style="width: 87%;">
     <section class="destacados">
@@ -167,7 +169,7 @@
 <script type="text/javascript">
     $('.slider').slider({
         indicators: true,
-        height: 461,
+        height: 561,
     });
 </script>
 @endsection

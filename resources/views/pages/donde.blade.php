@@ -21,13 +21,13 @@
                                 <div class="row no-margin">
                                     <div class="input-field col s6 l3">
                                         <input autocomplete="off" background="white" class="direccion_mapa" id="direccion" name="direccion" placeholder="Ingresa una ubicación" style="background-color: white" type="text"/>
-                                        <label class="titulos_input_direccion" for="direccion">
+                                        <label class="titulos_input_direccion" for="direccion" style="width: 100%;">
                                             Provincia, localidad, barrio o dirección
                                         </label>
                                     </div>
                                     <div class="input-field col s6 l3">
                                         <input autocomplete="off" background="white" class="radio_mapa" id="radio" name="radio" placeholder="Radio en km" style="background-color: white" type="number"/>
-                                        <label class="titulos_input_radio" for="radio">
+                                        <label class="titulos_input_radio right" for="radio" style="width: 100%;">
                                             Radio de búsqueda
                                         </label>
                                     </div>

@@ -13,7 +13,7 @@ use App\Local;
 use App\Novedad;
 use App\Contactotext;
 use App\Producto;
-use App\Servicio;
+use App\Servicio;   
 use App\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -34,6 +34,8 @@ class PaginasController extends Controller
 
     public function categ()
     {
+        $ref           = 'none';
+        $subref       = 'none';
         $activo        = 'productos';
         $categorias    = Categoria::where('id_superior', null)->orderBy('orden', 'asc')->get();
         $subcategorias = Categoria::whereNotNull('id_superior')->orderBy('orden', 'asc')->get();
@@ -41,7 +43,7 @@ class PaginasController extends Controller
         $todos         = Producto::OrderBy('orden', 'ASC')->get();
         $ready         = 0;
 
-        return view('pages.cate', compact('categorias', 'subcategorias', 'productos', 'productos_directos', 'activo', 'todos', 'ready'));
+        return view('pages.cate', compact('categorias', 'subcategorias', 'productos', 'productos_directos', 'activo', 'todos', 'ready', 'ref', 'subref'));
     }
 
     public function productos()
@@ -60,6 +62,7 @@ class PaginasController extends Controller
     {
         $ref           = $id;
         $ready         = 0;
+        $subref       = 'none';
         $cat           = Categoria::find($id);
         $activo        = 'productos';
         $categorias    = Categoria::where('id_superior', null)->orderBy('orden', 'asc')->get();
@@ -67,7 +70,7 @@ class PaginasController extends Controller
         $productos     = Producto::orderBy('categoria_id')->get();
         $todos         = Producto::where('categoria_id', $id)->OrderBy('orden', 'ASC')->get();
 
-        return view('pages.categorias', compact('categorias', 'subcategorias', 'productos', 'productos_directos', 'activo', 'ready', 'todos', 'ref', 'cat'));
+        return view('pages.categorias', compact('categorias', 'subcategorias', 'productos', 'productos_directos', 'activo', 'ready', 'todos', 'ref', 'cat', 'subref'));
     }
 
     public function subcategorias($id)

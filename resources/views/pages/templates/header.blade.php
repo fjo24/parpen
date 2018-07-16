@@ -125,7 +125,7 @@
                 @endif
                 @if($activo=='productos')
                 <li id="menu_productos">
-                    <a class="prod_menu" href="{{ url('/productos') }}">
+                    <a class="prod_menu" href="{{ route('categ')}}">
                         PRODUCTO
                     </a>
                     <ul>
@@ -156,7 +156,7 @@
                 </li>
                 @else
                 <li id="menu_productos">
-                    <a class="prod_menu" href="{{ url('/categ') }}">
+                    <a class="prod_menu" href="{{ route('categ')}}">
                         PRODUCTO
                     </a>
                     <ul>
@@ -245,7 +245,7 @@
             </ul>
         </div>
     </nav>
-    <ul class="sidenav" id="mobile-demo" style="position: absolute;">
+    <ul class="sidenav" id="mobile-demo" style="position: absolute;color: #7D0045;z-index: 3;">
         <ul class="collapsible collapsible-accordion">
             <li class="bold">
                 <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/') }}">
@@ -280,54 +280,56 @@
                 </div>
             </li>
             <li class="bold" style="background-color: #FAFAFA;">
-                <div class="principalmovil collapsible-header waves-effect waves-admin" style="
-      ">
-      <i class="material-icons">
+                <div class="principalmovil collapsible-header waves-effect waves-admin" style="">
+                    <i class="material-icons">
                         brush
                     </i>
-                    <a href="{{ url('/productos') }}">
-                    <span class="" style="color: #7D0045; padding-left: 19%;">    
-                    PRODUCTOS
-                    </span>
-                </a>
+                    <a href="{{ url('/categ') }}">
+                        <span class="" style="color: #7D0045; padding-left: 19%;">
+                            PRODUCTOS
+                        </span>
+                    </a>
                     <i class="material-icons right" style="padding-left: 36%;color: #7D0045; z-index: 9;">
                         arrow_drop_down
                     </i>
-                    
                 </div>
                 <div class="collapsible-body">
                     @foreach($categorias as $categoria)
                     <ul class="collapsible">
                         <li>
-                            <i class="material-icons right">
-                        arrow_drop_down
-                    </i>
-                            <a class="catemovil collapsible-header" style="">
-                                    {!! $categoria->nombre !!}
-
+                            <div class="catemovil collapsible-header">
+                                <a href="{{ route('categorias', $categoria->id)}}" style="padding: 0;">
+                                <span class="" style="color: #7D0045;z-index: 9;">
+                                {!! $categoria->nombre !!}
+                                </span>
                             </a>
+                            <i class="material-icons right">
+                                arrow_drop_down
+                            </i>
+                            </div>
                             @foreach($subcategorias as $subcategoria)
                             @if($subcategoria->id_superior==$categoria->id)
                             <div class="collapsible-body">
                                 <ul class="collapsible">
                                     <li>
-                                    <i class="material-icons right">
-                        arrow_drop_down
-                    </i>
-                                        <a class="subcatemovil collapsible-header"  style="">
-
-                                            {!! $subcategoria->nombre !!}
-                                            @isset($records)
-                                            @endisset
-                                        </a>
+                                        <div class="subcatemovil collapsible-header" style="">
+                                            <a href="{{ route('subcategorias', $subcategoria->id)}}" style="padding: 0;">
+                                            <span class="" style="color: #7D0045;z-index: 9;">
+                                {!! $subcategoria->nombre !!}
+                                </span>
+                            </a>
+                                        <i class="material-icons right">
+                                            arrow_drop_down
+                                        </i>
+                                        </div>
                                         <div class="collapsible-body" style="padding-top: 6px!important; text-transform: uppercase;">
                                             @foreach($productos as $producto)
                                             @if($producto->visible!='privado')
                                                             @if($producto->categoria_id==$subcategoria->id)
-                                            <div class="productomovil collapsible-header"  style="">
-                                                <a class="" style="" href="{{ route('productoinfo', $producto->id)}}">
+                                            <div class="productomovil collapsible-header" style="">
+                                                <a class="" href="{{ route('productoinfo', $producto->id)}}" style="">
                                                     {!! $producto->nombre !!}
-                                                    </a>
+                                                </a>
                                             </div>
                                             @endif
                                             @endif
@@ -344,8 +346,8 @@
                                 <ul class="collapsible">
                                     <li>
                                         <div class="productomovil collapsible-header" style="">
-                                            <a  class="" style="" href="{{ route('productoinfo', $product->id)}}">
-                                                    {!! $product->nombre !!}
+                                            <a class="" href="{{ route('productoinfo', $product->id)}}" style="">
+                                                {!! $product->nombre !!}
                                             </a>
                                         </div>
                                     </li>
@@ -359,7 +361,7 @@
                 </div>
             </li>
             <li class="bold">
-                <a class="principalmovil collapsible-header waves-effect waves-admin"  href="{{ url('/donde') }}">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/donde') }}">
                     <i class="material-icons">
                         map
                     </i>
@@ -367,7 +369,7 @@
                 </a>
             </li>
             <li class="bold">
-                <a class="principalmovil collapsible-header waves-effect waves-admin"  href="{{ url('/donde') }}">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/donde') }}">
                     <i class="material-icons">
                         new_releases
                     </i>
@@ -375,7 +377,7 @@
                 </a>
             </li>
             <li class="bold">
-                <a class="principalmovil collapsible-header waves-effect waves-admin"  href="{{ url('/donde') }}">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/donde') }}">
                     <i class="material-icons">
                         contact_mail
                     </i>

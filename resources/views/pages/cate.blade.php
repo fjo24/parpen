@@ -6,14 +6,11 @@
 <link href="{{ asset('css/pages/productos.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('css/slick.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('css/slick-theme.css') }}" rel="stylesheet" type="text/css"/>
-<div class="container" style="width: 89%">
+<div class="categorias_container container" style="width: 89%">
     <section class="productos">
         <div class="row">
-            <div class="col l12 m12 s12" style="padding-right: 0px;padding-left: 22px;">
+            <div class="col l12 m12 s12" style="padding-right: 0px;">
                 {{-- Menu inicio --}}
-
-    @include('pages.templates.filtro')
-
 
                 <div class="menuproductos col l4 m12 s12 hide-on-med-and-down">
                     <div class="menu-titulo">

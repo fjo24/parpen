@@ -595,6 +595,8 @@ nav ul a {
         border-style: solid!important;
         border-width: 0px 0px 1px 0px!important;
         padding-left: 4%!important;
+        border-bottom-color: #FF5F8A!important;
+
     }
     .catemovil:hover{
         background-color: #FF5F8A!important;   

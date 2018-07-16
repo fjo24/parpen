@@ -78,14 +78,16 @@
 .galeria2 {
     width: 71%!important;
     margin-top: 87px;
-    padding-left: 17px!important;
+    padding-left: 0px!important;
     padding-right: 0px!important;
 }
+
 .categoria-tarjeta {
     padding-bottom: 8px!important;
-    padding-right: 4px!important;
-    height: 350px;
+    padding-right: -1px!important;
+    height: 335px;
 }
+
 .categoria-tarjeta img {
     border: 1px solid #D9D9D9;
     width: 257px!important;
@@ -99,7 +101,7 @@
     color: #B3004A;
     position: relative;
     bottom: 35px;
-    height: 95px;
+    height: 100%;
     margin-left: 21px;
     margin-right: 21px;
 }
@@ -283,31 +285,133 @@
 
 @media only screen and (max-width: 1035px){
     .galeriadeproducto {
-        width: 125%!important;
-    height: 85%!important;
+        width: 100%!important;
+        height: 85%!important;
+        padding-right: 0px!important;
+    }
+
+    .categoria-tarjeta img {
+    border: 1px solid #D9D9D9;
+    width: 100%!important;
+    height: 70%!important;
     padding-right: 0px!important;
 }
 
-.masproducto {
-    background-color: #F5F5F5;
-    border: 1px solid #C9C9C9;
-    width: 140%!important;
-    height: 100%;
-    margin-top: 60px;
-    padding: 0!important;
+    .masproducto {
+        background-color: #F5F5F5;
+        border: 1px solid #C9C9C9;
+        width: 100%!important;
+        height: 100%;
+        margin-top: 60px;
+        padding: 0!important;
+    }
+
+    .rela-line {
+    position: relative!important;
+    width: 103%!important;
+    height: 1px!important;
+    border: 1px!important;
+    border-radius: 10px!important;
+    background-color: #7F0045!important;
+    left: 0px!important;
+    top: 0px!important;
+
 }
 
-.galeria {
-    width: 93%!important;
-    margin-top: 112px;
-    padding-left: 17px!important;
+    .galeria {
+        width: 93%!important;
+        margin-top: 10%;
+        padding-left: 17px!important;
+        padding-right: 0px!important;
+    }
+    .galeria2 {
+        width: 92%!important;
+        margin-top: 6%;
+        padding-left: 0px!important;
+        padding-right: 0px!important;
+    }
+}
+
+@media only screen and (max-width: 993px){
+    .cuerpo_filtro {
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        margin: 0px 0px;
+        color: #595959!important;
+        display: block;
+        font-size: 13px;
+        font-family: 'Asap';
+    }
+    .efecto {
+        width: 25%!important;
+    height: 190px;
+}
+    
+    .categoria-tarjeta {
+    padding-bottom: 8px!important;
+    padding-right: 4px!important;
+    height: 265px;
+}
+
+    .links {
+    position: relative;
+    left: -84px!important;
+    font-size: 11px;
+    top: 25px;
+}
+
+    .collapsible-body {
+        padding: 0;
+        padding-left: 0px!important;
+        border: transparent;
+        border: none;
+    }
+
+    .categoria-tarjeta img {
+    border: 1px solid #D9D9D9;
+    width: 100%!important;
+    height: 70%!important;
     padding-right: 0px!important;
 }
-.galeria2 {
-    width: 92%!important;
-    margin-top: 87px;
-    padding-left: 17px!important;
+}
+
+@media only screen and (max-width: 600px){
+    .categorias_container{
+        width: 100%;
+    }
+    .efecto {
+    width: 35%!important;
+    height: 200px;
+}
+.categoria-tarjeta img {
+    border: 1px solid #D9D9D9;
+    width: 257px!important;
+    height: 83%!important;
     padding-right: 0px!important;
+}
+.categoria-tarjeta {
+    margin-bottom: 20%;
+}
+}
+
+@media only screen and (max-width: 700px){
+    .categoria-tarjeta img {
+        border: 1px solid #D9D9D9;
+        width: 257px!important;
+        height: 50%;
+        padding-right: 0px!important;
+    }
+
+    .categoria-tarjeta {
+    padding-bottom: 8px!important;
+    padding-right: 4px!important;
+    height: 250px;
+}
+
+.efecto {
+    width: 151px;
+    height: 200px;
 }
 }
 

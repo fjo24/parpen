@@ -21,7 +21,11 @@
                 </h7>
              </div>
                 {{-- Menu inicio --}}
-                <div class="menuproductos2 col l4 m4 s12">
+                {{-- para moviles --}}
+                <br><br><br>
+                @include('pages.templates.filtro')
+                {{-- version web --}}
+                <div class="menuproductos2 col l4 m4 s12 hide-on-med-and-down">
                     <div class="menu-titulo">
                         PRODUCTOS
                     </div>
@@ -138,82 +142,7 @@
                 <div class="center galeria2 col l8 m8 s12">
                     @foreach($todos as $prod)
                     <a href="{{ route('productoinfo', $prod->id)}}">
-                        <div class="col l4 m6 s12 categoria-tarjeta">
-                            @foreach($prod->imagenes as $img)
-                            <div class="efecto">
-                                <span class="central">
-                                    <i class="material-icons">
-                                        add
-                                    </i>
-                                    <span class="ingresar">
-                                        Ingresar
-                                    </span>
-                                </span>
-                            </div>
-                            <img class="responsive-img" src="{{ asset($img->imagen) }}"/>
-                            <h2 class="center">
-                                {{ $prod->nombre }}
-                            </h2>
-                            @if($ready == 0)    
-                                        @break;
-                                    @endif
-                            @endforeach
-                        </div>
-                    </a>
-                    @endforeach
-                    @foreach($todos as $prod)
-                    <a href="{{ route('productoinfo', $prod->id)}}">
-                        <div class="col l4 m6 s12 categoria-tarjeta">
-                            @foreach($prod->imagenes as $img)
-                            <div class="efecto">
-                                <span class="central">
-                                    <i class="material-icons">
-                                        add
-                                    </i>
-                                    <span class="ingresar">
-                                        Ingresar
-                                    </span>
-                                </span>
-                            </div>
-                            <img class="responsive-img" src="{{ asset($img->imagen) }}"/>
-                            <h2 class="center">
-                                {{ $prod->nombre }}
-                            </h2>
-                            @if($ready == 0)    
-                                        @break;
-                                    @endif
-                            @endforeach
-                        </div>
-                    </a>
-                    @endforeach
-                    @foreach($todos as $prod)
-                    <a href="{{ route('productoinfo', $prod->id)}}">
-                        <div class="col l4 m6 s12 categoria-tarjeta">
-                            @foreach($prod->imagenes as $img)
-                            <div class="efecto">
-                                <span class="central">
-                                    <i class="material-icons">
-                                        add
-                                    </i>
-                                    <span class="ingresar">
-                                        Ingresar
-                                    </span>
-                                </span>
-                            </div>
-                            <img class="responsive-img" src="{{ asset($img->imagen) }}"/>
-                            <h2 class="center">
-                                {{ $prod->nombre }}
-                            </h2>
-                            @if($ready == 0)    
-                                        @break;
-                                    @endif
-                            @endforeach
-                        </div>
-                    </a>
-                    @endforeach
-                    @foreach($todos as $prod)
-                    <a href="{{ route('productoinfo', $prod->id)}}">
-                        <div class="col l4 m6 s12 categoria-tarjeta">
+                        <div class="col l4 m6 s6 categoria-tarjeta">
                             @foreach($prod->imagenes as $img)
                             <div class="efecto">
                                 <span class="central">

@@ -20,8 +20,12 @@
                     </a>
                 </h7>
              </div>
-                 {{-- Menu inicio --}}
-                <div class="menuproductos2 col l4 m4 s12">
+                {{-- Menu inicio --}}
+                {{-- para moviles --}}
+                <br><br>
+                @include('pages.templates.filtro')
+                {{-- version web --}}
+                <div class="menuproductos2 col l4 m4 s12 hide-on-med-and-down">
                     <div class="menu-titulo">
                         FILTROS
                     </div>
@@ -146,13 +150,9 @@
                 </div>
                 {{-- Menu final --}}
                 <div class="galeria2 col l8 m8 s12">
-                    <div class="col l12 m12 s12" style="padding: 0;    height: auto;">
+                    <div class="col l12 m12 s12" style="padding: 0;    height: auto;    padding-left: 2%!important;">
                         
                         <div class="col l6 m12 s12 galeriadeproducto">
-                                
-
-
-
                                 <div class="cont-ser">
                                             <div class="row imggrande">
                                                 <div class="col s12" style="padding-left: 0px;">
@@ -172,7 +172,7 @@
                                                     @foreach($p->imagenes as $imagen)
                                                     <div class="col l4 s4 m2" style="padding-left: 0px;">
                                                         <div class="cont-img">
-                                                            <img alt="" class="responsive-img" onclick="actualizar('{{asset($imagen->imagen)}}')" src="{{asset($imagen->imagen)}}" style="border: 1px solid #AAAAAA;">
+                                                            <img alt="" class="responsive-img" onclick="actualizar('{{asset($imagen->imagen)}}')" src="{{asset($imagen->imagen)}}" style="border: 1px solid #AAAAAA;height: 110px; width: 110px;">
                                                             </img>
                                                         </div>
                                                     </div>
@@ -242,13 +242,43 @@
                             </div>
                             <hr class="rela-line"/>
                     </div>
-                    <div class="col l12 m12 s12 relablock">
+                    <div class="col l12 m12 s12 relablock" style="margin-top: 2%;">
                     @foreach($relacionados as $relacionado)
                     <a href="{{ route('productoinfo', $relacionado->id)}}">
-                        <div class="col l4 m12 s12 categoria-tarjeta">
+                        <div class="col l4 m6 s6 categoria-tarjeta">
                             @foreach($relacionado->imagenes as $img)
                             <img class="responsive-img" src="{{ asset($img->imagen) }}"/>
-                            <h2 class="center">
+                            <h2 class="center" style="margin-left: 0px;margin-right: 0px;">
+                                {{ $relacionado->nombre }}
+                            </h2>
+                            @if($ready == 0)    
+                                        @break;
+                                    @endif
+                            @endforeach
+                        </div>
+                    </a>
+                    @endforeach 
+                    @foreach($relacionados as $relacionado)
+                    <a href="{{ route('productoinfo', $relacionado->id)}}">
+                        <div class="col l4 m6 s6 categoria-tarjeta">
+                            @foreach($relacionado->imagenes as $img)
+                            <img class="responsive-img" src="{{ asset($img->imagen) }}"/>
+                            <h2 class="center" style="margin-left: 0px;margin-right: 0px;">
+                                {{ $relacionado->nombre }}
+                            </h2>
+                            @if($ready == 0)    
+                                        @break;
+                                    @endif
+                            @endforeach
+                        </div>
+                    </a>
+                    @endforeach 
+                    @foreach($relacionados as $relacionado)
+                    <a href="{{ route('productoinfo', $relacionado->id)}}">
+                        <div class="col l4 m6 s6 categoria-tarjeta">
+                            @foreach($relacionado->imagenes as $img)
+                            <img class="responsive-img" src="{{ asset($img->imagen) }}"/>
+                            <h2 class="center" style="margin-left: 0px;margin-right: 0px;">
                                 {{ $relacionado->nombre }}
                             </h2>
                             @if($ready == 0)    
