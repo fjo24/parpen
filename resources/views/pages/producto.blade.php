@@ -258,36 +258,7 @@
                         </div>
                     </a>
                     @endforeach 
-                    @foreach($relacionados as $relacionado)
-                    <a href="{{ route('productoinfo', $relacionado->id)}}">
-                        <div class="col l4 m6 s6 categoria-tarjeta">
-                            @foreach($relacionado->imagenes as $img)
-                            <img class="responsive-img" src="{{ asset($img->imagen) }}"/>
-                            <h2 class="center" style="margin-left: 0px;margin-right: 0px;">
-                                {{ $relacionado->nombre }}
-                            </h2>
-                            @if($ready == 0)    
-                                        @break;
-                                    @endif
-                            @endforeach
-                        </div>
-                    </a>
-                    @endforeach 
-                    @foreach($relacionados as $relacionado)
-                    <a href="{{ route('productoinfo', $relacionado->id)}}">
-                        <div class="col l4 m6 s6 categoria-tarjeta">
-                            @foreach($relacionado->imagenes as $img)
-                            <img class="responsive-img" src="{{ asset($img->imagen) }}"/>
-                            <h2 class="center" style="margin-left: 0px;margin-right: 0px;">
-                                {{ $relacionado->nombre }}
-                            </h2>
-                            @if($ready == 0)    
-                                        @break;
-                                    @endif
-                            @endforeach
-                        </div>
-                    </a>
-                    @endforeach 
+
                     </div>
 
 

@@ -245,7 +245,7 @@
             </ul>
         </div>
     </nav>
-    <ul class="sidenav" id="mobile-demo" style="position: absolute;color: #7D0045;z-index: 3;">
+    <ul class="sidenav" id="mobile-demo" style="position: absolute;color: #7D0045;">
         <ul class="collapsible collapsible-accordion">
             <li class="bold">
                 <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/') }}">
@@ -258,26 +258,12 @@
                 </a>
             </li>
             <li class="bold">
-                <a class="principalmovil collapsible-header waves-effect waves-admin">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/empresa') }}">
                     <i class="material-icons">
                         group
                     </i>
                     QUIENES SOMOS
                 </a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li>
-                            <a href="{{route('newsletters.index')}}">
-                                Listado
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{route('newsletters.create')}}">
-                                Registrar email
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </li>
             <li class="bold" style="background-color: #FAFAFA;">
                 <div class="principalmovil collapsible-header waves-effect waves-admin" style="">
@@ -369,7 +355,7 @@
                 </a>
             </li>
             <li class="bold">
-                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/donde') }}">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ route('novedades', 'destacados') }}">
                     <i class="material-icons">
                         new_releases
                     </i>
@@ -377,7 +363,7 @@
                 </a>
             </li>
             <li class="bold">
-                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/donde') }}">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/contacto', 'General') }}">
                     <i class="material-icons">
                         contact_mail
                     </i>

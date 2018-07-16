@@ -308,7 +308,7 @@ nav .sidenav-trigger {
 nav .sidenav-trigger {
     float: left;
     position: relative;
-    z-index: 1;
+    /*z-index: 1;*/
     height: 56px;
     margin: 36px 0 0 0%!important;
 }
