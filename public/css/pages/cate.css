@@ -90,8 +90,8 @@
 
 .categoria-tarjeta img {
     border: 1px solid #D9D9D9;
-    width: 257px!important;
-    height: 257px!important;
+    
+    height: 350px!important;
     padding-right: 0px!important;
 }
 .categoria-tarjeta h2 {
@@ -126,7 +126,6 @@
     background-color: rgba(255, 126, 158, 0.75);
     width: 257px;
     height: 257px;
-        margin-left: 9px;
     z-index: 999;
     display: table-cell;
     vertical-align: middle;
@@ -323,7 +322,7 @@
         width: 93%!important;
         margin-top: 10%;
         padding-left: 17px!important;
-        padding-right: 0px!important;
+        padding-right: 1px!important;
     }
     .galeria2 {
         width: 92%!important;
@@ -379,18 +378,33 @@
 
 @media only screen and (max-width: 600px){
     .categorias_container{
-        width: 100%;
+        width: 100%!important;
     }
-    .efecto:hover {
-    display: none!important;
+
+    .galeria {
+    width: 100%!important;
+    padding-left: 0px!important;
 }
-.efecto {
-    display: none!important;
+
+.categoria-tarjeta {
+    padding-bottom: 0px!important;
+    padding-right: 9px!important;
+    height: 250px;
+
+}
+
+    .bloquecompleto {
+    padding-right: 0px;
+    padding-left: 0px!important;
+}
+    .efecto {
+    width: 35%!important;
+    height: 200px;
 }
 .categoria-tarjeta img {
     border: 1px solid #D9D9D9;
     width: 257px!important;
-        height: 60%!important;
+    height: 83%!important;
     padding-right: 0px!important;
 }
 
@@ -399,14 +413,12 @@
 @media only screen and (max-width: 700px){
     .categoria-tarjeta img {
         border: 1px solid #D9D9D9;
-        width: 257px!important;
-        height: 50%;
+        width: 100%!important;
+            height: 350px!important;
         padding-right: 0px!important;
     }
 
     .categoria-tarjeta {
-    padding-bottom: 8px!important;
-    padding-right: 4px!important;
     height: 250px;
 }
 

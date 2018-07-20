@@ -43,6 +43,7 @@
                 </div>
                 <div class="file-path-wrapper">
                     {!! Form::text('imagen',null, ['class'=>'file-path']) !!}
+                    {!!Form::label('Recomendado: 350px - 395px')!!}
                 </div>
             </div>
         </div>
