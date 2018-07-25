@@ -53,7 +53,7 @@
                 <a href="{!!$bloque1->link !!}">
                 <div class="col s12 l6">
                     <div class="card">
-                        <div class="card-image">
+                        <div class="cuadradas card-image">
                             <img src="{{asset($bloque1->imagen)}}" style="">
                             </img>
                             <div class="card-title" style="display: table;background-color: rgba(179, 0, 74, 0.86);font-family: 'Asap';width: 100%;">
@@ -68,7 +68,7 @@
                 <a href="{!!$bloque2->link !!}">
                     <div class="col s12 l6">
                         <div class="card">
-                            <div class="card-image">
+                            <div class="cuadradas card-image">
                                 <img src="{{asset($bloque2->imagen)}}" style="">
                                 </img>
                                 <div class="card-title" style="display: table;background-color: rgba(179, 0, 74, 0.86);font-family: 'Asap';width: 100%;">
@@ -83,7 +83,7 @@
                 <a href="{!!$bloque4->link !!}">
                     <div class="col s12">
                         <div class="card">
-                            <div class="card-image">
+                            <div class="larga card-image">
                                 <img src="{{asset($bloque4->imagen)}}" style="">
                                 </img>
                                 <div class="card-title" style="display: table;background-color: rgba(179, 0, 74, 0.86);font-family: 'Asap';width: 100%;">
@@ -100,7 +100,7 @@
                 <a href="{!!$bloque3->link !!}">
                 <div class="col s12">
                     <div class="card">
-                        <div class="card-image">
+                        <div class="alta card-image">
                             <img class="b3" src="{{asset($bloque3->imagen)}}" style="">
                             </img>
                             <div class="card-title" style="display: table;background-color: rgba(179, 0, 74, 0.86);font-family: 'Asap';width: 100%;">
@@ -137,7 +137,7 @@
         </div>
     </div>
 </div>
-<div class="seccion-banner" style="margin-top: -35px;">
+<div class="seccion-banner" style="margin-top: 0px;">
     <div class="btexto">
         <div class="tbanner center">
             <p>
