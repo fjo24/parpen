@@ -29,7 +29,11 @@
 					<tbody>
 					@foreach($datos as $dato)
 						<tr>
+							@if($dato->tipo=='email2')
+							<td>email pedidos</td>
+							@else
 							<td>{{ $dato->tipo }}</td>
+							@endif
 							<td>{{ $dato->descripcion }}</td>
 							<td class="text-right">
 								<a href="{{ route('datos.edit', $dato->id) }}"><i class="material-icons">create</i></a>

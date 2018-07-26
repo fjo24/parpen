@@ -37,7 +37,7 @@
 
 		<div class="row">
 
-			<div class="col l4">
+			<div class="col l4 s12">
 
 				{!!Form::open(['route'=>'logindistribuidor', 'method'=>'POST', 'class' => 'col s12'])!!}
 
@@ -67,11 +67,12 @@
 
 	                    </div>
 
-						<div class="col s12 no-padding sub" style="">
-
-								{!! Form::submit('Ingresar', ['class'=>'waves-effect waves-light btn right bg-azul']) !!}
-
-							</div>
+	                    <button class="btn waves-effect waves-light pink right" name="action" type="submit">
+                        Entrar
+                        <i class="material-icons right">
+                            send
+                        </i>
+                    </button>
 
 	                {!!Form::close()!!}
 
@@ -231,12 +232,13 @@
 							    </div>
 
 							</div>
+							<button class="btn waves-effect waves-light pink right" name="action" type="submit">
+                        REGÍSTRATE
+                        <i class="material-icons right">
+                            send
+                        </i>
+                    </button>
 
-							<div class="col s12 no-padding sub">
-
-								{!! Form::submit('REGÍSTRATE', ['class'=>'waves-effect waves-light btn right bg-azul']) !!}
-
-							</div>
 
 						{!! Form::close() !!} 
 

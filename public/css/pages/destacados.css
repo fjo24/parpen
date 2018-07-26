@@ -197,7 +197,7 @@
         margin-bottom: 148px;
 }
 
-@media only screen and (max-width: 993px){
+@media only screen and (max-width: 503px){
 
     .cuadradas img {
         height: 302px!important;
@@ -210,7 +210,7 @@
     }
 
     .alta img{
-        height: 424px!important;
+        height: 470px!important;
         right: 302px!important;
     }
     
@@ -221,4 +221,6 @@
 .tbanner2 p {
     text-shadow: 3px 3px 5px #fff, 6px 6px 5px #fff, 3px 3px 5px #fff, 6px 6px 5px #fff!important;
 }
+
+    
 }

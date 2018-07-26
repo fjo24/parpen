@@ -48,6 +48,22 @@
     color: #909090;
 }
 
+@media only screen and (max-width: 1025px){
+
+.box-cap {
+    position: absolute!important;
+    top: 25%!important;
+    left: 8%!important;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 84%!important;
+    height: 231px;
+    line-height: 250%;
+    color: #FF5F8A!important;
+    text-align: center;
+    font-family: 'Asap';
+}
+}
+
 @media only screen and (max-width: 993px){
 
 .slider .slides li img {
@@ -68,21 +84,21 @@
 
 .slidertext1 {
     position: relative;
-    top: 104px;
+    top: 30px;
     left: -1%;
     line-height: 29px;
     font-family: 'Asap';
-    font-size: 47px;
+    font-size: 58px;
     font-weight: bold;
     padding: 1%;
 }
 
 .slidertext2 {
     position: relative;
-    top: 60px;
+    top: 30px;
     padding: 10px!important;
     font-family: 'Lato';
-    font-size: 44px;
+    font-size: 43px;
     font-weight: 400;
     padding: 3%;
     color: #909090;
@@ -113,3 +129,17 @@
 
 }
 
+@media only screen and (max-width: 503px){
+    .slidertext1 {
+        position: relative;
+        top: 46px;
+        left: -1%;
+        line-height: 29px;
+        font-family: 'Asap';
+        font-size: 32px;
+        font-weight: bold;
+        padding: 1%;
+    }
+
+    
+}

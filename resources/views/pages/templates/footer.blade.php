@@ -51,7 +51,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="itemsb" href="{{ url('/productos') }}">
+                                <a class="itemsb" href="{{ url('/categ') }}">
                                     PRODUCTOS
                                 </a>
                             </li>

@@ -74,6 +74,8 @@ Route::group(['prefix' => 'carrito'], function () {
 
 //ADMIN*************->middleware('admin')******************************************************************************************
 Route::prefix('adm')->middleware('admin')->middleware('auth')->group(function () {
+
+
     Route::get('/', 'Adm\AdminController@dashboard')->name('dashboard');
 
     //DASHBOARD
@@ -87,11 +89,15 @@ Route::prefix('adm')->middleware('admin')->middleware('auth')->group(function ()
     /*------------CATEGORIAS----------------*/
     Route::resource('categorias', 'Adm\CategoriasController')->middleware('admin');
 
+    /*-----CARGA DE EXCELS-----------*/
+    Route::get('excelcat', ['uses' => 'Adm\CategoriasController@excelcat', 'as' => 'excelcat']);
+    Route::post('/import-excel', 'Adm\ExcelController@importCat')->name('importCat');
+
     /*------------CONTENIDO HOMES----------------*/
     Route::resource('homes', 'Adm\ContenidohomesController')->middleware('admin');
 
     /*------------DATOS----------------*/
-    Route::resource('datos', 'adm\DatosController')->middleware('admin');
+    Route::resource('datos', 'Adm\DatosController')->middleware('admin');
 
     /*------------DESTACADO HOMES----------------*/
     Route::resource('destacadoshomes', 'Adm\DestacadohomesController')->middleware('admin');

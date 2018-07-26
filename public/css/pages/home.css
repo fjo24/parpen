@@ -163,3 +163,57 @@ footer .listlinks2 {
 header .principal{
         box-shadow: none;
 }
+
+@media only screen and (max-width: 550px){
+    .newsletter {
+        top: -10px;
+        width: 90%;
+        height: 42px;
+        background-color: white;
+        border-bottom: none;
+        border-bottom: none;
+        margin-left: 7%;
+        border-radius: 3px;
+        border: 1px solid #B0B0B0;
+    }
+
+    input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+        width: 65%!important;
+        font-size: 14px!important;
+    }
+}
+
+@media only screen and (max-width: 321px){
+    
+.destacado-home2 {
+    background-color: #FAFAFA;
+    height: 485px;
+}
+
+.newsletter {
+    top: -9px;
+    width: 91%;
+    height: 42px;
+    background-color: white;
+    border-bottom: none;
+    border-bottom: none;
+    margin-left: 10%;
+    border-radius: 3px;
+    border: 1px solid #B0B0B0;
+}
+.boton2 {
+    top: -92px;
+    right: 72%;
+}
+.newsletter {
+    top: -36px;
+    width: 91%;
+    height: 42px;
+    background-color: white;
+    border-bottom: none;
+    border-bottom: none;
+    margin-left: 10%;
+    border-radius: 3px;
+    border: 1px solid #B0B0B0;
+}
+}

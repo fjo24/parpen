@@ -71,9 +71,14 @@ header('Access-Control-Allow-Origin: *');
     $(".dropdown-trigger3").dropdown({
         closeOnClick:false,
     });
-    $('.collapsible').collapsible();
 
   });
+
+
+        $(".collapsible").collapsible()({
+          
+          });
+
 
 
         $('.dropdown-button').dropdown({

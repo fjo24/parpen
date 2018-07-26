@@ -4,6 +4,7 @@
 
 @section('contenido')
 <link href="{{ asset('css/privada/zproductos.css') }}" rel="stylesheet" type="text/css"/>
+<link href="{{ asset('css/privada/zproductos2.css') }}" rel="stylesheet" type="text/css"/>
 <div class="container" style="width: 89%">
     <div class="masiva center">
         Compra Masiva

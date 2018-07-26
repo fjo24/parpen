@@ -173,7 +173,7 @@ table.dataTable tbody tr {
    
     width: 257px;
     height: 257px;
-    z-index: 999;
+    z-index: 9;
     display: table-cell;
     vertical-align: middle;
 }
@@ -228,5 +228,41 @@ table.dataTable tbody tr {
 }
 .modal_contenido{
     font-family: 'Lato';
+
+}
+
+nav .sidenav-trigger {
+    color: #FF5B88!important;
+}
+
+nav .sidenav-trigger {
+    float: left;
+    position: relative;
+    /* z-index: 1; */
+    height: 56px;
+    margin: 36px 0 0 0%!important;
+}
+
+@media only screen and (max-width: 600px){
+
+    nav {
+        box-shadow:none!important;
+    }
+
+    .top {
+        display: none;
+    }
+
+    .seguircomprando{
+    height: 42px;
+    border: 1px solid #7D0045;
+    color: #7D0045;
+    background-color: white;
+    padding: 20px;
+    width: 181px;
+    position: relative;
+    bottom: 49px;
+    left: 147px;
+}
 
 }

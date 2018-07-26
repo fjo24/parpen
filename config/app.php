@@ -161,7 +161,8 @@ return [
 
         //my providers
         Collective\Html\HtmlServiceProvider::class,
-        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class
+        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class
 
     ],
 
@@ -215,7 +216,8 @@ return [
         //my aliases
         'Form'         => Collective\Html\FormFacade::class,
         'Html'         => Collective\Html\HtmlFacade::class,
-        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class
+        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class
     ],
 
 ];
