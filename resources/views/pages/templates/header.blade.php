@@ -192,7 +192,7 @@
                 </img>
             </a>
             <a class="sidenav-trigger" data-target="mobile-demo" href="#" style="width: 0%;margin-left: 0;">
-                <i class="material-icons center">
+                <i class="material-icons center" style="color: black!important;">
                     menu
                 </i>
             </a>

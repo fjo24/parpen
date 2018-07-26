@@ -91,7 +91,7 @@ Route::prefix('adm')->middleware('admin')->middleware('auth')->group(function ()
     Route::resource('homes', 'Adm\ContenidohomesController')->middleware('admin');
 
     /*------------DATOS----------------*/
-    Route::resource('datos', 'adm\DatosController')->middleware('admin');
+    Route::resource('datos', 'Adm\DatosController')->middleware('admin');
 
     /*------------DESTACADO HOMES----------------*/
     Route::resource('destacadoshomes', 'Adm\DestacadohomesController')->middleware('admin');
