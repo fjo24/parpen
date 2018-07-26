@@ -3,13 +3,13 @@
 @section('titulo', 'Línea Parpen')
 
 @section('contenido')
-<link href="{{ asset('css/pages/productos.css') }}" rel="stylesheet" type="text/css"/>
+<link href="{{ asset('css/pages/cate.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('css/slick.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('css/slick-theme.css') }}" rel="stylesheet" type="text/css"/>
 <div class="categorias_container container" style="width: 89%">
     <section class="productos">
         <div class="row">
-            <div class="col l12 m12 s12" style="padding-right: 0px;">
+            <div class="bloquecompleto col l12 m12 s12" style="padding-right: 0px;">
                 {{-- Menu inicio --}}
 
                 <div class="menuproductos col l4 m12 s12 hide-on-med-and-down">
@@ -79,22 +79,18 @@
                 <div class="galeria col l8 m12 s12">
                     @foreach($categorias as $ca)
                     <a href="{{ route('categorias', $ca->id)}}">
-                        <div class="center col l4 m4 s12 categoria-tarjeta">
-                            <div class="efecto">
-                                <span class="central">
-                                    <i class="material-icons">
-                                        add
-                                    </i>
-                                    <span class="ingresar">
-                                        Ingresar
-                                    </span>
-                                </span>
-                            </div>
-                            <img class="center responsive-img" src="{{ asset($ca->imagen) }}"/>
-                            <h2 class="center">
-                                {{ $ca->nombre }}
-                            </h2>
-    
+                        <div class="center col l6 m6 s12 categoria-tarjeta" style="    height: 415px;">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="{{asset($ca->imagen)}}" style="">
+                                    </img>
+                                    <div class="card-title" style="display: table;background-color: rgba(179, 0, 74, 0.86);font-family: 'Asap';width: 100%;">
+                                        <p style="display: table-cell;text-align: center;">
+                                            {!! $ca->nombre !!}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>   
                         </div>
                     </a>
                     @endforeach

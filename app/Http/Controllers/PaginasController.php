@@ -24,7 +24,7 @@ class PaginasController extends Controller
     {
         $activo    = 'home';
         $sliders   = Slider::orderBy('orden', 'ASC')->Where('seccion', 'home')->get();
-        $bloque1   = Destacado_home::find(1);
+        $bloque1   = Destacado_home::find(5);
         $bloque2   = Destacado_home::find(2);
         $bloque3   = Destacado_home::find(3);
         $bloque4   = Destacado_home::find(4);
