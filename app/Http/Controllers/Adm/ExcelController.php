@@ -37,6 +37,6 @@ class ExcelController extends Controller
     
     });
 
-    return "Terminado";
+    return redirect()->route('categorias.index');
 }
 }
