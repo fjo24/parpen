@@ -30,9 +30,6 @@
                     Nombre
                 </th>
                 <th>
-                    Link
-                </th>
-                <th>
                     Orden
                 </th>
                 <th class="text-right">
@@ -42,13 +39,10 @@
             <tbody>
                 @foreach($destacados as $destacado)
                 <tr>
-                    <td class="hide-on-med-and-down"><img src="{{ asset($destacado->imagen) }}" alt="seccion" width="400" height="150"/>
+                    <td class="hide-on-med-and-down"><img src="{{ asset($destacado->imagen) }}" alt="seccion" width="200" height="150"/>
                     </td>
                     <td>
                         {!!$destacado->nombre!!}
-                    </td>
-                    <td>
-                        {!!$destacado->link!!}
                     </td>
                     <td>
                         {!!$destacado->orden!!}

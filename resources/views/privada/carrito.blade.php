@@ -4,7 +4,7 @@
 
 @section('contenido')
 <link href="{{ asset('css/privada/zproductos.css') }}" rel="stylesheet" type="text/css"/>
-
+<link href="{{ asset('css/privada/zproductos2.css') }}" rel="stylesheet" type="text/css"/>
 <body>
 <main class="zonaprivada">
 
@@ -116,9 +116,7 @@
 										<button class="enviar" class="bg-azul" href="#modal1" style="color:white; padding: 20px; background-color: #7D0045; border: none; width: 181px;
     height: 42px!important;"><span style="font-family: 'lato';font-size: 13px;position: relative;bottom: 8px;font-weight: bold;">REALIZAR PEDIDO</span></button></a>
 									</div>
-									<a type="submit" class="waves-effect waves-light btn modal-trigger" href="#modal1" style="    position: relative;
-    top: 258px;
-    background: white;">Modal</a>
+									
 									  <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
@@ -132,7 +130,7 @@
 									{!! Form::close() !!}
 								</div>
 
-									<a href="{{ url('/zonaprivada/productos') }}" class="right"><button class="boton" style="height: 42px;border: 1px solid #7D0045; color:#7D0045; background-color: white; padding: 20px; width: 181px;position: relative;
+									<a href="{{ url('/zonaprivada/productos') }}" class="right"><button class="boton seguircomprando" style="height: 42px;border: 1px solid #7D0045; color:#7D0045; background-color: white; padding: 20px; width: 181px;position: relative;
     bottom: 51px;
     left: 244px;"><span style="font-family: 'lato';font-size: 13px;position: relative;bottom: 8px;font-weight: bold;">SEGUIR COMPRANDO</span></button></a>
 						</div>

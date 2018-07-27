@@ -246,6 +246,12 @@
         </div>
     </nav>
     <ul class="sidenav" id="mobile-demo" style="position: absolute;color: #7D0045;">
+        <div class="center logoside">
+            <a class="brand-logoside" href="">
+                <img alt="" class="responsive-img" src="{{ asset('img/logo_principal.jpg') }}">
+                </img>
+            </a>
+        </div>
         <ul class="collapsible collapsible-accordion">
             <li class="bold">
                 <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/') }}">
@@ -267,15 +273,15 @@
             </li>
             <li class="bold" style="background-color: #FAFAFA;">
                 <div class="principalmovil collapsible-header waves-effect waves-admin" style="">
-                    <i class="material-icons">
+                    <i class="material-icons" style="color: #FF5F8A!important;">
                         brush
                     </i>
                     <a href="{{ url('/categ') }}">
-                        <span class="" style="color: #7D0045; padding-left: 19%;">
+                        <span class="" style="color: #595959; padding-left: 19%;">
                             PRODUCTOS
                         </span>
                     </a>
-                    <i class="material-icons right" style="padding-left: 36%;color: #7D0045; z-index: 9;">
+                    <i class="material-icons right" style="padding-left: 36%;color: #FF5F8A; z-index: 9;">
                         arrow_drop_down
                     </i>
                 </div>
@@ -285,7 +291,7 @@
                         <li>
                             <div class="catemovil collapsible-header">
                                 <a href="{{ route('categorias', $categoria->id)}}" style="padding: 0;">
-                                <span class="" style="color: #7D0045;z-index: 9;">
+                                <span class="" style="color: #595959;z-index: 9;">
                                 {!! $categoria->nombre !!}
                                 </span>
                             </a>
@@ -300,7 +306,7 @@
                                     <li>
                                         <div class="subcatemovil collapsible-header" style="">
                                             <a href="{{ route('subcategorias', $subcategoria->id)}}" style="padding: 0;">
-                                            <span class="" style="color: #7D0045;z-index: 9;">
+                                            <span class="" style="text-transform: capitalize;color: #595959;z-index: 9;">
                                 {!! $subcategoria->nombre !!}
                                 </span>
                             </a>
@@ -308,12 +314,12 @@
                                             arrow_drop_down
                                         </i>
                                         </div>
-                                        <div class="collapsible-body" style="padding-top: 6px!important; text-transform: uppercase;">
+                                        <div class="collapsible-body" style="padding-top: 6px!important; text-transform: capitalize;">
                                             @foreach($productos as $producto)
                                             @if($producto->visible!='privado')
                                                             @if($producto->categoria_id==$subcategoria->id)
                                             <div class="productomovil collapsible-header" style="">
-                                                <a class="" href="{{ route('productoinfo', $producto->id)}}" style="">
+                                                <a class="" href="{{ route('productoinfo', $producto->id)}}" style="text-transform: capitalize;color: #FF5F8A!important">
                                                     {!! $producto->nombre !!}
                                                 </a>
                                             </div>
@@ -368,6 +374,14 @@
                         contact_mail
                     </i>
                     CONTACTO
+                </a>
+            </li>
+            <li class="bold">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ url('/registro') }}">
+                    <i class="material-icons">
+                        shopping_cart
+                    </i>
+                    ZONA PRIVADA
                 </a>
             </li>
         </ul>

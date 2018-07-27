@@ -1,7 +1,7 @@
 <ul class="collapsible show-on-medium-and-down hide-on-large-only">
     <li>
       <div class="titulo_filtro collapsible-header"><span>Filtrar</span></div>
-      <div class="collapsible-body" style="display: block;background: #fafafa;height: 100%;">
+      <div class="collapsible-body" style="background: #fafafa;height: 100%;">
   @foreach($categorias as $categoria)
                     <ul class="cuerpo_filtro collapsible">
                         @if(($categoria->id == $ref))

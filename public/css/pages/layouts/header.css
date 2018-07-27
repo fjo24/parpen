@@ -352,6 +352,13 @@ nav ul a {
 
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  1000 px <<<<<<*/
 @media only screen and (max-width: 1000px) {
+
+    .productomovil a {
+    font-family: 'lato'!important;
+    font-weight: bold!important;
+    color: #595959!important;
+}
+
     .top {
         display: none;
     }
@@ -435,7 +442,7 @@ nav ul a {
         text-transform: uppercase!important;
         font-family: 'lato'!important;
         font-weight: bold!important;
-        color: #595959!important;
+        color: #FF5F8A!important;
         border-style: solid!important;
         border-width: 0px 0px 1px 0px!important;
         padding-left: 4%!important;
@@ -455,7 +462,7 @@ nav ul a {
         text-transform: uppercase;
         font-family: 'lato'!important;
         font-weight: bold!important;
-        color: #595959!important;
+        color: #FF5F8A!important;
         border-style: solid!important;
         border-width: 0px 0px 1px 0px!important;
         padding-left: 8%!important;
@@ -488,11 +495,11 @@ nav ul a {
     }
 
     .principalmovil{
-    color: #7D0045!important;
+    color: #595959!important;
     font-size: 16px!important;
     font-family: 'Asap';
     border-style: solid!important;
-    border-width: 0px 0px 1px 0px!important;
+    border-width: 0px 0px 0px 0px!important;
     }
 
     .sidenav li>a>i, .sidenav li>a>[class^="mdi-"], .sidenav li>a li>a>[class*="mdi-"], .sidenav li>a>i.material-icons {
@@ -501,7 +508,7 @@ nav ul a {
         line-height: 48px;
         width: 24px;
         margin-left: 10px;
-        color: #7D0045!important;
+        color: #FF5F8A!important;
     }
 }
 
@@ -591,7 +598,7 @@ nav ul a {
         text-transform: uppercase!important;
         font-family: 'lato'!important;
         font-weight: bold!important;
-        color: #595959!important;
+        color: #FF5F8A!important;
         border-style: solid!important;
         border-width: 0px 0px 1px 0px!important;
         padding-left: 4%!important;
@@ -649,11 +656,11 @@ nav ul a {
     }
 
     .principalmovil{
-    color: #7D0045!important;
+    color: #595959!important;
     font-size: 16px!important;
     font-family: 'Asap';
     border-style: solid!important;
-    border-width: 0px 0px 1px 0px!important;
+    border-width: 0px 0px 0px 0px!important;
     }
 
     .sidenav li>a>i, .sidenav li>a>[class^="mdi-"], .sidenav li>a li>a>[class*="mdi-"], .sidenav li>a>i.material-icons {
@@ -662,7 +669,7 @@ nav ul a {
         line-height: 48px;
         width: 24px;
         margin-left: 10px;
-        color: #7D0045!important;
+        color: #FF5F8A!important;
     }
 }
 
@@ -694,10 +701,11 @@ header .principal img {
 }
 
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  400 px <<<<<<*/
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 400px) { 
 #mobile_search:focus {
     left: -387%!important;
     width: 424%;    
+}
 }
 @media only screen and (max-width: 350px) {
 #mobile_search:focus {
@@ -719,4 +727,13 @@ header .principal img {
 header .principal img {
     margin-top: 0%;
     }
+}
+
+.logoside img {
+        height: 140px!important;
+    margin-top: 4%;
+}
+img.responsive-img, video.responsive-video {
+    max-width: 100%;
+    height: auto;
 }

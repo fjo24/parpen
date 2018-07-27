@@ -80,4 +80,9 @@ class CategoriasController extends Controller
         $categoria->delete();
         return redirect()->route('categorias.index');
     }
+
+    public function excelcat()
+    {
+        return view('adm.categorias.carga', compact('categorias'));
+    }
 }

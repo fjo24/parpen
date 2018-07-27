@@ -198,6 +198,11 @@
                                     </a>
                                 </li>
                                 <li>
+                                    <a href="{{route('excelcat')}}">
+                                        Cargar Excel Categorias
+                                    </a>
+                                </li>
+                                <li>
                                     <a href="{{route('productos.create')}}">
                                         Crear Producto
                                     </a>

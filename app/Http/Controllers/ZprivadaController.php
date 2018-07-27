@@ -66,7 +66,7 @@ class ZprivadaController extends Controller
     public function send(Request $request)
     {
         $activo = 'carrito';
-        $dato   = Dato::where('tipo', 'mail')->first();
+        $dato   = Dato::where('tipo', 'email2')->first();
         foreach (Cart::content() as $row) {
             $producto = $row->name;
             $cantidad = $row->qty;
@@ -91,7 +91,7 @@ class ZprivadaController extends Controller
 
         Mail::send('privada.mailpedido', ['total' => $total,'username' => $username, 'nombre' => $nombre,'apellido' => $apellido,'social' => $social,'cuit' => $cuit,'telefono' => $telefono,'direccion' => $direccion,'emailcliente' => $emailcliente, 'items' => $items, 'row' => $row, 'subtotal' => $subtotal, 'mensaje' => $mensaje], function ($message) use ($nombre, $apellido) {
 
-            $dato = Dato::where('tipo', 'email')->first();
+            $dato = Dato::where('tipo', 'email2')->first();
             $message->from('info@aberturastolosa.com.ar', 'Parpen | Pedidos');
 
             $message->to($dato->descripcion);

@@ -95,7 +95,7 @@
                     </img>
                 </a>
                 <a class="sidenav-trigger" data-target="mobile-demo" href="#">
-                    <i class="material-icons center" style="background-color: gray; width: 150%">
+                    <i class="material-icons center" style="width: 150%">
                         menu
                     </i>
                 </a>
@@ -130,24 +130,42 @@
                 </ul>
         </nav>
             </div>
-        <ul class="sidenav" id="mobile-demo">
-            <li>
-                <a href="{{ url('/mantenimiento') }}">
+        <ul class="sidenav" id="mobile-demo" style="position: absolute;color: #7D0045;">
+        <div class="center logoside">
+            <a class="brand-logoside" href="">
+                <img alt="" class="responsive-img" src="{{ asset('img/logo_principal.jpg') }}">
+                </img>
+            </a>
+        </div>
+            <li class="bold">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ route('zproductos') }}">
+                    <i class="material-icons"  style="color: #FF5F8A!important;">
+                        brush
+                    </i>
                     PRODUCTOS
                 </a>
             </li>
-            <li>
-                <a href="{{ url('/categorias') }}">
+            <li class="bold">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ route('carrito') }}">
+                    <i class="material-icons"  style="color: #FF5F8A!important;">
+                        shopping_cart
+                    </i>
                     PEDIDOS
                 </a>
             </li>
-            <li>
-                <a href="{{ url('/productos') }}">
+            <li class="bold">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ route('listadeprecios') }}">
+                    <i class="material-icons"  style="color: #FF5F8A!important;">
+                        attach_money
+                    </i>
                     LISTA DE PRECIOS
                 </a>
             </li>
-            <li>
-                <a href="{{ url('/consejos') }}">
+            <li class="bold">
+                <a class="principalmovil collapsible-header waves-effect waves-admin" href="{{ route('ofertasynovedades') }}">
+                    <i class="material-icons"  style="color: #FF5F8A!important;">
+                        new_releases
+                    </i>
                     OFERTAS Y NOVEDADES
                 </a>
             </li>
