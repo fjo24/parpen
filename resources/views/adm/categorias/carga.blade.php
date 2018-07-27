@@ -31,8 +31,8 @@
        <h2>ATENCIÓN</h2>
        <p>Para hacer la carga de productos mediante un archivo Excel, deberá cumplir lo siguiente:
        </p>
-       <p>1. El archivo debe guardarlo en formato <strong>.CSV</strong> .</p>
-       <p>2. Este archivo debe estar estructurado por columnas, las cuales deberan ser cada campo de la tabla. Deberán ser 9 columnas. La columna 2 debe contener las medidas. La columna 5 debe contener el precio en dólares y la columna 9 debe tener el ID del producto (puede consultarlo en la sección Editar Productos). </p>
+       <p>1. El archivo debe ser de tipo <strong>Excel</strong> .</p>
+       <p>2. Este archivo debe estar estructurado por columnas, donde la primera fila, es la que identifica el orden, por lo que debe estar identificada como id, superior, nombre y orden, y debajo de ella los datos de todas las categorias a cargar.. siendo id: el numero de id de la categoria, superior: en caso de pertenecer a otra categoria (en caso de no serlo, se puede dejar vacia la casilla), nombre: el nombre de la categoria y orden: si necesita ubicarlo mas arriba en la lista (puede dejarse vacio) </p>
        </div>
         
        
